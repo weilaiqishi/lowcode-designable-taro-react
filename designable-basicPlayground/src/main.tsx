@@ -1,35 +1,37 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import { GithubOutlined } from '@ant-design/icons'
 import {
-  Designer,
-  IconWidget,
-  Workbench,
-  ViewPanel,
-  DesignerToolsWidget,
-  ViewToolsWidget,
-  OutlineTreeWidget,
-  ResourceWidget,
-  StudioPanel,
-  CompositePanel,
-  WorkspacePanel,
-  ToolbarPanel,
-  ViewportPanel,
-  SettingsPanel,
-  HistoryWidget,
-} from '@designable/react'
-import { SettingsForm, MonacoInput } from '@designable/react-settings-form'
-import { observer } from '@formily/react'
-import {
+  createBehavior,
   createDesigner,
   createResource,
-  createBehavior,
   GlobalRegistry,
 } from '@designable/core'
-import { Content } from './content'
-import { Space, Button, Radio } from 'antd'
-import { GithubOutlined } from '@ant-design/icons'
+import {
+  CompositePanel,
+  Designer,
+  DesignerToolsWidget,
+  HistoryWidget,
+  IconWidget,
+  OutlineTreeWidget,
+  ResourceWidget,
+  SettingsPanel,
+  StudioPanel,
+  ToolbarPanel,
+  ViewPanel,
+  ViewportPanel,
+  ViewToolsWidget,
+  Workbench,
+  WorkspacePanel,
+} from '@designable/react'
+import { MonacoInput,SettingsForm } from '@designable/react-settings-form'
+import { observer } from '@formily/react'
+import { Button, Radio,Space } from 'antd'
+
 //import { Sandbox } from '@designable/react-sandbox'
 import 'antd/dist/antd.less'
+
+import { Content } from './content'
 
 const RootBehavior = createBehavior({
   name: 'Root',

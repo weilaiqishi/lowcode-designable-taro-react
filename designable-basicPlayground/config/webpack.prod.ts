@@ -1,7 +1,9 @@
-import baseConfig from './webpack.base'
+import path from 'path'
+
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import path from 'path'
+
+import baseConfig from './webpack.base'
 
 const createPages = (pages) => {
   return pages.map(({ filename, template, chunk }) => {

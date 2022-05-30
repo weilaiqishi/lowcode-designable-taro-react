@@ -1,9 +1,11 @@
-import baseConfig from './webpack.base'
+import path from 'path'
+
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 //import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import webpack from 'webpack'
-import path from 'path'
+
+import baseConfig from './webpack.base'
 
 const PORT = 3000
 
@@ -18,7 +20,7 @@ const createPages = (pages) => {
   })
 }
 
-for (let key in baseConfig.entry) {
+for (const key in baseConfig.entry) {
   if (Array.isArray(baseConfig.entry[key])) {
     baseConfig.entry[key].push(
       require.resolve('webpack/hot/dev-server'),
