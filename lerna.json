@@ -1,0 +1,16 @@
+{
+  "packages": [
+    "packages/formily-taro-ui"
+  ],
+  "command": {
+    "publish": {
+      "message": "chore(release): publish %s"
+    },
+    "create": {
+      "license": "MIT"
+    }
+  },
+  "version": "0.0.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}

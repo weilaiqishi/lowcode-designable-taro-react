@@ -1,0 +1,20 @@
+@import "~taro-ui/dist/style/index.scss"; 
+
+.at-input  {
+  margin-left: 0;
+  & input {
+    border: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.at-col {
+  overflow: hidden;
+}
+
+.at-hairline-bottom {
+  @include hairline-bottom();
+}
