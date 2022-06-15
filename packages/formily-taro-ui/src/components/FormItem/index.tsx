@@ -4,6 +4,7 @@ import { connect, mapProps } from '@formily/react'
 import { Text, View as TaroView } from '@tarojs/components'
 import classNames from 'classnames'
 
+import { pickDataProps } from '../__builtins__'
 import { useFormLayoutContext } from '../Form'
 
 const View: any = TaroView
@@ -35,11 +36,12 @@ const useFormItemLayout = () => {
 export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
   children,
   field,
+  ...props
 }) => {
   const formLayout = useFormItemLayout()
   console.log(formLayout)
   const required = !isVoidField(field) && field.required && field.pattern !== 'readPretty'
-  return <View className={classNames('at-row',{ 'at-hairline-bottom': formLayout.bordered })}>
+  return <View {...pickDataProps(props)} className={classNames('at-row',{ 'at-hairline-bottom': formLayout.bordered })}>
     <View className={classNames(`at-col`,`at-col-${formLayout.labelCol}`)}>
       <View className={`at-row at-row__align--center`} style={{ height: '100%' }}>
         <View
