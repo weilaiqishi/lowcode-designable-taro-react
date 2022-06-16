@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'formily',
   date: '2022-5-30',
@@ -19,6 +21,12 @@ const config = {
     }
   },
   framework: 'react',
+  compiler: {
+    type: 'webpack5',
+    prebundle: {
+      enable: false
+    }
+  },
   mini: {
     postcss: {
       pxtransform: {
@@ -59,7 +67,10 @@ const config = {
         }
       }
     }
-  }
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src')
+  },
 }
 
 module.exports = function (merge) {

@@ -39,7 +39,6 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
   ...props
 }) => {
   const formLayout = useFormItemLayout()
-  console.log(formLayout)
   const required = !isVoidField(field) && field.required && field.pattern !== 'readPretty'
   return <View {...pickDataProps(props)} className={classNames('at-row',{ 'at-hairline-bottom': formLayout.bordered })}>
     <View className={classNames(`at-col`,`at-col-${formLayout.labelCol}`)}>
