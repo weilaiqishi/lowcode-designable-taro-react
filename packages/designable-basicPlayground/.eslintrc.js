@@ -1,11 +1,10 @@
 module.exports = {
-  root: true,
   plugins: ['simple-import-sort', '@typescript-eslint'],
   extends: [
-    'taro/react',
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended'
   ],
+  root: true,
   parser: '@typescript-eslint/parser',
   rules: {
     'react/jsx-uses-react': 'off',
@@ -25,10 +24,7 @@ module.exports = {
   },
   overrides: [
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
+      files: ['*.tsx', '*.ts'],
       rules: {
         'simple-import-sort/imports': [
           'warn',
@@ -45,12 +41,12 @@ module.exports = {
               ['^(@|@company|@ui|components|utils|config|vendored-lib)(/.*|$)'],
               // Side effect imports.
               ['^\\u0000'],
-              // Style imports.
-              ['^.+\\.s?css$'],
               // Parent imports. Put `..` last.
               ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
               // Other relative imports. Put same-folder imports and `.` last.
               ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+              // Style imports.
+              ['^.+\\.s?css$'],
             ],
           },
         ],

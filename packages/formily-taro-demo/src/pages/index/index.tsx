@@ -5,7 +5,7 @@ import {
 import { FormProvider } from '@formily/react'
 import { Button, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
-import { Form, SchemaField } from 'formily-taro-ui/lib'
+import { Form, SchemaField, schemaTransitionPx } from 'formily-taro-ui/lib'
 
 import { initFormily } from '@/utils/formily'
 
@@ -27,6 +27,7 @@ export default () => {
       const temp = e[0]
     }
   }
+  schemaTransitionPx(jsonSchema.schema)
   return (
     <View>
       <Form form={form} {...jsonSchema.form}>

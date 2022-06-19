@@ -7,7 +7,6 @@ import {
   useTreeNode,
 } from '@designable/react'
 import { isArr, isStr } from '@designable/shared'
-import { FormItem } from 'formily-taro-ui/lib'
 import { FormPath } from '@formily/core'
 import {
   ArrayField,
@@ -20,6 +19,7 @@ import {
 } from '@formily/react'
 import { toJS } from '@formily/reactive'
 import { each, reduce } from '@formily/shared'
+import { FormItem } from 'formily-taro-ui/lib'
 
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'

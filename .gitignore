@@ -13,6 +13,7 @@ node_modules/
 
 # Build outputs
 packages/**/dist/
+packages/**/lib/
 dist/
 
 # misc

@@ -37,12 +37,12 @@ import { Button, Radio, Space } from 'antd'
 
 import 'antd/dist/antd.less'
 
-import 'taro-ui/dist/style/index.scss'
-import 'formily-taro-ui/dist/index.scss'
-
 import { Field, Form, Input } from '../src/components/index'
 
 import { PreviewWidget, SchemaEditorWidget } from './widgets'
+
+import 'taro-ui/dist/style/index.scss'
+import 'formily-taro-ui/dist/index.scss'
 
 defineCustomElements()
 setNpmCDNRegistry('//unpkg.com')

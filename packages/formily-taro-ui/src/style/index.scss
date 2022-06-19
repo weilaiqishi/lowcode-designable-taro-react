@@ -3,6 +3,7 @@
 .at-input  {
   margin-left: 0;
   & input {
+    width: 100%;
     border: none;
 
     &:focus-visible {

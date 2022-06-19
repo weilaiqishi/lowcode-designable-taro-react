@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react'
 import { createBehavior, createResource } from '@designable/core'
-import { DnFC,usePrefix } from '@designable/react'
+import { DnFC, usePrefix } from '@designable/react'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
-import { Form as FormilyForm } from 'formily-taro-ui/lib'
+import { Form as FormilyForm, FormLayoutPath } from 'formily-taro-ui/lib'
+import * as lodash from 'lodash-es'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
@@ -40,7 +41,7 @@ Form.Behavior = createBehavior({
       propsSchema: {
         type: 'object',
         properties: {
-          ...(AllSchemas.FormLayout.properties as any),
+          ...(lodash.pick(AllSchemas.FormLayout.properties, FormLayoutPath) as object),
           style: AllSchemas.CSSStyle,
         },
       },

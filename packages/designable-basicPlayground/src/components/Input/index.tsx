@@ -34,7 +34,6 @@ Input.Behavior = createBehavior(
     selector: (node) => node.props['x-component'] === 'Input',
     designerProps: {
       propsSchema,
-
     },
     designerLocales: {
       'zh-CN': {

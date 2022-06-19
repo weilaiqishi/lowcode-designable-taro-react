@@ -47,6 +47,7 @@ export const Field = {
         },
       },
       'x-decorator-props': {
+        decoratored: '是否使用容器',
         addonAfter: '后缀标签',
         addonBefore: '前缀标签',
         tooltip: '提示',

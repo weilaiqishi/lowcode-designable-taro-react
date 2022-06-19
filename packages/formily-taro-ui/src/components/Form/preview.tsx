@@ -12,31 +12,28 @@ import { PreviewText } from '../PreviewText'
 
 const View: any = TaroView
 
-export interface IFormLayoutProps {
+export interface FormLayoutProps {
+  bordered?: boolean
+  labelAlign?: 'right' | 'left'
+  labelCol?: number
+  labelWidth?: number | string
+  layout?: 'vertical' | 'horizontal' | 'inline'
+  wrapperAlign?: 'right' | 'left',
+  wrapperCol?: number
+  wrapperWidth?: number | string
+}
+
+export interface IFormLayoutProps extends FormLayoutProps {
   form?: FormType
   component?: JSXComponent
   previewTextPlaceholder?: React.ReactNode
   className?: string
   style?: React.CSSProperties
-
-  bordered?: boolean
-  labelAlign?: 'right' | 'left'
-  labelCol?: number
-  labelWidth?: number
-  labelWrap?: boolean
-  layout?: 'vertical' | 'horizontal' | 'inline'
-  wrapperAlign?: 'right' | 'left',
-  wrapperCol?: number
-  wrapperWidth?: number
-  wrapperWrap?: boolean
 }
 
-export type IFormLayoutContext = Pick<
-  IFormLayoutProps,
-  'labelAlign' | 'wrapperAlign' | 'layout' | 'labelWrap' | 'labelWidth' | 'wrapperWidth' | 'wrapperWrap' | 'labelCol' | 'wrapperCol' | 'bordered'
->
+export const FormLayoutPath= ['bordered', 'labelAlign', 'labelCol', 'labelWidth', 'layout', 'wrapperAlign', 'wrapperCol', 'wrapperWidth']
 
-export const FormLayoutContext = createContext<IFormLayoutContext | null>(null)
+export const FormLayoutContext = createContext<FormLayoutProps | null>(null)
 export const useFormLayoutContext = () => useContext(FormLayoutContext)
 export const Form: React.FC<React.PropsWithChildren<IFormLayoutProps>> = ({
   className,
