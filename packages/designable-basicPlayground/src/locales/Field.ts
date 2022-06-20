@@ -33,6 +33,7 @@ export const Field = {
         bordered: '是否有边框',
         placeholder: '占位提示',
         style: {
+          position: '定位',
           width: '宽度',
           height: '高度',
           display: '展示',
