@@ -109,11 +109,39 @@ export const createFieldSchema = ({
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'Input',
+      'x-reactions': {
+        "dependencies": [
+          {
+            "property": "value",
+            "type": "any"
+          }
+        ],
+        fulfill: {
+          state: {
+            // hidden: '{{(console.log($form.values)) && true}}',
+            hidden: '{{$form.values["x-decorator"] !== "FormItem"}}',
+          },
+        },
+      },
     },
     description: {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'Input.TextArea',
+      'x-reactions': {
+        "dependencies": [
+          {
+            "property": "value",
+            "type": "any"
+          }
+        ],
+        fulfill: {
+          state: {
+            // hidden: '{{(console.log($form.values)) && true}}',
+            hidden: '{{$form.values["x-decorator"] !== "FormItem"}}',
+          },
+        },
+      },
     },
     'x-display': {
       type: 'string',
@@ -153,6 +181,24 @@ export const createFieldSchema = ({
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
+    },
+    'x-decorator': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': FormItemSwitcher,
+      'x-reactions': {
+        "dependencies": [
+          {
+            "property": "value",
+            "type": "any"
+          }
+        ],
+        fulfill: {
+          state: {
+            value: '{{$form.values["x-component-props"]["style"]["position"] !== "absolute" ? "FormItem" : ""}}',
+          },
+        },
+      },
     },
   }
 

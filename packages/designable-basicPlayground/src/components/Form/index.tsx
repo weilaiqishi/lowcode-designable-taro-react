@@ -42,7 +42,10 @@ Form.Behavior = createBehavior({
         type: 'object',
         properties: {
           ...(lodash.pick(AllSchemas.FormLayout.properties, FormLayoutPath) as object),
-          style: AllSchemas.CSSStyle,
+          style: {
+            type: 'void',
+            properties: lodash.omit(AllSchemas.CSSStyle.properties as object, ['style.position', 'style.top', 'style.left'])
+          },
         },
       },
       defaultProps: {

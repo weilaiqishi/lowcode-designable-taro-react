@@ -32,7 +32,6 @@ const useFormItemLayout = (props: FormLayoutProps) => {
 export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
   children,
   field,
-  decoratored,
   ...props
 }) => {
   const formLayout = useFormItemLayout(props)
@@ -55,7 +54,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
       enableCol = true
     }
   }
-  return (decoratored ?? true) ? <View {...pickDataProps(props)} className={classNames('at-row',{ 'at-hairline-bottom': formLayout.bordered })}>
+  return <View {...pickDataProps(props)} className={classNames('at-row',{ 'at-hairline-bottom': formLayout.bordered })}>
     <View
       className={
         classNames({
@@ -90,13 +89,7 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
         overflow: 'hidden'
       }}
     >{children}</View>
-  </View> : <View
-    {...pickDataProps(props)}
-    style={{
-      ...labelStyle,
-      overflow: 'hidden'
-    }}
-  >{children}</View>
+  </View>
 }
 
 export const FormItem =  connect(

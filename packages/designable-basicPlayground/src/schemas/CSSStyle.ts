@@ -3,17 +3,30 @@ import { ISchema } from '@formily/react'
 export const CSSStyle: ISchema = {
   type: 'void',
   properties: {
-    // 'style.position': {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   default: 'relative',
-    //   enum: [{ label: '相对定位', value: 'relative' }, { label: '绝对定位', value: 'absolute' }],
-    //   'x-component': 'Radio.Group',
-    //   'x-component-props': {
-    //     defaultValue: 'relative',
-    //     optionType: 'button',
-    //   },
-    // },
+    'style.position': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      default: 'relative',
+
+      enum: [{ label: '相对定位', value: 'relative' }, { label: '绝对定位', value: 'absolute' }],
+      'x-component': 'Radio.Group',
+      'x-component-props': {
+        defaultValue: 'relative',
+        optionType: 'button',
+      },
+    },
+    'style.top': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
+      default: '0px'
+    },
+    'style.left': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
+      default: '0px'
+    },
     'style.width': {
       type: 'string',
       'x-decorator': 'FormItem',
