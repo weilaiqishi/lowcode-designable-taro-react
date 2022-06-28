@@ -37,7 +37,7 @@ import { Button, Radio, Space } from 'antd'
 
 import 'antd/dist/antd.less'
 
-import { Field, Form, Input, WidgetBase } from '../src/components/index'
+import { Field, Form, Input, InputNumber, WidgetBase } from '../src/components/index'
 
 import { PreviewWidget, SchemaEditorWidget } from './widgets'
 
@@ -93,7 +93,7 @@ const App = () => {
         <StudioPanel logo={<Logo />} actions={<Actions />}>
           <CompositePanel>
             <CompositePanel.Item title='panels.Component' icon='Component'>
-              <ResourceWidget title='sources.Inputs' sources={[Input]} />
+              <ResourceWidget title='sources.Inputs' sources={[Input, InputNumber]} />
               <ResourceWidget title='sources.Displays' sources={[]} />
               <ResourceWidget title="sources.Layouts" sources={[WidgetBase]} />
             </CompositePanel.Item>
@@ -119,6 +119,7 @@ const App = () => {
                       Form,
                       Field,
                       Input,
+                      InputNumber,
                       WidgetBase
                     }}
                   />
@@ -130,7 +131,7 @@ const App = () => {
                 )}
               </ViewPanel>
               <ViewPanel type='PREVIEW'>
-                {(tree) => <PreviewWidget tree={tree} />}
+                {(tree) => <PreviewWidget tree={tree}/>}
               </ViewPanel>
             </ViewportPanel>
           </WorkspacePanel>

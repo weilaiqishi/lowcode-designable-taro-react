@@ -1,24 +1,24 @@
 import React from 'react'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
-import { Input as component } from 'formily-taro-ui/lib'
+import { InputNumber as component } from 'formily-taro-ui/lib'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
 
-export const Input: DnFC<React.ComponentProps<typeof component>> = component
+export const InputNumber: DnFC<React.ComponentProps<typeof component>> = component
 const propsSchema = createFieldSchema({ component: AllSchemas.Input,
   props: {
     'component-group': ['maxLength', 'placeholder'],
   }
 }) as any
 
-Input.Behavior = createBehavior(
+InputNumber.Behavior = createBehavior(
   {
-    name: 'Input',
+    name: 'InputNumber',
     extends: ['Field'],
-    selector: (node) => node.props['x-component'] === 'Input',
+    selector: (node) => node.props['x-component'] === 'InputNumber',
     designerProps: {
       propsSchema,
       defaultProps: {
@@ -28,7 +28,7 @@ Input.Behavior = createBehavior(
   },
 )
 
-Input.Resource = createResource(
+InputNumber.Resource = createResource(
   {
     icon: 'InputSource',
     elements: [
@@ -36,9 +36,9 @@ Input.Resource = createResource(
         componentName: 'Field',
         props: {
           type: 'string',
-          title: 'Input',
+          title: 'InputNumber',
           'x-decorator': 'FormItem',
-          'x-component': 'Input',
+          'x-component': 'InputNumber',
         },
       },
     ],

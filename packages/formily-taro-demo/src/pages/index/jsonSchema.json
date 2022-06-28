@@ -16,9 +16,8 @@
         "x-validator": [],
         "x-component-props": {
           "placeholder": "请输入内容",
-          "style": {
-            "width": "375px"
-          }
+          "allowClear": true,
+          "style": {}
         },
         "x-decorator-props": {
           "decoratored": false

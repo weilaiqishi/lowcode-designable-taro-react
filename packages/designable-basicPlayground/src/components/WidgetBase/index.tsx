@@ -4,7 +4,6 @@ import { DnFC } from '@designable/react'
 import { WidgetBase as component } from 'formily-taro-ui/lib'
 
 import { AllLocales } from '../../locales'
-import { AllSchemas } from '../../schemas'
 import { createVoidFieldSchema } from '../Field'
 
 export const WidgetBase: DnFC<React.ComponentProps<typeof component>> =

@@ -5,11 +5,14 @@ import {
 
 import {
   FormItem,
-  Input} from './index'
+  Input,
+  InputNumber
+} from './index'
 
 export const SchemaField = createSchemaField({
   components: {
     Input,
+    InputNumber,
     FormItem
   },
 })

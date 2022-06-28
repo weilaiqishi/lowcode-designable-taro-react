@@ -10,12 +10,15 @@ import { FormItemSwitcher } from '../../common/FormItemSwitcher'
 import { AllSchemas } from '../../schemas'
 
 const getAllSchemaProperties = (props, index) => {
-  const style
-    = props?.[index]
-      ? {
-        type: AllSchemas.CSSStyle.type,
-        properties: lodash.pick(lodash.cloneDeep(AllSchemas.CSSStyle.properties), props[index])
-      } : lodash.cloneDeep(AllSchemas.CSSStyle)
+  const style = props?.[index]
+    ? {
+      type: AllSchemas.CSSStyle.type,
+      properties: lodash.pick(
+        lodash.cloneDeep(AllSchemas.CSSStyle.properties),
+        props[index]
+      ),
+    }
+    : lodash.cloneDeep(AllSchemas.CSSStyle)
   return style
 }
 
@@ -24,8 +27,14 @@ export const createComponentSchema = (
   decorator: ISchema,
   props: any
 ) => {
-  const xComponentPropsStyle = getAllSchemaProperties(props, 'x-component-props.style')
-  const xDecoratorPropsStyle = getAllSchemaProperties(props, 'x-decorator-props.style')
+  const xComponentPropsStyle = getAllSchemaProperties(
+    props,
+    'x-component-props.style'
+  )
+  const xDecoratorPropsStyle = getAllSchemaProperties(
+    props,
+    'x-decorator-props.style'
+  )
 
   return {
     'component-group': component && {
@@ -39,7 +48,12 @@ export const createComponentSchema = (
         },
       },
       properties: {
-        'x-component-props': component,
+        'x-component-props': {
+          ...component,
+          properties: props?.['component-group']
+            ? lodash.pick(component.properties, props['component-group'])
+            : component.properties,
+        },
       },
     },
     'decorator-group': decorator && {
@@ -93,10 +107,10 @@ export const createComponentSchema = (
 export const createFieldSchema = ({
   component,
   props = {},
-  decorator = AllSchemas.FormItem
+  decorator = AllSchemas.FormItem,
 }: {
-  component: ISchema,
-  props?: any,
+  component: ISchema
+  props?: any
   decorator?: ISchema
 }): ISchema => {
   const defaultFieldGroupProperties = {
@@ -110,11 +124,11 @@ export const createFieldSchema = ({
       'x-decorator': 'FormItem',
       'x-component': 'Input',
       'x-reactions': {
-        "dependencies": [
+        dependencies: [
           {
-            "property": "value",
-            "type": "any"
-          }
+            property: 'value',
+            type: 'any',
+          },
         ],
         fulfill: {
           state: {
@@ -129,11 +143,11 @@ export const createFieldSchema = ({
       'x-decorator': 'FormItem',
       'x-component': 'Input.TextArea',
       'x-reactions': {
-        "dependencies": [
+        dependencies: [
           {
-            "property": "value",
-            "type": "any"
-          }
+            property: 'value',
+            type: 'any',
+          },
         ],
         fulfill: {
           state: {
@@ -187,25 +201,25 @@ export const createFieldSchema = ({
       'x-decorator': 'FormItem',
       'x-component': FormItemSwitcher,
       'x-reactions': {
-        "dependencies": [
+        dependencies: [
           {
-            "property": "value",
-            "type": "any"
-          }
+            property: 'value',
+            type: 'any',
+          },
         ],
         fulfill: {
           state: {
-            value: '{{$form.values["x-component-props"]["style"]["position"] !== "absolute" ? "FormItem" : ""}}',
+            value:
+              '{{$form.values["x-component-props"]["style"]["position"] !== "absolute" ? "FormItem" : ""}}',
           },
         },
       },
     },
   }
 
-  const fieldGroupProperties
-    = props?.['field-group']
-      ? lodash.pick(defaultFieldGroupProperties, props['field-group'])
-      : defaultFieldGroupProperties
+  const fieldGroupProperties = props?.['field-group']
+    ? lodash.pick(defaultFieldGroupProperties, props['field-group'])
+    : defaultFieldGroupProperties
 
   return {
     type: 'object',
@@ -223,10 +237,10 @@ export const createFieldSchema = ({
 export const createVoidFieldSchema = ({
   component,
   props = {},
-  decorator = AllSchemas.FormItem
+  decorator = AllSchemas.FormItem,
 }: {
-  component: ISchema,
-  props?: any,
+  component: ISchema
+  props?: any
   decorator?: ISchema
 }) => {
   const defaultFieldGroupProperties = {
@@ -287,10 +301,9 @@ export const createVoidFieldSchema = ({
       'x-component': FormItemSwitcher,
     },
   }
-  const fieldGroupProperties
-    = props?.['field-group']
-      ? lodash.pick(defaultFieldGroupProperties, props['field-group'])
-      : defaultFieldGroupProperties
+  const fieldGroupProperties = props?.['field-group']
+    ? lodash.pick(defaultFieldGroupProperties, props['field-group'])
+    : defaultFieldGroupProperties
 
   return {
     type: 'object',
