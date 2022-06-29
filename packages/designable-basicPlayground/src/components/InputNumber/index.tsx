@@ -2,6 +2,7 @@ import React from 'react'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
 import { InputNumber as component } from 'formily-taro-ui/lib'
+import lodash from 'lodash-es'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
@@ -14,6 +15,9 @@ const propsSchema = createFieldSchema({ component: AllSchemas.Input,
   }
 }) as any
 
+const AllLocalesInput = lodash.cloneDeep(AllLocales.Input)
+AllLocalesInput['zh-CN'].title = '数字输入框'
+
 InputNumber.Behavior = createBehavior(
   {
     name: 'InputNumber',
@@ -24,7 +28,7 @@ InputNumber.Behavior = createBehavior(
       defaultProps: {
       },
     },
-    designerLocales: AllLocales.Input
+    designerLocales: AllLocalesInput
   },
 )
 
