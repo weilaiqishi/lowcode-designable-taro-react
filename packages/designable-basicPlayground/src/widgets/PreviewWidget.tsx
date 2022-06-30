@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { transformToSchema } from '@designable/formily-transformer'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
-import { Form, FormItem, Input, InputNumber, WidgetBase } from 'formily-taro-ui/lib'
+import { Form, FormItem, Input, InputNumber, Rate, WidgetBase } from 'formily-taro-ui/lib'
 
 const SchemaField = createSchemaField({
   components: {
@@ -10,6 +10,7 @@ const SchemaField = createSchemaField({
     FormItem,
     Input,
     InputNumber,
+    Rate,
     WidgetBase
   },
 })
