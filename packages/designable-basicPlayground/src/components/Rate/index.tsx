@@ -36,7 +36,7 @@ const propsSchema = createFieldSchema({
         'x-component-props': {
           defaultValue: 5,
         },
-      }
+      },
     },
   },
 }) as any
@@ -47,7 +47,14 @@ Rate.Behavior = createBehavior({
   selector: (node) => node.props['x-component'] === 'Rate',
   designerProps: {
     propsSchema,
-    defaultProps: {},
+    defaultProps: {
+      'x-component-props': {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+        },
+      },
+    },
   },
   designerLocales: {
     'zh-CN': {
@@ -60,7 +67,7 @@ Rate.Behavior = createBehavior({
         },
       },
     },
-  }
+  },
 })
 
 Rate.Resource = createResource({

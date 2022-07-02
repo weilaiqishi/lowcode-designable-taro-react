@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect, mapProps, mapReadPretty } from '@formily/react'
-import { AtRate } from 'taro-ui'
+import { AtSwitch } from 'taro-ui'
 
-export const Rate = connect(
-  AtRate,
+export const Switch = connect(
+  AtSwitch,
   mapProps((props, field) => {
     return {
       ...props,
-      customStyle: props.style
+      customStyle: props.style,
+      border: false,
     }
   })
 )

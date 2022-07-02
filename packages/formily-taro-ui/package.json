@@ -9,9 +9,11 @@
     "*.css"
   ],
   "scripts": {
-    "build": "yarn run build:rollup && yarn run build:lib && node copy.mjs",
+    "build": "yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js"
+    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "dev:lib": "tsc --watch --project ./tsconfig.build.json",
+    "dev:rollup": "rollup --watch --config ./config/rollup.config.js"
   },
   "dependencies": {
     "fs-extra": "^10.1.0",
@@ -21,16 +23,16 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
-    "@tarojs/components": "3.5.0-beta.2",
-    "@tarojs/react": "3.5.0-beta.2",
-    "@tarojs/taro": "3.5.0-beta.2",
+    "@tarojs/components": "3.5.0-beta.4",
+    "@tarojs/react": "3.5.0-beta.4",
+    "@tarojs/taro": "3.5.0-beta.4",
     "@types/classnames": "^2.2.9",
     "@types/node": "^17.0.15",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-taro": "3.5.0-beta.2",
+    "eslint-config-taro": "3.5.0-beta.4",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.14.2",

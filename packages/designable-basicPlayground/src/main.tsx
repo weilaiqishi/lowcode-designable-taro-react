@@ -37,10 +37,11 @@ import { Button, Radio, Space } from 'antd'
 
 import 'antd/dist/antd.less'
 
-import { Field, Form, Input, InputNumber, Rate,WidgetBase } from '../src/components/index'
+import { Field, Form, Input, InputNumber, Rate, Switch, WidgetBase } from '../src/components/index'
 
 import { PreviewWidget, SchemaEditorWidget } from './widgets'
 
+import '@tarojs/components/dist/taro-components/taro-components.css'
 import 'taro-ui/dist/style/index.scss'
 import 'formily-taro-ui/dist/index.scss'
 
@@ -93,7 +94,7 @@ const App = () => {
         <StudioPanel logo={<Logo />} actions={<Actions />}>
           <CompositePanel>
             <CompositePanel.Item title='panels.Component' icon='Component'>
-              <ResourceWidget title='sources.Inputs' sources={[Input, InputNumber, Rate]} />
+              <ResourceWidget title='sources.Inputs' sources={[Input, InputNumber, Rate, Switch]} />
               <ResourceWidget title='sources.Displays' sources={[]} />
               <ResourceWidget title="sources.Layouts" sources={[WidgetBase]} />
             </CompositePanel.Item>
@@ -121,6 +122,7 @@ const App = () => {
                       Input,
                       InputNumber,
                       Rate,
+                      Switch,
                       WidgetBase
                     }}
                   />

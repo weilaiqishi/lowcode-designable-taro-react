@@ -87,8 +87,9 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
       style={{
         display: 'flex',
         justifyContent: formLayout.wrapperAlign === 'left' ? 'flex-start' : formLayout.wrapperAlign === 'right' ? 'flex-end' : '',
+        alignItems: 'center',
         ...wrapperStyle,
-        overflow: 'hidden'
+        overflow: 'hidden',
       }}
     >{children}</View>
   </View>

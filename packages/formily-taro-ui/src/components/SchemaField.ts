@@ -7,7 +7,8 @@ import {
   FormItem,
   Input,
   InputNumber,
-  Rate
+  Rate,
+  Switch
 } from './index'
 
 export const SchemaField = createSchemaField({
@@ -15,6 +16,7 @@ export const SchemaField = createSchemaField({
     FormItem,
     Input,
     InputNumber,
-    Rate
+    Rate,
+    Switch
   },
 })

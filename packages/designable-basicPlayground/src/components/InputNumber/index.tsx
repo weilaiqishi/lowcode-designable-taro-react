@@ -34,7 +34,7 @@ InputNumber.Behavior = createBehavior(
 
 InputNumber.Resource = createResource(
   {
-    icon: 'InputSource',
+    icon: 'NumberPickerSource',
     elements: [
       {
         componentName: 'Field',
