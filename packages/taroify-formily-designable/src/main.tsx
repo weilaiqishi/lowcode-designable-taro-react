@@ -37,7 +37,7 @@ import { Button, Radio, Space } from 'antd'
 
 import 'antd/dist/antd.less'
 
-import { Field, Form, Input, WidgetBase } from '../src/components/index'
+import { CellGroup, Field, Form, Input, WidgetBase } from '../src/components/index'
 
 import { PreviewWidget, SchemaEditorWidget } from './widgets'
 
@@ -97,7 +97,7 @@ const App = () => {
             <CompositePanel.Item title="panels.Component" icon="Component">
               <ResourceWidget title="sources.Inputs" sources={[Input]} />
               <ResourceWidget title="sources.Displays" sources={[]} />
-              <ResourceWidget title="sources.Layouts" sources={[WidgetBase]} />
+              <ResourceWidget title="sources.Layouts" sources={[WidgetBase, CellGroup]} />
             </CompositePanel.Item>
             <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
               <OutlineTreeWidget />
@@ -118,6 +118,7 @@ const App = () => {
                 {() => (
                   <ComponentTreeWidget
                     components={{
+                      CellGroup,
                       Form,
                       Field,
                       Input,

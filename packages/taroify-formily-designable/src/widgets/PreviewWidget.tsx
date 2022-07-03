@@ -2,10 +2,11 @@ import React, { useMemo } from 'react'
 import { transformToSchema } from '@designable/formily-transformer'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
-import { Form, FormItem, Input, WidgetBase } from 'taroify-formily/lib'
+import { CellGroup,Form, FormItem, Input, WidgetBase } from 'taroify-formily/lib'
 
 const SchemaField = createSchemaField({
   components: {
+    CellGroup,
     Form,
     FormItem,
     Input,

@@ -14,6 +14,8 @@ export const Input = {
         },
         showCount: '是否展示字数',
         checkStrength: '检测强度',
+        type: '自定义类型',
+        password: '是否是密码'
       },
     },
   },

@@ -31,10 +31,6 @@ export const createComponentSchema = (
     props,
     'x-component-props.style'
   )
-  const xDecoratorPropsStyle = getAllSchemaProperties(
-    props,
-    'x-decorator-props.style'
-  )
 
   return {
     'component-group': component && {
@@ -84,21 +80,6 @@ export const createComponentSchema = (
       },
       properties: {
         'x-component-props.style': xComponentPropsStyle,
-      },
-    },
-    'decorator-style-group': {
-      type: 'void',
-      'x-component': 'CollapseItem',
-      'x-component-props': { defaultExpand: false },
-      'x-reactions': {
-        fulfill: {
-          state: {
-            visible: '{{!!$form.values["x-decorator"]}}',
-          },
-        },
-      },
-      properties: {
-        'x-decorator-props.style': xDecoratorPropsStyle,
       },
     },
   }

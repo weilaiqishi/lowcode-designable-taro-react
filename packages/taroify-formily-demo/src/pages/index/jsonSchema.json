@@ -1,55 +1,111 @@
 {
-  "form": {},
+  "form": {
+    "style": {
+      "backgroundColor": "rgba(247,248,250,1)"
+    }
+  },
   "schema": {
     "type": "object",
     "properties": {
-      "2lw6hr3yc4q": {
-        "type": "string",
-        "title": "Input",
-        "x-decorator": "FormItem",
-        "x-component": "Input",
-        "x-validator": [],
+      "eqbfddhpdn3": {
+        "type": "void",
+        "x-component": "CellGroup",
         "x-component-props": {
           "style": {
+            "width": "750px",
+            "height": "750px",
             "position": "relative",
             "top": "0px",
             "left": "0px"
-          }
+          },
+          "inset": true,
+          "title": "输入框"
         },
-        "x-decorator-props": {
-          "style": {
-            "position": "relative",
-            "top": "0px",
-            "left": "0px"
+        "x-designable-id": "eqbfddhpdn3",
+        "x-index": 0,
+        "properties": {
+          "a": {
+            "type": "string",
+            "title": "文本",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "placeholder": "请输入文本"
+            },
+            "x-decorator-props": {},
+            "x-designable-id": "pqmwcijj7vt",
+            "x-index": 0,
+            "name": "a"
+          },
+          "b": {
+            "type": "string",
+            "title": "数字",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "type": "number",
+              "placeholder": "请输入数字"
+            },
+            "x-decorator-props": {},
+            "x-designable-id": "neyg91mk9v7",
+            "x-index": 1,
+            "name": "b"
+          },
+          "c": {
+            "type": "string",
+            "title": "手机号码",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": "phone",
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "placeholder": "请输入手机号"
+            },
+            "x-decorator-props": {},
+            "required": true,
+            "x-designable-id": "a89tbw3dln7",
+            "x-index": 2,
+            "name": "c"
+          },
+          "d": {
+            "type": "string",
+            "title": "密码",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "password": true,
+              "placeholder": ""
+            },
+            "x-decorator-props": {},
+            "x-designable-id": "i9vx9qj4wzl",
+            "x-index": 3,
+            "name": "d"
           }
-        },
-        "x-designable-id": "2lw6hr3yc4q",
-        "x-index": 0
-      },
-      "soxiklr57c5": {
-        "type": "string",
-        "title": "Input",
-        "x-decorator": "FormItem",
-        "x-component": "Input",
-        "x-validator": [],
-        "x-component-props": {
-          "style": {
-            "position": "relative",
-            "top": "0px",
-            "left": "0px"
-          }
-        },
-        "x-decorator-props": {
-          "style": {
-            "position": "relative",
-            "top": "0px",
-            "left": "0px"
-          }
-        },
-        "x-designable-id": "soxiklr57c5",
-        "x-index": 1
+        }
       }
     },
-    "x-designable-id": "it2ptdlxkhf"
+    "x-designable-id": "9g4ikf4qskr"
   }
 }

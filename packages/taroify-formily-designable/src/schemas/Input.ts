@@ -3,39 +3,39 @@ import { ISchema } from '@formily/react'
 export const Input: ISchema & { TextArea?: ISchema } = {
   type: 'object',
   properties: {
-    addonBefore: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-    },
-    addonAfter: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-    },
-    prefix: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-    },
-    suffix: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-    },
-    allowClear: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    bordered: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-      'x-component-props': {
-        defaultChecked: true,
-      },
-    },
+    // addonBefore: {
+    //   type: 'string',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Input',
+    // },
+    // addonAfter: {
+    //   type: 'string',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Input',
+    // },
+    // prefix: {
+    //   type: 'string',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Input',
+    // },
+    // suffix: {
+    //   type: 'string',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Input',
+    // },
+    // allowClear: {
+    //   type: 'boolean',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Switch',
+    // },
+    // bordered: {
+    //   type: 'boolean',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Switch',
+    //   'x-component-props': {
+    //     defaultChecked: true,
+    //   },
+    // },
     maxLength: {
       type: 'number',
       'x-decorator': 'FormItem',
@@ -46,13 +46,30 @@ export const Input: ISchema & { TextArea?: ISchema } = {
       'x-decorator': 'FormItem',
       'x-component': 'Input',
     },
-    size: {
+    // size: {
+    //   type: 'string',
+    //   enum: ['large', 'small', 'middle', null],
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Select',
+    //   'x-component-props': {
+    //     defaultValue: 'middle',
+    //   },
+    // },
+    type: {
       type: 'string',
-      enum: ['large', 'small', 'middle', null],
+      enum: ['text', 'number'],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       'x-component-props': {
-        defaultValue: 'middle',
+        defaultValue: 'text',
+      },
+    },
+    password: {
+      type: 'boolean',
+      'x-decorator': 'FormItem',
+      'x-component': 'Switch',
+      'x-component-props': {
+        defaultValue: false,
       },
     },
   },

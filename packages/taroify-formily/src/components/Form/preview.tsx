@@ -6,9 +6,11 @@ import {
   JSXComponent,
   useParentForm,
 } from '@formily/react'
-import { Cell } from '@taroify/core'
+import { View as TaroView } from '@tarojs/components'
 
 import { PreviewText } from '../PreviewText'
+
+const View: any = TaroView
 
 export interface IFormLayoutProps {
   form?: FormType
@@ -30,9 +32,9 @@ export const Form: React.FC<React.PropsWithChildren<IFormLayoutProps>> = ({
   const renderContent = (_form: FormType | ObjectField) => (
     <ExpressionScope value={{ $$form: _form }}>
       <PreviewText.Placeholder value={previewTextPlaceholder}>
-        <Cell.Group inset className={className} style={style}>
+        <View className={className} style={style}>
           {children}
-        </Cell.Group>
+        </View>
       </PreviewText.Placeholder>
     </ExpressionScope>
   )

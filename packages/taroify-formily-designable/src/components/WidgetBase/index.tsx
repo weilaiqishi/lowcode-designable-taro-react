@@ -52,7 +52,6 @@ WidgetBase.Resource = createResource({
         type: 'void',
         'x-component': 'WidgetBase',
         'x-component-props': {
-          title: 'Title',
           style: {
             width: '750px',
             height: '750px'

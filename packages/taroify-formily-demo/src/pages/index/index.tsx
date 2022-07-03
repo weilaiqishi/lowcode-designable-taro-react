@@ -1,7 +1,5 @@
 import React, { useMemo } from 'react'
-import {
-  createForm,
-} from '@formily/core'
+import { createForm } from '@formily/core'
 import { FormProvider } from '@formily/react'
 import { Button, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'

@@ -8,11 +8,7 @@ import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
 
 export const Input: DnFC<React.ComponentProps<typeof component>> = component
-const propsSchema = createFieldSchema({ component: AllSchemas.Input,
-  props: {
-    'component-group': ['maxLength', 'placeholder'],
-  }
-}) as any
+const propsSchema = createFieldSchema({ component: AllSchemas.Input }) as any
 
 Input.Behavior = createBehavior(
   {

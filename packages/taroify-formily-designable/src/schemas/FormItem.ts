@@ -18,32 +18,32 @@ export const FormItem: ISchema = {
     //   'x-decorator': 'FormItem',
     //   'x-component': 'Input',
     // },
-    labelCol: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'NumberPicker',
-    },
-    wrapperCol: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'NumberPicker',
-    },
-    labelWidth: {
-      'x-decorator': 'FormItem',
-      'x-component': 'SizeInput',
-    },
-    wrapperWidth: {
-      'x-decorator': 'FormItem',
-      'x-component': 'SizeInput',
-    },
-    // colon: {
-    //   type: 'boolean',
+    // labelCol: {
+    //   type: 'number',
     //   'x-decorator': 'FormItem',
-    //   'x-component': 'Switch',
-    //   'x-component-props': {
-    //     defaultChecked: true,
-    //   },
+    //   'x-component': 'NumberPicker',
     // },
+    // wrapperCol: {
+    //   type: 'number',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'NumberPicker',
+    // },
+    // labelWidth: {
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'SizeInput',
+    // },
+    // wrapperWidth: {
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'SizeInput',
+    // },
+    colon: {
+      type: 'boolean',
+      'x-decorator': 'FormItem',
+      'x-component': 'Switch',
+      'x-component-props': {
+        defaultChecked: true,
+      },
+    },
     // asterisk: {
     //   type: 'boolean',
     //   'x-decorator': 'FormItem',
@@ -93,16 +93,16 @@ export const FormItem: ISchema = {
     // },
     labelAlign: {
       type: 'string',
-      enum: ['left', 'right', null],
+      enum: ['left', 'center', 'right'],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       'x-component-props': {
-        defaultValue: 'right',
+        defaultValue: 'left',
       },
     },
     wrapperAlign: {
       type: 'string',
-      enum: ['left', 'right', null],
+      enum: ['left', 'center', 'right'],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       'x-component-props': {
@@ -129,13 +129,13 @@ export const FormItem: ISchema = {
     //   'x-decorator': 'FormItem',
     //   'x-component': 'Switch',
     // },
-    bordered: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-      'x-component-props': {
-        defaultChecked: true,
-      },
-    },
+    // bordered: {
+    //   type: 'boolean',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Switch',
+    //   'x-component-props': {
+    //     defaultChecked: true,
+    //   },
+    // },
   },
 }
