@@ -1,3 +1,8 @@
+const eventProps = {
+  path: '路径',
+  propsJSONArray: '参数JSON数组'
+}
+
 export const Field = {
   'zh-CN': {
     settings: {
@@ -23,6 +28,7 @@ export const Field = {
       'component-group': '组件属性',
       'decorator-group': '容器属性',
       'component-style-group': '组件样式',
+      'component-events-group': '组件事件',
       'decorator-style-group': '容器样式',
       'x-component-props': {
         size: { title: '尺寸', dataSource: ['大', '小', '默认', '继承'] },
@@ -48,6 +54,10 @@ export const Field = {
           top: 'top',
           left: 'left',
         },
+        
+      },
+      'x-component-events': {
+        click: { title: '点击事件', ...eventProps }
       },
       'x-decorator-props': {
         addonAfter: '后缀标签',

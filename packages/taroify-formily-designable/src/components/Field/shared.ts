@@ -4,6 +4,7 @@ import {
   ValidatorSetter,
 } from '@designable/formily-setters'
 import { ISchema } from '@formily/json-schema'
+import { Select } from 'antd'
 import * as lodash from 'lodash-es'
 
 import { FormItemSwitcher } from '../../common/FormItemSwitcher'
@@ -20,6 +21,54 @@ const getAllSchemaProperties = (props, index) => {
     }
     : lodash.cloneDeep(AllSchemas.CSSStyle)
   return style
+}
+
+const eventProps = {
+  path: {
+    type: 'string',
+    'x-decorator': 'FormItem',
+    'x-component': 'Input',
+  },
+  propsJSONArrayTitle: {
+    type: 'string',
+    'x-decorator': 'FormItem',
+    title: '参数JSON数组'
+  },
+  propsJSONArray: {
+    type: 'array',
+    'x-component': 'ArrayItems',
+    items: {
+      type: 'void',
+      'x-component': 'Space',
+      properties: {
+        input: {
+          type: 'string',
+          'x-component': 'Textarea',
+        },
+        remove: {
+          type: 'void',
+          'x-component': 'ArrayItems.Remove',
+        },
+      },
+    },
+    properties: {
+      add: {
+        type: 'void',
+        title: '添加条目',
+        'x-component': 'ArrayItems.Addition',
+      },
+     
+    },
+  }
+}
+const xEventProperties = {
+  click: {
+    type: 'object',
+    'x-component': 'DrawerSetter',
+    properties: {
+      ...eventProps
+    },
+  },
 }
 
 export const createComponentSchema = (
@@ -80,6 +129,17 @@ export const createComponentSchema = (
       },
       properties: {
         'x-component-props.style': xComponentPropsStyle,
+      },
+    },
+    'component-events-group': {
+      type: 'void',
+      'x-component': 'CollapseItem',
+      'x-component-props': { defaultExpand: false },
+      properties: {
+        'x-component-events': {
+          type: 'object',
+          properties: xEventProperties,
+        },
       },
     },
   }

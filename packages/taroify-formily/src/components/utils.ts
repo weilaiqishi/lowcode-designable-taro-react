@@ -1,3 +1,5 @@
+import * as lodash from 'lodash-es'
+
 const pxToRem = (str, designWidth = 750) => {
   const reg = /(\d+(\.\d*)?)+(px)/gi
   return str.replace(reg, function(x) {
@@ -37,3 +39,52 @@ export function schemaTransitionPx(theSchema, options?: { mode: transitionPxMode
     theSchema.hasTransitionPxToRem = true
   }
 }
+
+let formilyStore: any = {}
+export function formilyStoreRegister(obj) {
+  formilyStore = obj
+}
+
+export function formilyStoreRunFunction(path, propsJSONArray, ...otherProps) {
+  // console.log('formilyStoreRunFunction path propsJSONArray otherProps -> ', propsJSONArray, otherProps)
+  const fn = lodash.get(formilyStore, path)
+  let obj = null
+  try {
+    const segments = String(path || '').split('.')
+    segments.pop()
+    obj = lodash.get(formilyStore, segments.join())
+  } catch (err) {
+    console.log('formilyStoreRunFunction -> getCallObj err -> ', err)
+  }
+  let propsArray: any[] = []
+  try {
+    propsArray = propsJSONArray.map(item => JSON.parse(item))
+  } catch (err) {
+    console.log('formilyStoreRunFunction -> parsepropsJSON err -> ', err)
+  }
+  if (typeof fn === 'function') {
+    obj ? fn.call(obj, ...propsArray, ...otherProps) : fn(...propsArray, ...otherProps)
+  }
+}
+
+export const formilyStoreRunFunctionThrottle = lodash.throttle((path, propsJSONArray, ...otherProps) => {
+  // console.log('formilyStoreRunFunction path propsJSONArray otherProps -> ', propsJSONArray, otherProps)
+  const fn = lodash.get(formilyStore, path)
+  let obj = null
+  try {
+    const segments = String(path || '').split('.')
+    segments.pop()
+    obj = lodash.get(formilyStore, segments.join())
+  } catch (err) {
+    console.log('formilyStoreRunFunction -> getCallObj err -> ', err)
+  }
+  let propsArray: any[] = []
+  try {
+    propsArray = propsJSONArray.map(item => JSON.parse(item))
+  } catch (err) {
+    console.log('formilyStoreRunFunction -> parsepropsJSON err -> ', err)
+  }
+  if (typeof fn === 'function') {
+    obj ? fn.call(obj, ...propsArray, ...otherProps) : fn(...propsArray, ...otherProps)
+  }
+}, 200)
