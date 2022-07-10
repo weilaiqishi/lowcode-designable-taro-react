@@ -1,0 +1,51 @@
+{
+  "form": {},
+  "schema": {
+    "type": "object",
+    "properties": {
+      "zb7jyvtbeey": {
+        "type": "void",
+        "x-component": "CellGroup",
+        "x-component-props": {
+          "style": {
+            "width": "750px",
+            "height": "750px",
+            "position": "relative",
+            "top": "0px",
+            "left": "0px",
+            "backgroundColor": "rgba(74,74,74,1)"
+          },
+          "event": {
+            "click": {
+              "propsJSONArray": [],
+              "api": "Taro.showToast"
+            }
+          }
+        },
+        "x-designable-id": "zb7jyvtbeey",
+        "properties": {
+          "06mfeu48lt1": {
+            "type": "string",
+            "title": "Input",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "event": {}
+            },
+            "x-decorator-props": {},
+            "x-designable-id": "06mfeu48lt1",
+            "x-index": 0
+          }
+        },
+        "x-index": 0
+      }
+    },
+    "x-designable-id": "vcnt8a7t4fi"
+  }
+}

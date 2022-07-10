@@ -24,6 +24,15 @@ const getAllSchemaProperties = (props, index) => {
 }
 
 const eventProps = {
+  api: {
+    type: 'string',
+    'x-decorator': 'FormItem',
+    'x-component': 'Select',
+    enum: [
+      { label: 'Taro界面交互showToast', value: 'Taro.showToast' },
+      { label: 'Taro界面交互showModal', value: 'Taro.showModal' },
+    ],
+  },
   path: {
     type: 'string',
     'x-decorator': 'FormItem',
@@ -32,7 +41,7 @@ const eventProps = {
   propsJSONArrayTitle: {
     type: 'string',
     'x-decorator': 'FormItem',
-    title: '参数JSON数组'
+    title: '参数JSON数组',
   },
   propsJSONArray: {
     type: 'array',
@@ -57,16 +66,15 @@ const eventProps = {
         title: '添加条目',
         'x-component': 'ArrayItems.Addition',
       },
-     
     },
-  }
+  },
 }
 const xEventProperties = {
   click: {
     type: 'object',
     'x-component': 'DrawerSetter',
     properties: {
-      ...eventProps
+      ...eventProps,
     },
   },
 }
@@ -136,9 +144,11 @@ export const createComponentSchema = (
       'x-component': 'CollapseItem',
       'x-component-props': { defaultExpand: false },
       properties: {
-        'x-component-events': {
+        'x-component-props.event': {
           type: 'object',
-          properties: xEventProperties,
+          properties: props?.['component-events-group']
+            ? lodash.pick(xEventProperties, props['component-events-group'])
+            : xEventProperties,
         },
       },
     },

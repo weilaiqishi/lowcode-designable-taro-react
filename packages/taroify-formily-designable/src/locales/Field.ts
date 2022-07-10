@@ -1,4 +1,5 @@
 const eventProps = {
+  api: '预设api',
   path: '路径',
   propsJSONArray: '参数JSON数组'
 }
@@ -54,10 +55,9 @@ export const Field = {
           top: 'top',
           left: 'left',
         },
-        
-      },
-      'x-component-events': {
-        click: { title: '点击事件', ...eventProps }
+        event: {
+          click: { title: '点击事件', ...eventProps }
+        }
       },
       'x-decorator-props': {
         addonAfter: '后缀标签',

@@ -2,6 +2,8 @@ import React from 'react'
 import { observer } from '@formily/react'
 import { View as TaroView } from '@tarojs/components'
 
+import { formilyStoreEvent } from '../utils'
+
 type typeProps = {
   children?: React.ReactNode
   style: any
@@ -19,6 +21,11 @@ export const WidgetBase = observer(({
     <View
       {...props}
       style={style}
+      onClick={() => {
+        if (props?.event?.click) {
+          formilyStoreEvent(props.event.click)
+        }
+      }}
     >
       {children}
     </View>

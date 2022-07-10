@@ -8,7 +8,12 @@ import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
 
 export const Input: DnFC<React.ComponentProps<typeof component>> = component
-const propsSchema = createFieldSchema({ component: AllSchemas.Input }) as any
+const propsSchema = createFieldSchema({
+  component: AllSchemas.Input,
+  props: {
+    'component-events-group': []
+  }
+}) as any
 
 Input.Behavior = createBehavior(
   {

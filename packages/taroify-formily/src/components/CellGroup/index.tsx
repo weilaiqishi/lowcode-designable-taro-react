@@ -3,6 +3,8 @@ import { observer } from '@formily/react'
 import { Cell } from "@taroify/core"
 import { View as TaroView } from '@tarojs/components'
 
+import { formilyStoreEvent } from '../utils'
+
 type typeProps = {
   children?: React.ReactNode
   style: any
@@ -26,6 +28,11 @@ export const CellGroup = observer(({
     <View
       {...props}
       style={style}
+      onClick={() => {
+        if (props?.event?.click) {
+          formilyStoreEvent(props.event.click)
+        }
+      }}
     >
       <Cell.Group inset={inset} bordered={bordered} title={title}>
         {children}

@@ -1,4 +1,5 @@
 import * as lodash from 'lodash-es'
+import Taro from '@tarojs/taro'
 
 const pxToRem = (str, designWidth = 750) => {
   const reg = /(\d+(\.\d*)?)+(px)/gi
@@ -40,7 +41,9 @@ export function schemaTransitionPx(theSchema, options?: { mode: transitionPxMode
   }
 }
 
-let formilyStore: any = {}
+let formilyStore: any = {
+  Taro
+}
 export function formilyStoreRegister(obj) {
   formilyStore = obj
 }
@@ -67,7 +70,19 @@ export function formilyStoreRunFunction(path, propsJSONArray, ...otherProps) {
   }
 }
 
-export const formilyStoreRunFunctionThrottle = lodash.throttle((path, propsJSONArray, ...otherProps) => {
+// lodash.throttle 在小程序里不能正常获得时间
+export function throttle(callback, wait = 600) {
+  let start = 0
+  return function (...args) {
+    const now = new Date().getTime()
+    if (now - start >= wait) {
+      callback.call(this, ...args)
+      start = now
+    }
+  }
+}
+
+export const formilyStoreRunFunctionThrottle = throttle((path, propsJSONArray, ...otherProps) => {
   // console.log('formilyStoreRunFunction path propsJSONArray otherProps -> ', propsJSONArray, otherProps)
   const fn = lodash.get(formilyStore, path)
   let obj = null
@@ -88,3 +103,14 @@ export const formilyStoreRunFunctionThrottle = lodash.throttle((path, propsJSONA
     obj ? fn.call(obj, ...propsArray, ...otherProps) : fn(...propsArray, ...otherProps)
   }
 }, 200)
+
+type typeEventItem = {
+  api: string
+  path: string
+  propsJSONArray: any[]
+}
+
+export const formilyStoreEvent = function (eventItem: typeEventItem, ...otherProps) {
+  const { api, path, propsJSONArray } = eventItem
+  formilyStoreRunFunctionThrottle(path || api, propsJSONArray, ...otherProps)
+}

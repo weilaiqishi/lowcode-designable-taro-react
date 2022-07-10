@@ -5,7 +5,6 @@ import '@taroify/core/index.scss'
 import 'taroify-formily/dist/index.scss'
 import './app.scss'
 
-
 class App extends Component {
   componentDidMount() {}
 
