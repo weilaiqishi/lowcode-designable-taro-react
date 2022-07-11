@@ -17,12 +17,15 @@
           },
           "event": {
             "click": {
-              "propsJSONArray": [],
+              "propsJSONArray": [
+                "{\"title\":\"click\"}"
+              ],
               "api": "Taro.showToast"
             }
           }
         },
         "x-designable-id": "zb7jyvtbeey",
+        "x-index": 0,
         "properties": {
           "06mfeu48lt1": {
             "type": "string",
@@ -42,8 +45,7 @@
             "x-designable-id": "06mfeu48lt1",
             "x-index": 0
           }
-        },
-        "x-index": 0
+        }
       }
     },
     "x-designable-id": "vcnt8a7t4fi"

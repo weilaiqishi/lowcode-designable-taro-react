@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   plugins: ['simple-import-sort', '@typescript-eslint'],
   extends: [
-    'taro/react',
+    // 'taro/react',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
   ],

@@ -368,3 +368,33 @@ export const createVoidFieldSchema = ({
     },
   }
 }
+
+export const ImageModeSelect = {
+  locales: {
+    mode: '图片模式',
+  },
+  properties: {
+    mode: {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'Select',
+      enum: [
+        'scaleToFill',
+        'aspectFit',
+        'aspectFill',
+        'widthFix',
+        'heightFix',
+        'top',
+        'bottom',
+        'center',
+        'left',
+        'right',
+        'topLeft',
+        'topRight',
+        'bottomLeft',
+        'bottomRight',
+      ],
+      default: 'aspectFit',
+    },
+  },
+}

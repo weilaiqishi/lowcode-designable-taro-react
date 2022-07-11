@@ -11,7 +11,7 @@ const pxToRem = (str, designWidth = 750) => {
 
 type transitionPxMode = 'rpx' | 'rem'
 export function schemaTransitionPx(theSchema, options?: { mode: transitionPxMode }) {
-  if (theSchema.hasTransitionPxToRem) {
+  if (theSchema.hasTransition) {
     return
   }
   for (const i in theSchema.properties) {
@@ -22,11 +22,11 @@ export function schemaTransitionPx(theSchema, options?: { mode: transitionPxMode
         if (options?.mode === 'rem') {
           style[s] = pxToRem(style[s])
         } else {
-          // 有rpx 被转换过则跳过
-          if (String(style[s]).includes('rpx')) {
-            theSchema.hasTransitionPxToRem = true
-            return
-          } 
+          // // 有rpx 被转换过则跳过
+          // if (String(style[s]).includes('rpx')) {
+          //   theSchema.hasTransition = true
+          //   return
+          // } 
           style[s] = String(style[s]).replace(/px/g, 'rpx')
         }
       }

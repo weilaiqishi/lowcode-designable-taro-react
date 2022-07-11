@@ -9,7 +9,7 @@ import { initFormily } from '@/utils/formily'
 
 import './index.scss'
 
-import eventJSON from './event.json'
+import json from './check.json'
 
 initFormily()
 
@@ -25,11 +25,11 @@ export default () => {
       const temp = e[0]
     }
   }
-  schemaTransitionPx(eventJSON.schema)
+  schemaTransitionPx(json.schema)
   return (
     <View>
-      <Form form={form} {...eventJSON.form}>
-        <SchemaField schema={eventJSON.schema} />
+      <Form form={form} {...json.form}>
+        <SchemaField schema={json.schema} />
       </Form>
       <Button onClick={submit} style={{marginTop: '1rem'}}>submit</Button>
     </View>
