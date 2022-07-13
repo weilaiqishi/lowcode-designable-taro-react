@@ -33,11 +33,11 @@ import {
 } from '@designable/react-settings-form'
 import { observer } from '@formily/react'
 import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
-import { Button, Radio, Space } from 'antd'
+import { Button, Space } from 'antd'
 
 import 'antd/dist/antd.less'
 
-import { CellGroup, Checkbox, Field, Form, Input, WidgetBase } from '../src/components/index'
+import { CellGroup, Checkbox, Field, Form, Input, Radio, Rate, WidgetBase } from '../src/components/index'
 
 import { PreviewWidget, SchemaEditorWidget } from './widgets'
 
@@ -95,7 +95,7 @@ const App = () => {
         <StudioPanel logo={<Logo />} actions={<Actions />}>
           <CompositePanel>
             <CompositePanel.Item title="panels.Component" icon="Component">
-              <ResourceWidget title="sources.Inputs" sources={[Input, Checkbox]} />
+              <ResourceWidget title="sources.Inputs" sources={[Input, Checkbox, Radio, Rate]} />
               <ResourceWidget title="sources.Displays" sources={[]} />
               <ResourceWidget title="sources.Layouts" sources={[WidgetBase, CellGroup]} />
             </CompositePanel.Item>
@@ -123,6 +123,8 @@ const App = () => {
                       Form,
                       Field,
                       Input,
+                      Radio,
+                      Rate,
                       WidgetBase,
                     }}
                   />

@@ -38,6 +38,12 @@ export const Checkbox = connect(
       checkboxLabelColor: 'checkboxLabelColor',
       checkboxLabelLineHeight: 'checkboxLabelLineHeight',
       checkboxDisabledLabelColor: 'checkboxDisabledLabelColor',
+      checkboxIconFontSize: 'checkboxIconFontSize',
+      checkboxCheckedIconColor: 'checkboxCheckedIconColor',
+      checkboxCheckedIconBorderColor: 'checkboxCheckedIconBorderColor',
+      checkboxCheckedIconBackgroundColor: 'checkboxCheckedIconBackgroundColor',
+      checkboxDisabledIconColor: 'checkboxDisabledIconColor',
+      checkboxDisabledIconBorderColor: 'checkboxDisabledIconBorderColor'
     }
 
     const customIcon: typeCustomIcon = (props.style as any)?.customIcon || {}
@@ -56,10 +62,9 @@ export const Checkbox = connect(
           direction={props.direction}
         >
           {_dataSource.map((item, i) => {
-            const checkboxProps: Record<string, any> = {}
-            console.log(customIcon)
+            const extraProps: Record<string, any> = {}
             if (customIcon.useIcon) {
-              checkboxProps.icon = (
+              extraProps.icon = (
                 <Image
                   src={
                     (Array.isArray(value) ? value : []).includes(item.value)
@@ -84,7 +89,7 @@ export const Checkbox = connect(
                 disabled={disabled}
                 size={props.size}
                 shape={props.shape}
-                {...checkboxProps}
+                {...extraProps}
               >
                 {item.label}
               </Component>

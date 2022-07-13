@@ -1,16 +1,16 @@
 import React from 'react'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
-import { Checkbox as component } from 'taroify-formily/lib'
+import { Radio as component } from 'taroify-formily/lib'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
 import { ImageModeSelect } from '../Field/shared'
 
-export const Checkbox: DnFC<React.ComponentProps<typeof component>> = component
+export const Radio: DnFC<React.ComponentProps<typeof component>> = component
 const propsSchema = createFieldSchema({
-  component: AllSchemas.Checkbox,
+  component: AllSchemas.Radio,
   props: {
     'component-events-group': [],
   },
@@ -53,67 +53,67 @@ const customStyles = {
       ...ImageModeSelect.properties,
     },
   },
-  checkboxFontSize: {
+  radioFontSize: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  checkboxBorderColor: {
+  radioBorderColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  checkboxGap: {
+  radioGap: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  checkboxLabelMargin: {
+  radioLabelMargin: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  checkboxLabelColor: {
+  radioLabelColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  checkboxLabelLineHeight: {
+  radioLabelLineHeight: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  checkboxDisabledLabelColor: {
+  radioDisabledLabelColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  checkboxIconFontSize: {
+  radioIconFontSize: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  checkboxCheckedIconColor: {
+  radioCheckedIconColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  checkboxCheckedIconBorderColor: {
+  radioCheckedIconBorderColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  checkboxCheckedIconBackgroundColor: {
+  radioCheckedIconBackgroundColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  checkboxDisabledIconColor: {
+  radioDisabledIconColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  checkboxDisabledIconBorderColor: {
+  radioDisabledIconBorderColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
@@ -127,10 +127,10 @@ Object.entries(customStyles).forEach(
   (values) => (styleSchema[`style.${values[0]}`] = values[1])
 )
 
-Checkbox.Behavior = createBehavior({
-  name: 'Checkbox',
+Radio.Behavior = createBehavior({
+  name: 'Radio',
   extends: ['Field'],
-  selector: (node) => node.props['x-component'] === 'Checkbox',
+  selector: (node) => node.props['x-component'] === 'Radio',
   designerProps: {
     propsSchema,
     defaultProps: {
@@ -146,19 +146,19 @@ Checkbox.Behavior = createBehavior({
       ]
     },
   },
-  designerLocales: AllLocales.CheckboxGroup,
+  designerLocales: AllLocales.RadioGroup,
 })
 
-Checkbox.Resource = createResource({
-  icon: 'CheckboxGroupSource',
+Radio.Resource = createResource({
+  icon: 'RadioGroupSource',
   elements: [
     {
       componentName: 'Field',
       props: {
         type: 'string',
-        title: 'Checkbox',
+        title: 'Radio',
         'x-decorator': 'FormItem',
-        'x-component': 'Checkbox',
+        'x-component': 'Radio',
       },
     },
   ],

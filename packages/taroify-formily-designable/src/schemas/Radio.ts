@@ -3,36 +3,42 @@ import { ISchema } from '@formily/react'
 export const Radio: ISchema & { Group?: ISchema } = {
   type: 'object',
   properties: {
-    autoFocus: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-  },
-}
-
-Radio.Group = {
-  type: 'object',
-  properties: {
-    optionType: {
+    direction: {
       type: 'string',
-      enum: ['default', 'button'],
       'x-decorator': 'FormItem',
-      'x-component': 'Radio.Group',
-      'x-component-props': {
-        defaultValue: 'default',
-        optionType: 'button',
-      },
+      'x-component': 'Select',
+      enum: [
+        {
+          label: '垂直',
+          value: 'vertical'
+        },
+        {
+          label: '水平',
+          value: 'horizontal'
+        }
+      ],
+      default: 'vertical'
     },
-    buttonStyle: {
+    size: {
+      type: 'number',
+      'x-decorator': 'FormItem',
+      'x-component': 'NumberPicker',
+    },
+    shape: {
       type: 'string',
-      enum: ['outline', 'solid'],
       'x-decorator': 'FormItem',
-      'x-component': 'Radio.Group',
-      'x-component-props': {
-        defaultValue: 'outline',
-        optionType: 'button',
-      },
-    },
+      'x-component': 'Select',
+      enum: [
+        {
+          label: '圆型',
+          value: 'round'
+        },
+        {
+          label: '正方形',
+          value: 'square'
+        }
+      ],
+      default: 'round'
+    }
   },
 }

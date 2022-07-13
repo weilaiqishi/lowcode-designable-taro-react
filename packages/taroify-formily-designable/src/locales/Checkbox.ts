@@ -6,13 +6,6 @@ export const CheckboxGroup = {
     settings: {
       'x-component-props': {
         style: {
-          checkboxFontSize: 'font-size',
-          checkboxBorderColor: 'border-color',
-          checkboxGap: 'gap',
-          checkboxLabelMargin: 'label-margin',
-          checkboxLabelColor: 'label-color',
-          checkboxLabelLineHeight: 'label-line-height',
-          checkboxDisabledLabelColor: 'disabled-label-color',
           customIcon: {
             title: '自定义图标',
             useIcon: '使用自定义图标',
@@ -22,6 +15,19 @@ export const CheckboxGroup = {
             height: '图标高度',
             ...ImageModeSelect.locales,
           },
+          checkboxFontSize: 'font-size',
+          checkboxBorderColor: 'border-color',
+          checkboxGap: 'gap',
+          checkboxLabelMargin: 'label-margin',
+          checkboxLabelColor: 'label-color',
+          checkboxLabelLineHeight: 'label-line-height',
+          checkboxDisabledLabelColor: 'disabled-label-color',
+          checkboxIconFontSize: 'icon-font-size',
+          checkboxCheckedIconColor: 'checked-icon-color',
+          checkboxCheckedIconBorderColor: 'checked-icon-border-color',
+          checkboxCheckedIconBackgroundColor: 'checked-icon-background-color',
+          checkboxDisabledIconColor: 'disabled-icon-color',
+          checkboxDisabledIconBorderColor: 'disabled-icon-color'
         },
         max: '最大可选数',
         direction: '排列方向',

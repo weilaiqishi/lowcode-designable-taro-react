@@ -7,6 +7,7 @@ import { createVariantElement } from '@taroify/core/utils/element'
 import { View as TaroView } from '@tarojs/components'
 import classNames from 'classnames'
 
+import FormItemBase from '../../ui/form-item'
 import { pickDataProps } from '../__builtins__'
 
 const View: any = TaroView
@@ -37,31 +38,31 @@ export const BaseItem: React.FC<React.PropsWithChildren<IFormItemProps>> = ({
   const required =
     !isVoidField(field) && field.required && field.pattern !== 'readPretty'
   return (
-    <View
-      className={classNames(className)}
+    <FormItemBase
+      required={required}
+      bordered
+      className={className}
       style={style}
       {...pickDataProps(props)}
     >
-      <Form.Item required={required}>
-        <Form.Label align={labelAlign} colon={colon}>
-          {field.title}
-        </Form.Label>
-        {children && <Form.Control children={children} align={wrapperAlign} />}
-        {feedbackStatus !== 'pending' && (
-          <Form.Feedback
-            status={
-              feedbackStatus === 'success'
-                ? 'valid'
-                : feedbackStatus === 'error'
-                  ? 'invalid'
-                  : 'warning'
-            }
-          >
-            {feedbackText}
-          </Form.Feedback>
-        )}
-      </Form.Item>
-    </View>
+      <Form.Label align={labelAlign} colon={colon}>
+        {field.title}
+      </Form.Label>
+      {children && <Form.Control children={children} align={wrapperAlign} />}
+      {feedbackStatus !== 'pending' && (
+        <Form.Feedback
+          status={
+            feedbackStatus === 'success'
+              ? 'valid'
+              : feedbackStatus === 'error'
+                ? 'invalid'
+                : 'warning'
+          }
+        >
+          {feedbackText}
+        </Form.Feedback>
+      )}
+    </FormItemBase>
   )
 }
 

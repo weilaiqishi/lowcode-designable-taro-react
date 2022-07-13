@@ -1,9 +1,11 @@
+import React from 'react'
 import {
   DataSourceSetter,
   ReactionsSetter,
   ValidatorSetter,
 } from '@designable/formily-setters'
 import { ISchema } from '@formily/json-schema'
+import * as Icons from '@taroify/icons'
 import { Select } from 'antd'
 import * as lodash from 'lodash-es'
 
@@ -396,5 +398,34 @@ export const ImageModeSelect = {
       ],
       default: 'aspectFit',
     },
+  },
+}
+
+export const IconSelect = {
+  type: 'string',
+  'x-decorator': 'FormItem',
+  'x-component': ({ value, onChange }) => {
+    return (
+      <Select
+        value={value}
+        onChange={onChange}
+        showSearch
+        optionFilterProp="children"
+        filterOption={(input, option) =>
+          String(option!.value)
+            .toLowerCase()
+            .includes(input.toLowerCase())
+        }
+      >
+        {Object.keys(Icons).map((key) => {
+          const Icon = Icons[key]
+          return (
+            <Select.Option value={key}>
+              <Icon style={{ fontSize: 20 }}></Icon>
+            </Select.Option>
+          )
+        })}
+      </Select>
+    )
   },
 }
