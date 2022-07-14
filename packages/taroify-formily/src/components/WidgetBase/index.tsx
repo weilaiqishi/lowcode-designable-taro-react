@@ -1,5 +1,5 @@
 import React from 'react'
-import { observer } from '@formily/react'
+import { observer, useForm } from '@formily/react'
 import { View as TaroView } from '@tarojs/components'
 
 import { formilyStoreEvent } from '../utils'
@@ -17,13 +17,19 @@ export const WidgetBase = observer(({
   style,
   ...props
 }: typeProps) => {
+  const form = useForm()
   return (
     <View
       {...props}
       style={style}
       onClick={() => {
         if (props?.event?.click) {
-          formilyStoreEvent(props.event.click)
+          formilyStoreEvent(
+            {
+              $form: form,
+            },
+            props.event.click
+          )
         }
       }}
     >

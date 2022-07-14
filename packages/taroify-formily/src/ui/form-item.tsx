@@ -33,12 +33,14 @@ import { fulfillPromise } from '@taroify/core/utils/promisify'
 import { useToRef } from '@taroify/core/utils/state'
 import { isElementOf } from '@taroify/core/utils/validate'
 import { cloneIconElement } from '@taroify/icons/utils'
-import { View } from '@tarojs/components'
+import { View as _View } from '@tarojs/components'
 import { InputProps } from '@tarojs/components/types/Input'
 import classNames from 'classnames'
 import * as _ from 'lodash'
 
 import { pickDataProps } from '../components/__builtins__'
+
+const View: any = _View
 
 interface FormItemChildren {
   label?: ReactElement

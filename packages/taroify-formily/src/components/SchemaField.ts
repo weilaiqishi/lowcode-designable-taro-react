@@ -2,6 +2,7 @@ import { Schema } from '@formily/json-schema'
 import { createSchemaField } from '@formily/react'
 
 import {
+  Button,
   CellGroup,
   Checkbox,
   DatetimePicker,
@@ -17,6 +18,7 @@ import {
 
 export const SchemaField = createSchemaField({
   components: {
+    Button,
     CellGroup,
     Checkbox,
     DatetimePicker,

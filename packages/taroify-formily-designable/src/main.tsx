@@ -33,11 +33,23 @@ import {
 } from '@designable/react-settings-form'
 import { observer } from '@formily/react'
 import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
-import { Button, Space } from 'antd'
+import Taro from '@tarojs/taro'
+import { Button as AntdButton, message, Space } from 'antd'
+import { formilyStoreRegister } from 'taroify-formily/lib'
 
 import 'antd/dist/antd.less'
 
-import { CellGroup, Checkbox, Field, Form, Input, Radio, Rate, WidgetBase } from '../src/components/index'
+import {
+  Button,
+  CellGroup,
+  Checkbox,
+  Field,
+  Form,
+  Input,
+  Radio,
+  Rate,
+  WidgetBase,
+} from '../src/components/index'
 
 import { PreviewWidget, SchemaEditorWidget } from './widgets'
 
@@ -60,6 +72,23 @@ GlobalRegistry.registerDesignerLocales({
   },
 })
 
+// 注册formily自定义组件全局数据源
+formilyStoreRegister({
+  Taro: {
+    ...Taro,
+    // 注册一些 PC Taro上没有的方法
+    showToast(arg) {
+      const { title = '', duration = 2 } = arg || {}
+      message.info('(PC临时工)' + title, duration)
+      // {"title": JSON.stringify($form.values)}
+    },
+    showModal(arg) {
+      const { content = '', duration = 2 } = arg || {}
+      message.info('(PC临时工)' + content, duration)
+    }
+  }
+})
+
 const Logo: React.FC = () => (
   <div style={{ display: 'flex', alignItems: 'center', fontSize: 14 }}>
     <IconWidget
@@ -74,8 +103,8 @@ const Actions = observer(() => {
 
   return (
     <Space style={{ marginRight: 10 }}>
-      <Button>保存</Button>
-      <Button type="primary">发布</Button>
+      <AntdButton>保存</AntdButton>
+      <AntdButton type="primary">发布</AntdButton>
     </Space>
   )
 })
@@ -95,9 +124,15 @@ const App = () => {
         <StudioPanel logo={<Logo />} actions={<Actions />}>
           <CompositePanel>
             <CompositePanel.Item title="panels.Component" icon="Component">
-              <ResourceWidget title="sources.Inputs" sources={[Input, Checkbox, Radio, Rate]} />
-              <ResourceWidget title="sources.Displays" sources={[]} />
-              <ResourceWidget title="sources.Layouts" sources={[WidgetBase, CellGroup]} />
+              <ResourceWidget
+                title="sources.Inputs"
+                sources={[Input, Checkbox, Radio, Rate]}
+              />
+              <ResourceWidget title="sources.Displays" sources={[Button]} />
+              <ResourceWidget
+                title="sources.Layouts"
+                sources={[WidgetBase, CellGroup]}
+              />
             </CompositePanel.Item>
             <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
               <OutlineTreeWidget />
@@ -118,6 +153,7 @@ const App = () => {
                 {() => (
                   <ComponentTreeWidget
                     components={{
+                      Button,
                       CellGroup,
                       Checkbox,
                       Form,

@@ -40,12 +40,12 @@ const eventProps = {
     'x-decorator': 'FormItem',
     'x-component': 'Input',
   },
-  propsJSONArrayTitle: {
+  propsOperatorsArrayTitle: {
     type: 'string',
     'x-decorator': 'FormItem',
-    title: '参数JSON数组',
+    title: '参数表达式数组',
   },
-  propsJSONArray: {
+  propsOperatorsArray: {
     type: 'array',
     'x-component': 'ArrayItems',
     items: {

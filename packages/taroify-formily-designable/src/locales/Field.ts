@@ -1,7 +1,7 @@
 const eventProps = {
   api: '预设api',
   path: '路径',
-  propsJSONArray: '参数JSON数组'
+  propsOperatorsArray: '参数表达式数组'
 }
 
 export const Field = {

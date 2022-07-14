@@ -20,7 +20,9 @@ const externalPackages = [
   '@formily/core',
   '@formily/react',
   '@frmily/shared',
-  '@taroify/core'
+  '@formily/json-schema',
+  '@taroify/core',
+  '@kimeng/vm',
 ]
 
 function pluginCopy() {
@@ -60,6 +62,6 @@ export default {
     RollupTypescript({
       tsconfig: resolveFile('tsconfig.rollup.json'),
     }),
-    pluginCopy()
+    pluginCopy(),
   ],
 }

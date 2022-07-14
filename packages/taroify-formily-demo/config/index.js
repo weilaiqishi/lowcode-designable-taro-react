@@ -49,6 +49,24 @@ const config = {
         }
       }
     },
+    webpackChain(chain) {
+      chain.merge({
+        optimization: {
+          splitChunks: {
+            cacheGroups: {
+              customGroup: {
+                test(module) {
+                  return /@kimeng[\\/]vm/.test(module.resource)
+                },
+                name: 'vm',
+                priority: 100,
+              },
+            },
+          },
+        },
+      })
+    },
+    commonChunks: ['runtime', 'vendors', 'taro', 'common', 'vm'],
   },
   h5: {
     publicPath: '/',
@@ -66,7 +84,8 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
-    }
+    },
+    esnextModules: ["@taroify"]
   },
   alias: {
     '@': path.resolve(__dirname, '..', 'src')

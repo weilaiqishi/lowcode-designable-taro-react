@@ -1,35 +1,37 @@
 {
-  "form": {},
+  "form": {
+    "style": {
+      "backgroundColor": "rgba(247,248,250,1)",
+      "padding": "60px 0px 0px 0px"
+    }
+  },
   "schema": {
     "type": "object",
     "properties": {
-      "zb7jyvtbeey": {
+      "eqbfddhpdn3": {
         "type": "void",
         "x-component": "CellGroup",
         "x-component-props": {
           "style": {
-            "width": "750px",
-            "height": "750px",
+            "width": "inherit",
+            "height": "inherit",
             "position": "relative",
             "top": "0px",
             "left": "0px",
-            "backgroundColor": "rgba(74,74,74,1)"
+            "margin": "0px 0px 0px 0px"
           },
+          "inset": true,
+          "title": "输入框",
           "event": {
-            "click": {
-              "propsJSONArray": [
-                "{\"title\":\"click\"}"
-              ],
-              "api": "Taro.showToast"
-            }
+            "click": {}
           }
         },
-        "x-designable-id": "zb7jyvtbeey",
+        "x-designable-id": "eqbfddhpdn3",
         "x-index": 0,
         "properties": {
-          "06mfeu48lt1": {
+          "inputText": {
             "type": "string",
-            "title": "Input",
+            "title": "文本",
             "x-decorator": "FormItem",
             "x-component": "Input",
             "x-validator": [],
@@ -39,15 +41,240 @@
                 "top": "0px",
                 "left": "0px"
               },
+              "placeholder": "请输入文本",
               "event": {}
             },
             "x-decorator-props": {},
-            "x-designable-id": "06mfeu48lt1",
-            "x-index": 0
+            "x-designable-id": "pqmwcijj7vt",
+            "x-index": 0,
+            "name": "inputText"
+          },
+          "inputNumber": {
+            "type": "string",
+            "title": "数字",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "type": "number",
+              "placeholder": "请输入数字",
+              "event": {}
+            },
+            "x-decorator-props": {},
+            "x-designable-id": "neyg91mk9v7",
+            "x-index": 1,
+            "name": "inputNumber"
+          },
+          "inputPhone": {
+            "type": "string",
+            "title": "手机号码",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": "phone",
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "placeholder": "请输入手机号",
+              "event": {}
+            },
+            "x-decorator-props": {},
+            "required": true,
+            "x-designable-id": "a89tbw3dln7",
+            "x-index": 2,
+            "name": "inputPhone"
+          },
+          "inputPass": {
+            "type": "string",
+            "title": "密码",
+            "x-decorator": "FormItem",
+            "x-component": "Input",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px"
+              },
+              "password": true,
+              "placeholder": "",
+              "event": {}
+            },
+            "x-decorator-props": {},
+            "x-designable-id": "i9vx9qj4wzl",
+            "x-index": 3,
+            "name": "inputPass"
           }
         }
+      },
+      "ymxjfz8qzm1": {
+        "type": "void",
+        "x-component": "CellGroup",
+        "x-component-props": {
+          "style": {
+            "width": "inherit",
+            "height": "inherit",
+            "position": "relative",
+            "top": "0px",
+            "left": "0px",
+            "margin": "60px 0px 0px 0px"
+          },
+          "inset": true,
+          "title": "其他输入",
+          "event": {
+            "click": {}
+          }
+        },
+        "x-designable-id": "ymxjfz8qzm1",
+        "x-index": 1,
+        "properties": {
+          "checkbox": {
+            "type": "string",
+            "title": "Checkbox",
+            "x-decorator": "FormItem",
+            "x-component": "Checkbox",
+            "enum": [
+              {
+                "children": [],
+                "label": "选项1",
+                "value": "1"
+              },
+              {
+                "children": [],
+                "label": "选项2",
+                "value": "2"
+              },
+              {
+                "children": [],
+                "label": "选项3",
+                "value": "3"
+              }
+            ],
+            "x-validator": [],
+            "x-component-props": {
+              "direction": "vertical",
+              "shape": "round",
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px",
+                "customIcon": {
+                  "srcActive": "https://img.yzcdn.cn/vant/user-active.png",
+                  "srcInactive": "https://img.yzcdn.cn/vant/user-inactive.png",
+                  "width": "25px",
+                  "height": "20px",
+                  "mode": "aspectFit",
+                  "useIcon": true
+                }
+              },
+              "event": {},
+              "max": 2
+            },
+            "x-decorator-props": {},
+            "name": "checkbox",
+            "x-designable-id": "hsczakrjrvp",
+            "x-index": 0
+          },
+          "radio": {
+            "type": "string",
+            "title": "Radio",
+            "x-decorator": "FormItem",
+            "x-component": "Radio",
+            "enum": [
+              {
+                "label": "选项1",
+                "value": "1"
+              },
+              {
+                "label": "选项2",
+                "value": "2"
+              }
+            ],
+            "x-validator": [],
+            "x-component-props": {
+              "direction": "horizontal",
+              "shape": "round",
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px",
+                "customIcon": {}
+              },
+              "event": {}
+            },
+            "x-decorator-props": {},
+            "name": "radio",
+            "x-designable-id": "ayolhnlwqtx",
+            "x-index": 1
+          },
+          "rate": {
+            "type": "string",
+            "title": "Rate",
+            "x-decorator": "FormItem",
+            "x-component": "Rate",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "top": "0px",
+                "left": "0px",
+                "customIcon": {}
+              },
+              "event": {}
+            },
+            "x-decorator-props": {},
+            "name": "rate",
+            "x-designable-id": "nq650rfrnms",
+            "x-index": 2
+          }
+        }
+      },
+      "oor7p895oxt": {
+        "type": "string",
+        "title": "Button",
+        "x-component": "Button",
+        "x-component-props": {
+          "variant": "contained",
+          "color": "primary",
+          "size": "medium",
+          "shape": "square",
+          "style": {
+            "position": "relative",
+            "top": "0px",
+            "left": "0px",
+            "customIcon": {
+              "src": "",
+              "width": "25px",
+              "height": "20px",
+              "mode": "aspectFit",
+              "icon": "WeappNav",
+              "useIcon": true
+            },
+            "margin": "60px 0px 0px 0px"
+          },
+          "event": {
+            "click": {
+              "propsOperatorsArray": [
+                "{\"title\": JSON.stringify($form.values)}"
+              ],
+              "api": "Taro.showModal",
+              "path": ""
+            }
+          },
+          "children": "打印表单",
+          "block": true
+        },
+        "x-designable-id": "oor7p895oxt",
+        "x-index": 2
       }
     },
-    "x-designable-id": "vcnt8a7t4fi"
+    "x-designable-id": "m2v5e1d6uc5"
   }
 }

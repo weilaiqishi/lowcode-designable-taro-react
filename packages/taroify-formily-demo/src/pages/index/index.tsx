@@ -3,13 +3,18 @@ import { createForm } from '@formily/core'
 import { FormProvider } from '@formily/react'
 import { Button, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
-import { Form, SchemaField, schemaTransitionPx } from 'taroify-formily/lib'
+import {
+  Form,
+  formStyleTransitionPx,
+  SchemaField,
+  schemaTransitionPx,
+} from 'taroify-formily/lib'
 
 import { initFormily } from '@/utils/formily'
 
 import './index.scss'
 
-import json from './check.json'
+import json from './event.json'
 
 initFormily()
 
@@ -25,13 +30,14 @@ export default () => {
       const temp = e[0]
     }
   }
-  schemaTransitionPx(json.schema)
+  schemaTransitionPx(json.schema, { mode: 'rem' })
+  formStyleTransitionPx(json.form, { mode: 'rem' })
   return (
     <View>
       <Form form={form} {...json.form}>
         <SchemaField schema={json.schema} />
       </Form>
-      <Button onClick={submit} style={{marginTop: '1rem'}}>submit</Button>
+      {/* <Button onClick={submit} style={{marginTop: '1rem'}}>submit</Button> */}
     </View>
   )
 }
