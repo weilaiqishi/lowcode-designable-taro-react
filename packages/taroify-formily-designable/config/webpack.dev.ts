@@ -7,8 +7,6 @@ import webpack from 'webpack'
 
 import baseConfig from './webpack.base'
 
-const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
-
 const PORT = 3000
 
 const createPages = (pages) => {
@@ -47,22 +45,6 @@ export default {
     ]),
     new webpack.HotModuleReplacementPlugin(),
     // new BundleAnalyzerPlugin()
-    new ModuleFederationPlugin({
-      name: 'designable_taro',
-      shared: {
-        react: {
-          requiredVersion: '17.0.0',
-          singleton: true, // only a single version of the shared module is allowed
-        },
-        'react-dom': {
-          requiredVersion: '17.0.0',
-          singleton: true, // only a single version of the shared module is allowed
-        },
-      },
-      remotes: {
-        formily_taro: 'formily_taro@http://192.168.1.8:10086/remoteEntry.js'
-      }
-    }),
   ],
   devServer: {
     host: '127.0.0.1',
