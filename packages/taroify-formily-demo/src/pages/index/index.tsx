@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { createForm } from '@formily/core'
 import { FormProvider } from '@formily/react'
 import { Button, View } from '@tarojs/components'
@@ -14,11 +14,17 @@ import { initFormily } from '@/utils/formily'
 
 import './index.scss'
 
-import json from './event.json'
+import testJson from './event.json'
 
 initFormily()
 
+function transitionPx(designableJson) {
+  schemaTransitionPx(designableJson.schema, { mode: 'rem' })
+  formStyleTransitionPx(designableJson.form, { mode: 'rem' })
+}
+
 export default () => {
+  const [designableJson, setdesignableJson] = useState(testJson)
   const form = useMemo(() => createForm(), [])
   async function submit() {
     try {
@@ -30,12 +36,29 @@ export default () => {
       const temp = e[0]
     }
   }
-  schemaTransitionPx(json.schema, { mode: 'rem' })
-  formStyleTransitionPx(json.form, { mode: 'rem' })
+  transitionPx(designableJson)
+
+  useEffect(() => {
+    if (process.env.TARO_ENV === 'h5' && window.opener) {
+      const fn = (event) => {
+        if (
+          event.data.type === 'getSchemaRes'
+        ) {
+          setdesignableJson(JSON.parse(event.data.data))
+          window.removeEventListener('message', fn)
+        }
+      }
+      window.addEventListener('message', fn, false)
+      window.opener.postMessage({
+        type: 'getSchema'
+      }, '*')
+    }
+  }, [])
+
   return (
     <View>
-      <Form form={form} {...json.form}>
-        <SchemaField schema={json.schema} />
+      <Form form={form} {...designableJson.form}>
+        <SchemaField schema={designableJson.schema} />
       </Form>
       {/* <Button onClick={submit} style={{marginTop: '1rem'}}>submit</Button> */}
     </View>

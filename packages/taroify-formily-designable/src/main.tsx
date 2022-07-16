@@ -1,5 +1,5 @@
 //import { Sandbox } from '@designable/react-sandbox'
-import React, { Suspense, useEffect, useMemo } from 'react'
+import React, { Suspense, useEffect, useMemo, useRef } from 'react'
 import ReactDOM from 'react-dom'
 import { GithubOutlined } from '@ant-design/icons'
 import {
@@ -20,6 +20,7 @@ import {
   SettingsPanel,
   StudioPanel,
   ToolbarPanel,
+  useDesigner,
   ViewPanel,
   ViewportPanel,
   ViewToolsWidget,
@@ -51,6 +52,7 @@ import {
   WidgetBase,
 } from '../src/components/index'
 
+import { loadInitialSchema, saveSchema } from './service'
 import { PreviewWidget, SchemaEditorWidget } from './widgets'
 
 import '@tarojs/components/dist/taro-components/taro-components.css'
@@ -85,8 +87,8 @@ formilyStoreRegister({
     showModal(arg) {
       const { content = '', duration = 2 } = arg || {}
       message.info('(PC临时工)' + content, duration)
-    }
-  }
+    },
+  },
 })
 
 const Logo: React.FC = () => (
@@ -99,12 +101,31 @@ const Logo: React.FC = () => (
 )
 
 const Actions = observer(() => {
-  useEffect(() => {}, [])
+  const designer = useDesigner()
 
   return (
     <Space style={{ marginRight: 10 }}>
-      <AntdButton>保存</AntdButton>
-      <AntdButton type="primary">发布</AntdButton>
+      <AntdButton
+        type="primary"
+        onClick={() => {
+          const otherWindow = window.open(process.env.demoPath)
+          const fn = (event) => {
+            if (event.data.type === 'getSchema') {
+              window.removeEventListener('message', fn)
+              otherWindow.postMessage(
+                {
+                  type: 'getSchemaRes',
+                  data: saveSchema(designer),
+                },
+                process.env.demoPath
+              )
+            }
+          }
+          window.addEventListener('message', fn, false)
+        }}
+      >
+        预览
+      </AntdButton>
     </Space>
   )
 })

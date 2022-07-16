@@ -3,6 +3,8 @@
   "name": "lowcode-designable-taro-react",
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
+    "inquirer": "6.5.2",
+    "execa": "^6.1.0",
 
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",

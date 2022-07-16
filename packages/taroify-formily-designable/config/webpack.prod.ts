@@ -42,6 +42,11 @@ export default {
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 10,
     }),
+    new webpack.DefinePlugin({
+      'process.env.TARO_ENV': '`h5`',
+      '__TARO_FRAMEWORK__': `'react'`,
+      'process.env.demoPath': `'${process.env.demoPath}'`
+    }),
   ],
   mode: 'development',
   optimization: {

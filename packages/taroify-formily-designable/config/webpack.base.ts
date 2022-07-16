@@ -1,8 +1,6 @@
 import path from 'path'
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import webpack from 'webpack'
-//import { getThemeVariables } from 'antd/dist/theme'
 
 export default {
   mode: 'development',
@@ -35,12 +33,6 @@ export default {
     moment: 'moment',
     antd: 'antd',
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.TARO_ENV': '`h5`',
-      '__TARO_FRAMEWORK__': `'react'`
-    }),
-  ],
   module: {
     rules: [
       {

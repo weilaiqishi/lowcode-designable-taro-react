@@ -1,9 +1,9 @@
 module.exports = {
+  env: {
+    node: true,
+  },
   plugins: ['simple-import-sort', '@typescript-eslint'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended'
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   root: true,
   parser: '@typescript-eslint/parser',
   rules: {
@@ -20,7 +20,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/no-var-requires': 'off'
+    '@typescript-eslint/no-var-requires': 'off',
   },
   overrides: [
     {

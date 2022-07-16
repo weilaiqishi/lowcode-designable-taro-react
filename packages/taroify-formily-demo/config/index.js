@@ -69,7 +69,6 @@ const config = {
     commonChunks: ['runtime', 'vendors', 'taro', 'common', 'vm'],
   },
   h5: {
-    publicPath: './',
     staticDirectory: 'static',
     postcss: {
       autoprefixer: {
