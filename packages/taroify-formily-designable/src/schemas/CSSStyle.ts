@@ -7,25 +7,38 @@ export const CSSStyle: ISchema = {
       type: 'string',
       'x-decorator': 'FormItem',
       default: 'relative',
-
-      enum: [{ label: '相对定位', value: 'relative' }, { label: '绝对定位', value: 'absolute' }],
-      'x-component': 'Radio.Group',
-      'x-component-props': {
-        defaultValue: 'relative',
-        optionType: 'button',
-      },
+      'x-component': 'Select',
+      enum: [
+        { label: 'static', value: 'static' },
+        { label: 'relative', value: 'relative' },
+        { label: 'absolute', value: 'absolute' },
+        { label: 'fixed', value: 'fixed' },
+        { label: 'sticky', value: 'sticky' },
+      ],
     },
     'style.top': {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-      default: '0px'
+      default: '0px',
     },
     'style.left': {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-      default: '0px'
+      default: '0px',
+    },
+    'style.right': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
+      default: '0px',
+    },
+    'style.bottom': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
+      default: '0px',
     },
     'style.width': {
       type: 'string',

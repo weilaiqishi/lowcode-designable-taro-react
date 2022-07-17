@@ -14,6 +14,8 @@ type typeProps = typePropsFields &
     // Radio
     size: number
     shape: 'round' | 'square'
+
+    customIcon: typeCustomIcon
   }>
 
 type typeCustomIcon = Partial<{
@@ -45,7 +47,7 @@ export const Radio = connect(
       radioDisabledIconBorderColor: 'radioDisabledIconBorderColor',
     }
 
-    const customIcon: typeCustomIcon = (props.style as any)?.customIcon || {}    
+    const customIcon = props.customIcon   
     return (
       <ConfigProvider
         theme={Object.keys(themeConfig).reduce((acc, cur) => {
@@ -61,7 +63,7 @@ export const Radio = connect(
         >
           {_dataSource.map((item, i) => {
             const extraProps: Record<string, any> = {}
-            if (customIcon.useIcon) {
+            if (customIcon?.useIcon) {
               extraProps.icon = (
                 <Image
                   src={

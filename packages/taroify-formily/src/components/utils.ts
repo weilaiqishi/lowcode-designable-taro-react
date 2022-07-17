@@ -12,10 +12,21 @@ const pxToRem = (str) => {
 }
 
 type transitionPxMode = 'rpx' | 'rem'
+function transitionPx(origin, mode: transitionPxMode = 'rem') {
+  for (const s in origin) {
+    if (mode === 'rem') {
+      origin[s] = pxToRem(origin[s])
+    } else {
+      origin[s] = String(origin[s]).replace(/px/g, 'rpx')
+    }
+  }
+}
+
 export function schemaTransitionPx(
   theSchema,
   options?: { mode: transitionPxMode }
 ) {
+  // 处理designable导出的json中schema字段的style 从px转成rem或rpx
   if (theSchema.hasTransition) {
     return
   }
@@ -23,24 +34,19 @@ export function schemaTransitionPx(
     const componentOptions = theSchema.properties[i]
     const style = componentOptions?.['x-component-props']?.style
     if (style) {
-      for (const s in style) {
-        if (options?.mode === 'rem') {
-          style[s] = pxToRem(style[s])
-        } else {
-          // // 有rpx 被转换过则跳过
-          // if (String(style[s]).includes('rpx')) {
-          //   theSchema.hasTransition = true
-          //   return
-          // }
-          style[s] = String(style[s]).replace(/px/g, 'rpx')
-        }
-      }
+      transitionPx(style, options?.mode)
+      // 如果有背景图片 backgroundSize 默认为 cover
       if (style.backgroundImage && !style.backgroundSize) {
         style.backgroundSize = 'cover'
       }
     }
     if (componentOptions.properties) {
       schemaTransitionPx(componentOptions)
+    }
+    // 处理自定义图标中的样式
+    const customIcon = componentOptions?.['x-component-props']?.customIcon
+    if (customIcon) {
+      transitionPx(customIcon, options?.mode)
     }
     theSchema.hasTransition = true
   }
@@ -49,25 +55,18 @@ export function formStyleTransitionPx(
   form,
   options?: { mode: transitionPxMode }
 ) {
-  console.log(JSON.stringify(form))
+  // 处理designable导出的json中form字段的style 从px转成rem或rpx
   if (form.hasTransition) {
     return
   }
   const style = form.style || {}
-  for (const s in style) {
-    if (options?.mode === 'rem') {
-      style[s] = pxToRem(style[s])
-      console.log(style[s])
-    } else {
-      style[s] = String(style[s]).replace(/px/g, 'rpx')
-    }
+  if (style) {
+    transitionPx(style, options?.mode)
     if (style.backgroundImage && !style.backgroundSize) {
       style.backgroundSize = 'cover'
     }
   }
-  form.style = style
   form.hasTransition = true
-  console.log(form)
 }
 
 const shared = {

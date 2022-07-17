@@ -13,6 +13,7 @@ type typeProps = typePropsFields &
     gutter: number
     allowHalf: boolean
     touchable: boolean
+    customIcon: typeCustomIcon
   }>
 
 type typeCustomIcon = Partial<{
@@ -32,8 +33,8 @@ export const Rate = connect(
     }
 
     const extraProps: Record<string, any> = {}
-    const customIcon: typeCustomIcon = (props.style as any)?.customIcon || {}
-    if (customIcon.useIcon) {
+    const customIcon= props.customIcon
+    if (customIcon?.useIcon) {
       const Icon1 = Icons[customIcon.icon || 'Like']
       const Icon2 = Icons[customIcon.emptyIcon || 'LikeOutlined']
       extraProps.icon = <Icon1></Icon1>

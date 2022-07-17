@@ -6,7 +6,6 @@ import { Rate as component } from 'taroify-formily/lib'
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
-import { IconSelect } from '../Field/shared'
 
 export const Rate: DnFC<React.ComponentProps<typeof component>> = component
 const propsSchema = createFieldSchema({
@@ -17,19 +16,6 @@ const propsSchema = createFieldSchema({
 }) as any
 
 const customStyles = {
-  customIcon: {
-    type: 'object',
-    'x-component': 'DrawerSetter',
-    properties: {
-      useIcon: {
-        type: 'boolean',
-        'x-decorator': 'FormItem',
-        'x-component': 'Switch',
-      },
-      icon: IconSelect,
-      emptyIcon: IconSelect,
-    },
-  },
   rateIconSize: {
     type: 'string',
     'x-decorator': 'FormItem',

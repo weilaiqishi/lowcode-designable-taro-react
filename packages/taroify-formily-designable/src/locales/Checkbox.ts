@@ -1,4 +1,4 @@
-import { ImageModeSelect } from '../components/Field/shared'
+import { ImageModeSelect } from '../components/shared'
 
 export const CheckboxGroup = {
   'zh-CN': {
@@ -6,15 +6,6 @@ export const CheckboxGroup = {
     settings: {
       'x-component-props': {
         style: {
-          customIcon: {
-            title: '自定义图标',
-            useIcon: '使用自定义图标',
-            srcActive: '选中图标链接',
-            srcInactive: '未选中图标链接',
-            width: '图标宽度',
-            height: '图标高度',
-            ...ImageModeSelect.locales,
-          },
           checkboxFontSize: 'font-size',
           checkboxBorderColor: 'border-color',
           checkboxGap: 'gap',
@@ -27,12 +18,21 @@ export const CheckboxGroup = {
           checkboxCheckedIconBorderColor: 'checked-icon-border-color',
           checkboxCheckedIconBackgroundColor: 'checked-icon-background-color',
           checkboxDisabledIconColor: 'disabled-icon-color',
-          checkboxDisabledIconBorderColor: 'disabled-icon-color'
+          checkboxDisabledIconBorderColor: 'disabled-icon-color',
         },
         max: '最大可选数',
         direction: '排列方向',
         size: '图标大小',
         shape: '形状',
+        customIcon: {
+          title: '自定义图标',
+          useIcon: '使用自定义图标',
+          srcActive: '选中图标链接',
+          srcInactive: '未选中图标链接',
+          width: '图标宽度',
+          height: '图标高度',
+          ...ImageModeSelect.locales,
+        },
       },
     },
   },

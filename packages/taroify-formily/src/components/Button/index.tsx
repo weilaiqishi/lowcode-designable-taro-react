@@ -27,7 +27,7 @@ type typeProps = typePropsFields &
     shape: ButtonShape // 按钮形状，可选值为 square circle round
     block: boolean // 是否为块级元素
     hairline: boolean // 是否使用 0.5px 边框
-
+    customIcon: typeCustomIcon
     event
   }>
 
@@ -48,9 +48,9 @@ export const Button = connect((props: typeProps) => {
   const themeConfig = {}
 
   const extraProps: Record<string, any> = {}
-  const customIcon: typeCustomIcon = (props.style as any)?.customIcon || {}
+  const customIcon = props.customIcon
   let children = <Block>{props.children}</Block>
-  if (customIcon.useIcon) {
+  if (customIcon?.useIcon) {
     if (customIcon.src) {
       extraProps.icon = (
         <Image

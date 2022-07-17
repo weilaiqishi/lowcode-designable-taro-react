@@ -1,5 +1,7 @@
 import { ISchema } from '@formily/react'
 
+import { ImageModeSelect } from '../components/shared'
+
 export const Checkbox: ISchema & { Group?: ISchema } = {
   type: 'object',
   properties: {
@@ -44,6 +46,42 @@ export const Checkbox: ISchema & { Group?: ISchema } = {
         }
       ],
       default: 'round'
-    }
+    },
+    customIcon: {
+      type: 'object',
+      'x-component': 'DrawerSetter',
+      properties: {
+        useIcon: {
+          type: 'boolean',
+          'x-decorator': 'FormItem',
+          'x-component': 'Switch',
+        },
+        srcActive: {
+          type: 'string',
+          'x-decorator': 'FormItem',
+          'x-component': 'Input',
+          default: 'https://img.yzcdn.cn/vant/user-active.png',
+        },
+        srcInactive: {
+          type: 'string',
+          'x-decorator': 'FormItem',
+          'x-component': 'Input',
+          default: 'https://img.yzcdn.cn/vant/user-inactive.png',
+        },
+        width: {
+          type: 'string',
+          'x-decorator': 'FormItem',
+          'x-component': 'SizeInput',
+          default: '25px',
+        },
+        height: {
+          type: 'string',
+          'x-decorator': 'FormItem',
+          'x-component': 'SizeInput',
+          default: '20px',
+        },
+        ...ImageModeSelect.properties,
+      },
+    },
   },
 }

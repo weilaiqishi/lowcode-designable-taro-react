@@ -6,7 +6,6 @@ import { Checkbox as component } from 'taroify-formily/lib'
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
-import { ImageModeSelect } from '../Field/shared'
 
 export const Checkbox: DnFC<React.ComponentProps<typeof component>> = component
 const propsSchema = createFieldSchema({
@@ -17,42 +16,6 @@ const propsSchema = createFieldSchema({
 }) as any
 
 const customStyles = {
-  customIcon: {
-    type: 'object',
-    'x-component': 'DrawerSetter',
-    properties: {
-      useIcon: {
-        type: 'boolean',
-        'x-decorator': 'FormItem',
-        'x-component': 'Switch',
-      },
-      srcActive: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'Input',
-        default: 'https://img.yzcdn.cn/vant/user-active.png',
-      },
-      srcInactive: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'Input',
-        default: 'https://img.yzcdn.cn/vant/user-inactive.png',
-      },
-      width: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'SizeInput',
-        default: '25px',
-      },
-      height: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'SizeInput',
-        default: '20px',
-      },
-      ...ImageModeSelect.properties,
-    },
-  },
   checkboxFontSize: {
     type: 'string',
     'x-decorator': 'FormItem',

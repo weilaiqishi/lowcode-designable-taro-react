@@ -1,4 +1,4 @@
-import { ImageModeSelect } from '../components/Field/shared'
+import { ImageModeSelect } from '../components/shared'
 
 export const RadioGroup = {
   'zh-CN': {

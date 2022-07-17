@@ -6,7 +6,7 @@ import { Button as component } from 'taroify-formily/lib'
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createVoidFieldSchema } from '../Field'
-import { IconSelect, ImageModeSelect } from '../Field/shared'
+import { IconSelect, ImageModeSelect } from '../shared'
 
 export const Button: DnFC<React.ComponentProps<typeof component>> = component
 const propsSchema = createVoidFieldSchema({
@@ -25,18 +25,18 @@ const propsSchema = createVoidFieldSchema({
         enum: [
           {
             label: 'contained',
-            value: 'contained'
+            value: 'contained',
           },
           {
             label: 'text',
-            value: 'text'
+            value: 'text',
           },
           {
             label: 'outlined',
-            value: 'outlined'
-          }
+            value: 'outlined',
+          },
         ],
-        default: 'contained'
+        default: 'contained',
       },
       color: {
         type: 'string',
@@ -45,26 +45,26 @@ const propsSchema = createVoidFieldSchema({
         enum: [
           {
             label: 'default',
-            value: 'default'
+            value: 'default',
           },
           {
             label: 'primary',
-            value: 'primary'
+            value: 'primary',
           },
           {
             label: 'success',
-            value: 'success'
+            value: 'success',
           },
           {
             label: 'warning',
-            value: 'warning'
+            value: 'warning',
           },
           {
             label: 'danger',
-            value: 'danger'
+            value: 'danger',
           },
         ],
-        'default': 'default'
+        default: 'default',
       },
       size: {
         type: 'string',
@@ -73,22 +73,22 @@ const propsSchema = createVoidFieldSchema({
         enum: [
           {
             label: 'medium',
-            value: 'medium'
+            value: 'medium',
           },
           {
             label: 'large',
-            value: 'large'
+            value: 'large',
           },
           {
             label: 'small',
-            value: 'small'
+            value: 'small',
           },
           {
             label: 'mini',
-            value: 'mini'
+            value: 'mini',
           },
         ],
-        default: 'medium'
+        default: 'medium',
       },
       shape: {
         type: 'string',
@@ -97,18 +97,18 @@ const propsSchema = createVoidFieldSchema({
         enum: [
           {
             label: 'square',
-            value: 'square'
+            value: 'square',
           },
           {
             label: 'circle',
-            value: 'circle'
+            value: 'circle',
           },
           {
             label: 'round',
-            value: 'round'
-          }
+            value: 'round',
+          },
         ],
-        default: 'square'
+        default: 'square',
       },
       block: {
         type: 'boolean',
@@ -119,7 +119,57 @@ const propsSchema = createVoidFieldSchema({
         type: 'boolean',
         'x-decorator': 'FormItem',
         'x-component': 'Switch',
-      }
+      },
+      customIcon: {
+        type: 'object',
+        'x-component': 'DrawerSetter',
+        properties: {
+          useIcon: {
+            type: 'boolean',
+            'x-decorator': 'FormItem',
+            'x-component': 'Switch',
+          },
+          icon: IconSelect,
+          inline: {
+            type: 'string',
+            'x-decorator': 'FormItem',
+            'x-component': 'Select',
+            enum: [
+              {
+                label: 'none',
+                value: 'none',
+              },
+              {
+                label: 'left',
+                value: 'left',
+              },
+              {
+                label: 'right',
+                value: 'right',
+              },
+            ],
+          },
+          src: {
+            type: 'string',
+            'x-decorator': 'FormItem',
+            'x-component': 'Input',
+            default: 'https://img.yzcdn.cn/vant/user-active.png',
+          },
+          width: {
+            type: 'string',
+            'x-decorator': 'FormItem',
+            'x-component': 'SizeInput',
+            default: '25px',
+          },
+          height: {
+            type: 'string',
+            'x-decorator': 'FormItem',
+            'x-component': 'SizeInput',
+            default: '20px',
+          },
+          ...ImageModeSelect.properties,
+        },
+      },
     },
   },
   props: {
@@ -127,58 +177,7 @@ const propsSchema = createVoidFieldSchema({
   },
 }) as any
 
-const customStyles = {
-  customIcon: {
-    type: 'object',
-    'x-component': 'DrawerSetter',
-    properties: {
-      useIcon: {
-        type: 'boolean',
-        'x-decorator': 'FormItem',
-        'x-component': 'Switch',
-      },
-      icon: IconSelect,
-      inline: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'Select',
-        enum: [
-          {
-            label: 'none',
-            value: 'none'
-          },
-          {
-            label: 'left',
-            value: 'left'
-          },
-          {
-            label: 'right',
-            value: 'right'
-          }
-        ]
-      },
-      src: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'Input',
-        default: 'https://img.yzcdn.cn/vant/user-active.png',
-      },
-      width: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'SizeInput',
-        default: '25px',
-      },
-      height: {
-        type: 'string',
-        'x-decorator': 'FormItem',
-        'x-component': 'SizeInput',
-        default: '20px',
-      },
-      ...ImageModeSelect.properties,
-    },
-  },
-}
+const customStyles = {}
 const styleSchema =
   propsSchema.properties['component-style-group'].properties[
     'x-component-props.style'
@@ -207,18 +206,17 @@ Button.Behavior = createBehavior({
           shape: '按钮形状',
           block: '是否为块级元素',
           hairline: '是否使用 0.5px 边框',
-          style: {
-            customIcon: {
-              title: '自定义图标',
-              useIcon: '使用自定义图标',
-              icon: '图标样式',
-              inline: '图标内联',
-              src: '图片链接(优先)',
-              width: '图片宽度',
-              height: '图片高度',
-              ...ImageModeSelect.locales,
-            },
+          customIcon: {
+            title: '自定义图标',
+            useIcon: '使用自定义图标',
+            icon: '图标样式',
+            inline: '图标内联',
+            src: '图片链接(优先)',
+            width: '图片宽度',
+            height: '图片高度',
+            ...ImageModeSelect.locales,
           },
+          style: {},
         },
       },
     },

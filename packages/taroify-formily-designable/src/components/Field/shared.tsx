@@ -1,12 +1,9 @@
-import React from 'react'
 import {
   DataSourceSetter,
   ReactionsSetter,
   ValidatorSetter,
 } from '@designable/formily-setters'
 import { ISchema } from '@formily/json-schema'
-import * as Icons from '@taroify/icons'
-import { Select } from 'antd'
 import * as lodash from 'lodash-es'
 
 import { FormItemSwitcher } from '../../common/FormItemSwitcher'
@@ -252,21 +249,7 @@ export const createFieldSchema = ({
     'x-decorator': {
       type: 'string',
       'x-decorator': 'FormItem',
-      'x-component': FormItemSwitcher,
-      'x-reactions': {
-        dependencies: [
-          {
-            property: 'value',
-            type: 'any',
-          },
-        ],
-        fulfill: {
-          state: {
-            value:
-              '{{$form.values["x-component-props"]["style"]["position"] !== "absolute" ? "FormItem" : ""}}',
-          },
-        },
-      },
+      'x-component': FormItemSwitcher
     },
   }
 
@@ -369,63 +352,4 @@ export const createVoidFieldSchema = ({
       ...createComponentSchema(component, decorator, props),
     },
   }
-}
-
-export const ImageModeSelect = {
-  locales: {
-    mode: '图片模式',
-  },
-  properties: {
-    mode: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      enum: [
-        'scaleToFill',
-        'aspectFit',
-        'aspectFill',
-        'widthFix',
-        'heightFix',
-        'top',
-        'bottom',
-        'center',
-        'left',
-        'right',
-        'topLeft',
-        'topRight',
-        'bottomLeft',
-        'bottomRight',
-      ],
-      default: 'aspectFit',
-    },
-  },
-}
-
-export const IconSelect = {
-  type: 'string',
-  'x-decorator': 'FormItem',
-  'x-component': ({ value, onChange }) => {
-    return (
-      <Select
-        value={value}
-        onChange={onChange}
-        showSearch
-        optionFilterProp="children"
-        filterOption={(input, option) =>
-          String(option!.value)
-            .toLowerCase()
-            .includes(input.toLowerCase())
-        }
-      >
-        {Object.keys(Icons).map((key) => {
-          const Icon = Icons[key]
-          return (
-            <Select.Option value={key}>
-              <Icon style={{ fontSize: 20 }}></Icon>
-            </Select.Option>
-          )
-        })}
-      </Select>
-    )
-  },
 }

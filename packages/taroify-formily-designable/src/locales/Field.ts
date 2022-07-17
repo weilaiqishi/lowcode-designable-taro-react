@@ -41,6 +41,10 @@ export const Field = {
         placeholder: '占位提示',
         style: {
           position: '定位',
+          top: 'top',
+          left: 'left',
+          right: 'right',
+          bottom: 'bottom',
           width: '宽度',
           height: '高度',
           display: '展示',
@@ -51,9 +55,7 @@ export const Field = {
           padding: '内边距',
           borderRadius: '圆角',
           border: '边框',
-          opacity: '透明度',
-          top: 'top',
-          left: 'left',
+          opacity: '透明度'
         },
         event: {
           click: { title: '点击事件', ...eventProps }
@@ -96,6 +98,10 @@ export const Field = {
         },
         style: {
           position: '定位',
+          top: 'top',
+          left: 'left',
+          right: 'right',
+          bottom: 'bottom',
           width: '宽度',
           height: '高度',
           display: '展示',
@@ -107,8 +113,6 @@ export const Field = {
           borderRadius: '圆角',
           border: '边框',
           opacity: '透明度',
-          top: 'top',
-          left: 'left',
         },
       },
     },
