@@ -1,11 +1,13 @@
-# 基于 Designable 开发 Taro 小程序低代码玩具系统
+# 基于 Designable 开发 Taro小程序前端页面可视化搭建工具
 
 ## 目录介绍
 
-|-- packages
-  |-- taroify-formily: `低代码组件库`
-  |-- taroify-formily-demo: 使用 `低代码组件` 小程序例子
-  |-- taroify-formily-designable: `PC端可视化编辑器`
+```
+├─ packages
+  ├─ taroify-formily: 组件库
+  ├─ taroify-formily-demo: demo例子
+  ├─ taroify-formily-designable: 可视化设计器
+```
 
 ## 项目启动
 
