@@ -19,8 +19,8 @@ demo H5（按 F12 切换设备仿真） <https://miku01.cn/taroifyDemo/index.htm
 
 formily表单设计器，就是基于designable扩展出来的。
 [这是预览地址](https://designable-antd.formilyjs.org/)， 颜值非常得高
-![designable-antd-empty](./showImage/designable-antd-empty.png)
-![img/designable-antd-userform](./showImage/designable-antd-userform.png)
+![designable-antd-empty](../showImage/designable-antd-empty.png)
+![img/designable-antd-userform](../showImage/designable-antd-userform.png)
 
 平时我的工作任务主要小程序开发，接下来文章会去介绍怎么开发 **Taro小程序前端页面可视化搭建工具**
 
