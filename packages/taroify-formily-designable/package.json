@@ -10,6 +10,7 @@
     "dev": "webpack-dev-server --config config/webpack.dev.ts",
     "start": "node start.js"
   },
+  "private": true,
   "devDependencies": {
     "@types/dateformat": "^3.0.1",
     "@types/fs-extra": "^9.0.13",
