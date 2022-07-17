@@ -1,4 +1,3 @@
-import { Schema } from '@formily/json-schema'
 import { createSchemaField } from '@formily/react'
 
 import {

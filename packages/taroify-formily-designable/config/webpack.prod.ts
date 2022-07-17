@@ -22,13 +22,13 @@ export default {
   ...baseConfig,
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[hash].bundle.js',
+    filename: '[name].[contenthash].bundle.js',
     publicPath: './',
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css',
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css',
     }),
     ...createPages([
       {
@@ -48,7 +48,8 @@ export default {
       'process.env.demoPath': `'${process.env.demoPath}'`
     }),
   ],
-  mode: 'development',
+  // mode: 'development',
+  mode: 'production',
   optimization: {
     usedExports: true,
     minimize: true,

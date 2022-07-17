@@ -32,7 +32,7 @@ async function run () {
         console.log(action, demoPath)
         const actionMap = {
           'webpack-dev-server': 'webpack-dev-server --config config/webpack.dev.ts',
-          'webpack build': 'rimraf dist && webpack-cli --config config/webpack.prod.ts'
+          'webpack build': 'npm run build'
         }
         // eslint-disable-next-line no-undef
         process.env.demoPath = demoPath
