@@ -386,7 +386,7 @@ export const Input = connect(
 )
 ```
 
-是不是非灰常简单
+是不是灰常简单
 
 ### SchemaField
 

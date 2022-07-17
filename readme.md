@@ -61,6 +61,6 @@ taroify-formily-demo/src/pages/index/jsonSchema.json
 
 目前组件比较少，如有需要上生产建议按自身业务搭一套
 
-[文章0](./arctile/arctile0.md)
-[文章1](./arctile/arctile1.md)
+[文章0](./article/article0.md)
+[文章1](./article/article1.md)
 
