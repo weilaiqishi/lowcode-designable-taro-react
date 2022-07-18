@@ -25,11 +25,11 @@ type typeCustomIcon = Partial<{
 export const Rate = connect(
   (props: typeProps) => {
     const themeConfig = {
-      rateIconSize: 'rateIconSize',
-      rateIconGutter: 'rateIconGutter',
-      rateIconEmptyColor: 'rateIconEmptyColor',
-      rateIconFullColor: 'rateIconFullColor',
-      rateIconDisabledColor: 'rateIconDisabledColor'
+      rateIconSize: '',
+      rateIconGutter: '',
+      rateIconEmptyColor: '',
+      rateIconFullColor: '',
+      rateIconDisabledColor: ''
     }
 
     const extraProps: Record<string, any> = {}

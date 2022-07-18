@@ -194,6 +194,7 @@ export const formilyStoreEvent = function (
   ...otherProps
 ) {
   const { api, path, propsOperatorsArray } = eventItem
+  if (!api && !path) { return }
   formilyStoreRunFunctionThrottle(
     scope,
     path || api,

@@ -49,6 +49,8 @@ import {
   Input,
   Radio,
   Rate,
+  Slider,
+  Stepper,
   WidgetBase,
 } from '../src/components/index'
 
@@ -147,7 +149,7 @@ const App = () => {
             <CompositePanel.Item title="panels.Component" icon="Component">
               <ResourceWidget
                 title="sources.Inputs"
-                sources={[Input, Checkbox, Radio, Rate]}
+                sources={[Input, Checkbox, Radio, Rate, Slider, Stepper]}
               />
               <ResourceWidget title="sources.Displays" sources={[Button]} />
               <ResourceWidget
@@ -182,6 +184,8 @@ const App = () => {
                       Input,
                       Radio,
                       Rate,
+                      Slider,
+                      Stepper,
                       WidgetBase,
                     }}
                   />

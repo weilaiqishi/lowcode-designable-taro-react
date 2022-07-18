@@ -1,15 +1,15 @@
 import React from 'react'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
-import { Radio as component } from 'taroify-formily/lib'
+import { Slider as component } from 'taroify-formily/lib'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
 
-export const Radio: DnFC<React.ComponentProps<typeof component>> = component
+export const Slider: DnFC<React.ComponentProps<typeof component>> = component
 const propsSchema = createFieldSchema({
-  component: AllSchemas.Radio,
+  component: AllSchemas.Slider,
   props: {
     'component-events-group': [],
   },
@@ -20,71 +20,61 @@ const customStyles = {
     type: 'void',
     'x-decorator': 'FormItem',
   },
-  radioFontSize: {
+  sliderBorderRadius: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  radioBorderColor: {
+  sliderActiveBackgroundColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  radioGap: {
+  sliderInactiveBackgroundColor: {
+    type: 'string',
+    'x-decorator': 'FormItem',
+    'x-component': 'ColorInput',
+  },
+  sliderDisabledOpacity: {
+    type: 'string',
+    'x-decorator': 'FormItem',
+    'x-component': 'Input',
+  },
+  sliderTrackHeight: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  radioLabelMargin: {
+  sliderTrackTransitionDuration: {
+    type: 'string',
+    'x-decorator': 'FormItem',
+    'x-component': 'NumberPicker',
+  },
+  sliderThumbWidth: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  radioLabelColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioLabelLineHeight: {
+  sliderThumbHeight: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  radioDisabledLabelColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioIconFontSize: {
+  sliderThumbBorderRadius: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'SizeInput',
   },
-  radioCheckedIconColor: {
+  sliderThumbBackgroundColor: {
     type: 'string',
     'x-decorator': 'FormItem',
     'x-component': 'ColorInput',
   },
-  radioCheckedIconBorderColor: {
+  sliderThumbBoxShadow: {
     type: 'string',
     'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
+    'x-component': 'Input',
   },
-  radioCheckedIconBackgroundColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioDisabledIconColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioDisabledIconBorderColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  }
 }
 const styleSchema =
   propsSchema.properties['component-style-group'].properties[
@@ -94,38 +84,27 @@ Object.entries(customStyles).forEach(
   (values) => (styleSchema[`style.${values[0]}`] = values[1])
 )
 
-Radio.Behavior = createBehavior({
-  name: 'Radio',
+Slider.Behavior = createBehavior({
+  name: 'Slider',
   extends: ['Field'],
-  selector: (node) => node.props['x-component'] === 'Radio',
+  selector: (node) => node.props['x-component'] === 'Slider',
   designerProps: {
     propsSchema,
-    defaultProps: {
-      enum: [
-        {
-          label: '选项1',
-          value: '1'
-        },
-        {
-          label: '选项2',
-          value: '2'
-        },
-      ]
-    },
+    defaultProps: {},
   },
-  designerLocales: AllLocales.RadioGroup,
+  designerLocales: AllLocales.Slider,
 })
 
-Radio.Resource = createResource({
-  icon: 'RadioGroupSource',
+Slider.Resource = createResource({
+  icon: 'SliderSource',
   elements: [
     {
       componentName: 'Field',
       props: {
         type: 'string',
-        title: 'Radio',
+        title: 'Slider',
         'x-decorator': 'FormItem',
-        'x-component': 'Radio',
+        'x-component': 'Slider',
       },
     },
   ],

@@ -8,6 +8,8 @@ export * from './Form'
 export * from './Input'
 export * from './Radio'
 export * from './Rate'
+export * from './Slider'
+export * from './Stepper'
 export * from './WidgetBase'
 
 

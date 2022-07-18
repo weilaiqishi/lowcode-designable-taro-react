@@ -6,6 +6,7 @@ export const CheckboxGroup = {
     settings: {
       'x-component-props': {
         style: {
+          customStylesTitle: '主题定制',
           checkboxFontSize: 'font-size',
           checkboxBorderColor: 'border-color',
           checkboxGap: 'gap',

@@ -6,15 +6,7 @@ export const RadioGroup = {
     settings: {
       'x-component-props': {
         style: {
-          customIcon: {
-            title: '自定义图标',
-            useIcon: '使用自定义图标',
-            srcActive: '选中图片链接',
-            srcInactive: '未选中图片链接',
-            width: '图片宽度',
-            height: '图片高度',
-            ...ImageModeSelect.locales,
-          },
+          customStylesTitle: '主题定制',
           radioFontSize: 'font-size',
           radioBorderColor: 'border-color',
           radioGap: 'gap',
@@ -32,6 +24,15 @@ export const RadioGroup = {
         direction: '排列方向',
         size: '图标大小',
         shape: '形状',
+      },
+      customIcon: {
+        title: '自定义图标',
+        useIcon: '使用自定义图标',
+        srcActive: '选中图片链接',
+        srcInactive: '未选中图片链接',
+        width: '图片宽度',
+        height: '图片高度',
+        ...ImageModeSelect.locales,
       },
     },
   },

@@ -9,6 +9,7 @@ export const Rate = {
         allowHalf: '允许半选',
         touchable: '允许滑动评分',
         style: {
+          customStylesTitle: '主题定制',
           rateIconSize: 'icon-size',
           rateIconGutter: 'icon-gutter',
           rateIconEmptyColor: 'icon-empty-color',

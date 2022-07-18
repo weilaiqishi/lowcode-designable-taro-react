@@ -51,7 +51,7 @@ const eventProps = {
       properties: {
         input: {
           type: 'string',
-          'x-component': 'Textarea',
+          'x-component': 'Input.TextArea',
         },
         remove: {
           type: 'void',

@@ -45,7 +45,6 @@ taroify-formily-demo 目录下
 yarn dev:weapp
 ```
 
-淘宝端在taro 3.5.0.beta6中好像不正常，3.5.0.beta2是可以的
 ```bash
 yarn dev:alipay
 ```

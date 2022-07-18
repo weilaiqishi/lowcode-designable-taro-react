@@ -32,19 +32,19 @@ export const Radio = connect(
     const _dataSource = dataSource || []
 
     const themeConfig = {
-      radioFontSize: 'radioFontSize',
-      radioBorderColor: 'radioBorderColor',
-      radioGap: 'radioGap',
-      radioLabelMargin: 'radioLabelMargin',
-      radioLabelColor: 'radioLabelColor',
-      radioLabelLineHeight: 'radioLabelLineHeight',
-      radioDisabledLabelColor: 'radioDisabledLabelColor',
-      radioIconFontSize: 'radioIconFontSize',
-      radioCheckedIconColor: 'radioCheckedIconColor',
-      radioCheckedIconBorderColor: 'radioCheckedIconBorderColor',
-      radioCheckedIconBackgroundColor: 'radioCheckedIconBackgroundColor',
-      radioDisabledIconColor: 'radioDisabledIconColor',
-      radioDisabledIconBorderColor: 'radioDisabledIconBorderColor',
+      radioFontSize: '',
+      radioBorderColor: '',
+      radioGap: '',
+      radioLabelMargin: '',
+      radioLabelColor: '',
+      radioLabelLineHeight: '',
+      radioDisabledLabelColor: '',
+      radioIconFontSize: '',
+      radioCheckedIconColor: '',
+      radioCheckedIconBorderColor: '',
+      radioCheckedIconBackgroundColor: '',
+      radioDisabledIconColor: '',
+      radioDisabledIconBorderColor: '',
     }
 
     const customIcon = props.customIcon   

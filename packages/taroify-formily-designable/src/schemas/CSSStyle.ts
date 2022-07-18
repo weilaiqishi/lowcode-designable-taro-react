@@ -20,25 +20,21 @@ export const CSSStyle: ISchema = {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-      default: '0px',
     },
     'style.left': {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-      default: '0px',
     },
     'style.right': {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-      default: '0px',
     },
     'style.bottom': {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-      default: '0px',
     },
     'style.width': {
       type: 'string',

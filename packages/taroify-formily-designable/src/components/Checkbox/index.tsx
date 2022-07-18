@@ -16,6 +16,10 @@ const propsSchema = createFieldSchema({
 }) as any
 
 const customStyles = {
+  customStylesTitle: {
+    type: 'void',
+    'x-decorator': 'FormItem',
+  },
   checkboxFontSize: {
     type: 'string',
     'x-decorator': 'FormItem',

@@ -33,19 +33,19 @@ export const Checkbox = connect(
     const _dataSource = dataSource || []
 
     const themeConfig = {
-      checkboxFontSize: 'checkboxFontSize',
-      checkboxBorderColor: 'checkboxBorderColor',
-      checkboxGap: 'checkboxGap',
-      checkboxLabelMargin: 'checkboxLabelMargin',
-      checkboxLabelColor: 'checkboxLabelColor',
-      checkboxLabelLineHeight: 'checkboxLabelLineHeight',
-      checkboxDisabledLabelColor: 'checkboxDisabledLabelColor',
-      checkboxIconFontSize: 'checkboxIconFontSize',
-      checkboxCheckedIconColor: 'checkboxCheckedIconColor',
-      checkboxCheckedIconBorderColor: 'checkboxCheckedIconBorderColor',
-      checkboxCheckedIconBackgroundColor: 'checkboxCheckedIconBackgroundColor',
-      checkboxDisabledIconColor: 'checkboxDisabledIconColor',
-      checkboxDisabledIconBorderColor: 'checkboxDisabledIconBorderColor'
+      checkboxFontSize: '',
+      checkboxBorderColor: '',
+      checkboxGap: '',
+      checkboxLabelMargin: '',
+      checkboxLabelColor: '',
+      checkboxLabelLineHeight: '',
+      checkboxDisabledLabelColor: '',
+      checkboxIconFontSize: '',
+      checkboxCheckedIconColor: '',
+      checkboxCheckedIconBorderColor: '',
+      checkboxCheckedIconBackgroundColor: '',
+      checkboxDisabledIconColor: '',
+      checkboxDisabledIconBorderColor: ''
     }
 
     const customIcon = props.customIcon

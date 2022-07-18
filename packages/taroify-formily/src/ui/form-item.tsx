@@ -16,7 +16,7 @@ import { cloneIconElement } from '@taroify/icons/utils'
 import { View as _View } from '@tarojs/components'
 import { InputProps } from '@tarojs/components/types/Input'
 import classNames from 'classnames'
-import * as _ from 'lodash'
+import * as _ from 'lodash-es'
 
 import { pickDataProps } from '../components/__builtins__'
 
