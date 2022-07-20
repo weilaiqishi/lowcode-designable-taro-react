@@ -196,7 +196,7 @@ Stepper.Resource = createResource({
     {
       componentName: 'Field',
       props: {
-        type: 'string',
+        type: 'number',
         title: 'Stepper',
         'x-decorator': 'FormItem',
         'x-component': 'Stepper',

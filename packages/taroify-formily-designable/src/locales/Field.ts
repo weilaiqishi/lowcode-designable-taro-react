@@ -58,7 +58,8 @@ export const Field = {
           opacity: '透明度'
         },
         event: {
-          click: { title: '点击事件', ...eventProps }
+          click: { title: '点击事件', ...eventProps },
+          close: { title: '关闭事件', ...eventProps },
         }
       },
       'x-decorator-props': {

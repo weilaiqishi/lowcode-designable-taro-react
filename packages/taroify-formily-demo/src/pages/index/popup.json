@@ -338,7 +338,7 @@
               "api": "$form.setValues"
             }
           },
-          "open": true,
+          "open": false,
           "rounded": true
         },
         "x-designable-id": "hpmg00pef80",
@@ -427,6 +427,6 @@
         "x-display": "visible"
       }
     },
-    "x-designable-id": "2drj5cgivdt"
+    "x-designable-id": "vzujgba3h4x"
   }
 }

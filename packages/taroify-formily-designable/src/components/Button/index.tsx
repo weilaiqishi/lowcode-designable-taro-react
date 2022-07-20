@@ -229,7 +229,7 @@ Button.Resource = createResource({
     {
       componentName: 'Field',
       props: {
-        type: 'string',
+        type: 'void',
         title: 'Button',
         'x-decorator': 'FormItem',
         'x-component': 'Button',

@@ -101,7 +101,7 @@ Slider.Resource = createResource({
     {
       componentName: 'Field',
       props: {
-        type: 'string',
+        type: 'number',
         title: 'Slider',
         'x-decorator': 'FormItem',
         'x-component': 'Slider',

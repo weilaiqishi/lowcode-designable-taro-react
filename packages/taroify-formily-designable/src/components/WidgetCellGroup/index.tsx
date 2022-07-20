@@ -1,12 +1,12 @@
 import React from 'react'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
-import { CellGroup as component } from 'taroify-formily/lib'
+import { WidgetCellGroup as component } from 'taroify-formily/lib'
 
 import { AllLocales } from '../../locales'
 import { createVoidFieldSchema } from '../Field'
 
-export const CellGroup: DnFC<React.ComponentProps<typeof component>> =
+export const WidgetCellGroup: DnFC<React.ComponentProps<typeof component>> =
   component
 
 const props = {
@@ -44,15 +44,15 @@ const propsSchema = createVoidFieldSchema({
   props,
 }) as any
 
-CellGroup.Behavior = createBehavior({
-  name: 'CellGroup',
+WidgetCellGroup.Behavior = createBehavior({
+  name: 'WidgetCellGroup',
   extends: ['Field'],
-  selector: (node) => node.props['x-component'] === 'CellGroup',
+  selector: (node) => node.props['x-component'] === 'WidgetCellGroup',
   designerProps: {
     droppable: true,
     propsSchema,
   },
-  designerLocales: AllLocales.Card && {
+  designerLocales: {
     'zh-CN': {
       title: '单元格分组',
       settings: {
@@ -68,14 +68,14 @@ CellGroup.Behavior = createBehavior({
   },
 })
 
-CellGroup.Resource = createResource({
+WidgetCellGroup.Resource = createResource({
   icon: 'CardSource',
   elements: [
     {
       componentName: 'Field',
       props: {
         type: 'void',
-        'x-component': 'CellGroup',
+        'x-component': 'WidgetCellGroup',
         'x-component-props': {
           style: {
             width: '750px',

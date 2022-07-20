@@ -40,9 +40,9 @@ import { formilyStoreRegister } from 'taroify-formily/lib'
 
 import 'antd/dist/antd.less'
 
+import testJson from '../../taroify-formily-demo/src/pages/index/event.json'
 import {
   Button,
-  CellGroup,
   Checkbox,
   Field,
   Form,
@@ -51,7 +51,10 @@ import {
   Rate,
   Slider,
   Stepper,
+  Switch,
   WidgetBase,
+  WidgetCellGroup,
+  WidgetPopup,
 } from '../src/components/index'
 
 import { loadInitialSchema, saveSchema } from './service'
@@ -61,6 +64,7 @@ import '@tarojs/components/dist/taro-components/taro-components.css'
 import '@taroify/icons/index.scss'
 import '@taroify/core/index.scss'
 import 'taroify-formily/dist/index.scss'
+import './taroifyFix.scss'
 
 defineCustomElements(window)
 setNpmCDNRegistry('//unpkg.com')
@@ -110,6 +114,15 @@ const Actions = observer(() => {
       <AntdButton
         type="primary"
         onClick={() => {
+          console.log(testJson)
+          loadInitialSchema(designer, JSON.stringify(testJson))
+        }}
+      >
+        使用默认配置
+      </AntdButton>
+      <AntdButton
+        type="primary"
+        onClick={() => {
           const otherWindow = window.open(process.env.demoPath)
           const fn = (event) => {
             if (event.data.type === 'getSchema') {
@@ -149,12 +162,20 @@ const App = () => {
             <CompositePanel.Item title="panels.Component" icon="Component">
               <ResourceWidget
                 title="sources.Inputs"
-                sources={[Input, Checkbox, Radio, Rate, Slider, Stepper]}
+                sources={[
+                  Input,
+                  Checkbox,
+                  Radio,
+                  Rate,
+                  Slider,
+                  Stepper,
+                  Switch,
+                ]}
               />
               <ResourceWidget title="sources.Displays" sources={[Button]} />
               <ResourceWidget
                 title="sources.Layouts"
-                sources={[WidgetBase, CellGroup]}
+                sources={[WidgetBase, WidgetCellGroup, WidgetPopup]}
               />
             </CompositePanel.Item>
             <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
@@ -177,7 +198,7 @@ const App = () => {
                   <ComponentTreeWidget
                     components={{
                       Button,
-                      CellGroup,
+                      WidgetCellGroup,
                       Checkbox,
                       Form,
                       Field,
@@ -186,7 +207,9 @@ const App = () => {
                       Rate,
                       Slider,
                       Stepper,
+                      Switch,
                       WidgetBase,
+                      WidgetPopup,
                     }}
                   />
                 )}

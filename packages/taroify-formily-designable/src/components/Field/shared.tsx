@@ -30,6 +30,8 @@ const eventProps = {
     enum: [
       { label: 'Taro界面交互showToast', value: 'Taro.showToast' },
       { label: 'Taro界面交互showModal', value: 'Taro.showModal' },
+      { label: 'formily表单修改values', value: '$form.setValues' },
+      { label: 'formily字段', value: '$self' }
     ],
   },
   path: {
@@ -70,6 +72,13 @@ const eventProps = {
 }
 const xEventProperties = {
   click: {
+    type: 'object',
+    'x-component': 'DrawerSetter',
+    properties: {
+      ...eventProps,
+    },
+  },
+  close: {
     type: 'object',
     'x-component': 'DrawerSetter',
     properties: {

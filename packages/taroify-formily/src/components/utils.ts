@@ -97,14 +97,23 @@ export function formilyStoreRunFunction(
     propsOperatorsArray,
     otherProps
   )
-  const fn = lodash.get(shared.formilyStore, path)
+  let fn
   let obj = null
-  try {
-    const segments = String(path || '').split('.')
-    segments.pop()
-    obj = lodash.get(shared.formilyStore, segments.join())
-  } catch (err) {
-    console.log('formilyStoreRunFunction -> getCallObj err -> ', err)
+  if (path.includes('$form')) {
+    // 从$form上获取方法
+    const formFnPath = path.split('.')[1]
+    fn = lodash.get(scope.$form, formFnPath)
+    obj = scope.$form
+  } else {
+    // 从全局formilyStore获取方法
+    fn = lodash.get(shared.formilyStore, path)
+    try {
+      const segments = String(path || '').split('.')
+      segments.pop()
+      obj = lodash.get(shared.formilyStore, segments.join())
+    } catch (err) {
+      console.log('formilyStoreRunFunction -> getCallObj err -> ', err)
+    }
   }
   let propsArray: any[] = []
   try {
@@ -182,7 +191,7 @@ type typeScope = Partial<{
   $values
 }>
 
-type typeEventItem = {
+export type typeEventItem = {
   api: string
   path: string
   propsOperatorsArray: any[]
@@ -194,7 +203,9 @@ export const formilyStoreEvent = function (
   ...otherProps
 ) {
   const { api, path, propsOperatorsArray } = eventItem
-  if (!api && !path) { return }
+  if (!api && !path) {
+    return
+  }
   formilyStoreRunFunctionThrottle(
     scope,
     path || api,

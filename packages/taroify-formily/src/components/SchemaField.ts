@@ -2,7 +2,6 @@ import { createSchemaField } from '@formily/react'
 
 import {
   Button,
-  CellGroup,
   Checkbox,
   DatetimePicker,
   FormItem,
@@ -13,12 +12,13 @@ import {
   Stepper,
   Switch,
   WidgetBase,
+  WidgetCellGroup,
+  WidgetPopup,
 } from './index'
 
 export const SchemaField = createSchemaField({
   components: {
     Button,
-    CellGroup,
     Checkbox,
     DatetimePicker,
     FormItem,
@@ -29,5 +29,7 @@ export const SchemaField = createSchemaField({
     Stepper,
     Switch,
     WidgetBase,
+    WidgetCellGroup,
+    WidgetPopup,
   },
 })

@@ -9,7 +9,7 @@
     "properties": {
       "eqbfddhpdn3": {
         "type": "void",
-        "x-component": "CellGroup",
+        "x-component": "WidgetCellGroup",
         "x-component-props": {
           "style": {
             "width": "750px",

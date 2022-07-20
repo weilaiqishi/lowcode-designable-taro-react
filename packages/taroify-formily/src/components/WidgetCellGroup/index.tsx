@@ -16,7 +16,7 @@ type typeProps = {
 
 const View: any = TaroView
 
-export const CellGroup = observer(
+export const WidgetCellGroup = observer(
   ({
     children,
     style,
