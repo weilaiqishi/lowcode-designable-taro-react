@@ -299,11 +299,19 @@
           "color": "success",
           "size": "medium",
           "shape": "square",
-          "customIcon": {},
+          "customIcon": {
+            "src": "",
+            "width": "25px",
+            "height": "20px",
+            "mode": "aspectFit",
+            "useIcon": true,
+            "icon": "Bars",
+            "inline": "none"
+          },
           "style": {
             "position": "relative",
-            "width": "686px",
-            "left": "32px",
+            "width": "inherit",
+            "left": "inherit",
             "margin": "0px 0px 60px 0px"
           },
           "event": {
@@ -314,10 +322,30 @@
               "api": "$form.setValues"
             }
           },
-          "children": "打开弹出窗"
+          "children": "打开弹出窗",
+          "block": true
         },
         "x-designable-id": "miix7k05ym6",
         "x-index": 1
+      },
+      "e54oyx3w305": {
+        "type": "void",
+        "x-component": "WidgetBase",
+        "x-component-props": {
+          "style": {
+            "width": "100%",
+            "height": "inherit",
+            "position": "relative",
+            "display": "flex",
+            "justifyContent": "center"
+          },
+          "event": {
+            "click": {},
+            "close": {}
+          }
+        },
+        "x-designable-id": "e54oyx3w305",
+        "x-index": 2
       },
       "hpmg00pef80": {
         "type": "void",
@@ -338,11 +366,11 @@
               "api": "$form.setValues"
             }
           },
-          "open": true,
+          "open": false,
           "rounded": true
         },
         "x-designable-id": "hpmg00pef80",
-        "x-index": 2,
+        "x-index": 3,
         "x-reactions": {
           "dependencies": [
             {
@@ -370,8 +398,8 @@
               "style": {
                 "position": "absolute",
                 "bottom": "30px",
-                "width": "686px",
-                "left": "32px"
+                "width": "100%",
+                "left": "inherit"
               },
               "event": {
                 "click": {}
@@ -423,10 +451,10 @@
           "block": true
         },
         "x-designable-id": "oor7p895oxt",
-        "x-index": 3,
+        "x-index": 4,
         "x-display": "visible"
       }
     },
-    "x-designable-id": "2drj5cgivdt"
+    "x-designable-id": "seh3kr7wzqq"
   }
 }

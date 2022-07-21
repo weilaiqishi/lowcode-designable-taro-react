@@ -57,7 +57,7 @@ export const WidgetPopup = observer(
           }
         }}
       >
-        <View {...props} style={{ ...style, height: '100%' }}>
+        <View {...props} style={{ ...style, height: '100%', width: '100%' }}>
           {children}
         </View>
       </Popup>
