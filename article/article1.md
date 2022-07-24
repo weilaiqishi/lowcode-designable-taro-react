@@ -7,10 +7,11 @@
 [Github](https://github.com/weilaiqishi/lowcode-designable-taro-react.git)
 
 可视化设计器（体积很大，注意流量，最好用PC打开） <https://miku01.cn/taroifyDesignable/index.html>
+
 demo H5（按 F12 切换设备仿真） <https://miku01.cn/taroifyDemo/index.html#/pages/index/index>
 
-![](../showImage/taroify-formily-designable.png)
-![](../showImage/taroify-formily-demo-weapp.png)
+![taroify-formily-designable](../showImage/taroify-formily-designable.png)
+![taroify-formily-demo-weapp](../showImage/taroify-formily-demo-weapp.png)
 
 ## 组件库准备 taroify-formily
 
@@ -854,7 +855,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ## 运行一下
 
-目前组件只有7个，先配置一些普通的页面吧
-![](../showImage/taroify-formily-designable.png)
+目前只有一些组件，先配置一些普通的页面吧
+![taroify-formily-designable](../showImage/taroify-formily-designable.png)
 
-到这里设计器的第一步已经迈出来，下篇文章再介绍如何把这一套东西在消费端运行起来
+到这里前端页面可视化搭建系统的第一步已经迈出来，有了基本的`组件库`、`协议和渲染器`，并且在`设计器`中可以配置组件属性最终渲染界面，下篇文章再介绍如何让 `小程序` 和 `H5` 渲染设计器产出的`JSONSchema`。

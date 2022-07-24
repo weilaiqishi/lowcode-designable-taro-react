@@ -43,14 +43,14 @@
     "react-dom": "^17.0.0"
   },
   "peerDependencies": {
-    "@formily/core": ">2.1.10",
-    "@formily/react": ">2.1.10",
-    "@taroify/core": "0.1.0-alpha.1",
+    "@formily/core": ">2",
+    "@formily/react": ">2",
+    "@taroify/core": ">=0.1.0-alpha.1",
     "@tarojs/components": ">=3",
     "@tarojs/react": ">=3",
     "classnames": "^2.2.6",
-    "react": ">=16.13.0",
-    "react-dom": ">=16.13.0"
+    "react": ">=17",
+    "react-dom": ">=17"
   },
   "publishConfig": {
     "access": "public"
