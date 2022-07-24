@@ -1,6 +1,6 @@
 {
   "name": "taroify-formily-designable",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "engines": {
     "npm": ">=3.0.0"
@@ -80,6 +80,6 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-jss": "^10.4.0",
-    "taroify-formily": "^0.0.3"
+    "taroify-formily": "^0.0.4"
   }
 }
