@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
-import { Slider as component } from 'taroify-formily/lib'
+import { Slider as component } from 'taroify-formily/src'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'

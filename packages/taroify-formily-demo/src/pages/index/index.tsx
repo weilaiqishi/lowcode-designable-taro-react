@@ -8,7 +8,7 @@ import {
   formStyleTransitionPx,
   SchemaField,
   schemaTransitionPx,
-} from 'taroify-formily/lib'
+} from 'taroify-formily/src'
 
 import { initFormily } from '@/utils/formily'
 

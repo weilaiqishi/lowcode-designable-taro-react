@@ -36,7 +36,7 @@ import { observer } from '@formily/react'
 import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
 import Taro from '@tarojs/taro'
 import { Button as AntdButton, message, Space } from 'antd'
-import { formilyStoreRegister } from 'taroify-formily/lib'
+import { formilyStoreRegister } from 'taroify-formily/src'
 
 import 'antd/dist/antd.less'
 

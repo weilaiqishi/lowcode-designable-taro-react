@@ -4,7 +4,7 @@ import { DnFC, usePrefix } from '@designable/react'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
 import * as lodash from 'lodash-es'
-import { Form as FormilyForm } from 'taroify-formily/lib'
+import { Form as FormilyForm } from 'taroify-formily/src'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'

@@ -4,12 +4,13 @@
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
   "source": "src/index.ts",
+  "types": "lib/index.d.ts",
   "sideEffects": [
     "*.scss",
     "*.css"
   ],
   "scripts": {
-    "build": "yarn run build:rollup && yarn run build:lib",
+    "build": "rimraf -rf lib dist && yarn run build:rollup && yarn run build:lib",
     "build:lib": "tsc --project ./tsconfig.build.json",
     "build:rollup": "rollup --config ./config/rollup.config.js",
     "dev:lib": "tsc --watch --project ./tsconfig.build.json",

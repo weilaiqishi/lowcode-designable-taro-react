@@ -1,4 +1,4 @@
-# 基于 Designable 开发 Taro 小程序低代码玩具系统(2)
+# 基于 Designable 开发 Taro 小程序低代码玩具系统(2) - Taro小程序H5渲染JSONSchema
 
 上一篇文章已经有了基本的`组件库`、`协议和渲染器`，并且在`设计器`中可以配置组件属性最终渲染界面，这篇文章介绍如何让 `小程序` 和 `H5` 渲染设计器产出的`JSONSchema`。
 
@@ -15,11 +15,11 @@ demo H5（按 F12 切换设备仿真） <https://miku01.cn/taroifyDemo/index.htm
 
 ## 适配小程序端
 
-在Taro项目中使用我们开发好的组件库中的 `SchemaField` 配合 `formily` 即可轻易渲染JSONSchema
+我们开发好的组件库就是基于Taro组件标签写的，所以在Taro项目编译到H5或小程序就能在想要的平台中展示设计好的页面中。
+要渲染 `可视化搭建设计器` 产出 `JSONSchema`，需要使用 `@formily/core` + `@formily/react` 以及组件库中的 `SchemaField`
 
-但是要用在小程序端最主要有两个问题
-
-1.在PC设计器上，设置组件样式的单位是px，需要转换为rem
+**但是要用在小程序端最主要有两个问题**
+**1.在PC设计器上，设置组件样式的单位是px，需要转换为rem**
 
 这个问题主要是使用 `Taro.pxTransform` 将以px为单位的数字转为 以rem为单位的字符串，配合正则就可以实现对某段style进行转换
 
@@ -35,11 +35,11 @@ const pxToRem = (str) => {
 
 对JSONSchema进行递归转换单位就解决了这个问题
 
-2.[formily Schema 联动协议](https://react.formilyjs.org/zh-CN/api/shared/schema#schemareactions)需要动态执行JS代码，但小程序不能使用 `Function`/`eval`
+2.**[formily Schema 联动协议](https://react.formilyjs.org/zh-CN/api/shared/schema#schemareactions)需要动态执行JS代码，但小程序不能使用 `Function`/`eval`，需要一个JS写的JS解释器**
 
 举一个上篇文章中的例子，表单中有字段为a的输入框和字段为b的输入框，单a的值为 'hidden' 时把b隐藏掉
-![](../showImage/howToReaction/2.png)
-![](../showImage/howToReaction/3.png)
+![howToReaction](../showImage/howToReaction/2.png)
+![howToReaction](../showImage/howToReaction/3.png)
 
 那么这里需要动态执行的代码(表达式)是
 
@@ -47,7 +47,7 @@ const pxToRem = (str) => {
 $form.values.a !== 'hidden'
 ```
 
-在 `@formily/json-schema` 中源码是使用 `new Function` 去执行的
+在 `@formily/json-schema` 中源码是使用 `new Function` 去执行的，把动态代码置于 `formily作用域` 运行以获得访问表单数据的能力
 
 ```js
 var Registry = {
@@ -67,8 +67,7 @@ var Registry = {
 };
 ```
 
-`@formily/json-schema` 中导出的 `Schema` 里面 `registerCompiler` 的方法允许使用者注册自己的逻辑，
-我们可以用js写的js解释器去运行动态代码
+`@formily/json-schema` 中导出的 `Schema` 里面 `registerCompiler` 的方法允许使用者注册自己的逻辑，这里我们改成用JS写的JS解释器去运行动态代码
 
 ```js
 function formilyCompilerInMiniRegister() {
@@ -110,7 +109,7 @@ function formilyCompilerInMiniRegister() {
 
 这篇文章后面没啥干货了，只是简单介绍如何使用我的低代码组件库
 
-1.首先全局安装 @tarojs/cli, 注意一定要3.5.0-beta.6以上版本
+1.首先全局安装 `@tarojs/cli`, 注意一定要3.5.0-beta.6以上版本(现在3.5.0已经正式发布)
 
 ```bash
 npm i -g @tarojs/cli@3.5.0-beta.6
@@ -165,6 +164,12 @@ export default App
 ```
 
 6.pages/index/index.tsx
+
+这里是怎样渲染JSONSchema的关键
+
+- 用 `@formily/core` 导出的 `createForm` 创建form实例
+- 用物料组件库中的 `Form` 组件(实际上用了`@formily/react` 导出的 `FormProvider`)桥接form实例与UI
+- 用物料组件库中的 `SchemaField` 组件(实际上用了`@formily/react` 导出的 `createSchemaField`)去渲染 `JOSNSchema`，`JOSNSchema` 使用前先处理一遍 `style` 单位
 
 ```tsx
 import React, { useEffect, useMemo, useState } from 'react'

@@ -4,7 +4,7 @@ import { createForm } from '@formily/core'
 import {
   Form,
   SchemaField,
-} from 'taroify-formily/lib'
+} from 'taroify-formily/src'
 
 export interface IPreviewWidgetProps {
   tree: any

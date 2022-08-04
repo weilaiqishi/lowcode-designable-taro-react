@@ -4,7 +4,7 @@ import {
   setValidateLanguage,
 } from '@formily/core'
 import Taro from '@tarojs/taro'
-import { formilyCompilerInMiniRegister, formilyStoreRegister } from 'taroify-formily/lib'
+import { formilyCompilerInMiniRegister, formilyStoreRegister } from 'taroify-formily/src'
 
 export function initFormily() {
   if (process.env.TARO_ENV !== 'h5') {

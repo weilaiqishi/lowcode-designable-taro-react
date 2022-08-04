@@ -19,7 +19,7 @@ import {
 } from '@formily/react'
 import { toJS } from '@formily/reactive'
 import { each, reduce } from '@formily/shared'
-import { FormItem } from 'taroify-formily/lib'
+import { FormItem } from 'taroify-formily/src'
 
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@designable/react'
-import { WidgetBase as component } from 'taroify-formily/lib'
+import { WidgetBase as component } from 'taroify-formily/src'
 
 import { AllLocales } from '../../locales'
 import { createVoidFieldSchema } from '../Field'
