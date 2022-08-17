@@ -1,10 +1,7 @@
 import React, { useMemo } from 'react'
 import { transformToSchema } from '@designable/formily-transformer'
 import { createForm } from '@formily/core'
-import {
-  Form,
-  SchemaField,
-} from 'taroify-formily/src'
+import { Form, SchemaField } from 'taroify-formily/lib'
 
 export interface IPreviewWidgetProps {
   tree: any

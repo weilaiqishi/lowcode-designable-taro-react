@@ -12,7 +12,9 @@ import {
   Stepper,
   Switch,
   WidgetBase,
+  WidgetCell,
   WidgetCellGroup,
+  WidgetList,
   WidgetPopup,
 } from './index'
 
@@ -29,7 +31,9 @@ export const SchemaField = createSchemaField({
     Stepper,
     Switch,
     WidgetBase,
+    WidgetCell,
     WidgetCellGroup,
+    WidgetList,
     WidgetPopup,
   },
 })

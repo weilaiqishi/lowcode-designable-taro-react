@@ -23,8 +23,8 @@ async function run () {
           type: 'rawlist',
           name: 'demoPath',
           message: '选择demo预览地址-Select demo preview path',
-          default: 'http://192.168.0.105:10086',
-          choices: ['http://192.168.0.105:10086', 'https://miku01.cn/taroifyDemo/index.html']
+          default: 'http://192.168.1.8:10086',
+          choices: ['http://192.168.1.8:10086', 'https://miku01.cn/taroifyDemo/index.html']
         }
       ])
       .then(({ demoPath }) => {

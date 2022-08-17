@@ -53,7 +53,9 @@ import {
   Stepper,
   Switch,
   WidgetBase,
+  WidgetCell,
   WidgetCellGroup,
+  WidgetList,
   WidgetPopup,
 } from '../src/components/index'
 
@@ -63,7 +65,7 @@ import { PreviewWidget, SchemaEditorWidget } from './widgets'
 import '@tarojs/components/dist/taro-components/taro-components.css'
 import '@taroify/icons/index.scss'
 import '@taroify/core/index.scss'
-import 'taroify-formily/dist/index.scss'
+import 'taroify-formily/src/style/index.scss'
 import './taroifyFix.scss'
 
 defineCustomElements(window)
@@ -175,7 +177,7 @@ const App = () => {
               <ResourceWidget title="sources.Displays" sources={[Button]} />
               <ResourceWidget
                 title="sources.Layouts"
-                sources={[WidgetBase, WidgetCellGroup, WidgetPopup]}
+                sources={[WidgetBase, WidgetCell, WidgetCellGroup, WidgetList, WidgetPopup]}
               />
             </CompositePanel.Item>
             <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
@@ -191,14 +193,18 @@ const App = () => {
               <ViewToolsWidget use={['DESIGNABLE', 'JSONTREE', 'PREVIEW']} />
             </ToolbarPanel>
             <ViewportPanel
-              style={{ minHeight: '100%', width: '750px', overflow: 'auto' }}
+              style={{
+                minHeight: '100%',
+                width: '750px',
+                overflow: 'auto'
+              }}
             >
               <ViewPanel type="DESIGNABLE">
                 {() => (
                   <ComponentTreeWidget
+                    className='ComponentTreeWidget'
                     components={{
                       Button,
-                      WidgetCellGroup,
                       Checkbox,
                       Form,
                       Field,
@@ -209,6 +215,9 @@ const App = () => {
                       Stepper,
                       Switch,
                       WidgetBase,
+                      WidgetCell,
+                      WidgetCellGroup,
+                      WidgetList,
                       WidgetPopup,
                     }}
                   />
