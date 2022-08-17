@@ -17,6 +17,7 @@ const propsSchema = createVoidFieldSchema({
         type: 'string',
         'x-decorator': 'FormItem',
         'x-component': 'Input',
+        default: '按钮',
       },
       variant: {
         type: 'string',
@@ -64,7 +65,7 @@ const propsSchema = createVoidFieldSchema({
             value: 'danger',
           },
         ],
-        default: 'default',
+        default: 'primary',
       },
       size: {
         type: 'string',
@@ -231,7 +232,6 @@ Button.Resource = createResource({
       props: {
         type: 'void',
         title: 'Button',
-        'x-decorator': 'FormItem',
         'x-component': 'Button',
       },
     },

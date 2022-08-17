@@ -49,7 +49,10 @@ Form.Behavior = createBehavior({
         },
       },
       defaultProps: {
-        initialValues: {}
+        initialValues: {},
+        style: {
+          fontSize: '0'
+        }
       },
     }
   },

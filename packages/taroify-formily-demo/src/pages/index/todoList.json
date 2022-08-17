@@ -3,21 +3,105 @@
     "initialValues": {
       "lists": [
         {
-          "itemKey1": ""
+          "itemKey1": "todo1"
         },
         {
-          "itemKey1": ""
+          "itemKey1": "todo2"
         }
       ]
     },
     "style": {
       "backgroundColor": "rgba(245,245,245,1)",
-      "height": "100vh"
+      "height": "100vh",
+      "fontSize": "0"
     }
   },
   "schema": {
     "type": "object",
     "properties": {
+      "atb7djrlxr0": {
+        "type": "void",
+        "x-component": "WidgetBase",
+        "x-component-props": {
+          "style": {
+            "width": "750px",
+            "height": "100px",
+            "position": "relative",
+            "boxShadow": "inset 0 -2px 1px #00000008",
+            "backgroundColor": "rgba(255,255,255,1)",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "borderBottomColor": "rgba(245,245,245,1)",
+            "display": "flex",
+            "flexDirection": "row",
+            "flexWrap": "nowrap",
+            "alignContent": "center",
+            "justifyContent": "center",
+            "alignItems": "center"
+          },
+          "event": {
+            "click": {},
+            "close": {}
+          }
+        },
+        "x-designable-id": "atb7djrlxr0",
+        "x-index": 0,
+        "properties": {
+          "inputValue": {
+            "type": "string",
+            "title": "任务",
+            "x-component": "Input",
+            "x-validator": [],
+            "x-component-props": {
+              "style": {
+                "position": "relative",
+                "boxShadow": "0px 0px   ",
+                "height": "50px",
+                "margin": "0px 0px 0px 20px",
+                "fontSize": "30px",
+                "lineHeight": "0px"
+              },
+              "event": {},
+              "placeholder": "What needs to be done?"
+            },
+            "x-designable-id": "g5bcvl1ii52",
+            "x-index": 0,
+            "name": "inputValue"
+          },
+          "mh3c5p6p565": {
+            "type": "void",
+            "title": "Button",
+            "x-component": "Button",
+            "x-component-props": {
+              "children": "添加",
+              "variant": "contained",
+              "color": "default",
+              "size": "medium",
+              "shape": "circle",
+              "customIcon": {},
+              "style": {
+                "position": "relative",
+                "width": "130px",
+                "height": "60px",
+                "right": "inherit",
+                "margin": "0px 20px 0px 0px",
+                "fontSize": "24px",
+                "lineHeight": "0px"
+              },
+              "event": {
+                "click": {
+                  "propsOperatorsArray": [
+                    "{\n  lists: [{\n    itemKey1: $form.values.inputValue\n  }, ...$form.values.lists]\n}"
+                  ],
+                  "api": "$form.setValues"
+                }
+              }
+            },
+            "x-designable-id": "mh3c5p6p565",
+            "x-index": 1
+          }
+        }
+      },
       "lists": {
         "type": "array",
         "x-component": "ArrayViews",
@@ -30,7 +114,7 @@
         "x-validator": [],
         "name": "lists",
         "x-designable-id": "sge01zaxdn0",
-        "x-index": 0,
+        "x-index": 1,
         "items": {
           "type": "object",
           "x-designable-id": "ddf7csuwday",
@@ -41,12 +125,18 @@
               "x-component-props": {
                 "style": {
                   "width": "750px",
-                  "height": "200px",
+                  "height": "60px",
                   "position": "relative",
                   "backgroundColor": "rgba(255,255,255,1)",
                   "borderBottomStyle": "solid",
                   "borderBottomWidth": "1px",
-                  "borderBottomColor": "rgba(245,245,245,1)"
+                  "borderBottomColor": "rgba(245,245,245,1)",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "flexWrap": "nowrap",
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "justifyContent": "center"
                 },
                 "event": {
                   "click": {},
@@ -54,12 +144,32 @@
                 }
               },
               "x-designable-id": "c9osxcqqez7",
-              "x-index": 0
+              "x-index": 0,
+              "properties": {
+                "itemKey1": {
+                  "type": "string",
+                  "title": "Text",
+                  "x-component": "Text",
+                  "x-component-props": {
+                    "style": {
+                      "fontSize": "24px",
+                      "lineHeight": "24px",
+                      "position": "relative"
+                    },
+                    "staticValue": "文本",
+                    "event": {},
+                    "useValue": true
+                  },
+                  "x-designable-id": "c56fe8uyr9t",
+                  "x-index": 0,
+                  "name": "itemKey1"
+                }
+              }
             }
           }
         }
       }
     },
-    "x-designable-id": "7ntwb7120vx"
+    "x-designable-id": "bu3ba47dkjp"
   }
 }

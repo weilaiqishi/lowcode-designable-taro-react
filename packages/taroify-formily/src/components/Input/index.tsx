@@ -11,5 +11,5 @@ export const Input = connect(
       ...props
     }
   }),
-  mapReadPretty(PreviewText.Input)
+  // mapReadPretty(PreviewText.Input)
 )

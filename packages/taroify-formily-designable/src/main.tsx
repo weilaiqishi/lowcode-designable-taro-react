@@ -54,6 +54,7 @@ import {
   Slider,
   Stepper,
   Switch,
+  Text,
   WidgetBase,
   WidgetCell,
   WidgetCellGroup,
@@ -183,7 +184,10 @@ const App = () => {
                   Switch,
                 ]}
               />
-              <ResourceWidget title="sources.Displays" sources={[Button]} />
+              <ResourceWidget
+                title="sources.Displays"
+                sources={[Button, Text]}
+              />
               <ResourceWidget title="sources.Arrays" sources={[ArrayViews]} />
               <ResourceWidget
                 title="sources.Layouts"
@@ -231,6 +235,7 @@ const App = () => {
                       Slider,
                       Stepper,
                       Switch,
+                      Text,
                       WidgetBase,
                       WidgetCell,
                       WidgetCellGroup,
