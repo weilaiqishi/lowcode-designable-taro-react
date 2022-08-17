@@ -1,0 +1,13 @@
+diff --git a/node_modules/@taroify/core/number-keyboard/number-keyboard-icons.scss b/node_modules/@taroify/core/number-keyboard/number-keyboard-icons.scss
+index 581b750..8b84a40 100644
+--- a/node_modules/@taroify/core/number-keyboard/number-keyboard-icons.scss
++++ b/node_modules/@taroify/core/number-keyboard/number-keyboard-icons.scss
+@@ -7,7 +7,7 @@
+   src: url('./fonts/number-keyboard.eot?o8m3qv#iefix') format('embedded-opentype'),
+   url('./fonts/number-keyboard.ttf?o8m3qv') format('truetype'),
+   url('./fonts/number-keyboard.woff?o8m3qv') format('woff'),
+-  url('./fonts/number-keyboard.svg?o8m3qv#taroify-number-keyboard') format('svg');
++  url('./fonts/number-keyboard.svg?o8m3qv') format('svg');
+ }
+ 
+ [class^="taroify-backspace"], [class*=" taroify-backspace"],

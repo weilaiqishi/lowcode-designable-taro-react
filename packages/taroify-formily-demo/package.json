@@ -36,8 +36,8 @@
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
-    "@formily/core": "2.1.10",
-    "@formily/react": "2.1.10",
+    "@formily/core": "2.2.0",
+    "@formily/react": "2.2.0",
     "@kimeng/vm": "0.4.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.7",
     "@tarojs/components": "3.5.3",

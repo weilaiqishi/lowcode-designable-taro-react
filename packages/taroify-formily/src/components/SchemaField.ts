@@ -1,6 +1,7 @@
 import { createSchemaField } from '@formily/react'
 
 import {
+  ArrayViews,
   Button,
   Checkbox,
   DatetimePicker,
@@ -20,6 +21,7 @@ import {
 
 export const SchemaField = createSchemaField({
   components: {
+    ArrayViews,
     Button,
     Checkbox,
     DatetimePicker,

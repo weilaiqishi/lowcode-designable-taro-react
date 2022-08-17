@@ -49,6 +49,7 @@ Form.Behavior = createBehavior({
         },
       },
       defaultProps: {
+        initialValues: {}
       },
     }
   },
@@ -63,7 +64,7 @@ Form.Resource = createResource({
       componentName: 'Field',
       props: {
         type: 'object',
-        'x-component': 'Form',
+        'x-component': 'Form'
       },
     },
   ],

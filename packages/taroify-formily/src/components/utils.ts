@@ -48,8 +48,14 @@ export function schemaTransitionPx(
     if (customIcon) {
       transitionPx(customIcon, options?.mode)
     }
-    theSchema.hasTransition = true
+
+    // 遍历 Array类型字段
+    if (componentOptions?.items?.properties) {
+      schemaTransitionPx(componentOptions.items)
+    }
   }
+
+  theSchema.hasTransition = true
 }
 export function formStyleTransitionPx(
   form,

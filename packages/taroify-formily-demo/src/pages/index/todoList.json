@@ -1,0 +1,65 @@
+{
+  "form": {
+    "initialValues": {
+      "lists": [
+        {
+          "itemKey1": ""
+        },
+        {
+          "itemKey1": ""
+        }
+      ]
+    },
+    "style": {
+      "backgroundColor": "rgba(245,245,245,1)",
+      "height": "100vh"
+    }
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "lists": {
+        "type": "array",
+        "x-component": "ArrayViews",
+        "x-component-props": {
+          "style": {
+            "position": "relative"
+          },
+          "event": {}
+        },
+        "x-validator": [],
+        "name": "lists",
+        "x-designable-id": "sge01zaxdn0",
+        "x-index": 0,
+        "items": {
+          "type": "object",
+          "x-designable-id": "ddf7csuwday",
+          "properties": {
+            "c9osxcqqez7": {
+              "type": "void",
+              "x-component": "WidgetBase",
+              "x-component-props": {
+                "style": {
+                  "width": "750px",
+                  "height": "200px",
+                  "position": "relative",
+                  "backgroundColor": "rgba(255,255,255,1)",
+                  "borderBottomStyle": "solid",
+                  "borderBottomWidth": "1px",
+                  "borderBottomColor": "rgba(245,245,245,1)"
+                },
+                "event": {
+                  "click": {},
+                  "close": {}
+                }
+              },
+              "x-designable-id": "c9osxcqqez7",
+              "x-index": 0
+            }
+          }
+        }
+      }
+    },
+    "x-designable-id": "7ntwb7120vx"
+  }
+}

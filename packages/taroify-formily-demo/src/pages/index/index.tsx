@@ -24,8 +24,17 @@ function transitionPx(designableJson) {
 }
 
 export default () => {
-  const [designableJson, setdesignableJson] = useState(testJson)
-  const form = useMemo(() => createForm(), [])
+  const [designableJson, setdesignableJson] = useState<{
+    form: any
+    schema: any
+  }>(testJson)
+  const form = useMemo(
+    () =>
+      createForm({
+        initialValues: designableJson.form?.initialValues || {},
+      }),
+    [designableJson]
+  )
   async function submit() {
     try {
       const res = (await form.submit()) as any
@@ -37,21 +46,25 @@ export default () => {
     }
   }
   transitionPx(designableJson)
+  console.log(designableJson)
 
   useEffect(() => {
-    if (process.env.TARO_ENV === 'h5' && window.opener) {
-      const fn = (event) => {
-        if (
-          event.data.type === 'getSchemaRes'
-        ) {
-          setdesignableJson(JSON.parse(event.data.data))
-          window.removeEventListener('message', fn)
+    if (process.env.TARO_ENV === 'h5') {
+      if (window.opener) {
+        const fn = (event) => {
+          if (event.data.type === 'getSchemaRes') {
+            setdesignableJson(JSON.parse(event.data.data))
+            window.removeEventListener('message', fn)
+          }
         }
+        window.addEventListener('message', fn, false)
+        window.opener.postMessage(
+          {
+            type: 'getSchema',
+          },
+          '*'
+        )
       }
-      window.addEventListener('message', fn, false)
-      window.opener.postMessage({
-        type: 'getSchema'
-      }, '*')
     }
   }, [])
 

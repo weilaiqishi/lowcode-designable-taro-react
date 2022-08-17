@@ -1,3 +1,4 @@
+export * from './ArrayViews'
 export * from './Button'
 export * from './Checkbox'
 export * from './DatetimePicker'

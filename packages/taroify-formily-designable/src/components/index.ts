@@ -1,6 +1,7 @@
 // eslint-disable-next-line simple-import-sort/exports
 export * from './Field'
 
+export * from './ArrayViews'
 export * from './Button'
 export * from './Checkbox'
 export * from './Form'

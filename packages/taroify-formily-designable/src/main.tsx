@@ -41,7 +41,9 @@ import { formilyStoreRegister } from 'taroify-formily/src'
 import 'antd/dist/antd.less'
 
 import testJson from '../../taroify-formily-demo/src/pages/index/event.json'
+import todoList from '../../taroify-formily-demo/src/pages/index/todoList.json'
 import {
+  ArrayViews,
   Button,
   Checkbox,
   Field,
@@ -116,7 +118,14 @@ const Actions = observer(() => {
       <AntdButton
         type="primary"
         onClick={() => {
-          console.log(testJson)
+          loadInitialSchema(designer, JSON.stringify(todoList))
+        }}
+      >
+        使用TODOLIST配置
+      </AntdButton>
+      <AntdButton
+        type="primary"
+        onClick={() => {
           loadInitialSchema(designer, JSON.stringify(testJson))
         }}
       >
@@ -128,7 +137,7 @@ const Actions = observer(() => {
           const otherWindow = window.open(process.env.demoPath)
           const fn = (event) => {
             if (event.data.type === 'getSchema') {
-              window.removeEventListener('message', fn)
+              // window.removeEventListener('message', fn)
               otherWindow.postMessage(
                 {
                   type: 'getSchemaRes',
@@ -175,9 +184,16 @@ const App = () => {
                 ]}
               />
               <ResourceWidget title="sources.Displays" sources={[Button]} />
+              <ResourceWidget title="sources.Arrays" sources={[ArrayViews]} />
               <ResourceWidget
                 title="sources.Layouts"
-                sources={[WidgetBase, WidgetCell, WidgetCellGroup, WidgetList, WidgetPopup]}
+                sources={[
+                  WidgetBase,
+                  WidgetCell,
+                  WidgetCellGroup,
+                  WidgetList,
+                  WidgetPopup,
+                ]}
               />
             </CompositePanel.Item>
             <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
@@ -196,14 +212,15 @@ const App = () => {
               style={{
                 minHeight: '100%',
                 width: '750px',
-                overflow: 'auto'
+                overflow: 'auto',
               }}
             >
               <ViewPanel type="DESIGNABLE">
                 {() => (
                   <ComponentTreeWidget
-                    className='ComponentTreeWidget'
+                    className="ComponentTreeWidget"
                     components={{
+                      ArrayViews,
                       Button,
                       Checkbox,
                       Form,
