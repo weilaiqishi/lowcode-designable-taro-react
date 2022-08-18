@@ -10,7 +10,9 @@ type typeProps = typePropsFields &
     staticValue: string // 在设计器中填入的静态值
   }>
 
+const TheComponent: any = Component
+
 export const Text = connect(({ useValue, staticValue, value, ...props }: typeProps) => {
   const text = (useValue ? value : staticValue) || ''
-  return <Component {...props}>{text}</Component>
+  return <TheComponent {...props}>{text}</TheComponent>
 })

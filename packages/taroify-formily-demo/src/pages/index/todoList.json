@@ -19,6 +19,45 @@
   "schema": {
     "type": "object",
     "properties": {
+      "as8dgcohtb9": {
+        "type": "void",
+        "x-component": "WidgetBase",
+        "x-component-props": {
+          "style": {
+            "width": "750px",
+            "height": "200px",
+            "position": "relative",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center"
+          },
+          "event": {
+            "click": {},
+            "close": {}
+          }
+        },
+        "x-designable-id": "as8dgcohtb9",
+        "x-index": 0,
+        "properties": {
+          "2vkm3feq0hl": {
+            "type": "string",
+            "title": "Text",
+            "x-component": "Text",
+            "x-component-props": {
+              "style": {
+                "fontSize": "80px",
+                "lineHeight": "200px",
+                "position": "relative",
+                "color": "rgba(184,63,69,1)"
+              },
+              "staticValue": "todos",
+              "event": {}
+            },
+            "x-designable-id": "2vkm3feq0hl",
+            "x-index": 0
+          }
+        }
+      },
       "atb7djrlxr0": {
         "type": "void",
         "x-component": "WidgetBase",
@@ -45,7 +84,7 @@
           }
         },
         "x-designable-id": "atb7djrlxr0",
-        "x-index": 0,
+        "x-index": 1,
         "properties": {
           "inputValue": {
             "type": "string",
@@ -73,12 +112,20 @@
             "title": "Button",
             "x-component": "Button",
             "x-component-props": {
-              "children": "添加",
+              "children": "ADD",
               "variant": "contained",
-              "color": "default",
+              "color": "danger",
               "size": "medium",
               "shape": "circle",
-              "customIcon": {},
+              "customIcon": {
+                "src": "",
+                "width": "25px",
+                "height": "20px",
+                "mode": "aspectFit",
+                "shape": "square",
+                "useIcon": false,
+                "icon": "Add"
+              },
               "style": {
                 "position": "relative",
                 "width": "130px",
@@ -86,7 +133,8 @@
                 "right": "inherit",
                 "margin": "0px 20px 0px 0px",
                 "fontSize": "24px",
-                "lineHeight": "0px"
+                "lineHeight": "0px",
+                "backgroundColor": "rgba(184,63,69,1)"
               },
               "event": {
                 "click": {
@@ -114,7 +162,7 @@
         "x-validator": [],
         "name": "lists",
         "x-designable-id": "sge01zaxdn0",
-        "x-index": 1,
+        "x-index": 2,
         "items": {
           "type": "object",
           "x-designable-id": "ddf7csuwday",
@@ -170,6 +218,6 @@
         }
       }
     },
-    "x-designable-id": "bu3ba47dkjp"
+    "x-designable-id": "4hg6xuielur"
   }
 }

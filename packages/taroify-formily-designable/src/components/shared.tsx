@@ -5,6 +5,7 @@ import { Select } from 'antd'
 export const ImageModeSelect = {
   locales: {
     mode: '图片模式',
+    shape: '图片形状'
   },
   properties: {
     mode: {
@@ -28,6 +29,17 @@ export const ImageModeSelect = {
         'bottomRight',
       ],
       default: 'aspectFit',
+    },
+    shape: {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'Select',
+      enum: [
+        'square',
+        'rounded',
+        'circle'
+      ],
+      default: 'square',
     },
   },
 }

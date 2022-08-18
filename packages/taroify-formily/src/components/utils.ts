@@ -14,6 +14,7 @@ const pxToRem = (str) => {
 type transitionPxMode = 'rpx' | 'rem'
 function transitionPx(origin, mode: transitionPxMode = 'rem') {
   for (const s in origin) {
+    if (typeof origin[s] !== 'string') { continue }
     if (mode === 'rem') {
       origin[s] = pxToRem(origin[s])
     } else {

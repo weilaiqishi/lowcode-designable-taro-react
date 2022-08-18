@@ -53,6 +53,7 @@ export default () => {
       if (window.opener) {
         const fn = (event) => {
           if (event.data.type === 'getSchemaRes') {
+            console.log(event.data.data, JSON.parse(event.data.data))
             setdesignableJson(JSON.parse(event.data.data))
             window.removeEventListener('message', fn)
           }

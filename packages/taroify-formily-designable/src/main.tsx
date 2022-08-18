@@ -48,6 +48,7 @@ import {
   Checkbox,
   Field,
   Form,
+  Image,
   Input,
   Radio,
   Rate,
@@ -186,7 +187,7 @@ const App = () => {
               />
               <ResourceWidget
                 title="sources.Displays"
-                sources={[Button, Text]}
+                sources={[Button, Image, Text]}
               />
               <ResourceWidget title="sources.Arrays" sources={[ArrayViews]} />
               <ResourceWidget
@@ -229,6 +230,7 @@ const App = () => {
                       Checkbox,
                       Form,
                       Field,
+                      Image,
                       Input,
                       Radio,
                       Rate,
