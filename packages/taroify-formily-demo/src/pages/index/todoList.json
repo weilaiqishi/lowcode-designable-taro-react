@@ -1,7 +1,7 @@
 {
   "form": {
     "initialValues": {
-      "lists": [
+      "list": [
         {
           "itemKey1": "todo1"
         },
@@ -13,7 +13,13 @@
     "style": {
       "backgroundColor": "rgba(245,245,245,1)",
       "height": "100vh",
-      "fontSize": "0"
+      "fontSize": "0",
+      "display": "flex",
+      "flexDirection": "column",
+      "flexWrap": "nowrap",
+      "alignContent": "center",
+      "justifyContent": "flex-start",
+      "alignItems": "center"
     }
   },
   "schema": {
@@ -98,7 +104,8 @@
                 "height": "50px",
                 "margin": "0px 0px 0px 20px",
                 "fontSize": "30px",
-                "lineHeight": "0px"
+                "lineHeight": "0px",
+                "textAlign": "center"
               },
               "event": {},
               "placeholder": "What needs to be done?"
@@ -139,9 +146,9 @@
               "event": {
                 "click": {
                   "propsOperatorsArray": [
-                    "{\n  lists: [{\n    itemKey1: $form.values.inputValue\n  }, ...$form.values.lists]\n}"
+                    "$form.fields.list.unshift({\nitemKey1:$form.values.inputValue\n})"
                   ],
-                  "api": "$form.setValues"
+                  "api": "runStatement"
                 }
               }
             },
@@ -150,7 +157,7 @@
           }
         }
       },
-      "lists": {
+      "list": {
         "type": "array",
         "x-component": "ArrayViews",
         "x-component-props": {
@@ -160,7 +167,7 @@
           "event": {}
         },
         "x-validator": [],
-        "name": "lists",
+        "name": "list",
         "x-designable-id": "sge01zaxdn0",
         "x-index": 2,
         "items": {
@@ -202,7 +209,9 @@
                     "style": {
                       "fontSize": "24px",
                       "lineHeight": "24px",
-                      "position": "relative"
+                      "position": "relative",
+                      "width": "500px",
+                      "textAlign": "center"
                     },
                     "staticValue": "文本",
                     "event": {},
@@ -211,6 +220,47 @@
                   "x-designable-id": "c56fe8uyr9t",
                   "x-index": 0,
                   "name": "itemKey1"
+                },
+                "956d01mudrx": {
+                  "type": "void",
+                  "title": "Button",
+                  "x-component": "Button",
+                  "x-component-props": {
+                    "children": "",
+                    "variant": "text",
+                    "color": "primary",
+                    "size": "medium",
+                    "shape": "square",
+                    "customIcon": {
+                      "src": "",
+                      "width": "25px",
+                      "height": "20px",
+                      "mode": "aspectFit",
+                      "shape": "square",
+                      "useIcon": true,
+                      "icon": "Close"
+                    },
+                    "style": {
+                      "position": "absolute",
+                      "top": "16px",
+                      "left": "inherit",
+                      "right": "44px",
+                      "width": "28px",
+                      "height": "28px",
+                      "fontSize": "28px",
+                      "color": "rgba(184,63,69,1)"
+                    },
+                    "event": {
+                      "click": {
+                        "propsOperatorsArray": [
+                          "$array.field.remove($index)"
+                        ],
+                        "api": "runStatement"
+                      }
+                    }
+                  },
+                  "x-designable-id": "956d01mudrx",
+                  "x-index": 1
                 }
               }
             }
@@ -218,6 +268,6 @@
         }
       }
     },
-    "x-designable-id": "4hg6xuielur"
+    "x-designable-id": "l0tttrw3k9q"
   }
 }

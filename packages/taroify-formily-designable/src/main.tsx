@@ -36,7 +36,7 @@ import { observer } from '@formily/react'
 import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
 import Taro from '@tarojs/taro'
 import { Button as AntdButton, message, Space } from 'antd'
-import { formilyStoreRegister } from 'taroify-formily/src'
+import { formilyStoreRegister } from 'taroify-formily/lib'
 
 import 'antd/dist/antd.less'
 
@@ -100,7 +100,7 @@ formilyStoreRegister({
       const { content = '', duration = 2 } = arg || {}
       message.info('(PC临时工)' + content, duration)
     },
-  },
+  }
 })
 
 const Logo: React.FC = () => (

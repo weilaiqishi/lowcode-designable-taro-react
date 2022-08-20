@@ -3,7 +3,7 @@ import { observer, useForm } from '@formily/react'
 import { Cell } from '@taroify/core'
 
 import { pickDataProps } from '../__builtins__'
-import { formilyStoreEvent } from '../utils'
+import { formilyStoreEvent, useScope } from '../utils'
 
 type typeProps = {
   children?: React.ReactNode
@@ -27,16 +27,14 @@ export const WidgetCell = observer(
     align,
     ...props
   }: typeProps) => {
-    const form = useForm()
+    const scope = useScope()
     return (
       <Cell
         style={style}
         onClick={() => {
           if (props?.event?.click) {
             formilyStoreEvent(
-              {
-                $form: form,
-              },
+              scope,
               props.event.click
             )
           }

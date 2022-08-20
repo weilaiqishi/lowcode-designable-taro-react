@@ -73,3 +73,7 @@ yarn start
 [2Taro小程序H5渲染JSONSchema](./article/2Taro%E5%B0%8F%E7%A8%8B%E5%BA%8FH5%E6%B8%B2%E6%9F%93JSONSchema.md)
 3事件系统(开坑中)
 4数组组件(开坑中)
+
+## 待优化
+
+- [] 输入框字体在H5中的大小

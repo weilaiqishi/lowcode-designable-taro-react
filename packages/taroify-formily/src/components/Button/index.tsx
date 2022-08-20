@@ -14,7 +14,7 @@ import { Block as _Block } from '@tarojs/components'
 
 import { PreviewText } from '../PreviewText'
 import { typePropsFields } from '../type'
-import { formilyStoreEvent } from '../utils'
+import { formilyStoreEvent, useScope } from '../utils'
 
 const Block: any = _Block
 
@@ -91,8 +91,7 @@ export const Button = connect((props: typeProps) => {
       }
     }
   }
-
-  const form = useForm()
+  const scope = useScope()
   return (
     <ConfigProvider
       theme={Object.keys(themeConfig).reduce((acc, cur) => {
@@ -106,9 +105,7 @@ export const Button = connect((props: typeProps) => {
         onClick={() => {
           if (props?.event?.click) {
             formilyStoreEvent(
-              {
-                $form: form,
-              },
+              scope,
               props.event.click
             )
           }

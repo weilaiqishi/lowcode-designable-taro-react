@@ -28,10 +28,11 @@ const eventProps = {
     'x-decorator': 'FormItem',
     'x-component': 'Select',
     enum: [
+      { label: '自定义JS语句执行', value: 'runStatement' },
       { label: 'Taro界面交互showToast', value: 'Taro.showToast' },
       { label: 'Taro界面交互showModal', value: 'Taro.showModal' },
       { label: 'formily表单修改values', value: '$form.setValues' },
-      { label: 'formily字段', value: '$self' }
+      // { label: 'formily字段', value: '$self' }
     ],
   },
   path: {

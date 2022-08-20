@@ -38,8 +38,6 @@ export const ArrayViews = observer((props: typeProps) => {
         throw new Error('can not found items schema object')
       }
 
-      console.log(items)
-
       const content = (
         <RecursionField
           schema={items}
@@ -61,6 +59,5 @@ export const ArrayViews = observer((props: typeProps) => {
     })
   }
 
-  const form = useForm()
   return <ArrayBase>{renderItems()}</ArrayBase>
 })

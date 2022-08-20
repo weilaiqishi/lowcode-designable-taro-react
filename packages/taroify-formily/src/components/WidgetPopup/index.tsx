@@ -3,7 +3,7 @@ import { observer, useForm } from '@formily/react'
 import { Popup } from '@taroify/core'
 import { View as TaroView } from '@tarojs/components'
 
-import { formilyStoreEvent, typeEventItem } from '../utils'
+import { formilyStoreEvent, typeEventItem, useScope } from '../utils'
 
 type typeProps = Partial<{
   children: React.ReactNode
@@ -27,7 +27,7 @@ export const WidgetPopup = observer(
     rounded,
     ...props
   }: typeProps) => {
-    const form = useForm()
+    const scope = useScope()
     const PopupSyle = { height: style.height }
     return (
       <Popup
@@ -38,22 +38,12 @@ export const WidgetPopup = observer(
         rounded={rounded}
         onClick={() => {
           if (props?.event?.click) {
-            formilyStoreEvent(
-              {
-                $form: form,
-              },
-              props.event.click
-            )
+            formilyStoreEvent(scope, props.event.click)
           }
         }}
         onClose={() => {
           if (props?.event?.close) {
-            formilyStoreEvent(
-              {
-                $form: form,
-              },
-              props.event.close
-            )
+            formilyStoreEvent(scope, props.event.close)
           }
         }}
       >

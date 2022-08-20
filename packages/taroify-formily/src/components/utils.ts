@@ -1,8 +1,27 @@
 import { Schema } from '@formily/json-schema'
+import { useField } from '@formily/react'
+import { autorun, observable, untracked } from '@formily/reactive'
 import vm from '@kimeng/vm'
 import Taro from '@tarojs/taro'
 import * as lodash from 'lodash-es'
 
+import ArrayBase from './ArrayBase'
+
+// --- 小工具
+// lodash.throttle 在小程序里不能正常获得时间
+export function throttle(callback, wait = 600) {
+  let start = 0
+  return function (...args) {
+    const now = new Date().getTime()
+    if (now - start >= wait) {
+      callback.call(this, ...args)
+      start = now
+    }
+  }
+}
+
+// --- 样式转化相关
+type transitionPxMode = 'rpx' | 'rem'
 const pxToRem = (str) => {
   const reg = /(\d+(\.\d*)?)+(px)/gi
   return String(str).replace(reg, function (x) {
@@ -10,8 +29,6 @@ const pxToRem = (str) => {
     return Taro.pxTransform(Number(val))
   })
 }
-
-type transitionPxMode = 'rpx' | 'rem'
 function transitionPx(origin, mode: transitionPxMode = 'rem') {
   for (const s in origin) {
     if (typeof origin[s] !== 'string') { continue }
@@ -22,7 +39,6 @@ function transitionPx(origin, mode: transitionPxMode = 'rem') {
     }
   }
 }
-
 export function schemaTransitionPx(
   theSchema,
   options?: { mode: transitionPxMode }
@@ -76,115 +92,61 @@ export function formStyleTransitionPx(
   form.hasTransition = true
 }
 
+
+
+// --- Schema中JS表达式执行相关
+function baseCompiler(expression, scope, isStatement?) {
+  if (isStatement) {
+    new Function(
+      '$root',
+      'with($root) { '.concat(expression, '; }')
+    )(scope)
+    return
+  }
+  return new Function(
+    '$root',
+    'with($root) { return ('.concat(expression, '); }')
+  )(scope)
+}
+function myCompiler(expression, scope, isStatement?) {
+  if (scope === void 0) {
+    scope = {}
+  }
+  const scopeKey = Object.keys(scope).filter(str => str.includes('$'))
+  scopeKey.forEach((key) => {
+    const reg = new RegExp(`\\${key}`, 'g')
+    expression = expression.replace(reg, 'scope.' + key)
+  })
+  const bridge = { current: null }
+  const context = vm.createContext({ bridge, expression, scope, console })
+  try {
+    if (isStatement) {
+      vm.runInContext(`${expression} `, context)
+      return
+    }
+    vm.runInContext(`bridge.current = ${expression} `, context)
+  } catch (err) {
+    console.error(err)
+  }
+  return bridge.current
+}
+export function formilyCompilerInMiniRegister() {
+  // json-schema注册兼容小程序的解析器
+  Schema.registerCompiler(myCompiler)
+  shared.useMyCompiler = true
+}
+
+// --- 事件系统相关
 const shared = {
   formilyStore: {
     Taro,
   },
   PC: false,
-}
-
-export function useInPc() {
-  shared.PC = true
-}
-
-export function formilyStoreRegister(obj) {
-  shared.formilyStore = obj
-}
-
-export function formilyStoreRunFunction(
-  scope: typeScope,
-  path,
-  propsOperatorsArray,
-  ...otherProps
-) {
-  console.log(
-    'formilyStoreRunFunction scope path propsOperatorsArray otherProps -> ',
-    scope,
-    path,
-    propsOperatorsArray,
-    otherProps
-  )
-  let fn
-  let obj = null
-  if (path.includes('$form')) {
-    // 从$form上获取方法
-    const formFnPath = path.split('.')[1]
-    fn = lodash.get(scope.$form, formFnPath)
-    obj = scope.$form
-  } else {
-    // 从全局formilyStore获取方法
-    fn = lodash.get(shared.formilyStore, path)
-    try {
-      const segments = String(path || '').split('.')
-      segments.pop()
-      obj = lodash.get(shared.formilyStore, segments.join())
-    } catch (err) {
-      console.log('formilyStoreRunFunction -> getCallObj err -> ', err)
-    }
-  }
-  let propsArray: any[] = []
-  try {
-    propsArray = propsOperatorsArray.map((expression) => {
-      if (process.env.TARO_ENV === 'h5') {
-        return new Function(
-          '$root',
-          'with($root) { return ('.concat(expression, '); }')
-        )(scope)
-      } else {
-        const scopeKey = [
-          '$dependencies',
-          '$deps',
-          '$effect',
-          '$form',
-          '$memo',
-          '$observable',
-          '$props',
-          '$self',
-          '$target',
-          '$values',
-        ]
-        scopeKey.forEach((key) => {
-          const reg = new RegExp(`\\${key}`, 'g')
-          expression = expression.replace(reg, 'scope.' + key)
-        })
-        const bridge = { current: null }
-        const context = vm.createContext({ bridge, expression, scope, console })
-        try {
-          vm.runInContext(`bridge.current = ${expression} `, context)
-        } catch (err) {
-          console.error(err)
-        }
-        return bridge.current
-      }
-    })
-  } catch (err) {
-    console.log('formilyStoreRunFunction -> parsepropsJSON err -> ', err)
-  }
-
-  if (typeof fn === 'function') {
-    obj
-      ? fn.call(obj, ...propsArray, ...otherProps)
-      : fn(...propsArray, ...otherProps)
+  useMyCompiler: false,
+  getCompiler() {
+    return this.useMyCompiler ? myCompiler : baseCompiler
   }
 }
-
-// lodash.throttle 在小程序里不能正常获得时间
-export function throttle(callback, wait = 600) {
-  let start = 0
-  return function (...args) {
-    const now = new Date().getTime()
-    if (now - start >= wait) {
-      callback.call(this, ...args)
-      start = now
-    }
-  }
-}
-
-export const formilyStoreRunFunctionThrottle = throttle(
-  formilyStoreRunFunction,
-  200
-)
-
 type typeScope = Partial<{
   $dependencies
   $deps
@@ -196,14 +158,98 @@ type typeScope = Partial<{
   $self
   $target
   $values
-}>
 
+  // Array组件里才有
+  $array
+  $index
+  $record
+}>
 export type typeEventItem = {
   api: string
   path: string
   propsOperatorsArray: any[]
 }
+export function formilyStoreRunFunction(
+  scope: typeScope,
+  path,
+  propsOperatorsArray,
+  ...otherProps
+) {
+  console.log(
+    'formilyStoreRunFunction -> formilyStore scope path propsOperatorsArray otherProps -> ',
+    shared.formilyStore,
+    scope,
+    path,
+    propsOperatorsArray,
+    otherProps
+  )
+  let fn
+  let callObject = null
 
+  // 自定义JS语句执行
+  if (path === 'runStatement') {
+    const expression = propsOperatorsArray[0]
+    if (expression) {
+      shared.getCompiler()(expression, scope, true)
+    }
+    return
+  }
+
+  // formily和注册方法执行
+  if (path.includes('$form')) {
+    // 从$form上获取方法
+    const formFnPath = path.split('.')[1]
+    fn = lodash.get(scope.$form, formFnPath)
+    callObject = scope.$form
+  } else {
+    // 从全局formilyStore获取方法
+    fn = lodash.get(shared.formilyStore, path)
+    try {
+      const segments = String(path || '').split('.')
+      segments.pop()
+      callObject = lodash.get(shared.formilyStore, segments.join())
+    } catch (err) {
+      console.log('formilyStoreRunFunction -> getCallObject err -> ', err)
+    }
+  }
+  let propsArray: any[] = []
+  try {
+    propsArray = propsOperatorsArray.map((expression) => {
+      return shared.getCompiler()(expression, scope)
+    })
+  } catch (err) {
+    console.log('formilyStoreRunFunction -> parsePropsJSON err -> ', err)
+  }
+
+  if (typeof fn === 'function') {
+    callObject
+      ? fn.call(callObject, ...propsArray, ...otherProps)
+      : fn(...propsArray, ...otherProps)
+  }
+}
+export const formilyStoreRunFunctionThrottle = throttle(
+  formilyStoreRunFunction,
+  200
+)
+export function useScope() {
+  const field = useField()
+  const $array = ArrayBase.useArray?.()
+  const $index = ArrayBase.useIndex?.()
+  const $record = ArrayBase.useRecord?.()
+  const scope = {
+    $self: field,
+    $form: field.form,
+    $values: field.form.values,
+    $observable: (target: any, deps?: any[]) => autorun.memo(() => observable(target), deps),
+    $effect: (props: any) => field.setComponentProps(props),
+    $memo: autorun.memo,
+    $props: (props: any) => field.setComponentProps(props),
+    $array,
+    $index,
+    $record
+  }
+  return scope
+}
 export const formilyStoreEvent = function (
   scope: typeScope,
   eventItem: typeEventItem,
@@ -220,36 +266,10 @@ export const formilyStoreEvent = function (
     ...otherProps
   )
 }
-
-export function formilyCompilerInMiniRegister() {
-  // json-schema注册兼容小程序的解析器
-  Schema.registerCompiler(function (expression, scope) {
-    if (scope === void 0) {
-      scope = {}
-    }
-    const scopeKey = [
-      '$dependencies',
-      '$deps',
-      '$effect',
-      '$form',
-      '$memo',
-      '$observable',
-      '$props',
-      '$self',
-      '$target',
-      '$values',
-    ]
-    scopeKey.forEach((key) => {
-      const reg = new RegExp(`\\${key}`, 'g')
-      expression = expression.replace(reg, 'scope.' + key)
-    })
-    const bridge = { current: null }
-    const context = vm.createContext({ bridge, expression, scope, console })
-    try {
-      vm.runInContext(`a.current = ${expression} `, context)
-    } catch (err) {
-      console.error(err)
-    }
-    return bridge.current
-  })
+export function useInPc() {
+  shared.PC = true
 }
+export function formilyStoreRegister(obj) {
+  shared.formilyStore = obj
+}
+

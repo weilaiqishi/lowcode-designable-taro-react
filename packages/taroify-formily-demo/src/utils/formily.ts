@@ -11,6 +11,9 @@ export function initFormily() {
     // json-schema注册兼容小程序的解析器
     formilyCompilerInMiniRegister()
   } else {
+    // json-schema注册兼容小程序的解析器 在h5环境中测试
+    formilyCompilerInMiniRegister()
+
     // 注册formily自定义组件全局数据源
     // 补充部分h5缺失的Taro方法
     formilyStoreRegister({

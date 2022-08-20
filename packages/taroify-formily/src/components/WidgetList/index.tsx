@@ -3,7 +3,7 @@ import { observer, useForm } from '@formily/react'
 import { List } from '@taroify/core'
 
 import { pickDataProps } from '../__builtins__'
-import { formilyStoreEvent } from '../utils'
+import { formilyStoreEvent, useScope } from '../utils'
 
 type typeProps = {
   children?: React.ReactNode
@@ -17,7 +17,7 @@ export const WidgetList = observer(
     style,
     ...props
   }: typeProps) => {
-    const form = useForm()
+    const scope = useScope()
     return (
       <List
         style={style}

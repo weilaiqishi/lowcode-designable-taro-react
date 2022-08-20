@@ -3,7 +3,7 @@ import { observer, useForm } from '@formily/react'
 import { Cell } from '@taroify/core'
 import { View as TaroView } from '@tarojs/components'
 
-import { formilyStoreEvent } from '../utils'
+import { formilyStoreEvent, useScope } from '../utils'
 
 type typeProps = {
   children?: React.ReactNode
@@ -25,7 +25,7 @@ export const WidgetCellGroup = observer(
     bordered = true,
     ...props
   }: typeProps) => {
-    const form = useForm()
+    const scope = useScope()
     return (
       <View
         {...props}
@@ -33,9 +33,7 @@ export const WidgetCellGroup = observer(
         onClick={() => {
           if (props?.event?.click) {
             formilyStoreEvent(
-              {
-                $form: form,
-              },
+              scope,
               props.event.click
             )
           }
