@@ -23,11 +23,12 @@ demo H5（按 F12 切换设备仿真） <https://miku01.cn/taroifyDemo/index.htm
 ## 项目启动
 
 **依赖安装**
+本项目用了lerna去做monorepo，注意lerna7版本有较大改动
 根目录下
 
 ```bash
-npm i -g yarn lerna ts-node @tarojs/cli@3.5.0-beta.6
-lerna bootstrap
+npm i -g yarn lerna@7 ts-node @tarojs/cli@3.6.8
+yarn
 ```
 
 **物料组件库打包**

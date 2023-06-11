@@ -14,6 +14,9 @@ const createPages = (pages) => {
       inject: 'body',
       chunks: chunk,
       publicPath: './',
+      templateParameters: {
+        'process': JSON.stringify({ env: process.env })
+      }
     })
   })
 }
@@ -41,12 +44,7 @@ export default {
     // Limit the maximum number of chunks
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 10,
-    }),
-    new webpack.DefinePlugin({
-      'process.env.TARO_ENV': '`h5`',
-      '__TARO_FRAMEWORK__': `'react'`,
-      'process.env.demoPath': `'${process.env.demoPath}'`
-    }),
+    })
   ],
   // mode: 'development',
   mode: 'production',

@@ -462,7 +462,7 @@ export default {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
-      '@tarojs/components$': '@tarojs/components/dist-h5/react',
+      '@tarojs/components$': '@tarojs/components/dist-h5/react', // taro3.6及以上为  @tarojs/components/lib/react
       '@tarojs/taro': '@tarojs/taro-h5',
     },
   },

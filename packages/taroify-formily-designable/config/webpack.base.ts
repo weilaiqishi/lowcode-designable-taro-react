@@ -1,6 +1,10 @@
 import path from 'path'
-
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+
+process.env.FRAMEWORK = 'react'
+process.env.TARO_ENV = 'h5'
+process.env.TARO_PLATFORM = 'web'
+process.env.TARO_VERSION = '3.6.8'
 
 export default {
   mode: 'development',
@@ -20,7 +24,8 @@ export default {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
-      '@tarojs/components$': '@tarojs/components/dist-h5/react',
+      '@tarojs/components$': '@tarojs/components/lib/react',
+      // '@tarojs/components$': '@tarojs/components-react',
       '@tarojs/taro': '@tarojs/taro-h5',
       // '@tarojs/router': require.resolve('@tarojs/router'),
       // '@tarojs/runtime': require.resolve('@tarojs/runtime'),
@@ -107,5 +112,5 @@ export default {
         ),
       },
     ],
-  },
+  }
 }
