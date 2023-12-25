@@ -2,7 +2,7 @@ import {
   DataSourceSetter,
   ReactionsSetter,
   ValidatorSetter,
-} from '@designable/formily-setters'
+} from '@pind/designable-formily-setters'
 import { ISchema } from '@formily/json-schema'
 import * as lodash from 'lodash-es'
 

@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
-import { createBehavior, createResource } from '@designable/core'
-import { DnFC, usePrefix } from '@designable/react'
+import { createBehavior, createResource } from '@pind/designable-core'
+import { DnFC, usePrefix } from '@pind/designable-react'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
 import * as lodash from 'lodash-es'
-import { Form as FormilyForm } from 'taroify-formily/src'
+import { Form as FormilyForm } from 'taroify-formily'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'

@@ -1,7 +1,7 @@
 import React from 'react'
-import { createBehavior, createResource } from '@designable/core'
-import { DnFC } from '@designable/react'
-import { Radio as component } from 'taroify-formily/src'
+import { createBehavior, createResource } from '@pind/designable-core'
+import { DnFC } from '@pind/designable-react'
+import { Radio as component } from 'taroify-formily'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'

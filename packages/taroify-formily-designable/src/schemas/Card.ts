@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@designable/core'
+import { GlobalRegistry } from '@pind/designable-core'
 import { ISchema } from '@formily/react'
 
 export const Card: ISchema & { Addition?: ISchema } = {

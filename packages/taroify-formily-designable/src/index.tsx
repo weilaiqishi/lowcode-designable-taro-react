@@ -1,13 +1,13 @@
-//import { Sandbox } from '@designable/react-sandbox'
+//import { Sandbox } from '@pind/designable-react-sandbox'
 import React, { Suspense, useEffect, useMemo, useRef } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { GithubOutlined } from '@ant-design/icons'
 import {
   createBehavior,
   createDesigner,
   createResource,
   GlobalRegistry,
-} from '@designable/core'
+} from '@pind/designable-core'
 import {
   ComponentTreeWidget,
   CompositePanel,
@@ -26,19 +26,17 @@ import {
   ViewToolsWidget,
   Workbench,
   WorkspacePanel,
-} from '@designable/react'
+} from '@pind/designable-react'
 import {
   MonacoInput,
   setNpmCDNRegistry,
   SettingsForm,
-} from '@designable/react-settings-form'
+} from '@pind/designable-react-settings-form'
 import { observer } from '@formily/react'
 import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
 import Taro from '@tarojs/taro'
 import { Button as AntdButton, message, Space } from 'antd'
-import { formilyStoreRegister } from 'taroify-formily/lib'
-
-import 'antd/dist/antd.less'
+import { formilyStoreRegister } from 'taroify-formily'
 
 import testJson from '../../taroify-formily-demo/src/pages/index/event.json'
 import todoList from '../../taroify-formily-demo/src/pages/index/todoList.json'
@@ -266,4 +264,10 @@ const App = () => {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const container = document.getElementById('root')
+if (container) {
+  const root = createRoot(container)
+  root.render(<App />)
+} else {
+  console.error('dom root is non-existent')
+}

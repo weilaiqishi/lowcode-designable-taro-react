@@ -1,12 +1,12 @@
 import React from 'react'
-import { createBehavior } from '@designable/core'
+import { createBehavior } from '@pind/designable-core'
 import {
   DnFC,
   useComponents,
   useDesigner,
   useTreeNode,
-} from '@designable/react'
-import { isArr, isStr } from '@designable/shared'
+} from '@pind/designable-react'
+import { isArr, isStr } from '@pind/designable-shared'
 import { FormPath } from '@formily/core'
 import {
   ArrayField,
@@ -19,7 +19,7 @@ import {
 } from '@formily/react'
 import { toJS } from '@formily/reactive'
 import { each, reduce } from '@formily/shared'
-import { FormItem } from 'taroify-formily/src'
+import { FormItem } from 'taroify-formily'
 
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'

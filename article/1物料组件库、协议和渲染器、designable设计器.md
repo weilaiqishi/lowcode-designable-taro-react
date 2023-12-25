@@ -118,7 +118,7 @@ export default Form
 
 如图所见FormItem的作用就是显示label、必填、校验文案等，并且让表单布局更加美观，我们需要混入Formily能力。
 
-首先介绍 `pickDataProps` 方法，这个方法主要挑选出 `@designable/react` `ComponentTreeWidget` 渲染器给的属性，在设计器中这些属性挂在dom上才能点击选中、拖拉拽。
+首先介绍 `pickDataProps` 方法，这个方法主要挑选出 `@pind/designable-react` `ComponentTreeWidget` 渲染器给的属性，在设计器中这些属性挂在dom上才能点击选中、拖拉拽。
 
 ```ts
 export const pickDataProps = (props: any = {}) => {
@@ -591,8 +591,8 @@ export const CSSStyle: ISchema = {
 
 ```tsx
 import React, { useMemo } from 'react'
-import { createBehavior, createResource } from '@designable/core'
-import { DnFC, usePrefix } from '@designable/react'
+import { createBehavior, createResource } from '@pind/designable-core'
+import { DnFC, usePrefix } from '@pind/designable-react'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
 import * as lodash from 'lodash-es'
@@ -673,8 +673,8 @@ Input组件处理
 
 ```tsx
 import React from 'react'
-import { createBehavior, createResource } from '@designable/core'
-import { DnFC } from '@designable/react'
+import { createBehavior, createResource } from '@pind/designable-core'
+import { DnFC } from '@pind/designable-react'
 import { Input as component } from 'taroify-formily/lib'
 
 import { AllLocales } from '../../locales'
@@ -740,7 +740,7 @@ Input.Resource = createResource(
 
 ```js
 import React, { useMemo } from 'react'
-import { transformToSchema } from '@designable/formily-transformer'
+import { transformToSchema } from '@pind/designable-formily-transformer'
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/react'
 import {

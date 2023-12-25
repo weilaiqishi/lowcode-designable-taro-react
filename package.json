@@ -2,36 +2,76 @@
   "private": true,
   "name": "lowcode-designable-taro-react",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0",
-    "inquirer": "6.5.2",
-    "execa": "^6.1.0",
-
+    "@babel/core": "^7.8.0",
+    "@babel/runtime": "^7.7.7",
+    "@formily/antd-v5": "1.1.9",
+    "@formily/core": "2.3.1",
+    "@formily/json-schema": "2.3.1",
+    "@formily/react": "2.3.1",
+    "@formily/reactive": "2.3.1",
+    "@formily/reactive-react": "2.3.1",
+    "@formily/shared": "2.3.1",
+    "@kimeng/vm": "0.5.0",
+    "@pind/designable-core": "2.0.0-beta.6",
+    "@pind/designable-formily-setters": "2.0.0-beta.6",
+    "@pind/designable-formily-transformer": "2.0.0-beta.6",
+    "@pind/designable-react": "2.0.0-beta.6",
+    "@pind/designable-react-sandbox": "2.0.0-beta.6",
+    "@pind/designable-react-settings-form": "2.0.0-beta.6",
+    "@pind/designable-shared": "2.0.0-beta.6",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "@taroify/core": "0.1.1-alpha.9",
+    "@taroify/icons": "0.1.1-alpha.9",
+    "@tarojs/components": "3.6.20",
+    "@tarojs/helper": "3.6.20",
+    "@tarojs/plugin-framework-react": "3.6.20",
+    "@tarojs/plugin-platform-alipay": "3.6.20",
+    "@tarojs/plugin-platform-h5": "3.6.20",
+    "@tarojs/plugin-platform-jd": "3.6.20",
+    "@tarojs/plugin-platform-qq": "3.6.20",
+    "@tarojs/plugin-platform-swan": "3.6.20",
+    "@tarojs/plugin-platform-tt": "3.6.20",
+    "@tarojs/plugin-platform-weapp": "3.6.20",
+    "@tarojs/react": "3.6.20",
+    "@tarojs/router": "3.6.20",
+    "@tarojs/runtime": "3.6.20",
+    "@tarojs/shared": "3.6.20",
+    "@tarojs/taro": "3.6.20",
+    "@tarojs/taro-h5": "3.6.20",
+    "@tarojs/webpack5-runner": "3.6.20",
+    "@types/react": "^18.2.0",
+    "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
+    "babel-preset-taro": "3.6.20",
+    "classnames": "^2.3.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-taro": "3.5.3",
+    "eslint-config-taro": "3.6.20",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    
+    "execa": "^6.1.0",
+    "fs-extra": "^10.1.0",
+    "inquirer": "6.5.2",
+    "lodash-es": "^4.17.21",
+    "mobx": "4.8.0",
+    "mobx-react": "6.1.4",
+    "patch-package": "^6.4.7",
     "prettier": "^2.6.2",
     "pretty-format": "^24.0.0",
     "pretty-quick": "^3.1.0",
-    "patch-package": "^6.4.7",
-
-    "@rollup/plugin-commonjs": "^22.0.1",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "rollup": "^2.76.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-typescript2": "^0.32.1",
-    "rollup-plugin-visualizer": "^5.6.0",
-
-    "typescript": "^4.7.3",
-    "ts-node": "^10.7.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-refresh": "0.11.0",
+    "stylelint": "^14.4.0",
+    "taro-ui": "^3.1.0-beta.2",
+    "taroify-formily": "workspace:^0.0.6",
+    "ts-node": "^10.7.0",
+    "typescript": "^5.3.3"
   },
   "config": {
     "commitizen": {
@@ -43,9 +83,12 @@
       "packages/*"
     ]
   },
-  "scripts": {
-    "postinstall": "patch-package",
-    "bootstrap": "lerna bootstrap",
-    "postbootstrap": "patch-package"
+  "dependencies": {
+    "classname": "^0.0.0"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@taroify/core@0.1.1-alpha.9": "patches/@taroify__core@0.1.1-alpha.9.patch"
+    }
   }
 }

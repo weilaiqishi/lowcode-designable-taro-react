@@ -12,8 +12,8 @@ async function run () {
       type: 'rawlist',
       name: 'action',
       message: '选择动作-Select Action',
-      default: 'webpack-dev-server',
-      choices: ['webpack-dev-server', 'webpack build']
+      default: 'serve',
+      choices: ['serve', 'build']
     }
   ]).then((res) => {
     const { action } = res
@@ -31,8 +31,8 @@ async function run () {
         // eslint-disable-next-line no-undef
         console.log(action, demoPath)
         const actionMap = {
-          'webpack-dev-server': 'webpack-dev-server --config config/webpack.dev.ts',
-          'webpack build': 'npm run build'
+          'serve': 'npm run serve',
+          'build': 'npm run build'
         }
         // eslint-disable-next-line no-undef
         process.env.demoPath = demoPath

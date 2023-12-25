@@ -1,60 +1,11 @@
 {
   "name": "taroify-formily",
   "version": "0.0.6",
-  "module": "dist/index.esm.js",
-  "main": "dist/index.js",
-  "source": "src/index.ts",
-  "types": "lib/index.d.ts",
+  "module": "src",
+  "main": "src",
+  "source": "src",
   "sideEffects": [
     "*.scss",
     "*.css"
-  ],
-  "scripts": {
-    "build": "rimraf -rf lib dist && yarn run build:rollup && yarn run build:lib",
-    "build:lib": "tsc --project ./tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js",
-    "dev:lib": "tsc --watch --project ./tsconfig.build.json",
-    "dev:rollup": "rollup --watch --config ./config/rollup.config.js"
-  },
-  "dependencies": {
-    "@taroify/core": "0.1.0-alpha.1",
-    "@taroify/icons": "0.1.0-alpha.1",
-    "fs-extra": "^10.1.0"
-  },
-  "devDependencies": {
-    "@kimeng/vm": "0.4.0",
-    "@tarojs/components": "3.6.8",
-    "@tarojs/react": "3.6.8",
-    "@tarojs/taro": "3.6.8",
-    "@types/classnames": "^2.2.9",
-    "@types/node": "^17.0.15",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.20.0",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-taro": "3.6.8",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.14.2",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.6.2",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
-  },
-  "peerDependencies": {
-    "@formily/core": ">2",
-    "@formily/react": ">2",
-    "@taroify/core": ">=0.1.0-alpha.1",
-    "@tarojs/components": ">=3",
-    "@tarojs/react": ">=3",
-    "classnames": "^2.2.6",
-    "react": ">=17",
-    "react-dom": ">=17"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+  ]
 }

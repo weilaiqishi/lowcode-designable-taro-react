@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
-import { createBehavior, createResource, TreeNode } from '@designable/core'
+import { createBehavior, createResource, TreeNode } from '@pind/designable-core'
 import {
   DnFC,
   DroppableWidget,
   TreeNodeWidget,
   useNodeIdProps,
   useTreeNode,
-} from '@designable/react'
-import { ArrayBase } from '@formily/antd'
+} from '@pind/designable-react'
+import { ArrayBase } from '@formily/antd-v5'
 import { observer } from '@formily/react'
 import cls from 'classnames'
 

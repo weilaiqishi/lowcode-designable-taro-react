@@ -1,11 +1,12 @@
 import { Schema } from '@formily/json-schema'
 import { useField } from '@formily/react'
 import { autorun, observable, untracked } from '@formily/reactive'
-import vm from '@kimeng/vm'
 import Taro from '@tarojs/taro'
 import * as lodash from 'lodash-es'
 
 import ArrayBase from './ArrayBase'
+
+const vm = process.env.TARO_ENV !== 'h5' ? require('@kimeng/vm').default : {}
 
 // --- 小工具
 // lodash.throttle 在小程序里不能正常获得时间
@@ -31,7 +32,9 @@ const pxToRem = (str) => {
 }
 function transitionPx(origin, mode: transitionPxMode = 'rem') {
   for (const s in origin) {
-    if (typeof origin[s] !== 'string') { continue }
+    if (typeof origin[s] !== 'string') {
+      continue
+    }
     if (mode === 'rem') {
       origin[s] = pxToRem(origin[s])
     } else {
@@ -92,15 +95,10 @@ export function formStyleTransitionPx(
   form.hasTransition = true
 }
 
-
-
 // --- Schema中JS表达式执行相关
 function baseCompiler(expression, scope, isStatement?) {
   if (isStatement) {
-    new Function(
-      '$root',
-      'with($root) { '.concat(expression, '; }')
-    )(scope)
+    new Function('$root', 'with($root) { '.concat(expression, '; }'))(scope)
     return
   }
   return new Function(
@@ -108,11 +106,11 @@ function baseCompiler(expression, scope, isStatement?) {
     'with($root) { return ('.concat(expression, '); }')
   )(scope)
 }
-function myCompiler(expression, scope, isStatement?) {
+function miniCompiler(expression, scope, isStatement?) {
   if (scope === void 0) {
     scope = {}
   }
-  const scopeKey = Object.keys(scope).filter(str => str.includes('$'))
+  const scopeKey = Object.keys(scope).filter((str) => str.includes('$'))
   scopeKey.forEach((key) => {
     const reg = new RegExp(`\\${key}`, 'g')
     expression = expression.replace(reg, 'scope.' + key)
@@ -132,8 +130,10 @@ function myCompiler(expression, scope, isStatement?) {
 }
 export function formilyCompilerInMiniRegister() {
   // json-schema注册兼容小程序的解析器
-  Schema.registerCompiler(myCompiler)
-  shared.useMyCompiler = true
+  if (process.env.TARO_ENV !== 'h5' ) {
+    Schema.registerCompiler(miniCompiler)
+    shared.compiler = miniCompiler
+  }
 }
 
 // --- 事件系统相关
@@ -142,10 +142,7 @@ const shared = {
     Taro,
   },
   PC: false,
-  useMyCompiler: false,
-  getCompiler() {
-    return this.useMyCompiler ? myCompiler : baseCompiler
-  }
+  compiler: baseCompiler,
 }
 type typeScope = Partial<{
   $dependencies
@@ -190,7 +187,7 @@ export function formilyStoreRunFunction(
   if (path === 'runStatement') {
     const expression = propsOperatorsArray[0]
     if (expression) {
-      shared.getCompiler()(expression, scope, true)
+      shared.compiler(expression, scope, true)
     }
     return
   }
@@ -215,7 +212,7 @@ export function formilyStoreRunFunction(
   let propsArray: any[] = []
   try {
     propsArray = propsOperatorsArray.map((expression) => {
-      return shared.getCompiler()(expression, scope)
+      return shared.compiler(expression, scope)
     })
   } catch (err) {
     console.log('formilyStoreRunFunction -> parsePropsJSON err -> ', err)
@@ -227,10 +224,7 @@ export function formilyStoreRunFunction(
       : fn(...propsArray, ...otherProps)
   }
 }
-export const formilyStoreRunFunctionThrottle = throttle(
-  formilyStoreRunFunction,
-  200
-)
+
 export function useScope() {
   const field = useField()
   const $array = ArrayBase.useArray?.()
@@ -240,13 +234,14 @@ export function useScope() {
     $self: field,
     $form: field.form,
     $values: field.form.values,
-    $observable: (target: any, deps?: any[]) => autorun.memo(() => observable(target), deps),
+    $observable: (target: any, deps?: any[]) =>
+      autorun.memo(() => observable(target), deps),
     $effect: (props: any) => field.setComponentProps(props),
     $memo: autorun.memo,
     $props: (props: any) => field.setComponentProps(props),
     $array,
     $index,
-    $record
+    $record,
   }
   return scope
 }
@@ -259,7 +254,7 @@ export const formilyStoreEvent = function (
   if (!api && !path) {
     return
   }
-  formilyStoreRunFunctionThrottle(
+  formilyStoreRunFunction(
     scope,
     path || api,
     propsOperatorsArray,
@@ -272,4 +267,3 @@ export function useInPc() {
 export function formilyStoreRegister(obj) {
   shared.formilyStore = obj
 }
-

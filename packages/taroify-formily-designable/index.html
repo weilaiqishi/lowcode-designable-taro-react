@@ -12,7 +12,12 @@
   <div id="root">
   </div>
   <script>
-    window.process = <%= process %>
+    window.process = {
+      env: {
+        TARO_ENV: 'h5',
+        TARO_PLATFORM: 'web'
+      }
+    }
     window.__TARO_FRAMEWORK__ = 'react'
     window.DEPRECATED_ADAPTER_COMPONENT = false
   </script>

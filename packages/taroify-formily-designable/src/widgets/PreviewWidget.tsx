@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react'
-import { transformToSchema } from '@designable/formily-transformer'
+import { transformToSchema } from '@pind/designable-formily-transformer'
 import { createForm } from '@formily/core'
-import { Form, SchemaField } from 'taroify-formily/lib'
+import { Form, SchemaField } from 'taroify-formily'
 
 export interface IPreviewWidgetProps {
   tree: any
 }
+
+console.log(SchemaField)
 
 export const PreviewWidget: React.FC<IPreviewWidgetProps> = (props) => {
   const { form: formProps, schema } = transformToSchema(props.tree)

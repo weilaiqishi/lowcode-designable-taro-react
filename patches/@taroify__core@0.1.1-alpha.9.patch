@@ -1,0 +1,13 @@
+diff --git "a/C:/Users/\345\220\264\345\205\213\351\223\255/AppData/Local/Temp/92531a2f3827a9dbcf03e719968c7519/source/index.scss" "b/C:/Users/\345\220\264\345\205\213\351\223\255/AppData/Local/Temp/92531a2f3827a9dbcf03e719968c7519/user/index.scss"
+index 782cfeb4017dc60c9f466d60849af3849c205c8e..7d5245c88455e702776f09101eba121ba3a22e2c 100644
+--- "a/C:/Users/\345\220\264\345\205\213\351\223\255/AppData/Local/Temp/92531a2f3827a9dbcf03e719968c7519/source/index.scss"
++++ "b/C:/Users/\345\220\264\345\205\213\351\223\255/AppData/Local/Temp/92531a2f3827a9dbcf03e719968c7519/user/index.scss"
+@@ -22,7 +22,7 @@
+ @import "./checkbox";
+ @import "./input";
+ @import "./form";
+-@import "./number-keyboard";
++// @import "./number-keyboard";
+ @import "./password-input";
+ @import "./picker";
+ @import "./radio";

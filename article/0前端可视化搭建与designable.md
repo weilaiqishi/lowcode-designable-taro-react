@@ -25,8 +25,8 @@ formily表单设计器，就是基于designable扩展出来的。
 
 平时我的工作任务主要小程序开发，接下来文章会去介绍怎么开发 **Taro小程序前端页面可视化搭建工具**
 
-> - 目前 designable 1.x版本非稳定正式版本，2.0 版本可能要2022年7月中旬发布<https://github.com/alibaba/designable/discussions/240>
-> - 目前没有文档，可以先看一些非官方文章或视频教程
+> - 目前 designable 不维护了，这个fork @pind/designable 功能更新一点
+> - 没有文档，可以看一些非官方文章或视频教程
 > - [表单设计器开发指南](https://formilyjs.org/zh-CN/guide/form-builder)
 > - [「表单设计器开发指南」的内容补充*](https://www.yuque.com/xjchenhao/development/gt1k7i)
 > - [Designable 应用和源码浅析](https://zhuanlan.zhihu.com/p/431263711)
@@ -164,8 +164,8 @@ export default Input
 ```js
 import React from 'react'
 import { Input as FormilyInput } from '@formily/antd'
-import { createBehavior, createResource } from '@designable/core'
-import { DnFC } from '@designable/react'
+import { createBehavior, createResource } from '@pind/designable-core'
+import { DnFC } from '@pind/designable-react'
 import { createFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
@@ -311,8 +311,8 @@ import {
     ...
 } from '@formily/antd'
 import { Card, Slider, Rate } from 'antd' // 一些简单的布局组件或输入组件，即使不适配也能用起来
-import { TreeNode } from '@designable/core'
-import { transformToSchema } from '@designable/formily-transformer'
+import { TreeNode } from '@pind/designable-core'
+import { transformToSchema } from '@pind/designable-formily-transformer'
 
 const SchemaField = createSchemaField({
   components: {
@@ -373,7 +373,7 @@ export const PreviewWidget: React.FC<IPreviewWidgetProps> = (props) => {
             <ViewportPanel style={{ height: '100%' }}>
               <ViewPanel type="DESIGNABLE">
                 {() => (
-                  <ComponentTreeWidget // 组件树编辑区 使用了 @designable/react 渲染器，意思就是支持了拖拉拽，但是没有了formily MVVM能力
+                  <ComponentTreeWidget // 组件树编辑区 使用了 @pind/designable-react 渲染器，意思就是支持了拖拉拽，但是没有了formily MVVM能力
                     components={{
                       Form,
                       Field,

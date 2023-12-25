@@ -1,4 +1,4 @@
-import { createLocales } from '@designable/core'
+import { createLocales } from '@pind/designable-core'
 import { Card } from './Card'
 
 export const ArrayCards = createLocales(Card, {
