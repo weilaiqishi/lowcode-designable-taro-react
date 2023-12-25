@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "lowcode-designable-taro-react",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.8.0",
     "@babel/runtime": "^7.7.7",
     "@formily/antd-v5": "1.1.9",
@@ -11,7 +11,7 @@
     "@formily/reactive": "2.3.1",
     "@formily/reactive-react": "2.3.1",
     "@formily/shared": "2.3.1",
-    "@kimeng/vm": "0.5.0",
+    "@kimeng/vm": "0.6.0",
     "@pind/designable-core": "2.0.0-beta.6",
     "@pind/designable-formily-setters": "2.0.0-beta.6",
     "@pind/designable-formily-transformer": "2.0.0-beta.6",
@@ -44,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "babel-preset-taro": "3.6.20",
+    "classname": "^0.0.0",
     "classnames": "^2.3.2",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
@@ -82,9 +83,6 @@
     "packages": [
       "packages/*"
     ]
-  },
-  "dependencies": {
-    "classname": "^0.0.0"
   },
   "pnpm": {
     "patchedDependencies": {

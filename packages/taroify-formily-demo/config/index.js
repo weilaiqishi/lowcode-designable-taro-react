@@ -13,6 +13,7 @@ const config = {
   outputRoot: 'dist',
   plugins: [],
   defineConstants: {
+    'process.env.BABEL_TYPES_8_BREAKING': 'false'
   },
   copy: {
     patterns: [

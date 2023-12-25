@@ -1,12 +1,11 @@
 import { Schema } from '@formily/json-schema'
 import { useField } from '@formily/react'
 import { autorun, observable, untracked } from '@formily/reactive'
+import vm from '@kimeng/vm/src/vm'
 import Taro from '@tarojs/taro'
 import * as lodash from 'lodash-es'
 
 import ArrayBase from './ArrayBase'
-
-const vm = process.env.TARO_ENV !== 'h5' ? require('@kimeng/vm').default : {}
 
 // --- 小工具
 // lodash.throttle 在小程序里不能正常获得时间
@@ -130,10 +129,8 @@ function miniCompiler(expression, scope, isStatement?) {
 }
 export function formilyCompilerInMiniRegister() {
   // json-schema注册兼容小程序的解析器
-  if (process.env.TARO_ENV !== 'h5' ) {
-    Schema.registerCompiler(miniCompiler)
-    shared.compiler = miniCompiler
-  }
+  Schema.registerCompiler(miniCompiler)
+  shared.compiler = miniCompiler
 }
 
 // --- 事件系统相关

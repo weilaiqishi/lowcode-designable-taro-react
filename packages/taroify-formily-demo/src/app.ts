@@ -2,7 +2,7 @@ import { Component } from 'react'
 
 import '@taroify/icons/index.scss'
 import '@taroify/core/index.scss'
-import 'taroify-formily/style/index.scss'
+import 'taroify-formily/src/style/index.scss'
 import './app.scss'
 
 class App extends Component {

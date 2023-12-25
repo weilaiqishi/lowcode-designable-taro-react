@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@kimeng/vm": "0.5.0",
+    "@kimeng/vm": "0.6.0",
     "@rspack/cli": "^0.4.3",
     "@rspack/core": "^0.4.3",
     "@taroify/core": "0.1.1-alpha.9",
