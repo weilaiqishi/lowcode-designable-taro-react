@@ -236,7 +236,6 @@ const App = () => {
               </ViewPanel>
               <ViewPanel type="JSONTREE" scrollable={false}>
                 {(tree, onChange) => {
-                  console.log(tree)
                   return <SchemaEditorWidget tree={tree} onChange={onChange} />
                 }}
               </ViewPanel>

@@ -32,8 +32,6 @@ export const IconSelect = {
   },
 }
 
-console.log(AllSchemas)
-
 export const imageDesignableConfig = {
   locales: {
     mode: '图片模式',
