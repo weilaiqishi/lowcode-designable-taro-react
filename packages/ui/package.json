@@ -1,0 +1,11 @@
+{
+  "name": "ui-nutui-react-taro",
+  "version": "0.0.6",
+  "module": "src",
+  "main": "src",
+  "source": "src",
+  "sideEffects": [
+    "*.scss",
+    "*.css"
+  ]
+}

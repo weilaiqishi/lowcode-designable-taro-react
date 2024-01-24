@@ -1,10 +1,39 @@
 {
+  "name": "mobile-nutui-react-taro",
+  "version": "0.0.6",
   "private": true,
-  "name": "lowcode-designable-taro-react",
+  "description": "",
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "sass"
+  },
+  "module": "src",
+  "main": "src",
+  "source": "src",
+  "scripts": {
+    "build:weapp": "taro build --type weapp",
+    "build:swan": "taro build --type swan",
+    "build:alipay": "taro build --type alipay",
+    "build:tt": "taro build --type tt",
+    "build:h5": "taro build --type h5",
+    "build:rn": "taro build --type rn",
+    "build:qq": "taro build --type qq",
+    "build:jd": "taro build --type jd",
+    "build:quickapp": "taro build --type quickapp",
+    "dev:weapp": "npm run build:weapp -- --watch",
+    "dev:swan": "npm run build:swan -- --watch",
+    "dev:alipay": "npm run build:alipay -- --watch",
+    "dev:tt": "npm run build:tt -- --watch",
+    "dev:h5": "npm run build:h5 -- --watch",
+    "dev:rn": "npm run build:rn -- --watch",
+    "dev:qq": "npm run build:qq -- --watch",
+    "dev:jd": "npm run build:jd -- --watch",
+    "dev:quickapp": "npm run build:quickapp -- --watch"
+  },
+  "author": "",
   "dependencies": {
-    "@babel/core": "^7.8.0",
     "@babel/runtime": "^7.7.7",
-    "@formily/antd-v5": "1.1.9",
     "@formily/core": "2.3.1",
     "@formily/json-schema": "2.3.1",
     "@formily/react": "2.3.1",
@@ -12,15 +41,6 @@
     "@formily/reactive-react": "2.3.1",
     "@formily/shared": "2.3.1",
     "@kimeng/vm": "0.6.0",
-    "@nutui/icons-react-taro": "^1.0.0",
-    "@nutui/nutui-react-taro": "^2.3.4",
-    "@pind/designable-core": "2.0.0-beta.6",
-    "@pind/designable-formily-setters": "2.0.0-beta.6",
-    "@pind/designable-formily-transformer": "2.0.0-beta.6",
-    "@pind/designable-react": "2.0.0-beta.6",
-    "@pind/designable-react-sandbox": "2.0.0-beta.6",
-    "@pind/designable-react-settings-form": "2.0.0-beta.6",
-    "@pind/designable-shared": "2.0.0-beta.6",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@taroify/core": "0.1.1-alpha.9",
     "@taroify/icons": "0.1.1-alpha.9",
@@ -41,14 +61,10 @@
     "@tarojs/taro": "3.6.20",
     "@tarojs/taro-h5": "3.6.20",
     "@tarojs/webpack5-runner": "3.6.20",
-    "@types/react": "^18.2.0",
-    "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
-    "babel-preset-taro": "3.6.20",
     "classname": "^0.0.0",
     "classnames": "^2.3.2",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-taro": "3.6.20",
@@ -57,37 +73,23 @@
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
-    "inquirer": "6.5.2",
     "lodash-es": "^4.17.21",
     "mobx": "4.8.0",
     "mobx-react": "6.1.4",
-    "patch-package": "^6.4.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ui-nutui-react-taro": "workspace:^0.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@types/react": "^18.2.0",
+    "@types/webpack-env": "^1.13.6",
+    "babel-preset-taro": "3.6.20",
     "prettier": "^2.6.2",
     "pretty-format": "^24.0.0",
     "pretty-quick": "^3.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-refresh": "0.11.0",
-    "stylelint": "^14.4.0",
-    "ts-node": "^10.7.0",
-    "typescript": "^5.3.3",
-    "ui-nutui-react-taro": "workspace:^"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "@taroify/core@0.1.1-alpha.9": "patches/@taroify__core@0.1.1-alpha.9.patch"
-    }
+    "stylelint": "^14.4.0"
   }
 }
