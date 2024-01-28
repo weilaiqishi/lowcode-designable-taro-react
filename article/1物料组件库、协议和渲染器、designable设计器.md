@@ -812,7 +812,7 @@ const App = () => {
               <ViewToolsWidget use={['DESIGNABLE', 'JSONTREE', 'PREVIEW']} />
             </ToolbarPanel>
             <ViewportPanel
-              style={{ minHeight: '100%', width: '750px', overflow: 'auto' }}
+              style={{ minHeight: '100%', width: '750px', overflow: 'overlay' }}
             >
               <ViewPanel type="DESIGNABLE">
                 {() => (

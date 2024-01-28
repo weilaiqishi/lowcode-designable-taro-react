@@ -47,7 +47,7 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
   return (
     <div
       style={{
-        overflow: props.scrollable ? 'auto' : 'hidden',
+        overflow: props.scrollable ? 'overlay' : 'hidden',
         height: '100%',
         cursor: 'auto',
         userSelect: 'text',

@@ -157,7 +157,7 @@ export const ResponsiveSimulator: React.FC<IResponsiveSimulatorProps> =
             left: 0,
             height: '100%',
             width: '100%',
-            overflow: 'auto',
+            overflow: 'overlay',
           }}
         >
           <div

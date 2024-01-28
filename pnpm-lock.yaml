@@ -49,27 +49,6 @@ importers:
       '@nutui/nutui-react-taro':
         specifier: ^2.3.4
         version: 2.3.4(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-core':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-formily-setters':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/antd-v5@1.1.9)(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/react@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(@formily/shared@2.3.1)(@types/react-dom@18.2.18)(@types/react@18.2.45)(antd@5.12.5)(dayjs@1.11.10)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@pind/designable-formily-transformer':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-react':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-react-sandbox':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-react-settings-form':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/antd-v5@1.1.9)(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/react@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(@formily/shared@2.3.1)(@types/react-dom@18.2.18)(@types/react@18.2.45)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@pind/designable-shared':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: ^0.5.11
         version: 0.5.11(react-refresh@0.11.0)(webpack@5.89.0)
@@ -90,25 +69,25 @@ importers:
         version: 3.6.20(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
       '@tarojs/plugin-platform-alipay':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-h5':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-jd':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-qq':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-swan':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-tt':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-weapp':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/react':
         specifier: 3.6.20
         version: 3.6.20(react@18.2.0)
@@ -232,9 +211,33 @@ importers:
 
   packages/editor:
     dependencies:
+      '@babel/parser':
+        specifier: ^7.23.9
+        version: 7.23.9
+      '@formily/grid':
+        specifier: ^2.3.1
+        version: 2.3.1(typescript@5.3.3)
       '@kimeng/vm':
         specifier: 0.6.0
         version: 0.6.0(@babel/core@7.23.6)(typescript@5.3.3)(webpack@5.89.0)
+      '@monaco-editor/loader':
+        specifier: ^1.4.0
+        version: 1.4.0(monaco-editor@0.34.1)
+      '@monaco-editor/react':
+        specifier: ^4.6.0
+        version: 4.6.0(monaco-editor@0.34.1)(react-dom@18.2.0)(react@18.2.0)
+      '@pind/designable-core':
+        specifier: 2.0.0-beta.6
+        version: 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
+      '@pind/designable-formily-transformer':
+        specifier: 2.0.0-beta.6
+        version: 2.0.0-beta.6(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
+      '@pind/designable-shared':
+        specifier: 2.0.0-beta.6
+        version: 2.0.0-beta.6
+      '@rc-component/mini-decimal':
+        specifier: ^1.1.0
+        version: 1.1.0
       '@rspack/cli':
         specifier: ^0.5.1
         version: 0.5.1(@rspack/core@0.5.1)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4)
@@ -289,6 +292,9 @@ importers:
       dateformat:
         specifier: ^4.6.3
         version: 4.6.3
+      dayjs:
+        specifier: ^1.11.10
+        version: 1.11.10
       less:
         specifier: ^4.2
         version: 4.2.0
@@ -307,6 +313,9 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      react-color:
+        specifier: ^2.19.3
+        version: 2.19.3(react@18.2.0)
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
@@ -478,25 +487,25 @@ importers:
         version: 3.6.20(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
       '@tarojs/plugin-platform-alipay':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-h5':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-jd':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-qq':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-swan':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-tt':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-weapp':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/react':
         specifier: 3.6.20
         version: 3.6.20(react@18.2.0)
@@ -693,7 +702,7 @@ packages:
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.6)
       '@babel/helpers': 7.23.6
-      '@babel/parser': 7.23.6
+      '@babel/parser': 7.23.9
       '@babel/template': 7.22.15
       '@babel/traverse': 7.23.6
       '@babel/types': 7.23.6
@@ -921,8 +930,8 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
 
-  /@babel/parser@7.23.6:
-    resolution: {integrity: sha512-Z2uID7YJ7oNvAI20O9X0bblw7Qqs8Q2hFy0R9tAfnfLkp5MW0UH9eUvnDSnFwKZ0AvgS1ucqR4KzvVHgnke1VQ==}
+  /@babel/parser@7.23.9:
+    resolution: {integrity: sha512-9tcKgqKbs3xGJ+NtKF2ndOBBLVwPjl1SHxPQkd36r3Dlirw3xWUeGaTbqr7uGZcTaxkVNwc+03SVP7aCdWrTlA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
@@ -2011,7 +2020,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.23.5
-      '@babel/parser': 7.23.6
+      '@babel/parser': 7.23.9
       '@babel/types': 7.23.6
 
   /@babel/traverse@7.23.6:
@@ -2024,7 +2033,7 @@ packages:
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.23.6
+      '@babel/parser': 7.23.9
       '@babel/types': 7.23.6
       debug: 4.3.4
       globals: 11.12.0
@@ -2795,7 +2804,7 @@ packages:
   /@kimeng/vm@0.6.0(@babel/core@7.23.6)(typescript@5.3.3)(webpack@5.89.0):
     resolution: {integrity: sha512-leqaLgV3Q+1B6kTdG/6Qu4p8byN4RLCtwBpXJ8ToS3pN3xVoginT130MY3rXZ53CuZ2zOf0MBKOuF7xK9izVBA==}
     dependencies:
-      '@babel/parser': 7.23.6
+      '@babel/parser': 7.23.9
       '@babel/plugin-transform-modules-commonjs': 7.23.3(@babel/core@7.23.6)
       '@babel/plugin-transform-strict-mode': 7.23.3(@babel/core@7.23.6)
       '@babel/types': 7.23.6
@@ -2924,52 +2933,6 @@ packages:
       '@pind/designable-shared': 2.0.0-beta.6
     dev: false
 
-  /@pind/designable-formily-setters@2.0.0-beta.6(@formily/antd-v5@1.1.9)(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/react@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(@formily/shared@2.3.1)(@types/react-dom@18.2.18)(@types/react@18.2.45)(antd@5.12.5)(dayjs@1.11.10)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-xG+Qh+ZESuojGY16aieyLYPUsPXTc63FG841sAFCdi320su8ouu+RRtaTWapcPSgVYcW4m87zMe+zmMqjDZ3Xw==}
-    engines: {npm: '>=3.0.0'}
-    peerDependencies:
-      '@formily/antd-v5': ^1.0.1-rc.1
-      '@formily/core': ^2.2.14
-      '@formily/json-schema': ^2.2.14
-      '@formily/react': ^2.2.14
-      '@formily/reactive': ^2.2.14
-      '@formily/reactive-react': ^2.2.14
-      '@formily/shared': ^2.2.14
-      '@types/react': ^18.0.0
-      '@types/react-dom': ^18.0.0
-      antd: ^5.0.0
-      react: ^18.0.0
-      react-dom: ^18.0.0
-      react-is: ^18.0.0
-    dependencies:
-      '@formily/antd-v5': 1.1.9(@types/react-dom@18.2.18)(@types/react@18.2.45)(antd@5.12.5)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@formily/core': 2.3.1
-      '@formily/json-schema': 2.3.1(typescript@5.3.3)
-      '@formily/react': 2.3.1(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@formily/reactive': 2.3.1
-      '@formily/reactive-react': 2.3.1(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
-      '@formily/shared': 2.3.1
-      '@pind/designable-core': 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-formily-transformer': 2.0.0-beta.6(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-react': 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-react-settings-form': 2.0.0-beta.6(@formily/antd-v5@1.1.9)(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/react@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(@formily/shared@2.3.1)(@types/react-dom@18.2.18)(@types/react@18.2.45)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@pind/designable-shared': 2.0.0-beta.6
-      '@types/react': 18.2.45
-      '@types/react-dom': 18.2.18
-      antd: 5.12.5(react-dom@18.2.0)(react@18.2.0)
-      classnames: 2.3.2
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-is: 18.2.0
-    transitivePeerDependencies:
-      - '@formily/path'
-      - date-fns
-      - dayjs
-      - luxon
-      - moment
-      - typescript
-    dev: false
-
   /@pind/designable-formily-transformer@2.0.0-beta.6(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1):
     resolution: {integrity: sha512-/ZF3Tb7g3aWTnZhtqXaKxEDOE2JMBaR4sxRQGKokq0QuqFD1sVo2OVD+EzOVMzaiyyVM28ns2ZlYR1fozdECaQ==}
     engines: {npm: '>=3.0.0'}
@@ -2983,99 +2946,6 @@ packages:
       '@pind/designable-shared': 2.0.0-beta.6
     transitivePeerDependencies:
       - '@formily/path'
-    dev: false
-
-  /@pind/designable-react-sandbox@2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-/U5u4OXH3ogPt1ZBEMRGtHiJo0WiILM48+7bMKu5ed9SOKHwzKTk7mwtGx0di5CZXGj1K7RgF/fnZ3Rv6xp+aA==}
-    engines: {npm: '>=3.0.0'}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    dependencies:
-      '@pind/designable-react': 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-shared': 2.0.0-beta.6
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - '@formily/json-schema'
-      - '@formily/path'
-      - '@formily/reactive'
-      - '@formily/reactive-react'
-      - date-fns
-      - luxon
-      - moment
-    dev: false
-
-  /@pind/designable-react-settings-form@2.0.0-beta.6(@formily/antd-v5@1.1.9)(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/react@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(@formily/shared@2.3.1)(@types/react-dom@18.2.18)(@types/react@18.2.45)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-Fn3WAS5jKCBNXawHgOF/EIoVTSbHDJNGNwU2X81Cim3lVsKr1DqSQrmAOUlAKw5bqmEhgDBW7r2xulA7ztVL5A==}
-    engines: {npm: '>=3.0.0'}
-    peerDependencies:
-      '@formily/antd-v5': ^1.0.1-rc.1
-      '@formily/core': ^2.2.14
-      '@formily/react': ^2.2.14
-      '@formily/reactive': ^2.2.14
-      '@formily/reactive-react': ^2.2.14
-      '@formily/shared': ^2.2.14
-      '@types/react': ^18.0.0
-      '@types/react-dom': ^18.0.0
-      dayjs: ^1.11.7
-      react: ^18.0.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@babel/parser': 7.23.6
-      '@formily/antd-v5': 1.1.9(@types/react-dom@18.2.18)(@types/react@18.2.45)(antd@5.12.5)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@formily/core': 2.3.1
-      '@formily/grid': 2.3.1(typescript@5.3.3)
-      '@formily/react': 2.3.1(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@5.3.3)
-      '@formily/reactive': 2.3.1
-      '@formily/reactive-react': 2.3.1(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
-      '@formily/shared': 2.3.1
-      '@monaco-editor/loader': 1.4.0(monaco-editor@0.34.1)
-      '@monaco-editor/react': 4.6.0(monaco-editor@0.34.1)(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-core': 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-react': 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-shared': 2.0.0-beta.6
-      '@types/react': 18.2.45
-      '@types/react-dom': 18.2.18
-      antd: 5.12.5(react-dom@18.2.0)(react@18.2.0)
-      classnames: 2.3.2
-      dayjs: 1.11.10
-      monaco-editor: 0.34.1
-      prettier: 2.8.8
-      react: 18.2.0
-      react-color: 2.19.3(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - '@formily/json-schema'
-      - '@formily/path'
-      - date-fns
-      - luxon
-      - moment
-      - typescript
-    dev: false
-
-  /@pind/designable-react@2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)(@formily/reactive-react@2.3.1)(@formily/reactive@2.3.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-+A214FlVRGkz5z216Zc9J+T7HAyZO4qSXtaHBg2osDB7Q7wTEm+LMIxTUXZ6Kjr6O2faQbxh99q6Qq7yRgXeoA==}
-    engines: {npm: '>=3.0.0'}
-    peerDependencies:
-      '@formily/reactive': ^2.2.14
-      '@formily/reactive-react': ^2.2.14
-    dependencies:
-      '@formily/reactive': 2.3.1
-      '@formily/reactive-react': 2.3.1(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)
-      '@pind/designable-core': 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-shared': 2.0.0-beta.6
-      antd: 5.12.5(react-dom@18.2.0)(react@18.2.0)
-      classnames: 2.3.2
-      dateformat: 4.6.3
-    transitivePeerDependencies:
-      - '@formily/json-schema'
-      - '@formily/path'
-      - date-fns
-      - luxon
-      - moment
-      - react
-      - react-dom
     dev: false
 
   /@pind/designable-shared@2.0.0-beta.6:
@@ -3715,7 +3585,7 @@ packages:
       - '@types/webpack-dev-server'
     dev: false
 
-  /@tarojs/components-react@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/components-react@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-9UO1y7ADuv1NH6W8Hc6asJyCfxbK2ri6wvPQABgTbgb3+QTfg2CSTkTeobKiXf4dzb1S7vesQfoMHUdbp44Exw==}
     dependencies:
       '@babel/runtime': 7.23.6
@@ -3732,6 +3602,7 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - vue
     dev: false
 
@@ -3771,7 +3642,7 @@ packages:
     resolution: {integrity: sha512-sKsvv//FR2rfKfg2P+geMc2f69kSSgLpSr3e0B1CnGdzfI9CROVt2SKGo4jcrDVpDuRMbitfX4HsaMalOdzRfQ==}
     dependencies:
       '@babel/core': 7.23.6
-      '@babel/parser': 7.23.6
+      '@babel/parser': 7.23.9
       '@babel/plugin-proposal-decorators': 7.23.6(@babel/core@7.23.6)
       '@babel/plugin-proposal-object-rest-spread': 7.20.7(@babel/core@7.23.6)
       '@babel/plugin-transform-runtime': 7.23.6(@babel/core@7.23.6)
@@ -3842,7 +3713,7 @@ packages:
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-alipay@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-alipay@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-mQ5GQfKc+PfuCwkhW8BpXSBx5IGOAFqna/ZphJGM+M38HlPOOPh7z7O4KKfBwK2p2hnIIJF/ny1bXUsBn7YA0A==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3855,15 +3726,16 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-h5@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-h5@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-vbETmGr1y2c+1LIN9PJHSiIGksSAo8MwAgnELY0steppIGnBo/PAtFOFJad3ndSxYFAO8SNFoDpbdWmvG7Pi1w==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/components-react': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/components-react': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/router': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/service': 3.6.20(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/shared': 3.6.20
@@ -3879,6 +3751,7 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
@@ -3898,10 +3771,10 @@ packages:
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-qq@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-qq@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-xWaMpHWG1nt4IZVD3XSQYqutpwm2FdRp9dV0yMLn9i1ULwMaao2325b+ZftkjLDWxxF+Kq7VNtcGgBK3T/uPTQ==}
     dependencies:
-      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/service': 3.6.20(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/shared': 3.6.20
     transitivePeerDependencies:
@@ -3911,11 +3784,12 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-swan@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-swan@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-1PoJR69E0UjOFj3KiETK3qc93LvDCme0inLsyx5/RIoLjBGuBuAclJtGWNjFClj9WNWKNwooh97lpuyD9OcMzw==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3928,11 +3802,12 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-tt@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-tt@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-/821/9MaMnCy1j6OGI8srVDWqjlaNSH8EuERojBYFCbEaPbfQCZr+85BEHIO/T2Ijq12Wl4IgftgkGLbQFn3LQ==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3945,11 +3820,12 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-weapp@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-weapp@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-ryxsbsAmULe58+2yZ/qg7tjrKqjhlCxQShmtzXrPRQyO7vUH1L5lgT5gWUdnYbTX8WR3zq9yeimjMUdfE3E+Nw==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3962,6 +3838,7 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
@@ -4173,12 +4050,12 @@ packages:
     dependencies:
       '@parcel/css': 1.14.0
       '@tarojs/helper': 3.6.20(@swc/helpers@0.5.3)
-      '@tarojs/plugin-platform-alipay': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-alipay': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-jd': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-qq': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-swan': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-tt': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-qq': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-swan': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-tt': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/runner-utils': 3.6.20
       '@tarojs/runtime': 3.6.20
       '@tarojs/shared': 3.6.20
@@ -5595,6 +5472,7 @@ packages:
   /callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+    requiresBuild: true
 
   /camel-case@3.0.0:
     resolution: {integrity: sha512-+MbKztAYHXPr1jNTSKQF52VpcFjwY5RkR7fxksV8Doo4KAYc5Fl4UJRgthBbTmEx8C54DqahhbLJkDwjI3PI/w==}
@@ -8494,6 +8372,7 @@ packages:
 
   /is-arrayish@0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
+    requiresBuild: true
 
   /is-async-function@2.0.0:
     resolution: {integrity: sha512-Y1JXKrfykRJGdlDwdKlLpLyMIiWqWvuSd17TvZk68PLAOGOoF4Xyav1z0Xhoi+gCYjZVeC5SI+hYFOfvXmGRCA==}

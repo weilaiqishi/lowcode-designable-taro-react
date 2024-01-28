@@ -203,7 +203,6 @@ const App = () => {
             </ToolbarPanel>
             <ViewportPanel
               style={{
-                minHeight: '100%',
                 width: '750px',
                 overflow: 'overlay',
               }}

@@ -956,7 +956,7 @@ export default class List extends PureComponent<typeVirtualListComponentListProp
         position: 'relative',
         height: this._getStyleValue(height),
         width: this._getStyleValue(width),
-        overflow: 'auto',
+        overflow: 'overlay',
         WebkitOverflowScrolling: 'touch',
         willChange: 'transform',
         direction,
