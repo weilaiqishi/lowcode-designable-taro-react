@@ -1,0 +1,44 @@
+.dn-input-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #333;
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 8px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      color: #333;
+    }
+
+    &-controller {
+      min-width: 0;
+      flex-shrink: 1;
+      flex-grow: 1;
+
+      .ant-radio-group {
+        display: flex;
+
+        .ant-radio-button-wrapper {
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+    &.vertical {
+      flex-direction: column;
+      align-items: flex-start;
+      .dn-input-items-item-controller {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -4,6 +4,25 @@ const eventProps = {
   propsOperatorsArray: '参数表达式数组'
 }
 
+export const CSSStyleLocales = {
+  position: '定位',
+  top: 'top',
+  left: 'left',
+  right: 'right',
+  bottom: 'bottom',
+  width: '宽度',
+  height: '高度',
+  display: '展示',
+  background: '背景',
+  boxShadow: '阴影',
+  font: '字体',
+  margin: '外边距',
+  padding: '内边距',
+  borderRadius: '圆角',
+  border: '边框',
+  opacity: '透明度'
+}
+
 export const Field = {
   'zh-CN': {
     settings: {
@@ -39,24 +58,7 @@ export const Field = {
         notFoundContent: '空状态内容',
         bordered: '是否有边框',
         placeholder: '占位提示',
-        style: {
-          position: '定位',
-          top: 'top',
-          left: 'left',
-          right: 'right',
-          bottom: 'bottom',
-          width: '宽度',
-          height: '高度',
-          display: '展示',
-          background: '背景',
-          boxShadow: '阴影',
-          font: '字体',
-          margin: '外边距',
-          padding: '内边距',
-          borderRadius: '圆角',
-          border: '边框',
-          opacity: '透明度'
-        },
+        style: CSSStyleLocales,
         event: {
           click: { title: '点击事件', ...eventProps },
           close: { title: '关闭事件', ...eventProps },
@@ -119,3 +121,4 @@ export const Field = {
     },
   }
 }
+

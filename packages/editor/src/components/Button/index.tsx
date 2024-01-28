@@ -14,6 +14,13 @@ import {
 } from '../shared'
 
 export const Button: DnFC<React.ComponentProps<typeof component>> = component
+
+const { imgsProperties, imgsLocales } = iconimageDesignableConfig([
+  {
+    name: 'leftIcon',
+    locale: '左侧图标',
+  },
+])
 const propsSchema = createVoidFieldSchema({
   component: {
     type: 'object',
@@ -130,7 +137,7 @@ const propsSchema = createVoidFieldSchema({
         'x-decorator': 'FormItem',
         'x-component': 'Switch',
       },
-      // icon: iconimageDesignableConfig(),
+      ...imgsProperties,
     },
   },
   props: {
@@ -159,12 +166,13 @@ Button.Behavior = createBehavior({
       settings: {
         'x-component-props': {
           children: '文本',
-          variant: '按钮变种',
           color: '按钮颜色',
-          size: '尺寸',
           shape: '按钮形状',
+          type: '按钮样式',
+          size: '尺寸',
+          fill: '填充模式',
           block: '是否为块级元素',
-          hairline: '是否使用 0.5px 边框',
+          ...imgsLocales,
         },
       },
     },

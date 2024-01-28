@@ -205,7 +205,7 @@ const App = () => {
               style={{
                 minHeight: '100%',
                 width: '750px',
-                overflow: 'auto',
+                overflow: 'overlay',
               }}
             >
               <ViewPanel type="DESIGNABLE">

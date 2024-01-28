@@ -9,7 +9,6 @@ type typeProps = typePropsFields &
   ImageProps &
   Partial<{
     useValue: boolean // 使用表单中对应字段的值
-    src: string // 在设计器中填入的静态值
   }>
 
 export const Image = connect(

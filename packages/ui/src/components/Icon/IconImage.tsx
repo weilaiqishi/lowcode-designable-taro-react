@@ -4,7 +4,7 @@ import { Image } from '@nutui/nutui-react-taro'
 import { ImageProps } from '@nutui/nutui-react-taro/dist/types/index'
 
 export type typeIconImageProps = Partial<{
-  iconFontProps: Parameters<typeof IconFont>[0]
+  iconFontProps: Parameters<typeof IconFont>[0] & { iconName: string }
   imageProps: ImageProps
 }>
 
@@ -16,7 +16,7 @@ export function getIconImageConfig (
   names.forEach((name) => {
     if (record[name]?.imageProps?.src) {
       IconImageConfig[name] = <Image {...record[name]!.imageProps}></Image>
-    } else if (record[name]?.iconFontProps?.name) {
+    } else if (record[name]?.iconFontProps?.iconName) {
       IconImageConfig[name] = (
         <IconFont {...record[name]!.iconFontProps}></IconFont>
       )

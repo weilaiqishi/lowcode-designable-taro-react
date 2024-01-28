@@ -1,7 +1,10 @@
 import React from 'react'
+import { ISchema } from '@formily/json-schema'
 import * as Icons from '@nutui/icons-react-taro'
 import { Select } from 'antd'
 import * as lodash from 'lodash-es'
+
+import { CSSStyleLocales } from '@/locales/Field'
 
 import * as AllSchemas from '../schemas/all'
 
@@ -33,9 +36,6 @@ export const IconSelect = {
 }
 
 export const imageDesignableConfig = {
-  locales: {
-    mode: '图片模式',
-  },
   properties: {
     src: {
       type: 'string',
@@ -84,14 +84,7 @@ export const imageDesignableConfig = {
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
     },
-    'style-group': {
-      type: 'void',
-      'x-component': 'CollapseItem',
-      'x-component-props': { defaultExpand: false },
-      properties: {
-        style: lodash.cloneDeep(AllSchemas.CSSStyle),
-      },
-    },
+    style: lodash.cloneDeep(AllSchemas.CSSStyle),
   },
 }
 
@@ -148,21 +141,52 @@ export const iconFontDesignableConfig = {
   },
 }
 
-export function iconimageDesignableConfig() {
-  return {
-    type: 'object',
-    'x-component': 'DrawerSetter',
-    properties: {
-      imageProps: {
-        type: 'object',
-        'x-component': 'CollapseItem',
-        properties: lodash.cloneDeep(imageDesignableConfig),
-      },
-      iconFontProps: {
-        type: 'object',
-        'x-component': 'CollapseItem',
-        properties: lodash.cloneDeep(iconFontDesignableConfig),
-      },
-    },
+export function iconimageDesignableConfig(
+  propertyArr: {
+    name: string
+    locale: string
+  }[]
+) {
+  const obj = {
+    imgsProperties: {} as Record<string, ISchema>,
+    imgsLocales: {} as any,
   }
+  propertyArr.forEach(({ name, locale }) => {
+    obj.imgsProperties[name + '-group'] = {
+      type: 'void',
+      'x-component': 'DrawerSetter',
+      properties: {
+        [name + '.imageProps']: {
+          type: 'object',
+          'x-component': 'CollapseItem',
+          properties: lodash.cloneDeep(imageDesignableConfig.properties),
+          "x-component-props": {
+            title: '图片'
+          }
+        },
+        // iconFontProps: {
+        //   type: 'object',
+        //   'x-component': 'CollapseItem',
+        //   properties: lodash.cloneDeep(iconFontDesignableConfig.properties),
+        // },
+      },
+    }
+    obj.imgsLocales[name + '-group'] = locale
+    obj.imgsLocales[name] = {
+      imageProps: {
+        ...imageLocals,
+        style: CSSStyleLocales,
+      },
+    }
+  })
+  return obj
+}
+
+const imageLocals = {
+  src: '图片资源地址',
+  mode: '图片裁剪、缩放的模式',
+  lazyLoad: '图片懒加载',
+  width: '宽度，默认单位px',
+  height: '高度，默认单位px',
+  radius: '圆角大小',
 }

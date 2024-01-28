@@ -12,16 +12,16 @@ import { formilyStoreEvent, useScope } from '../utils'
 type typeProps = typePropsBase &
   ButtonProps &
   Partial<{
-    icon: typeIconImageProps
+    leftIcon: typeIconImageProps
     rightIcon: typeIconImageProps
     event
   }>
 
 export const Button = connect(
-  ({ icon, rightIcon, children, event, ...props }: typeProps) => {
-    const propNames = ['icon', 'rightIcon']
+  ({ leftIcon, rightIcon, children, event, ...props }: typeProps) => {
+    const propNames = ['leftIcon', 'rightIcon']
     const IconImageConfig = getIconImageConfig(propNames, {
-      icon,
+      leftIcon,
       rightIcon,
     })
 
