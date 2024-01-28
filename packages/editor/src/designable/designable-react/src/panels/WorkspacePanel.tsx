@@ -1,5 +1,6 @@
-import { ReactFC } from '@formily/reactive-react'
 import React from 'react'
+import { ReactFC } from '@formily/reactive-react'
+
 import { usePrefix } from '../hooks'
 
 export interface IWorkspaceItemProps {

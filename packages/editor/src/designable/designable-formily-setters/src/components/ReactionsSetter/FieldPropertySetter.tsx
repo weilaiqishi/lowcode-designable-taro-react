@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { TextWidget, usePrefix } from '@/designable/designable-react/src'
-import { Menu } from 'antd'
-import { MonacoInput } from '@/designable/designable-react-settings-form/src'
 import { isPlainObj, reduce } from '@formily/shared'
+import { Menu } from 'antd'
+
+import { TextWidget, usePrefix } from '@/designable/designable-react/src'
+import { MonacoInput } from '@/designable/designable-react-settings-form/src'
+
 import { FieldProperties } from './properties'
 export interface IFieldProperty {
   [key: string]: string
@@ -55,7 +57,7 @@ export const FieldPropertySetter: React.FC<IFieldPropertySetterProps> = (
           width: 200,
           height: 300,
           paddingRight: 4,
-          overflowY: 'auto',
+          overflowY: 'scroll',
           overflowX: 'hidden',
         }}
         defaultSelectedKeys={selectKeys}
@@ -63,8 +65,7 @@ export const FieldPropertySetter: React.FC<IFieldPropertySetterProps> = (
         onSelect={({ selectedKeys }) => {
           setSelectKeys(selectedKeys)
         }}
-      >
-        {FieldProperties.map((key) => {
+        items={FieldProperties.map((key) => {
           if (isPlainObj(key)) {
             return (
               <Menu.Item key={key.key}>
@@ -82,7 +83,7 @@ export const FieldPropertySetter: React.FC<IFieldPropertySetterProps> = (
             </Menu.Item>
           )
         })}
-      </Menu>
+      ></Menu>
       <div className={prefix + '-coder-wrapper'}>
         <div className={prefix + '-coder-start'}>
           {`$self.${selectKeys[0]} = (`}

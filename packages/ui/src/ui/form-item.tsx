@@ -42,6 +42,7 @@ const FormItem = (props: FormItemProps) => {
     feedbackText,
     errorMessageAlign,
     starPosition,
+    ...extraProps
   } = {
     ...defaultProps,
     ...props,
@@ -56,7 +57,7 @@ const FormItem = (props: FormItemProps) => {
     </Block>
   )
   return (
-    <Cell className={`nut-form-item ${className}`} style={style}>
+    <Cell className={`nut-form-item ${className}`} style={style} {...extraProps}>
       {label ? (
         <div className='nut-cell-title nut-form-item-label'>{renderLabel}</div>
       ) : null}

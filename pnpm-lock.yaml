@@ -69,25 +69,25 @@ importers:
         version: 3.6.20(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
       '@tarojs/plugin-platform-alipay':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-h5':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-jd':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-qq':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-swan':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-tt':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-weapp':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/react':
         specifier: 3.6.20
         version: 3.6.20(react@18.2.0)
@@ -222,10 +222,10 @@ importers:
         version: 0.6.0(@babel/core@7.23.6)(typescript@5.3.3)(webpack@5.89.0)
       '@monaco-editor/loader':
         specifier: ^1.4.0
-        version: 1.4.0(monaco-editor@0.34.1)
+        version: 1.4.0(monaco-editor@0.45.0)
       '@monaco-editor/react':
         specifier: ^4.6.0
-        version: 4.6.0(monaco-editor@0.34.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 4.6.0(monaco-editor@0.45.0)(react-dom@18.2.0)(react@18.2.0)
       '@pind/designable-core':
         specifier: 2.0.0-beta.6
         version: 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
@@ -239,11 +239,11 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       '@rspack/cli':
-        specifier: ^0.5.1
-        version: 0.5.1(@rspack/core@0.5.1)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4)
+        specifier: 0.5.0
+        version: 0.5.0(@rspack/core@0.5.0)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4)
       '@rspack/core':
-        specifier: ^0.5.1
-        version: 0.5.1(@swc/helpers@0.5.3)
+        specifier: 0.5.0
+        version: 0.5.0(@swc/helpers@0.5.3)
       '@swc/helpers':
         specifier: ^0.5.3
         version: 0.5.3
@@ -301,6 +301,9 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
+      monaco-editor:
+        specifier: ^0.45.0
+        version: 0.45.0
       postcss-loader:
         specifier: ^7.0.0
         version: 7.3.3(postcss@8.4.32)(typescript@5.3.3)(webpack@5.89.0)
@@ -388,7 +391,7 @@ importers:
         version: 5.1.0(webpack@5.89.0)
       html-webpack-plugin:
         specifier: ^5.5.0
-        version: 5.6.0(@rspack/core@0.5.1)(webpack@5.89.0)
+        version: 5.6.0(@rspack/core@0.5.0)(webpack@5.89.0)
       less-loader:
         specifier: ^11.1.0
         version: 11.1.3(less@4.2.0)(webpack@5.89.0)
@@ -487,25 +490,25 @@ importers:
         version: 3.6.20(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
       '@tarojs/plugin-platform-alipay':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-h5':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-jd':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-qq':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-swan':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-tt':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-weapp':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/react':
         specifier: 3.6.20
         version: 3.6.20(react@18.2.0)
@@ -2839,24 +2842,24 @@ packages:
       '@module-federation/runtime': 0.0.8
       '@module-federation/sdk': 0.0.8
 
-  /@monaco-editor/loader@1.4.0(monaco-editor@0.34.1):
+  /@monaco-editor/loader@1.4.0(monaco-editor@0.45.0):
     resolution: {integrity: sha512-00ioBig0x642hytVspPl7DbQyaSWRaolYie/UFNjoTdvoKPzo6xrXLhTk9ixgIKcLH5b5vDOjVNiGyY+uDCUlg==}
     peerDependencies:
       monaco-editor: '>= 0.21.0 < 1'
     dependencies:
-      monaco-editor: 0.34.1
+      monaco-editor: 0.45.0
       state-local: 1.0.7
     dev: false
 
-  /@monaco-editor/react@4.6.0(monaco-editor@0.34.1)(react-dom@18.2.0)(react@18.2.0):
+  /@monaco-editor/react@4.6.0(monaco-editor@0.45.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-RFkU9/i7cN2bsq/iTkurMWOEErmYcY6JiQI3Jn+WeR/FGISH8JbHERjpS9oRuSOPvDMJI0Z8nJeKkbOs9sBYQw==}
     peerDependencies:
       monaco-editor: '>= 0.25.0 < 1'
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@monaco-editor/loader': 1.4.0(monaco-editor@0.34.1)
-      monaco-editor: 0.34.1
+      '@monaco-editor/loader': 1.4.0(monaco-editor@0.45.0)
+      monaco-editor: 0.45.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -3145,91 +3148,91 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@rspack/binding-darwin-arm64@0.5.1:
-    resolution: {integrity: sha512-Kc0b94ZN1ecUu2Gyj20kGLWzOrdJbeN1JUTMKZx6jlLa3m7uJ+FhRjnsqFmZ5kdK2zx722ejoKr7xkrl7hOkuw==}
+  /@rspack/binding-darwin-arm64@0.5.0:
+    resolution: {integrity: sha512-zRx4efhn2eCjdhHt6avhdkKur6FZvYy1TgPhNKpWbTg7fnrvtNGzcVQCAOnPUUPkJjnss3veOhZlWJ3paX0EDQ==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-darwin-x64@0.5.1:
-    resolution: {integrity: sha512-iqt+3gKLBwXDsscOrwWTRrr4bTjKvNlOUIeuCIEgpvyvsq/Ez7mZl1hDpPhgqIih2X34zgFdiXuo31IsbXQWGQ==}
+  /@rspack/binding-darwin-x64@0.5.0:
+    resolution: {integrity: sha512-d6SvBURfKow3WcKxTrjJPBkp+NLsuCPoIMaS8/bM4gHwgjVs2zuOsTQ9+l36dypOkjnu6QLkOIykTdiUKJ0eQg==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-linux-arm64-gnu@0.5.1:
-    resolution: {integrity: sha512-H7DV7bJat2UVTVA9BkuXTAulmY1Ysn5X7KcfIVi3Vi34C1xJja2iA7MSqozFNvkm7XrJFcTMI0trwSel9mMnNw==}
+  /@rspack/binding-linux-arm64-gnu@0.5.0:
+    resolution: {integrity: sha512-97xFbF7RjJc2VvX+0Hvb7Jzsk+eEE8oEUcc5Dnb7OIwGZulWKk6cLNcRkNfmL/F9kk1QEKlUTNC/VQI7ljf2tA==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-linux-arm64-musl@0.5.1:
-    resolution: {integrity: sha512-iRyskxvtY5QpBrkcB3nBZaErQQRRP5ActQ0qkmhHx82PUfmGgyE9Q6ww9G+CwZuOuLpd1TFQhg80TV7e2EW1uw==}
+  /@rspack/binding-linux-arm64-musl@0.5.0:
+    resolution: {integrity: sha512-lk0IomCy276EoynmksoBwg0IcHvvVXuZPMeq7OgRPTvs33mdTExSzSTPtrGzx/D00bX1ybUqLQwJhcgGt6erPQ==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-linux-x64-gnu@0.5.1:
-    resolution: {integrity: sha512-P047gkIshhSDNP2HRODJlYilJ+r5rh8G86wUmZmx5tnQMqYZZZYvvH0C+pOP9F23oprwsLIrR6v/nM5U7bMIVQ==}
+  /@rspack/binding-linux-x64-gnu@0.5.0:
+    resolution: {integrity: sha512-r15ddpse0S/8wHtfL85uJrVotvPVIMnQX06KlXyGUSw1jWrjxV+NXFDJ4xXnHCvk/YV6lCFTotAssk4wJEE0Fw==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-linux-x64-musl@0.5.1:
-    resolution: {integrity: sha512-frFHfBnEjeNNtg7OBvxDeMVtahb+ZreVrXjFp8ZMBCx7Qa9+CT1K8nUzDLQZ3wVc5shikZi1Ddts6h3BathRqA==}
+  /@rspack/binding-linux-x64-musl@0.5.0:
+    resolution: {integrity: sha512-lB9Dn1bi4xyzEe6Bf/GQ7Ktlrq4Kmt1LHwN+t0m6iVYH3Vb/3g8uQGDSkwnjP8NmlAtldK1cmvRMhR7flUrgZA==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-win32-arm64-msvc@0.5.1:
-    resolution: {integrity: sha512-rGDS2QIPZIYGds1GWWTIBNzvnU72CjKWKKBNQx+skFywVvs50cZ1cB78Vj4wXWzAs2hS6NPTP65mrito//hvIQ==}
+  /@rspack/binding-win32-arm64-msvc@0.5.0:
+    resolution: {integrity: sha512-aDoF13puU8LxST/qKZndtXzlJbnbnxY2Bxyj0fu7UDh8nHJD4A2HQfWRN6BZFHaVSqM6Bnli410dJrIWeTNhZQ==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-win32-ia32-msvc@0.5.1:
-    resolution: {integrity: sha512-t7Cfz7V8y9DdlVd3XtUJduSXrmjst28+kqprCw9PecpOcdi0nnhmY23FjAGv7yTyhniLc4Kl3YJfk7lIHX8x9g==}
+  /@rspack/binding-win32-ia32-msvc@0.5.0:
+    resolution: {integrity: sha512-EYGeH4YKX5v4gtTL8mBAWnsKSkF+clsKu0z1hgWgSV/vnntNlqJQZUCb5CMdg5VqadNm+lUNDYYHeHNa3+Jp3w==}
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding-win32-x64-msvc@0.5.1:
-    resolution: {integrity: sha512-7ruRf8oiK9u6Klwwdtcg96A4+QaJCUBd8qQOD0wcFF77Rr0JndZxngUWAU/MUKmy3VoibzFEyk019AVhCC4cXA==}
+  /@rspack/binding-win32-x64-msvc@0.5.0:
+    resolution: {integrity: sha512-RCECFW6otUrFiPbWQyOvLZOMNV/OL6AyAKMDbX9ejjk0TjLMrHjnhmI5X8EoA/SUc1/vEbgsJzDVLKTfn138cg==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /@rspack/binding@0.5.1:
-    resolution: {integrity: sha512-2CMZ0oVBEgs+/v2nNzIEDqKS01Al//biWl0aDclh8ypeEIM9tkI/gvhjrovsnyib9oxsO3xCM4tCNCND+nx1CA==}
+  /@rspack/binding@0.5.0:
+    resolution: {integrity: sha512-+v1elZMn6lKBqbXQzhcfeCaPzztFNGEkNDEcQ7weako6yQPsBihGCRzveMMzZkja4RyB9GRHjWRE+THm8V8+3w==}
     optionalDependencies:
-      '@rspack/binding-darwin-arm64': 0.5.1
-      '@rspack/binding-darwin-x64': 0.5.1
-      '@rspack/binding-linux-arm64-gnu': 0.5.1
-      '@rspack/binding-linux-arm64-musl': 0.5.1
-      '@rspack/binding-linux-x64-gnu': 0.5.1
-      '@rspack/binding-linux-x64-musl': 0.5.1
-      '@rspack/binding-win32-arm64-msvc': 0.5.1
-      '@rspack/binding-win32-ia32-msvc': 0.5.1
-      '@rspack/binding-win32-x64-msvc': 0.5.1
+      '@rspack/binding-darwin-arm64': 0.5.0
+      '@rspack/binding-darwin-x64': 0.5.0
+      '@rspack/binding-linux-arm64-gnu': 0.5.0
+      '@rspack/binding-linux-arm64-musl': 0.5.0
+      '@rspack/binding-linux-x64-gnu': 0.5.0
+      '@rspack/binding-linux-x64-musl': 0.5.0
+      '@rspack/binding-win32-arm64-msvc': 0.5.0
+      '@rspack/binding-win32-ia32-msvc': 0.5.0
+      '@rspack/binding-win32-x64-msvc': 0.5.0
 
-  /@rspack/cli@0.5.1(@rspack/core@0.5.1)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4):
-    resolution: {integrity: sha512-CLLtV/MY447TE1CzGp8+J+2Db1AYJgQtXx5TCo8YZBdPknX0wYj4od4aoaHQFVrWTD39KesdXOTEIB00GY4W1g==}
+  /@rspack/cli@0.5.0(@rspack/core@0.5.0)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4):
+    resolution: {integrity: sha512-69D4mK/KcGQ0yv7orR76ephyTgct/ttuu0PBeh8rdfcvUG8gyzPaWOPm2yG+pCIyqK22pugk+G90vxU8/e4O9w==}
     hasBin: true
     peerDependencies:
       '@rspack/core': '>=0.4.0'
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
-      '@rspack/core': 0.5.1(@swc/helpers@0.5.3)
-      '@rspack/dev-server': 0.5.1(@rspack/core@0.5.1)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4)
+      '@rspack/core': 0.5.0(@swc/helpers@0.5.3)
+      '@rspack/dev-server': 0.5.0(@rspack/core@0.5.0)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4)
       colorette: 2.0.19
       exit-hook: 3.2.0
       interpret: 3.1.1
@@ -3250,8 +3253,8 @@ packages:
       - webpack-cli
     dev: false
 
-  /@rspack/core@0.5.1(@swc/helpers@0.5.3):
-    resolution: {integrity: sha512-fsUKPhnBCV7UOE31W03GBfqp7lSRZBcRuvLwrUt1bmTAvl9SRrR0HuWhJAs4O8LvrjKgxRzXPM8Fpysqerfo4w==}
+  /@rspack/core@0.5.0(@swc/helpers@0.5.3):
+    resolution: {integrity: sha512-/Bpujdtx28qYir7AK9VVSbY35GBFEcZ1NTJZBx/WIzZGZWLCxhlVYfjH8cj44y4RvXa0Y26tnj/q7VJ4U3sHug==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@swc/helpers': '>=0.5.1'
@@ -3260,7 +3263,7 @@ packages:
         optional: true
     dependencies:
       '@module-federation/runtime-tools': 0.0.8
-      '@rspack/binding': 0.5.1
+      '@rspack/binding': 0.5.0
       '@swc/helpers': 0.5.3
       browserslist: 4.22.2
       enhanced-resolve: 5.12.0
@@ -3274,13 +3277,13 @@ packages:
       zod: 3.22.4
       zod-validation-error: 1.3.1(zod@3.22.4)
 
-  /@rspack/dev-server@0.5.1(@rspack/core@0.5.1)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4):
-    resolution: {integrity: sha512-DDy85op9F6spSldIJSFExU93o3bl0PVwq4NvtcG0/jO0jlRk/ERN+daaW2607/iC5W1BOL9vWnPSvyWRqc2GlA==}
+  /@rspack/dev-server@0.5.0(@rspack/core@0.5.0)(@swc/core@1.3.96)(react-refresh@0.11.0)(webpack-cli@5.1.4):
+    resolution: {integrity: sha512-3TIBoi17h/d99v5zdGoeODds4vWAGlPnjqS1IKYSDwjqDfnneYbCB8TqGfwdoS4qZOHjCSl75BS1SspwKe69yw==}
     peerDependencies:
       '@rspack/core': '*'
     dependencies:
-      '@rspack/core': 0.5.1(@swc/helpers@0.5.3)
-      '@rspack/plugin-react-refresh': 0.5.1(react-refresh@0.11.0)
+      '@rspack/core': 0.5.0(@swc/helpers@0.5.3)
+      '@rspack/plugin-react-refresh': 0.5.0(react-refresh@0.11.0)
       chokidar: 3.5.3
       connect-history-api-fallback: 2.0.0
       express: 4.18.1
@@ -3303,8 +3306,8 @@ packages:
       - webpack-cli
     dev: false
 
-  /@rspack/plugin-react-refresh@0.5.1(react-refresh@0.11.0):
-    resolution: {integrity: sha512-7wZ7i/aQcTU8wrV6+U7VwaBhtsUp6f/W4wiLXbz7EkflGsVEnfkZWgKsJneIfPyRkAldcmZqWzwCnF+7f0DvSA==}
+  /@rspack/plugin-react-refresh@0.5.0(react-refresh@0.11.0):
+    resolution: {integrity: sha512-Tas91XaFgRmgdLFzgeei/LybMFvnYBicMf4Y7Yt9lZHRHfgONrGbmqSVeS+nWWTW9U8Q31K9uiM2Z2a02hq2Vw==}
     peerDependencies:
       react-refresh: '>=0.10.0 <1.0.0'
     peerDependenciesMeta:
@@ -3585,7 +3588,7 @@ packages:
       - '@types/webpack-dev-server'
     dev: false
 
-  /@tarojs/components-react@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
+  /@tarojs/components-react@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
     resolution: {integrity: sha512-9UO1y7ADuv1NH6W8Hc6asJyCfxbK2ri6wvPQABgTbgb3+QTfg2CSTkTeobKiXf4dzb1S7vesQfoMHUdbp44Exw==}
     dependencies:
       '@babel/runtime': 7.23.6
@@ -3602,7 +3605,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - vue
     dev: false
 
@@ -3713,7 +3715,7 @@ packages:
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-alipay@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
+  /@tarojs/plugin-platform-alipay@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
     resolution: {integrity: sha512-mQ5GQfKc+PfuCwkhW8BpXSBx5IGOAFqna/ZphJGM+M38HlPOOPh7z7O4KKfBwK2p2hnIIJF/ny1bXUsBn7YA0A==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3726,16 +3728,15 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-h5@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
+  /@tarojs/plugin-platform-h5@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
     resolution: {integrity: sha512-vbETmGr1y2c+1LIN9PJHSiIGksSAo8MwAgnELY0steppIGnBo/PAtFOFJad3ndSxYFAO8SNFoDpbdWmvG7Pi1w==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/components-react': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/components-react': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/router': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/service': 3.6.20(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/shared': 3.6.20
@@ -3751,7 +3752,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - supports-color
       - vue
     dev: false
@@ -3771,10 +3771,10 @@ packages:
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-qq@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
+  /@tarojs/plugin-platform-qq@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
     resolution: {integrity: sha512-xWaMpHWG1nt4IZVD3XSQYqutpwm2FdRp9dV0yMLn9i1ULwMaao2325b+ZftkjLDWxxF+Kq7VNtcGgBK3T/uPTQ==}
     dependencies:
-      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/service': 3.6.20(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/shared': 3.6.20
     transitivePeerDependencies:
@@ -3784,12 +3784,11 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-swan@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
+  /@tarojs/plugin-platform-swan@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
     resolution: {integrity: sha512-1PoJR69E0UjOFj3KiETK3qc93LvDCme0inLsyx5/RIoLjBGuBuAclJtGWNjFClj9WNWKNwooh97lpuyD9OcMzw==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3802,12 +3801,11 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-tt@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
+  /@tarojs/plugin-platform-tt@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
     resolution: {integrity: sha512-/821/9MaMnCy1j6OGI8srVDWqjlaNSH8EuERojBYFCbEaPbfQCZr+85BEHIO/T2Ijq12Wl4IgftgkGLbQFn3LQ==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3820,12 +3818,11 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-weapp@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
+  /@tarojs/plugin-platform-weapp@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
     resolution: {integrity: sha512-ryxsbsAmULe58+2yZ/qg7tjrKqjhlCxQShmtzXrPRQyO7vUH1L5lgT5gWUdnYbTX8WR3zq9yeimjMUdfE3E+Nw==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3838,7 +3835,6 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
-      - react
       - supports-color
       - vue
     dev: false
@@ -4050,12 +4046,12 @@ packages:
     dependencies:
       '@parcel/css': 1.14.0
       '@tarojs/helper': 3.6.20(@swc/helpers@0.5.3)
-      '@tarojs/plugin-platform-alipay': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-alipay': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-jd': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-qq': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/plugin-platform-swan': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/plugin-platform-tt': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-qq': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-swan': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-tt': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/runner-utils': 3.6.20
       '@tarojs/runtime': 3.6.20
       '@tarojs/shared': 3.6.20
@@ -8094,7 +8090,7 @@ packages:
       webpack: 5.89.0(@swc/core@1.3.96)(webpack-cli@5.1.4)
     dev: false
 
-  /html-webpack-plugin@5.6.0(@rspack/core@0.5.1)(webpack@5.89.0):
+  /html-webpack-plugin@5.6.0(@rspack/core@0.5.0)(webpack@5.89.0):
     resolution: {integrity: sha512-iwaY4wzbe48AfKLZ/Cc8k0L+FKG6oSNRaZ8x5A/T/IVDGyXcbHncM9TdDa93wn0FsSm82FhTKW7f3vS61thXAw==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
@@ -8106,7 +8102,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      '@rspack/core': 0.5.1(@swc/helpers@0.5.3)
+      '@rspack/core': 0.5.0(@swc/helpers@0.5.3)
       '@types/html-minifier-terser': 6.1.0
       html-minifier-terser: 6.1.0
       lodash: 4.17.21
@@ -9449,8 +9445,8 @@ packages:
     resolution: {integrity: sha512-uR6FnrK50UEbV+zTXkOI+R0pAMb7xA5mkAWnKTMBcN6hAh57qAa9r0XMvsiPgpb8dS3Kw1x0sNhrrUNUcM+Pug==}
     dev: false
 
-  /monaco-editor@0.34.1:
-    resolution: {integrity: sha512-FKc80TyiMaruhJKKPz5SpJPIjL+dflGvz4CpuThaPMc94AyN7SeC9HQ8hrvaxX7EyHdJcUY5i4D0gNyJj1vSZQ==}
+  /monaco-editor@0.45.0:
+    resolution: {integrity: sha512-mjv1G1ZzfEE3k9HZN0dQ2olMdwIfaeAAjFiwNprLfYNRSz7ctv9XuCT7gPtBGrMUeV1/iZzYKj17Khu1hxoHOA==}
     dev: false
 
   /mri@1.2.0:
