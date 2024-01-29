@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
-import { createBehavior, createResource } from '@pind/designable-core'
+import { createBehavior, createResource } from '@/designable/designable-core/src'
 import * as lodash from 'lodash-es'
 import { Form as FormilyForm } from 'ui-nutui-react-taro'
 

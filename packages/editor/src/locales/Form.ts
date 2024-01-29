@@ -1,4 +1,4 @@
-import { createLocales } from '@pind/designable-core'
+import { createLocales } from '@/designable/designable-core/src'
 import { Component } from './Component'
 
 export const Form = createLocales(Component, {

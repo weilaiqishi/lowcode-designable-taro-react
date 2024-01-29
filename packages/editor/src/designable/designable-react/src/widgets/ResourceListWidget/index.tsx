@@ -5,10 +5,10 @@ import {
   isResourceHost,
   isResourceList,
   SourceType,
-} from '@pind/designable-core'
+} from '@/designable/designable-core/src'
 import { IResourceWidgetProps, ResourceWidget } from '../ResourceWidget'
 import React from 'react'
-import { isFn } from '@pind/designable-shared'
+import { isFn } from '@/designable/designable-shared/src'
 import { Input } from 'antd'
 
 export interface IResourceListWidgetProps

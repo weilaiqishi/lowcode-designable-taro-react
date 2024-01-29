@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Engine, GlobalRegistry } from '@pind/designable-core'
+import { Engine, GlobalRegistry } from '@/designable/designable-core/src'
 import { DesignerEngineContext } from '../context'
 import { IDesignerProps } from '../types'
 import { GhostWidget } from '../widgets'

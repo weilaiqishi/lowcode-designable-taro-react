@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBehavior, createResource } from '@pind/designable-core'
+import { createBehavior, createResource } from '@/designable/designable-core/src'
 import { Radio as component } from 'ui-nutui-react-taro'
 
 import { DnFC } from '@/designable/designable-react/src'

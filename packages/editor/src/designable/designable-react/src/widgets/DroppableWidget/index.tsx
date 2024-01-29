@@ -1,5 +1,5 @@
 import React from 'react'
-import { TreeNode } from '@pind/designable-core'
+import { TreeNode } from '@/designable/designable-core/src'
 import { observer, ReactFC } from '@formily/reactive-react'
 import { useTreeNode, useNodeIdProps } from '../../hooks'
 import { NodeTitleWidget } from '../NodeTitleWidget'

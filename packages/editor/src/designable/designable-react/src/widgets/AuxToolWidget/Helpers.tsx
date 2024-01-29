@@ -1,5 +1,5 @@
 import React, { useRef, useState, useLayoutEffect } from 'react'
-import { TreeNode } from '@pind/designable-core'
+import { TreeNode } from '@/designable/designable-core/src'
 import { reaction } from '@formily/reactive'
 import { usePrefix, useViewport } from '../../hooks'
 import { Selector } from './Selector'
@@ -7,7 +7,7 @@ import { Copy } from './Copy'
 import { Delete } from './Delete'
 import { DragHandler } from './DragHandler'
 import cls from 'classnames'
-import { globalThisPolyfill } from '@pind/designable-shared'
+import { globalThisPolyfill } from '@/designable/designable-shared/src'
 import { ReactFC } from '@formily/reactive-react'
 
 const HELPER_DEBOUNCE_TIMEOUT = 100

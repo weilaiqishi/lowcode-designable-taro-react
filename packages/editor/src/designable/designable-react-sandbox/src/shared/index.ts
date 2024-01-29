@@ -1,4 +1,4 @@
-import { isFn, globalThisPolyfill } from '@pind/designable-shared'
+import { isFn, globalThisPolyfill } from '@/designable/designable-shared/src'
 import { createRoot } from 'react-dom/client'
 import { useSandboxScope } from '../hooks'
 

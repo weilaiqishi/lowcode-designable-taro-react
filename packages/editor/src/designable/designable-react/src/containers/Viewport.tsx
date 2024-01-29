@@ -1,8 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import { usePrefix, useViewport } from '../hooks'
 import { AuxToolWidget, EmptyWidget } from '../widgets'
-import { Viewport as ViewportType } from '@pind/designable-core'
-import { requestIdle, globalThisPolyfill } from '@pind/designable-shared'
+import { Viewport as ViewportType } from '@/designable/designable-core/src'
+import { requestIdle, globalThisPolyfill } from '@/designable/designable-shared/src'
 import cls from 'classnames'
 export interface IViewportProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'placeholder'> {

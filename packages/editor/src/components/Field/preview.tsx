@@ -11,8 +11,8 @@ import {
 } from '@formily/react'
 import { toJS } from '@formily/reactive'
 import { each, reduce } from '@formily/shared'
-import { createBehavior } from '@pind/designable-core'
-import { isArr, isStr } from '@pind/designable-shared'
+import { createBehavior } from '@/designable/designable-core/src'
+import { isArr, isStr } from '@/designable/designable-shared/src'
 import { FormItem } from 'ui-nutui-react-taro'
 
 import {

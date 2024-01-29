@@ -8,7 +8,7 @@ import { Header } from './Header'
 import { traverseTree } from './shared'
 import { ITreeDataSource, INodeItem } from './types'
 import './styles.less'
-import { GlobalRegistry } from '@pind/designable-core'
+import { GlobalRegistry } from '@/designable/designable-core/src'
 
 const limitTreeDrag = ({ dropPosition }) => {
   if (dropPosition === 0) {

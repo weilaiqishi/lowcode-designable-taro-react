@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { ArrayBase } from '@formily/antd-v5'
 import { observer } from '@formily/react'
-import { createBehavior, createResource, TreeNode } from '@pind/designable-core'
+import { createBehavior, createResource, TreeNode } from '@/designable/designable-core/src'
 import cls from 'classnames'
 
 import {

@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@pind/designable-core'
+import { GlobalRegistry } from '@/designable/designable-core/src'
 import icons from './icons'
 import panels from './panels'
 import global from './global'

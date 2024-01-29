@@ -1,6 +1,6 @@
 import React from 'react'
-import { ScreenType } from '@pind/designable-core'
-import { requestIdle } from '@pind/designable-shared'
+import { ScreenType } from '@/designable/designable-core/src'
+import { requestIdle } from '@/designable/designable-shared/src'
 import { observer } from '@formily/reactive-react'
 import { useScreen } from '../hooks'
 import {

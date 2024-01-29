@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { TreeNode, Engine } from '@pind/designable-core'
+import { TreeNode, Engine } from '@/designable/designable-core/src'
 import {
   IDesignerLayoutContext,
   IWorkspaceContext,

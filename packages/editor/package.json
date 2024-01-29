@@ -14,12 +14,10 @@
   "dependencies": {
     "@babel/parser": "^7.23.9",
     "@formily/grid": "^2.3.1",
+    "@juggle/resize-observer": "^3.4.0",
     "@kimeng/vm": "0.6.0",
     "@monaco-editor/loader": "^1.4.0",
     "@monaco-editor/react": "^4.6.0",
-    "@pind/designable-core": "2.0.0-beta.6",
-    "@pind/designable-formily-transformer": "2.0.0-beta.6",
-    "@pind/designable-shared": "2.0.0-beta.6",
     "@rc-component/mini-decimal": "^1.1.0",
     "@rspack/cli": "0.5.0",
     "@rspack/core": "0.5.0",
@@ -50,6 +48,7 @@
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "react-refresh": "0.11.0",
+    "requestidlecallback": "^0.3.0",
     "sass-loader": "^13.3.2",
     "ui-nutui-react-taro": "workspace:^0.0.6"
   },

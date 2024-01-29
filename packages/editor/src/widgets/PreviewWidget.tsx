@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
-import { transformToSchema } from '@pind/designable-formily-transformer'
+import { transformToSchema } from '@/designable/designable-formily-transformer/src'
 import { FormPage, SchemaField } from 'ui-nutui-react-taro'
 
 export interface IPreviewWidgetProps {

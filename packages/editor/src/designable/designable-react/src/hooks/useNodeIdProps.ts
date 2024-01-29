@@ -1,4 +1,4 @@
-import { TreeNode } from '@pind/designable-core'
+import { TreeNode } from '@/designable/designable-core/src'
 import { useDesigner } from './useDesigner'
 import { useTreeNode } from './useTreeNode'
 

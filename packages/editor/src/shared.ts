@@ -1,4 +1,4 @@
-import { Engine,TreeNode } from '@pind/designable-core'
+import { Engine,TreeNode } from '@/designable/designable-core/src'
 
 export type ComponentNameMatcher =
   | string

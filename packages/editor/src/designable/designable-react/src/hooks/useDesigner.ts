@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
-import { Engine } from '@pind/designable-core'
+import { Engine } from '@/designable/designable-core/src'
 import { DesignerEngineContext } from '../context'
-import { isFn, globalThisPolyfill } from '@pind/designable-shared'
+import { isFn, globalThisPolyfill } from '@/designable/designable-shared/src'
 export interface IEffects {
   (engine: Engine): void
 }

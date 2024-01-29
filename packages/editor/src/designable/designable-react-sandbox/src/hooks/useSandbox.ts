@@ -4,7 +4,7 @@ import {
   usePrefix,
   useWorkspace,
 } from '@/designable/designable-react/src'
-import { globalThisPolyfill } from '@pind/designable-shared'
+import { globalThisPolyfill } from '@/designable/designable-shared/src'
 import { useEffect, useRef } from 'react'
 
 export interface ISandboxProps {

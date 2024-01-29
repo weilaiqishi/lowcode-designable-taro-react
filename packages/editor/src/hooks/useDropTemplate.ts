@@ -1,4 +1,4 @@
-import { AppendNodeEvent, TreeNode } from '@pind/designable-core'
+import { AppendNodeEvent, TreeNode } from '@/designable/designable-core/src'
 
 import { useDesigner } from '@/designable/designable-react/src'
 

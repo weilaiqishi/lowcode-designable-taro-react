@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
 import { Form } from '@formily/antd-v5'
 import { observer } from '@formily/react'
-import { requestIdle, cancelIdle } from '@pind/designable-shared'
+import { requestIdle, cancelIdle } from '@/designable/designable-shared/src'
 import {
   usePrefix,
   useSelected,

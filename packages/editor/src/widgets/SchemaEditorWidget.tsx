@@ -1,9 +1,9 @@
 import React from 'react'
-import { ITreeNode, TreeNode } from '@pind/designable-core'
+import { ITreeNode, TreeNode } from '@/designable/designable-core/src'
 import {
   transformToSchema,
   transformToTreeNode,
-} from '@pind/designable-formily-transformer'
+} from '@/designable/designable-formily-transformer/src'
 
 import { MonacoInput } from '@/designable/designable-react-settings-form/src'
 

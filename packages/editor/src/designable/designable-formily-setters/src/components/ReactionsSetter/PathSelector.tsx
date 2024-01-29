@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { TreeNode } from '@pind/designable-core'
+import { TreeNode } from '@/designable/designable-core/src'
 import { useSelectedNode } from '@/designable/designable-react/src'
 import { TreeSelectProps, TreeSelect } from 'antd'
 

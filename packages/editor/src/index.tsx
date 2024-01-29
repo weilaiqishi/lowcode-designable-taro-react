@@ -8,7 +8,7 @@ import {
   createDesigner,
   createResource,
   GlobalRegistry,
-} from '@pind/designable-core'
+} from '@/designable/designable-core/src'
 import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
 import Taro from '@tarojs/taro'
 import { Button as AntdButton, message, Space } from 'antd'

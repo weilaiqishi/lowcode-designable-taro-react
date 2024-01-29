@@ -28,6 +28,9 @@ importers:
       '@formily/json-schema':
         specifier: 2.3.1
         version: 2.3.1(typescript@5.3.3)
+      '@formily/path':
+        specifier: ^2.3.1
+        version: 2.3.1
       '@formily/react':
         specifier: 2.3.1
         version: 2.3.1(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(typescript@5.3.3)
@@ -217,6 +220,9 @@ importers:
       '@formily/grid':
         specifier: ^2.3.1
         version: 2.3.1(typescript@5.3.3)
+      '@juggle/resize-observer':
+        specifier: ^3.4.0
+        version: 3.4.0
       '@kimeng/vm':
         specifier: 0.6.0
         version: 0.6.0(@babel/core@7.23.6)(typescript@5.3.3)(webpack@5.89.0)
@@ -226,15 +232,6 @@ importers:
       '@monaco-editor/react':
         specifier: ^4.6.0
         version: 4.6.0(monaco-editor@0.45.0)(react-dom@18.2.0)(react@18.2.0)
-      '@pind/designable-core':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-formily-transformer':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-shared':
-        specifier: 2.0.0-beta.6
-        version: 2.0.0-beta.6
       '@rc-component/mini-decimal':
         specifier: ^1.1.0
         version: 1.1.0
@@ -325,6 +322,9 @@ importers:
       react-refresh:
         specifier: 0.11.0
         version: 0.11.0
+      requestidlecallback:
+        specifier: ^0.3.0
+        version: 0.3.0
       sass-loader:
         specifier: ^13.3.2
         version: 13.3.2(webpack@5.89.0)
@@ -2920,42 +2920,6 @@ packages:
     engines: {node: '>= 12.0.0'}
     dependencies:
       lightningcss: 1.22.1
-    dev: false
-
-  /@pind/designable-core@2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1):
-    resolution: {integrity: sha512-WUdGrIaQV5UBIkuTXcLpFSFzILS3V2XIMpeaOZrh4SyZ2/AuhCJq+xZsEuUNj320RsJE/C1lE9sdGzxo0cbcug==}
-    engines: {npm: '>=3.0.0'}
-    peerDependencies:
-      '@formily/json-schema': ^2.2.14
-      '@formily/path': ^2.2.14
-    dependencies:
-      '@formily/json-schema': 2.3.1(typescript@5.3.3)
-      '@formily/path': 2.3.1
-      '@formily/reactive': 2.3.1
-      '@juggle/resize-observer': 3.4.0
-      '@pind/designable-shared': 2.0.0-beta.6
-    dev: false
-
-  /@pind/designable-formily-transformer@2.0.0-beta.6(@formily/core@2.3.1)(@formily/json-schema@2.3.1)(@formily/path@2.3.1):
-    resolution: {integrity: sha512-/ZF3Tb7g3aWTnZhtqXaKxEDOE2JMBaR4sxRQGKokq0QuqFD1sVo2OVD+EzOVMzaiyyVM28ns2ZlYR1fozdECaQ==}
-    engines: {npm: '>=3.0.0'}
-    peerDependencies:
-      '@formily/core': ^2.2.14
-      '@formily/json-schema': ^2.2.14
-    dependencies:
-      '@formily/core': 2.3.1
-      '@formily/json-schema': 2.3.1(typescript@5.3.3)
-      '@pind/designable-core': 2.0.0-beta.6(@formily/json-schema@2.3.1)(@formily/path@2.3.1)
-      '@pind/designable-shared': 2.0.0-beta.6
-    transitivePeerDependencies:
-      - '@formily/path'
-    dev: false
-
-  /@pind/designable-shared@2.0.0-beta.6:
-    resolution: {integrity: sha512-zxtAAt4iSw3bKA7aXT7yGoGC3BB3SppxAPJwx9hSyduCql8cCytUfG5VtSj0AdqYOIhcB5dJORW23RSI7+NQYQ==}
-    engines: {npm: '>=3.0.0'}
-    dependencies:
-      requestidlecallback: 0.3.0
     dev: false
 
   /@pmmmwh/react-refresh-webpack-plugin@0.5.11(react-refresh@0.11.0)(webpack@5.89.0):

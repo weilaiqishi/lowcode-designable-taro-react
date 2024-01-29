@@ -1,8 +1,8 @@
-import { Engine } from '@pind/designable-core'
+import { Engine } from '@/designable/designable-core/src'
 import {
   transformToSchema,
   transformToTreeNode,
-} from '@pind/designable-formily-transformer'
+} from '@/designable/designable-formily-transformer/src'
 
 export const saveSchema = (designer: Engine) => {
   return JSON.stringify(transformToSchema(designer.getCurrentTree(), {
