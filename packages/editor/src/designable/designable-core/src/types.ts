@@ -41,15 +41,17 @@ export type IResizable = {
     node: TreeNode,
     element: Element
   ) => {
-    plus: () => void
-    minus: () => void
+    // plus: () => void
+    // minus: () => void
+    resize: () => void
   }
   height?: (
     node: TreeNode,
     element: Element
   ) => {
-    plus: () => void
-    minus: () => void
+    // plus: () => void
+    // minus: () => void
+    resize: () => void
   }
 }
 

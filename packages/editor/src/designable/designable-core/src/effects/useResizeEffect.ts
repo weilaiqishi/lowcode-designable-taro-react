@@ -84,7 +84,15 @@ export const useResizeEffect = (engine: Engine) => {
       event.context?.workspace ?? engine.workbench.activeWorkspace
     const helper = currentWorkspace?.operation.transformHelper
     if (helper) {
+      const dragNodes = helper.dragNodes
       helper.dragEnd()
+      if (!dragNodes.length) return
+      dragNodes.forEach((node) => {
+        const element = node.getElement()
+        if (!element) return
+        node.designerProps.resizable?.width(node, element).resize()
+        node.designerProps.resizable?.height(node, element).resize()
+      })
     }
   })
 }

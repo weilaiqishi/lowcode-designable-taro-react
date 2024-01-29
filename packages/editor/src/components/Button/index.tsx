@@ -1,7 +1,10 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import { Button as component } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
@@ -165,33 +168,38 @@ Button.Behavior = createBehavior({
           node.props?.style?.width ?? element.getBoundingClientRect().width
         )
         return {
-          plus: () => {
-            node.props = node.props || {}
-            node.props.style = node.props.style || {}
-            node.props.style.width = width + 10
-          },
-          minus: () => {
-            node.props = node.props || {}
-            node.props.style = node.props.style || {}
-            node.props.style.width = width - 10
+          // plus: () => {
+          //   node.props = node.props || {}
+          //   node.props.style = node.props.style || {}
+          //   node.props.style.width = width + 10
+          // },
+          // minus: () => {
+          //   node.props = node.props || {}
+          //   node.props.style = node.props.style || {}
+          //   node.props.style.width = width - 10
+          // },
+          resize() {
+            node.props['x-component-props'].style.width = width + 'px'
           },
         }
       },
       height(node, element) {
         const height = Number(
-          node.props?.style?.height ??
-            element.getBoundingClientRect().height
+          node.props?.style?.height ?? element.getBoundingClientRect().height
         )
         return {
-          plus: () => {
-            node.props = node.props || {}
-            node.props.style = node.props.style || {}
-            node.props.style.height = height + 10
-          },
-          minus: () => {
-            node.props = node.props || {}
-            node.props.style = node.props.style || {}
-            node.props.style.height = height - 10
+          // plus: () => {
+          //   node.props = node.props || {}
+          //   node.props.style = node.props.style || {}
+          //   node.props.style.height = height + 10
+          // },
+          // minus: () => {
+          //   node.props = node.props || {}
+          //   node.props.style = node.props.style || {}
+          //   node.props.style.height = height - 10
+          // },
+          resize() {
+            node.props['x-component-props'].style.height = height + 'px'
           },
         }
       },
@@ -213,8 +221,7 @@ Button.Behavior = createBehavior({
         }
       },
       y(node, element, diffY) {
-        const top =
-          parseInt(node.props?.style?.top ?? element?.style.top) || 0
+        const top = parseInt(node.props?.style?.top ?? element?.style.top) || 0
         const rect = element.getBoundingClientRect()
         return {
           translate: () => {
