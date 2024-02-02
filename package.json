@@ -14,7 +14,7 @@
     "@formily/shared": "2.3.1",
     "@kimeng/vm": "0.6.0",
     "@nutui/icons-react-taro": "^1.0.0",
-    "@nutui/nutui-react-taro": "^2.3.4",
+    "@nutui/nutui-react-taro": "^2.3.9",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@taroify/core": "0.1.1-alpha.9",
     "@taroify/icons": "0.1.1-alpha.9",

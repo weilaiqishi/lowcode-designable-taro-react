@@ -85,7 +85,7 @@ const propsSchema = createVoidFieldSchema({
             value: 'info',
           },
         ],
-        default: 'default',
+        default: 'primary',
       },
       size: {
         type: 'string',
@@ -121,8 +121,8 @@ const propsSchema = createVoidFieldSchema({
             value: 'none',
           },
           {
-            label: 'solid',
-            value: 'solid',
+            label: '默认',
+            value: '',
           },
           {
             label: 'outline',
@@ -133,7 +133,7 @@ const propsSchema = createVoidFieldSchema({
             value: 'dashed',
           },
         ],
-        default: 'solid',
+        default: '',
       },
       block: {
         type: 'boolean',

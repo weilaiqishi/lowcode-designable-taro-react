@@ -50,8 +50,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@nutui/nutui-react-taro':
-        specifier: ^2.3.4
-        version: 2.3.4(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^2.3.9
+        version: 2.3.9(react-dom@18.2.0)(react@18.2.0)
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: ^0.5.11
         version: 0.5.11(react-refresh@0.11.0)(webpack@5.89.0)
@@ -72,25 +72,25 @@ importers:
         version: 3.6.20(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
       '@tarojs/plugin-platform-alipay':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-h5':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-jd':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-qq':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-swan':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-tt':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-weapp':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/react':
         specifier: 3.6.20
         version: 3.6.20(react@18.2.0)
@@ -490,25 +490,25 @@ importers:
         version: 3.6.20(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)(preact@10.19.3)(react-refresh@0.11.0)(react@18.2.0)
       '@tarojs/plugin-platform-alipay':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-h5':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-jd':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-platform-qq':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-swan':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-tt':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-weapp':
         specifier: 3.6.20
-        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+        version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/react':
         specifier: 3.6.20
         version: 3.6.20(react@18.2.0)
@@ -2891,13 +2891,17 @@ packages:
     resolution: {integrity: sha512-GlRqrRrhiRe6zZCzpc+nHzg9gjwM4uKWaXl8lde0ctVY6pYG1OMzyyb1sNgRZY3gRZj0bzY1cVXBXWkit/CVHQ==}
     dev: false
 
-  /@nutui/nutui-react-taro@2.3.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-qoUQlHCNtZVFlVY1Q7KuvjPejm2dvitinZfwW7jRMdG7awhDkgY/iQDLhbPFTG/qeNdC91Woxysl1ED61nFvLw==}
+  /@nutui/icons-react-taro@1.0.2:
+    resolution: {integrity: sha512-qn5rBdsPleejZ+5u/gTUoi9vPY32UCTnpxuArha1ZL7LS+kk/5E1ECKLDv0Sh5q87PaCpYfe9wMyGENREnHBgw==}
+    dev: false
+
+  /@nutui/nutui-react-taro@2.3.9(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-a+Pyf2WxAOteiqKHlYi1WNx9K0wpyy+PY8ww1N9C2YxZWM/UklyoTb6Gl9eE95ysNJJmE77IklEgcW1NRKUiwg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@babel/runtime': 7.23.6
-      '@nutui/icons-react-taro': 1.0.0
+      '@nutui/icons-react-taro': 1.0.2
       '@nutui/touch-emulator': 1.0.0
       '@react-spring/web': 9.6.1(react-dom@18.2.0)(react@18.2.0)
       '@use-gesture/react': 10.2.20(react@18.2.0)
@@ -3552,7 +3556,7 @@ packages:
       - '@types/webpack-dev-server'
     dev: false
 
-  /@tarojs/components-react@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/components-react@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-9UO1y7ADuv1NH6W8Hc6asJyCfxbK2ri6wvPQABgTbgb3+QTfg2CSTkTeobKiXf4dzb1S7vesQfoMHUdbp44Exw==}
     dependencies:
       '@babel/runtime': 7.23.6
@@ -3569,6 +3573,7 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - vue
     dev: false
 
@@ -3679,7 +3684,7 @@ packages:
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-alipay@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-alipay@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-mQ5GQfKc+PfuCwkhW8BpXSBx5IGOAFqna/ZphJGM+M38HlPOOPh7z7O4KKfBwK2p2hnIIJF/ny1bXUsBn7YA0A==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3692,15 +3697,16 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-h5@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-h5@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-vbETmGr1y2c+1LIN9PJHSiIGksSAo8MwAgnELY0steppIGnBo/PAtFOFJad3ndSxYFAO8SNFoDpbdWmvG7Pi1w==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/components-react': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/components-react': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/router': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/service': 3.6.20(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/shared': 3.6.20
@@ -3716,6 +3722,7 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
@@ -3735,10 +3742,10 @@ packages:
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-qq@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-qq@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-xWaMpHWG1nt4IZVD3XSQYqutpwm2FdRp9dV0yMLn9i1ULwMaao2325b+ZftkjLDWxxF+Kq7VNtcGgBK3T/uPTQ==}
     dependencies:
-      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/service': 3.6.20(@swc/helpers@0.5.3)(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/shared': 3.6.20
     transitivePeerDependencies:
@@ -3748,11 +3755,12 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-swan@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-swan@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-1PoJR69E0UjOFj3KiETK3qc93LvDCme0inLsyx5/RIoLjBGuBuAclJtGWNjFClj9WNWKNwooh97lpuyD9OcMzw==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3765,11 +3773,12 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-tt@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-tt@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-/821/9MaMnCy1j6OGI8srVDWqjlaNSH8EuERojBYFCbEaPbfQCZr+85BEHIO/T2Ijq12Wl4IgftgkGLbQFn3LQ==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3782,11 +3791,12 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
 
-  /@tarojs/plugin-platform-weapp@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
+  /@tarojs/plugin-platform-weapp@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-ryxsbsAmULe58+2yZ/qg7tjrKqjhlCxQShmtzXrPRQyO7vUH1L5lgT5gWUdnYbTX8WR3zq9yeimjMUdfE3E+Nw==}
     dependencies:
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3799,6 +3809,7 @@ packages:
       - '@types/webpack'
       - '@types/webpack-dev-server'
       - postcss
+      - react
       - supports-color
       - vue
     dev: false
@@ -4010,12 +4021,12 @@ packages:
     dependencies:
       '@parcel/css': 1.14.0
       '@tarojs/helper': 3.6.20(@swc/helpers@0.5.3)
-      '@tarojs/plugin-platform-alipay': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-alipay': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/plugin-platform-jd': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-qq': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-swan': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-tt': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
+      '@tarojs/plugin-platform-qq': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-swan': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-tt': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
+      '@tarojs/plugin-platform-weapp': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
       '@tarojs/runner-utils': 3.6.20
       '@tarojs/runtime': 3.6.20
       '@tarojs/shared': 3.6.20
