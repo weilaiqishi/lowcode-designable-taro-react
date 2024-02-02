@@ -24,6 +24,7 @@ import {
 
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'
+import { behaviorOfResizeAndtranslate } from '../shared'
 
 Schema.silent(true)
 
@@ -169,4 +170,7 @@ Field.Behavior = createBehavior({
   name: 'Field',
   selector: 'Field',
   designerLocales: AllLocales.Field,
+  designerProps: {
+    ...behaviorOfResizeAndtranslate
+  }
 })

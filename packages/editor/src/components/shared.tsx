@@ -190,3 +190,79 @@ const imageLocals = {
   height: '高度，默认单位px',
   radius: '圆角大小',
 }
+
+export const behaviorOfResizeAndtranslate = {
+  resizable: {
+    width(node, element) {
+      const width = Number(
+        node.props?.style?.width ?? element.getBoundingClientRect().width
+      )
+      return {
+        // plus: () => {
+        //   node.props = node.props || {}
+        //   node.props.style = node.props.style || {}
+        //   node.props.style.width = width + 10
+        // },
+        // minus: () => {
+        //   node.props = node.props || {}
+        //   node.props.style = node.props.style || {}
+        //   node.props.style.width = width - 10
+        // },
+        resize() {
+          node.props = node.props || {}
+          node.props['x-component-props'] = node.props['x-component-props'] || {}
+          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
+          node.props['x-component-props'].style.width = width + 'px'
+        },
+      }
+    },
+    height(node, element) {
+      const height = Number(
+        node.props?.style?.height ?? element.getBoundingClientRect().height
+      )
+      return {
+        // plus: () => {
+        //   node.props = node.props || {}
+        //   node.props.style = node.props.style || {}
+        //   node.props.style.height = height + 10
+        // },
+        // minus: () => {
+        //   node.props = node.props || {}
+        //   node.props.style = node.props.style || {}
+        //   node.props.style.height = height - 10
+        // },
+        resize() {
+          node.props = node.props || {}
+          node.props['x-component-props'] = node.props['x-component-props'] || {}
+          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
+          node.props['x-component-props'].style.height = height + 'px'
+        },
+      }
+    },
+  },
+  translatable: {
+    x(node, element, diffX) {
+      const left =
+        parseInt(node.props?.style?.left ?? element?.style.left) || 0
+      return {
+        translate: () => {
+          node.props = node.props || {}
+          node.props['x-component-props'] = node.props['x-component-props'] || {}
+          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
+          node.props['x-component-props'].style.left = left + parseInt(String(diffX)) + 'px'
+        },
+      }
+    },
+    y(node, element, diffY) {
+      const top = parseInt(node.props?.style?.top ?? element?.style.top) || 0
+      return {
+        translate: () => {
+          node.props = node.props || {}
+          node.props['x-component-props'] = node.props['x-component-props'] || {}
+          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
+          node.props['x-component-props'].style.top = top + parseInt(String(diffY)) + 'px'
+        },
+      }
+    },
+  },
+}
