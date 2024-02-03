@@ -12,8 +12,6 @@ import { AllSchemas } from '../../schemas'
 import { createVoidFieldSchema } from '../Field'
 import {
   iconimageDesignableConfig,
-  IconSelect,
-  imageDesignableConfig,
 } from '../shared'
 
 export const Button: DnFC<React.ComponentProps<typeof component>> = component
@@ -22,6 +20,10 @@ const { imgsProperties, imgsLocales } = iconimageDesignableConfig([
   {
     name: 'leftIcon',
     locale: '左侧图标',
+  },
+  {
+    name: 'rightIcon',
+    locale: '右侧图标',
   },
 ])
 const propsSchema = createVoidFieldSchema({

@@ -63,6 +63,12 @@ const xEventProperties = {
   click: {
     type: 'object',
     'x-component': 'DrawerSetter',
+    'x-decorator': 'FormItem',
+    'x-decorator-props': {
+      labelStyle: {
+        display: 'none',
+      },
+    },
     properties: {
       ...eventProps,
     },
@@ -70,6 +76,12 @@ const xEventProperties = {
   close: {
     type: 'object',
     'x-component': 'DrawerSetter',
+    'x-decorator': 'FormItem',
+    'x-decorator-props': {
+      labelStyle: {
+        display: 'none',
+      },
+    },
     properties: {
       ...eventProps,
     },

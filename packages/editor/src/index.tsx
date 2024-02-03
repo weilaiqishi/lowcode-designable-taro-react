@@ -66,6 +66,7 @@ import { PreviewWidget, SchemaEditorWidget } from './widgets'
 
 import '@tarojs/components/dist/taro-components/taro-components.css'
 import '@nutui/nutui-react-taro/dist/style.css'
+import '@nutui/icons-react-taro/dist/style_iconfont.css'
 import './fix.scss'
 
 defineCustomElements(window)

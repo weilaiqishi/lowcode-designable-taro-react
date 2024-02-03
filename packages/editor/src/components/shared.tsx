@@ -8,7 +8,11 @@ import { CSSStyleLocales } from '@/locales/Field'
 
 import * as AllSchemas from '../schemas/all'
 
-export const IconSelect = {
+const IconList = {...Icons}
+delete IconList.IconFontConfig
+delete IconList.IconFont
+
+export const IconSelectProperties = {
   type: 'string',
   'x-decorator': 'FormItem',
   'x-component': ({ value, onChange }) => {
@@ -18,15 +22,16 @@ export const IconSelect = {
         onChange={onChange}
         showSearch
         optionFilterProp="children"
-        filterOption={(input, option) =>
-          String(option!.value).toLowerCase().includes(input.toLowerCase())
-        }
+        // filterOption={(input, option) =>
+        //   String(option!.value).toLowerCase().includes(input.toLowerCase())
+        // }
       >
         {Object.keys(Icons).map((key) => {
-          const Icon = Icons[key]
+          const IconFn = Icons[key]
+          const TheIcon = <IconFn style={{ fontSize: 20 }}></IconFn>
           return (
-            <Select.Option value={key}>
-              <Icon style={{ fontSize: 20 }}></Icon>
+            <Select.Option value={key.toLowerCase()}>
+              {TheIcon}
             </Select.Option>
           )
         })}
@@ -90,26 +95,22 @@ export const imageDesignableConfig = {
 
 export const iconFontDesignableConfig = {
   properties: {
-    name: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': IconSelect,
-    },
+    iconName: IconSelectProperties,
     size: {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
     },
-    // width: {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'SizeInput'
-    // },
-    // height: {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'SizeInput'
-    // },
+    width: {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput'
+    },
+    height: {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput'
+    },
     color: {
       type: 'string',
       'x-decorator': 'FormItem',
@@ -130,14 +131,7 @@ export const iconFontDesignableConfig = {
     //   'x-decorator': 'FormItem',
     //   'x-component': 'Input',
     // },
-    'style-group': {
-      type: 'void',
-      'x-component': 'CollapseItem',
-      'x-component-props': { defaultExpand: false },
-      properties: {
-        style: lodash.cloneDeep(AllSchemas.CSSStyle),
-      },
-    },
+    style: lodash.cloneDeep(AllSchemas.CSSStyle),
   },
 }
 
@@ -155,20 +149,31 @@ export function iconimageDesignableConfig(
     obj.imgsProperties[name + '-group'] = {
       type: 'void',
       'x-component': 'DrawerSetter',
+      'x-decorator': 'FormItem',
+      'x-decorator-props': {
+        labelStyle: {
+          display: 'none'
+        }
+      },
       properties: {
         [name + '.imageProps']: {
           type: 'object',
           'x-component': 'CollapseItem',
           properties: lodash.cloneDeep(imageDesignableConfig.properties),
           "x-component-props": {
-            title: '图片'
+            title: '图片',
+            defaultExpand: false
           }
         },
-        // iconFontProps: {
-        //   type: 'object',
-        //   'x-component': 'CollapseItem',
-        //   properties: lodash.cloneDeep(iconFontDesignableConfig.properties),
-        // },
+        [name + '.iconFontProps']: {
+          type: 'object',
+          'x-component': 'CollapseItem',
+          properties: lodash.cloneDeep(iconFontDesignableConfig.properties),
+          "x-component-props": {
+            title: '图标',
+            defaultExpand: false
+          }
+        },
       },
     }
     obj.imgsLocales[name + '-group'] = locale
@@ -177,6 +182,10 @@ export function iconimageDesignableConfig(
         ...imageLocals,
         style: CSSStyleLocales,
       },
+      iconFontProps: {
+        ...iconFontLocals,
+        style: CSSStyleLocales,
+      }
     }
   })
   return obj
@@ -189,6 +198,16 @@ const imageLocals = {
   width: '宽度，默认单位px',
   height: '高度，默认单位px',
   radius: '圆角大小',
+}
+
+const iconFontLocals = {
+  iconName: '图标名称或图片链接',
+  color: '图标颜色',
+  size: '图标大小',
+  width: '图标宽度',
+  height: '图标高度',
+  classPrefix: '类名前缀，用于使用自定义图标',
+  fontClassName: '自定义icon字体基础类名'
 }
 
 export const behaviorOfResizeAndtranslate = {
