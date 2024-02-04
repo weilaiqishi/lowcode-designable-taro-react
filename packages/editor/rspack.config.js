@@ -53,6 +53,29 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          {
+            // nutui以375px来设计 但PC页面编辑器是750px 对nutui做px转rem来兼容
+						loader: "postcss-loader",
+						options: {
+							postcssOptions: {
+								plugins: [
+									[
+										"postcss-plugin-px2rem",
+										{
+											rootValue: 37.5,
+                      exclude: /^(?!.*nutui)/
+										}
+									]
+								]
+							}
+						}
+					}
+        ],
+        type: 'css/auto', // 如果你需要将 '*.module.css' 视为 CSS Module 那么将 'type' 设置为 'css/auto' 否则设置为 'css'
+      },
+      {
         test: /\.s[ac]ss$/,
         use: [
           {

@@ -26,6 +26,7 @@ export const Button = connect(
     })
     if (IconImageConfig.leftIcon) {
       IconImageConfig.icon = IconImageConfig.leftIcon
+      delete IconImageConfig.leftIcon
     }
 
     const scope = useScope()

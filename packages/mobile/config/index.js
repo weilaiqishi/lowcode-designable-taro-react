@@ -5,10 +5,9 @@ const config = {
   date: '2022-5-30',
   designWidth: 750,
   deviceRatio: {
-    640: 2.34 / 2,
     750: 1,
-    828: 1.81 / 2
   },
+  baseFontSize: 37.5,
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: [],
@@ -72,6 +71,15 @@ const config = {
   h5: {
     staticDirectory: 'static',
     postcss: {
+      pxtransform: {
+        enable: true,
+        config: {
+          /* pxtransform 配置项 */
+          baseFontSize: 37.5,
+          maxRootSize: 1000,
+          minRootSize: 0
+        },
+      },
       autoprefixer: {
         enable: true,
         config: {

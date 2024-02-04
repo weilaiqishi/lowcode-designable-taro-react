@@ -1,6 +1,6 @@
 import React from 'react'
 import { ISchema } from '@formily/json-schema'
-import * as Icons from '@nutui/icons-react-taro'
+import { IconFont } from '@nutui/icons-react-taro'
 import { Select } from 'antd'
 import * as lodash from 'lodash-es'
 
@@ -8,9 +8,7 @@ import { CSSStyleLocales } from '@/locales/Field'
 
 import * as AllSchemas from '../schemas/all'
 
-const IconList = {...Icons}
-delete IconList.IconFontConfig
-delete IconList.IconFont
+import iconNames from './iconNames.json'
 
 export const IconSelectProperties = {
   type: 'string',
@@ -22,17 +20,16 @@ export const IconSelectProperties = {
         onChange={onChange}
         showSearch
         optionFilterProp="children"
-        // filterOption={(input, option) =>
-        //   String(option!.value).toLowerCase().includes(input.toLowerCase())
-        // }
+        filterOption={(input, option) =>
+          String(option!.value).toLowerCase().includes(input.toLowerCase())
+        }
       >
-        {Object.keys(Icons).map((key) => {
-          const IconFn = Icons[key]
-          const TheIcon = <IconFn style={{ fontSize: 20 }}></IconFn>
+        {iconNames.map((key) => {
+          const TheIcon = (
+            <IconFont name={key}></IconFont>
+          )
           return (
-            <Select.Option value={key.toLowerCase()}>
-              {TheIcon}
-            </Select.Option>
+            <Select.Option value={key.toLowerCase()} key={key}>{TheIcon}</Select.Option>
           )
         })}
       </Select>
@@ -104,12 +101,12 @@ export const iconFontDesignableConfig = {
     width: {
       type: 'string',
       'x-decorator': 'FormItem',
-      'x-component': 'SizeInput'
+      'x-component': 'SizeInput',
     },
     height: {
       type: 'string',
       'x-decorator': 'FormItem',
-      'x-component': 'SizeInput'
+      'x-component': 'SizeInput',
     },
     color: {
       type: 'string',
@@ -152,27 +149,27 @@ export function iconimageDesignableConfig(
       'x-decorator': 'FormItem',
       'x-decorator-props': {
         labelStyle: {
-          display: 'none'
-        }
+          display: 'none',
+        },
       },
       properties: {
         [name + '.imageProps']: {
           type: 'object',
           'x-component': 'CollapseItem',
           properties: lodash.cloneDeep(imageDesignableConfig.properties),
-          "x-component-props": {
+          'x-component-props': {
             title: '图片',
-            defaultExpand: false
-          }
+            defaultExpand: false,
+          },
         },
         [name + '.iconFontProps']: {
           type: 'object',
           'x-component': 'CollapseItem',
           properties: lodash.cloneDeep(iconFontDesignableConfig.properties),
-          "x-component-props": {
+          'x-component-props': {
             title: '图标',
-            defaultExpand: false
-          }
+            defaultExpand: false,
+          },
         },
       },
     }
@@ -185,7 +182,7 @@ export function iconimageDesignableConfig(
       iconFontProps: {
         ...iconFontLocals,
         style: CSSStyleLocales,
-      }
+      },
     }
   })
   return obj
@@ -207,7 +204,7 @@ const iconFontLocals = {
   width: '图标宽度',
   height: '图标高度',
   classPrefix: '类名前缀，用于使用自定义图标',
-  fontClassName: '自定义icon字体基础类名'
+  fontClassName: '自定义icon字体基础类名',
 }
 
 export const behaviorOfResizeAndtranslate = {
@@ -229,8 +226,10 @@ export const behaviorOfResizeAndtranslate = {
         // },
         resize() {
           node.props = node.props || {}
-          node.props['x-component-props'] = node.props['x-component-props'] || {}
-          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
+          node.props['x-component-props'] =
+            node.props['x-component-props'] || {}
+          node.props['x-component-props'].style =
+            node.props['x-component-props'].style || {}
           node.props['x-component-props'].style.width = width + 'px'
         },
       }
@@ -252,8 +251,10 @@ export const behaviorOfResizeAndtranslate = {
         // },
         resize() {
           node.props = node.props || {}
-          node.props['x-component-props'] = node.props['x-component-props'] || {}
-          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
+          node.props['x-component-props'] =
+            node.props['x-component-props'] || {}
+          node.props['x-component-props'].style =
+            node.props['x-component-props'].style || {}
           node.props['x-component-props'].style.height = height + 'px'
         },
       }
@@ -261,14 +262,16 @@ export const behaviorOfResizeAndtranslate = {
   },
   translatable: {
     x(node, element, diffX) {
-      const left =
-        parseInt(node.props?.style?.left ?? element?.style.left) || 0
+      const left = parseInt(node.props?.style?.left ?? element?.style.left) || 0
       return {
         translate: () => {
           node.props = node.props || {}
-          node.props['x-component-props'] = node.props['x-component-props'] || {}
-          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
-          node.props['x-component-props'].style.left = left + parseInt(String(diffX)) + 'px'
+          node.props['x-component-props'] =
+            node.props['x-component-props'] || {}
+          node.props['x-component-props'].style =
+            node.props['x-component-props'].style || {}
+          node.props['x-component-props'].style.left =
+            left + parseInt(String(diffX)) + 'px'
         },
       }
     },
@@ -277,9 +280,12 @@ export const behaviorOfResizeAndtranslate = {
       return {
         translate: () => {
           node.props = node.props || {}
-          node.props['x-component-props'] = node.props['x-component-props'] || {}
-          node.props['x-component-props'].style = node.props['x-component-props'].style || {}
-          node.props['x-component-props'].style.top = top + parseInt(String(diffY)) + 'px'
+          node.props['x-component-props'] =
+            node.props['x-component-props'] || {}
+          node.props['x-component-props'].style =
+            node.props['x-component-props'].style || {}
+          node.props['x-component-props'].style.top =
+            top + parseInt(String(diffY)) + 'px'
         },
       }
     },

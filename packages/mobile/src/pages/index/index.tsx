@@ -71,9 +71,10 @@ export default () => {
 
   return (
     <View>
-      <Form form={form} {...designableJson.form}>
+      <View className='the375'></View>
+      {/* <Form form={form} {...designableJson.form}>
         <SchemaField schema={designableJson.schema} />
-      </Form>
+      </Form> */}
       {/* <Button onClick={submit} style={{marginTop: '1rem'}}>submit</Button> */}
     </View>
   )

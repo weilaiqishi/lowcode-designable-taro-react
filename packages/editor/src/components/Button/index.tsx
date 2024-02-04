@@ -111,7 +111,7 @@ const propsSchema = createVoidFieldSchema({
             value: 'mini',
           },
         ],
-        default: 'normal',
+        default: 'large',
       },
       fill: {
         type: 'string',

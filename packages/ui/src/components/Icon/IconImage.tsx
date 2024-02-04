@@ -17,8 +17,10 @@ export function getIconImageConfig (
     if (record[name]?.imageProps?.src) {
       IconImageConfig[name] = <Image {...record[name]!.imageProps}></Image>
     } else if (record[name]?.iconFontProps?.iconName) {
+      // @ts-ignore
+      const { iconName, ...otherProps } = record[name].iconFontProps
       IconImageConfig[name] = (
-        <IconFont {...record[name]!.iconFontProps} name={record[name]!.iconFontProps!.iconName}></IconFont>
+        <IconFont {...otherProps} name={record[name]!.iconFontProps!.iconName}></IconFont>
       )
     }
   })
