@@ -1,5 +1,7 @@
 import { Component } from 'react'
 
+import '@nutui/nutui-react-taro/dist/style.css'
+import '@nutui/icons-react-taro/dist/style_iconfont.css'
 import './app.scss'
 
 class App extends Component {

@@ -4,7 +4,7 @@ import { FormProvider } from '@formily/react'
 import { Button, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import {
-  Form,
+  FormPage,
   formStyleTransitionPx,
   SchemaField,
   schemaTransitionPx,
@@ -14,7 +14,7 @@ import { initFormily } from '@/utils/formily'
 
 import './index.scss'
 
-import testJson from './event.json'
+import testJson from './test.json'
 
 initFormily()
 
@@ -70,12 +70,11 @@ export default () => {
   }, [])
 
   return (
-    <View>
-      <View className='the375'></View>
-      {/* <Form form={form} {...designableJson.form}>
+    <View style="magrin: 0; padding: 0;">
+      <FormPage form={form} {...designableJson.form}>
         <SchemaField schema={designableJson.schema} />
-      </Form> */}
-      {/* <Button onClick={submit} style={{marginTop: '1rem'}}>submit</Button> */}
+      </FormPage>
+      <Button onClick={submit} style={{marginTop: '1rem'}}>submit</Button>
     </View>
   )
 }
