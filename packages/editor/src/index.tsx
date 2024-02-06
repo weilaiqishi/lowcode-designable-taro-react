@@ -182,6 +182,7 @@ const App = () => {
               <ResourceWidget
                 title="sources.Layouts"
                 sources={[
+                  Form,
                   WidgetBase,
                   WidgetCell,
                   WidgetCellGroup,
@@ -206,6 +207,7 @@ const App = () => {
               style={{
                 width: '750px',
                 overflow: 'overlay',
+                overflowX: 'hidden'
               }}
             >
               <ViewPanel type="DESIGNABLE">
@@ -216,7 +218,7 @@ const App = () => {
                       ArrayViews,
                       Button,
                       Checkbox,
-                      // Form,
+                      Form,
                       FormPage,
                       Field,
                       Image,

@@ -52,10 +52,11 @@ export const Viewport: React.FC<IViewportProps> = ({
     <div
       {...props}
       ref={ref}
-      className={cls(prefix, props.className, 'theClass')}
+      className={cls(prefix, props.className, 'theViewportClass')}
       style={{
         opacity: !loaded ? 0 : 1,
         overflow: isFrameRef.current ? 'hidden' : 'overlay',
+        overflowX: 'hidden',
         ...props.style,
       }}
     >

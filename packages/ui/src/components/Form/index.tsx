@@ -4,12 +4,15 @@ import {
   ExpressionScope,
   FormProvider,
   JSXComponent,
+  observer,
   useParentForm,
 } from '@formily/react'
 import { Cell } from '@nutui/nutui-react-taro'
 import classNames from 'classnames'
-
+import { typePropsBase } from '../type'
 import { PreviewText } from '../PreviewText'
+
+import './form.scss'
 
 export interface IFormLayoutProps {
   form?: FormType
@@ -27,7 +30,9 @@ const PositionInfo: any = {
   right: 'form-layout-right',
 }
 
-export const Form: React.FC<React.PropsWithChildren<IFormLayoutProps>> = ({
+type typeProps = typePropsBase & IFormLayoutProps
+
+export const Form = ({
   form,
   previewTextPlaceholder,
   className,
@@ -35,7 +40,17 @@ export const Form: React.FC<React.PropsWithChildren<IFormLayoutProps>> = ({
   children,
   divider,
   labelPosition,
-}) => {
+  ...props
+}: typeProps) => {
+  console.log({
+    form,
+    previewTextPlaceholder,
+    className,
+    style,
+    children,
+    divider,
+    labelPosition,
+  })
   const classPrefix = 'nut-form'
   const top = useParentForm()
   const renderContent = (_form: FormType | ObjectField) => (
@@ -50,8 +65,9 @@ export const Form: React.FC<React.PropsWithChildren<IFormLayoutProps>> = ({
           style={style}
           action=''
           onSubmit={() => {}}
+          {...props}
         >
-          <Cell.Group divider={divider}>{children}</Cell.Group>
+          <Cell.Group divider={divider} style={{ margin: '0' }} className='formCellGroup'>{children}</Cell.Group>
         </form>
       </PreviewText.Placeholder>
     </ExpressionScope>

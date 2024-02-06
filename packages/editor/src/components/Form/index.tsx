@@ -1,65 +1,52 @@
 import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import * as lodash from 'lodash-es'
-import { Form as FormilyForm } from 'ui-nutui-react-taro'
+import { Form as Component } from 'ui-nutui-react-taro'
 
-import { DnFC, usePrefix } from '@/designable/designable-react/src'
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
+import {
+  DnFC,
+  DroppableWidget,
+  useTreeNode,
+} from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
+import { createVoidFieldSchema } from '../Field/shared'
 
-export const Form: DnFC<React.ComponentProps<typeof FormilyForm>> = observer(
-  (props) => {
-    const form = useMemo(
-      () =>
-        createForm({
-          designable: true,
-        }),
-      []
-    )
-    return (
-      <FormilyForm {...props} form={form}>
-        {props.children}
-      </FormilyForm>
-    )
-  }
-)
+export const Form: DnFC<React.ComponentProps<typeof Component>> = (props) => {
+  const node = useTreeNode()
+  if (node.children.length === 0) return <DroppableWidget />
+  return <Component {...props}></Component>
+}
 
 Form.Behavior = createBehavior({
   name: 'Form',
-  selector: (node) => node.componentName === 'Form',
-  designerProps(node) {
-    return {
-      draggable: !node.isRoot,
-      cloneable: !node.isRoot,
-      deletable: !node.isRoot,
-      droppable: true,
-      propsSchema: {
-        type: 'object',
-        properties: {
-          // ...(lodash.pick(AllSchemas.FormLayout.properties) as object),
-          style: {
-            type: 'void',
-            properties: lodash.omit(AllSchemas.CSSStyle.properties as object, [
-              'style.position',
-              'style.top',
-              'style.left',
-              'style.right',
-              'style.bottom',
-            ]),
-          },
-        },
-      },
-      defaultProps: {
-        initialValues: {},
+  extends: ['Field'],
+  selector: (node) => node.props['x-component'] === 'Form',
+  designerProps: {
+    droppable: true,
+    propsSchema: {
+      type: 'void',
+      properties: {
         style: {
-          fontSize: '0',
+          type: 'void',
+          properties: lodash.omit(AllSchemas.CSSStyle.properties, [
+            'style.position',
+            'style.top',
+            'style.left',
+            'style.right',
+            'style.bottom',
+          ]) as any,
         },
       },
-    }
+    },
   },
+
   designerLocales: AllLocales.Form,
 })
 
@@ -70,8 +57,12 @@ Form.Resource = createResource({
     {
       componentName: 'Field',
       props: {
-        type: 'object',
+        type: 'void',
         'x-component': 'Form',
+        'x-component-props': {
+          style: {
+          },
+        },
       },
     },
   ],
