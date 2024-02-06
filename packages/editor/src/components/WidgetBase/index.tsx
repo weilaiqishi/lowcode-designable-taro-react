@@ -1,7 +1,11 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
+import * as lodash from 'lodash-es'
 import { WidgetBase as component } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
@@ -30,7 +34,7 @@ WidgetBase.Behavior = createBehavior({
     droppable: true,
     propsSchema,
   },
-  designerLocales: AllLocales.Card && {
+  designerLocales: lodash.merge(AllLocales.Card, {
     'zh-CN': {
       title: '基础容器',
       settings: {
@@ -39,7 +43,7 @@ WidgetBase.Behavior = createBehavior({
         },
       },
     },
-  },
+  }),
 })
 
 WidgetBase.Resource = createResource({

@@ -1,10 +1,13 @@
 import React, { useMemo } from 'react'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import * as lodash from 'lodash-es'
 import { FormPage as FormilyFormPage } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC, usePrefix } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
@@ -57,7 +60,11 @@ FormPage.Behavior = createBehavior({
       },
     }
   },
-  designerLocales: AllLocales.Form,
+  designerLocales: lodash.merge(lodash.cloneDeep(AllLocales.Form), {
+    'zh-CN': {
+      title: '页面',
+    },
+  }),
 })
 
 FormPage.Resource = createResource({

@@ -25,11 +25,11 @@ export const IconSelectProperties = {
         }
       >
         {iconNames.map((key) => {
-          const TheIcon = (
-            <IconFont name={key}></IconFont>
-          )
+          const TheIcon = <IconFont name={key}></IconFont>
           return (
-            <Select.Option value={key.toLowerCase()} key={key}>{TheIcon}</Select.Option>
+            <Select.Option value={key.toLowerCase()} key={key}>
+              {TheIcon}
+            </Select.Option>
           )
         })}
       </Select>
@@ -226,11 +226,12 @@ export const behaviorOfResizeAndtranslate = {
         // },
         resize() {
           node.props = node.props || {}
-          node.props['x-component-props'] =
-            node.props['x-component-props'] || {}
-          node.props['x-component-props'].style =
-            node.props['x-component-props'].style || {}
-          node.props['x-component-props'].style.width = width + 'px'
+          const styleKey = node.props['x-decorator']
+            ? 'x-decorator-props'
+            : 'x-component-props'
+          node.props[styleKey] = node.props[styleKey] || {}
+          node.props[styleKey].style = node.props[styleKey].style || {}
+          node.props[styleKey].style.width = width + 'px'
         },
       }
     },
@@ -251,11 +252,12 @@ export const behaviorOfResizeAndtranslate = {
         // },
         resize() {
           node.props = node.props || {}
-          node.props['x-component-props'] =
-            node.props['x-component-props'] || {}
-          node.props['x-component-props'].style =
-            node.props['x-component-props'].style || {}
-          node.props['x-component-props'].style.height = height + 'px'
+          const styleKey = node.props['x-decorator']
+            ? 'x-decorator-props'
+            : 'x-component-props'
+          node.props[styleKey] = node.props[styleKey] || {}
+          node.props[styleKey].style = node.props[styleKey].style || {}
+          node.props[styleKey].style.height = height + 'px'
         },
       }
     },
@@ -266,11 +268,12 @@ export const behaviorOfResizeAndtranslate = {
       return {
         translate: () => {
           node.props = node.props || {}
-          node.props['x-component-props'] =
-            node.props['x-component-props'] || {}
-          node.props['x-component-props'].style =
-            node.props['x-component-props'].style || {}
-          node.props['x-component-props'].style.left =
+          const styleKey = node.props['x-decorator']
+            ? 'x-decorator-props'
+            : 'x-component-props'
+          node.props[styleKey] = node.props[styleKey] || {}
+          node.props[styleKey].style = node.props[styleKey].style || {}
+          node.props[styleKey].style.left =
             left + parseInt(String(diffX)) + 'px'
         },
       }
@@ -280,12 +283,12 @@ export const behaviorOfResizeAndtranslate = {
       return {
         translate: () => {
           node.props = node.props || {}
-          node.props['x-component-props'] =
-            node.props['x-component-props'] || {}
-          node.props['x-component-props'].style =
-            node.props['x-component-props'].style || {}
-          node.props['x-component-props'].style.top =
-            top + parseInt(String(diffY)) + 'px'
+          const styleKey = node.props['x-decorator']
+            ? 'x-decorator-props'
+            : 'x-component-props'
+          node.props[styleKey] = node.props[styleKey] || {}
+          node.props[styleKey].style = node.props[styleKey].style || {}
+          node.props[styleKey].style.top = top + parseInt(String(diffY)) + 'px'
         },
       }
     },

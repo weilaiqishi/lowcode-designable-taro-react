@@ -143,6 +143,21 @@ export const createComponentSchema = (
         'x-component-props.style': lodash.cloneDeep(AllSchemas.CSSStyle),
       },
     },
+    'decorator-style-group': {
+      type: 'void',
+      'x-component': 'CollapseItem',
+      'x-component-props': { defaultExpand: false },
+      'x-reactions': {
+        fulfill: {
+          state: {
+            visible: '{{!!$form.values["x-decorator"]}}',
+          },
+        },
+      },
+      properties: {
+        'x-decorator-props.style': lodash.cloneDeep(AllSchemas.CSSStyle),
+      },
+    },
     'component-events-group': {
       type: 'void',
       'x-component': 'CollapseItem',
