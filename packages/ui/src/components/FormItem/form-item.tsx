@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Cell, CellProps } from '@nutui/nutui-react-taro'
 import { Block } from '@tarojs/components'
 
-import { ComponentDefaults } from '../components/type'
+import { ComponentDefaults } from '../type'
 
 export interface FormItemProps extends CellProps {
   className?: string

@@ -1,99 +1,125 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import { Checkbox as component } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
+import { iconimageDesignableConfig } from '../shared'
 
 export const Checkbox: DnFC<React.ComponentProps<typeof component>> = component
+
+const { imgsProperties, imgsLocales } = iconimageDesignableConfig([
+  {
+    name: 'noActiveIcon',
+    locale: '选中前图标',
+  },
+  {
+    name: 'activeIcon',
+    locale: '选中后图标',
+  },
+  {
+    name: 'indeterminateIcon',
+    locale: '半选状态图标',
+  },
+])
+
 const propsSchema = createFieldSchema({
-  component: AllSchemas.Checkbox,
+  component: {
+    type: 'object',
+    properties: {
+      'CheckboxGroupProps-group': {
+        type: 'void',
+        'x-component': 'DrawerSetter',
+        'x-decorator': 'FormItem',
+        'x-decorator-props': {
+          labelStyle: {
+            display: 'none',
+          },
+        },
+        properties: {
+          'CheckboxGroupProps': {
+            type: 'object',
+            'x-component': 'CollapseItem',
+            properties: {
+              max: {
+                type: 'number',
+                'x-decorator': 'FormItem',
+                'x-component': 'NumberPicker',
+              },
+              min: {
+                type: 'number',
+                'x-decorator': 'FormItem',
+                'x-component': 'NumberPicker',
+              },
+              labelPosition: {
+                type: 'string',
+                'x-decorator': 'FormItem',
+                'x-component': 'Select',
+                enum: [
+                  {
+                    label: 'left',
+                    value: 'left',
+                  },
+                  {
+                    label: 'right',
+                    value: 'right',
+                  },
+                ],
+                default: 'right',
+              },
+              direction: {
+                type: 'string',
+                'x-decorator': 'FormItem',
+                'x-component': 'Select',
+                enum: [
+                  {
+                    label: '垂直',
+                    value: 'vertical',
+                  },
+                  {
+                    label: '水平',
+                    value: 'horizontal',
+                  },
+                ],
+                default: 'vertical',
+              },
+            },
+            'x-component-props': {
+              title: 'Checkbox.Group属性',
+              defaultExpand: true,
+            },
+          },
+        },
+      },
+      shape: {
+        type: 'string',
+        'x-decorator': 'FormItem',
+        'x-component': 'Select',
+        enum: [
+          {
+            label: 'button',
+            value: 'button',
+          },
+          {
+            label: 'round',
+            value: 'round',
+          },
+        ],
+        default: 'round',
+      },
+      ...imgsProperties,
+    },
+  },
   props: {
     'component-events-group': [],
   },
 }) as any
-
-const customStyles = {
-  customStylesTitle: {
-    type: 'void',
-    'x-decorator': 'FormItem',
-  },
-  checkboxFontSize: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  checkboxBorderColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  checkboxGap: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  checkboxLabelMargin: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  checkboxLabelColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  checkboxLabelLineHeight: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  checkboxDisabledLabelColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  checkboxIconFontSize: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  checkboxCheckedIconColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  checkboxCheckedIconBorderColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  checkboxCheckedIconBackgroundColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  checkboxDisabledIconColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  checkboxDisabledIconBorderColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-}
-const styleSchema =
-  propsSchema.properties['component-style-group'].properties[
-    'x-component-props.style'
-  ].properties
-Object.entries(customStyles).forEach(
-  (values) => (styleSchema[`style.${values[0]}`] = values[1])
-)
 
 Checkbox.Behavior = createBehavior({
   name: 'Checkbox',
@@ -106,15 +132,34 @@ Checkbox.Behavior = createBehavior({
         {
           label: '选项1',
           value: '1',
+          disabled: true,
         },
         {
           label: '选项2',
           value: '2',
+          disabled: false,
         },
       ],
     },
   },
-  designerLocales: AllLocales.CheckboxGroup,
+  designerLocales: {
+    'zh-CN': {
+      title: '复选框组',
+      settings: {
+        'x-component-props': {
+          'CheckboxGroupProps-group': 'Checkbox.Group属性',
+          'CheckboxGroupProps': {
+            max: '限制最大可选数',
+            min: '限制至少选择数',
+            labelPosition: '文本所在的位置',
+            direction: '排列方向',
+          },
+          shape: '形状',
+          ...imgsLocales,
+        },
+      },
+    },
+  },
 })
 
 Checkbox.Resource = createResource({

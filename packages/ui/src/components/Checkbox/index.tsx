@@ -13,7 +13,7 @@ type typeProps = typePropsFields &
   CheckboxProps &
   Partial<{
     CheckboxGroupProps: CheckboxGroupProps
-    icon: typeIconImageProps // 选中前
+    noActiveIcon: typeIconImageProps // 选中前
     activeIcon: typeIconImageProps // 选中后
     indeterminateIcon: typeIconImageProps // 半选状态
   }>
@@ -24,31 +24,42 @@ export const Checkbox = connect(
     onChange,
     dataSource,
     CheckboxGroupProps,
-    icon,
+    noActiveIcon,
     activeIcon,
     indeterminateIcon,
+    disabled,
     ...props
   }: typeProps) => {
-    const _dataSource = dataSource || []
-
+    const _dataSource: {
+      label: string,
+      value: string | number,
+      disabled: boolean
+    }[] = (dataSource || []) as any
     return (
       <Component.Group
         {...(CheckboxGroupProps || {})}
         value={value}
         onChange={onChange}
+        disabled={disabled}
       >
         {_dataSource.map((item, i) => {
-          const propNames = ['icon', 'activeIcon', 'indeterminateIcon']
+          const propNames = ['noActiveIcon', 'activeIcon', 'indeterminateIcon']
           const IconImageConfig = getIconImageConfig(propNames, {
-            icon,
+            noActiveIcon,
             activeIcon,
             indeterminateIcon,
           })
+          if (IconImageConfig.noActiveIcon) {
+            IconImageConfig.icon = IconImageConfig.noActiveIcon
+            delete IconImageConfig.noActiveIcon
+          }
           return (
             <Component
               {...props}
               {...IconImageConfig}
               key={item.value}
+              value={item.value}
+              disabled={item.disabled}
             >
               {item.label}
             </Component>
@@ -56,8 +67,8 @@ export const Checkbox = connect(
         })}
       </Component.Group>
     )
-  }
-  // mapProps({
-  //   dataSource: 'dataSource',
-  // })
+  },
+  mapProps({
+    dataSource: 'dataSource',
+  }),
 )

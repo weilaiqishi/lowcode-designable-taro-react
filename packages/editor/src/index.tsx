@@ -70,7 +70,7 @@ import '@nutui/icons-react-taro/dist/style_iconfont.css'
 import './fix.scss'
 
 defineCustomElements(window)
-setNpmCDNRegistry('//unpkg.com')
+setNpmCDNRegistry('//github.elemecdn.com')
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
     sources: {

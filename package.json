@@ -43,7 +43,7 @@
     "classname": "^0.0.0",
     "classnames": "^2.3.2",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.12.0",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-taro": "3.6.20",
     "eslint-plugin-import": "^2.13.0",
@@ -58,7 +58,8 @@
     "mobx": "4.8.0",
     "mobx-react": "6.1.4",
     "patch-package": "^6.4.7",
-    "prettier": "^2.6.2",
+    "prettier": "^3.1.0",
+    "prettier-eslint": "^16.3.0",
     "pretty-format": "^24.0.0",
     "pretty-quick": "^3.1.0",
     "react": "^18.2.0",
@@ -79,9 +80,5 @@
       "packages/*"
     ]
   },
-  "pnpm": {
-    "patchedDependencies": {
-      "@taroify/core@0.1.1-alpha.9": "patches/@taroify__core@0.1.1-alpha.9.patch"
-    }
-  }
+  "pnpm": {}
 }

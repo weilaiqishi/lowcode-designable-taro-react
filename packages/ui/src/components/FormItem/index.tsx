@@ -2,7 +2,7 @@ import React from 'react'
 import { isVoidField } from '@formily/core'
 import { connect, mapProps } from '@formily/react'
 
-import FormItemBase from '../../ui/form-item'
+import FormItemBase from './form-item'
 
 export const FormItem = connect(
   FormItemBase,

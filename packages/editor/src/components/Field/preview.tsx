@@ -163,6 +163,7 @@ export const Field: DnFC<ISchema> = observer((props) => {
       </VoidField>
     )
   }
+  console.log(fieldProps)
   return <InternalField {...fieldProps} name={node.id} />
 })
 

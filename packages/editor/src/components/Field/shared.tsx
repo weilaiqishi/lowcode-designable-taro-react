@@ -113,21 +113,6 @@ export const createComponentSchema = (
         },
       },
     },
-    'decorator-group': decorator && {
-      type: 'void',
-      'x-component': 'CollapseItem',
-      'x-component-props': { defaultExpand: false },
-      'x-reactions': {
-        fulfill: {
-          state: {
-            visible: '{{!!$form.values["x-decorator"]}}',
-          },
-        },
-      },
-      properties: {
-        'x-decorator-props': decorator,
-      },
-    },
     'component-style-group': {
       type: 'void',
       'x-component': 'CollapseItem',
@@ -141,6 +126,34 @@ export const createComponentSchema = (
       },
       properties: {
         'x-component-props.style': lodash.cloneDeep(AllSchemas.CSSStyle),
+      },
+    },
+    'component-events-group': {
+      type: 'void',
+      'x-component': 'CollapseItem',
+      'x-component-props': { defaultExpand: false },
+      properties: {
+        'x-component-props.event': {
+          type: 'object',
+          properties: props?.['component-events-group']
+            ? lodash.pick(xEventProperties, props['component-events-group'])
+            : xEventProperties,
+        },
+      },
+    },
+    'decorator-group': decorator && {
+      type: 'void',
+      'x-component': 'CollapseItem',
+      'x-component-props': { defaultExpand: false },
+      'x-reactions': {
+        fulfill: {
+          state: {
+            visible: '{{!!$form.values["x-decorator"]}}',
+          },
+        },
+      },
+      properties: {
+        'x-decorator-props': decorator,
       },
     },
     'decorator-style-group': {
@@ -158,19 +171,7 @@ export const createComponentSchema = (
         'x-decorator-props.style': lodash.cloneDeep(AllSchemas.CSSStyle),
       },
     },
-    'component-events-group': {
-      type: 'void',
-      'x-component': 'CollapseItem',
-      'x-component-props': { defaultExpand: false },
-      properties: {
-        'x-component-props.event': {
-          type: 'object',
-          properties: props?.['component-events-group']
-            ? lodash.pick(xEventProperties, props['component-events-group'])
-            : xEventProperties,
-        },
-      },
-    },
+
   }
 }
 
