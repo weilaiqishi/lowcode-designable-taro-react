@@ -42,15 +42,6 @@ export const Form = ({
   labelPosition,
   ...props
 }: typeProps) => {
-  console.log({
-    form,
-    previewTextPlaceholder,
-    className,
-    style,
-    children,
-    divider,
-    labelPosition,
-  })
   const classPrefix = 'nut-form'
   const top = useParentForm()
   const renderContent = (_form: FormType | ObjectField) => (

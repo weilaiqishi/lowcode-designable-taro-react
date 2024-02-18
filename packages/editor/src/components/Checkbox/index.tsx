@@ -144,7 +144,7 @@ Checkbox.Behavior = createBehavior({
   },
   designerLocales: {
     'zh-CN': {
-      title: '复选框组',
+      title: '复选按钮',
       settings: {
         'x-component-props': {
           'CheckboxGroupProps-group': 'Checkbox.Group属性',

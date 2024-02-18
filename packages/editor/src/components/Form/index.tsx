@@ -33,21 +33,38 @@ Form.Behavior = createBehavior({
     propsSchema: {
       type: 'void',
       properties: {
-        style: {
-          type: 'void',
-          properties: lodash.omit(AllSchemas.CSSStyle.properties, [
-            'style.position',
-            'style.top',
-            'style.left',
-            'style.right',
-            'style.bottom',
-          ]) as any,
+        'x-component-props': {
+          type: 'object',
+          properties: {
+            labelPosition: {
+              type: 'string',
+              enum: ['left', 'top'],
+              'x-decorator': 'FormItem',
+              'x-component': 'Select',
+              'x-component-props': {
+                defaultValue: 'left',
+              },
+            },
+            style: {
+              type: 'void',
+              properties: AllSchemas.CSSStyle.properties,
+            },
+          },
         },
       },
     },
   },
 
-  designerLocales: AllLocales.Form,
+  designerLocales: {
+    'zh-CN': {
+      title: '复选框组',
+      settings: {
+        'x-component-props': {
+          labelPosition: 'label的位置',
+        },
+      },
+    },
+  },
 })
 
 Form.Resource = createResource({
@@ -60,8 +77,7 @@ Form.Resource = createResource({
         type: 'void',
         'x-component': 'Form',
         'x-component-props': {
-          style: {
-          },
+          style: {},
         },
       },
     },

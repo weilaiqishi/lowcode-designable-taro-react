@@ -1,55 +1,64 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import { Rate as component } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
+import { iconimageDesignableConfig } from '../shared'
 
 export const Rate: DnFC<React.ComponentProps<typeof component>> = component
+
+const { imgsProperties, imgsLocales } = iconimageDesignableConfig([
+  {
+    name: 'uncheckedIcon',
+    locale: '选中前图标',
+  },
+  {
+    name: 'checkedIcon',
+    locale: '选中后图标',
+  },
+])
+
 const propsSchema = createFieldSchema({
-  component: AllSchemas.Rate,
+  component: {
+    type: 'object',
+    properties: {
+      count: {
+        type: 'number',
+        'x-decorator': 'FormItem',
+        'x-component': 'NumberPicker',
+        'x-component-props': {
+          defaultValue: 5,
+        },
+      },
+      min: {
+        type: 'number',
+        'x-decorator': 'FormItem',
+        'x-component': 'NumberPicker',
+      },
+      allowHalf: {
+        type: 'boolean',
+        'x-decorator': 'FormItem',
+        'x-component': 'Switch',
+      },
+      touchable: {
+        type: 'boolean',
+        'x-decorator': 'FormItem',
+        'x-component': 'Switch',
+      },
+      ...imgsProperties,
+    },
+  },
   props: {
     'component-events-group': [],
   },
 }) as any
-
-const customStyles = {
-  rateIconSize: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  rateIconGutter: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  rateIconEmptyColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  rateIconFullColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  rateIconDisabledColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-}
-const styleSchema =
-  propsSchema.properties['component-style-group'].properties[
-    'x-component-props.style'
-  ].properties
-Object.entries(customStyles).forEach(
-  (values) => (styleSchema[`style.${values[0]}`] = values[1])
-)
 
 Rate.Behavior = createBehavior({
   name: 'Rate',
@@ -59,7 +68,20 @@ Rate.Behavior = createBehavior({
     propsSchema,
     defaultProps: {},
   },
-  designerLocales: AllLocales.Rate,
+  designerLocales: {
+    'zh-CN': {
+      title: '评分',
+      settings: {
+        'x-component-props': {
+          count: 'star 总数',
+          min: '最少选中star数量',
+          allowHalf: '允许半选',
+          touchable: '允许滑动评分',
+          ...imgsLocales,
+        },
+      },
+    },
+  },
 })
 
 Rate.Resource = createResource({

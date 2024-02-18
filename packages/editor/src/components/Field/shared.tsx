@@ -175,10 +175,35 @@ export const createComponentSchema = (
   }
 }
 
+const FormItemProperties: ISchema = {
+  type: 'object',
+  properties: {
+    errorMessageAlign: {
+      type: 'string',
+      enum: ['center' , 'right' , 'left'],
+      'x-decorator': 'FormItem',
+      'x-component': 'Select',
+      'x-component-props': {
+        defaultValue: 'left',
+      },
+    },
+    starPosition: {
+      type: 'string',
+      enum: ['left', 'right'],
+      'x-decorator': 'FormItem',
+      'x-component': 'Select',
+      'x-component-props': {
+        defaultValue: 'left',
+      },
+    },
+  },
+}
+
+
 export const createFieldSchema = ({
   component,
   props = {},
-  decorator = AllSchemas.FormItem,
+  decorator = FormItemProperties,
 }: {
   component: ISchema
   props?: any
@@ -294,7 +319,7 @@ export const createFieldSchema = ({
 export const createVoidFieldSchema = ({
   component,
   props = {},
-  decorator = AllSchemas.FormItem,
+  decorator = FormItemProperties,
 }: {
   component: ISchema
   props?: any

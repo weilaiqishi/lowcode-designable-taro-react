@@ -1,21 +1,19 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import { Image as Component } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createVoidFieldSchema } from '../Field'
-import { imageDesignableConfig } from '../shared'
+import { imageDesignableConfig, imageLocals } from '../shared'
 
 export const Image: DnFC<React.ComponentProps<typeof Component>> = (props) => {
-  return (
-    <Component
-      {...props}
-      value={`https://dummyimage.com/200x200/000/fff&text=field`}
-    ></Component>
-  )
+  return <Component {...props}></Component>
 }
 const propsSchema = createVoidFieldSchema({
   component: {
@@ -26,13 +24,13 @@ const propsSchema = createVoidFieldSchema({
         'x-decorator': 'FormItem',
         'x-component': 'Switch',
       },
-      staticValue: {
+      ...imageDesignableConfig.properties,
+      src: {
         type: 'string',
         'x-decorator': 'FormItem',
         'x-component': 'Input',
         default: `https://dummyimage.com/200x200/000/fff&text=static`,
       },
-      ...imageDesignableConfig.properties,
     },
   },
   props: {
@@ -63,8 +61,7 @@ Image.Behavior = createBehavior({
       settings: {
         'x-component-props': {
           useValue: '	使用表单字段值',
-          staticValue: '静态值',
-          ...imageDesignableConfig.locales,
+          ...imageLocals,
         },
       },
     },
