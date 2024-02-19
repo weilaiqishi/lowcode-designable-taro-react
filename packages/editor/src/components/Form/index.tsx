@@ -57,7 +57,7 @@ Form.Behavior = createBehavior({
 
   designerLocales: {
     'zh-CN': {
-      title: '复选框组',
+      title: '表单',
       settings: {
         'x-component-props': {
           labelPosition: 'label的位置',

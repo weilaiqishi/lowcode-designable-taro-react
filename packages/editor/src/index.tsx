@@ -56,6 +56,7 @@ import {
   Rate,
   Switch,
   Text,
+  TextArea,
   WidgetBase,
   WidgetCell,
   WidgetCellGroup,
@@ -174,7 +175,7 @@ const App = () => {
             <CompositePanel.Item title="panels.Component" icon="Component">
               <ResourceWidget
                 title="sources.Inputs"
-                sources={[Input, Checkbox, Radio, Rate, Switch]}
+                sources={[Input, TextArea, Checkbox, Radio, Rate, Switch]}
               />
               <ResourceWidget
                 title="sources.Displays"
@@ -229,6 +230,7 @@ const App = () => {
                       Rate,
                       Switch,
                       Text,
+                      TextArea,
                       WidgetBase,
                       WidgetCell,
                       WidgetCellGroup,
