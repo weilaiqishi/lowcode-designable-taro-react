@@ -1,14 +1,26 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
-import { WidgetCellGroup as component } from 'ui-nutui-react-taro'
+import { WidgetCellGroup as Component } from 'ui-nutui-react-taro'
 
-import { DnFC } from '@/designable/designable-react/src'
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
+import {
+  DnFC,
+  DroppableWidget,
+  useTreeNode,
+} from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
 import { createVoidFieldSchema } from '../Field'
 
-export const WidgetCellGroup: DnFC<React.ComponentProps<typeof component>> =
-  component
+export const WidgetCellGroup: DnFC<React.ComponentProps<typeof Component>> = (
+  props
+) => {
+  const node = useTreeNode()
+  if (node.children.length === 0) return <DroppableWidget />
+  return <Component {...props}></Component>
+}
 
 const props = {
   'field-group': ['name', 'x-display', 'x-reactions'],
@@ -23,22 +35,15 @@ const propsSchema = createVoidFieldSchema({
         'x-decorator': 'FormItem',
         'x-component': 'Input',
       },
-      inset: {
-        type: 'boolean',
+      description: {
+        type: 'string',
         'x-decorator': 'FormItem',
-        'x-component': 'Switch',
-        'x-component-props': {
-          defaultValue: false,
-        },
+        'x-component': 'Input.TextArea',
       },
-      bordered: {
+      divider: {
         type: 'boolean',
         'x-decorator': 'FormItem',
         'x-component': 'Switch',
-        'x-component-props': {
-          defaultValue: true,
-          defaultChecked: true,
-        },
       },
     },
   },
@@ -58,10 +63,9 @@ WidgetCellGroup.Behavior = createBehavior({
       title: '单元格分组',
       settings: {
         'x-component-props': {
-          style: {},
           title: '分组标题',
-          inset: '是否展示为圆角卡片风格',
-          bordered: '是否显示外边框',
+          description: '分组描述',
+          divider: '单元格之间是否有分割线',
         },
       },
     },
