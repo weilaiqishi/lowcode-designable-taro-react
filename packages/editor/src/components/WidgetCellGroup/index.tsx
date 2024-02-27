@@ -85,6 +85,7 @@ WidgetCellGroup.Resource = createResource({
             width: '750px',
             height: '750px',
           },
+          divider: true
         },
       },
     },

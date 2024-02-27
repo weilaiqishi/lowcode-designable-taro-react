@@ -46,7 +46,7 @@ module.exports = {
               // Side effect imports.
               ['^\\u0000'],
               // Style imports.
-              ['^.+\\.s?css$'],
+              ['^.+\\.s?css$', '^.+\\.less$'],
               // Parent imports. Put `..` last.
               ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
               // Other relative imports. Put same-folder imports and `.` last.

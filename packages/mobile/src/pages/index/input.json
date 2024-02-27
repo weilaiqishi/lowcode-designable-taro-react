@@ -1,111 +1,163 @@
 {
   "form": {
     "style": {
-      "backgroundColor": "rgba(247,248,250,1)"
-    }
+      "backgroundColor": "rgba(247,248,250,1)",
+      "padding": "20px 20px 20px 20px"
+    },
+    "initialValues": {}
   },
   "schema": {
     "type": "object",
     "properties": {
-      "eqbfddhpdn3": {
-        "type": "void",
-        "x-component": "WidgetCellGroup",
+      "nyz0bl8r3h3": {
+        "type": "string",
+        "title": "Text",
+        "x-component": "Text",
         "x-component-props": {
           "style": {
-            "width": "750px",
-            "height": "750px",
+            "fontSize": "28px",
+            "lineHeight": "28px",
             "position": "relative",
-            "top": "0px",
-            "left": "0px"
+            "color": "#909ca4",
+            "padding": "0px 20px 0px 20px",
+            "margin": "0px 0px 20px 0px",
+            "display": "inline-block"
           },
-          "inset": true,
-          "title": "输入框"
+          "staticValue": "基础用法",
+          "event": {}
         },
-        "x-designable-id": "eqbfddhpdn3",
-        "x-index": 0,
+        "x-designable-id": "nyz0bl8r3h3",
+        "x-index": 0
+      },
+      "sov9nxpm3an": {
+        "type": "void",
+        "x-component": "Form",
+        "x-component-props": {
+          "style": {
+            "position": "relative"
+          }
+        },
+        "x-designable-id": "sov9nxpm3an",
+        "x-index": 1,
         "properties": {
-          "a": {
-            "type": "string",
-            "title": "文本",
-            "x-decorator": "FormItem",
-            "x-component": "Input",
-            "x-validator": [],
+          "c1on2stqlyb": {
+            "type": "void",
+            "x-component": "WidgetCellGroup",
             "x-component-props": {
               "style": {
-                "position": "relative",
-                "top": "0px",
-                "left": "0px"
+                "width": "750px",
+                "height": "750px",
+                "position": "relative"
               },
-              "placeholder": "请输入文本"
+              "event": {
+                "click": {},
+                "close": {}
+              },
+              "divider": false
             },
-            "x-decorator-props": {},
-            "x-designable-id": "pqmwcijj7vt",
+            "x-designable-id": "c1on2stqlyb",
             "x-index": 0,
-            "name": "a"
-          },
-          "b": {
-            "type": "string",
-            "title": "数字",
-            "x-decorator": "FormItem",
-            "x-component": "Input",
-            "x-validator": [],
-            "x-component-props": {
-              "style": {
-                "position": "relative",
-                "top": "0px",
-                "left": "0px"
+            "properties": {
+              "3s1m5ap8cz4": {
+                "type": "string",
+                "title": "字段A",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "position": "relative",
+                    "display": "block"
+                  },
+                  "event": {},
+                  "placeholder": "请输入字段A"
+                },
+                "x-decorator-props": {
+                  "style": {
+                    "position": "relative"
+                  }
+                },
+                "x-designable-id": "3s1m5ap8cz4",
+                "x-index": 0,
+                "description": "",
+                "required": true
               },
-              "type": "number",
-              "placeholder": "请输入数字"
-            },
-            "x-decorator-props": {},
-            "x-designable-id": "neyg91mk9v7",
-            "x-index": 1,
-            "name": "b"
-          },
-          "c": {
-            "type": "string",
-            "title": "手机号码",
-            "x-decorator": "FormItem",
-            "x-component": "Input",
-            "x-validator": "phone",
-            "x-component-props": {
-              "style": {
-                "position": "relative",
-                "top": "0px",
-                "left": "0px"
+              "jrtti23wcuk": {
+                "type": "string",
+                "title": "字段D",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [
+                  {
+                    "required": false
+                  }
+                ],
+                "x-component-props": {
+                  "style": {
+                    "position": "relative"
+                  },
+                  "event": {},
+                  "placeholder": "请输入字段D"
+                },
+                "x-decorator-props": {
+                  "style": {
+                    "position": "relative"
+                  }
+                },
+                "x-designable-id": "jrtti23wcuk",
+                "x-index": 1,
+                "required": true
               },
-              "placeholder": "请输入手机号"
-            },
-            "x-decorator-props": {},
-            "required": true,
-            "x-designable-id": "a89tbw3dln7",
-            "x-index": 2,
-            "name": "c"
-          },
-          "d": {
-            "type": "string",
-            "title": "密码",
-            "x-decorator": "FormItem",
-            "x-component": "Input",
-            "x-validator": [],
-            "x-component-props": {
-              "style": {
-                "position": "relative",
-                "top": "0px",
-                "left": "0px"
-              },
-              "password": true,
-              "placeholder": ""
-            },
-            "x-decorator-props": {},
-            "x-designable-id": "i9vx9qj4wzl",
-            "x-index": 3,
-            "name": "d"
+              "1xyi4y2n3qu": {
+                "type": "void",
+                "x-component": "WidgetCell",
+                "x-component-props": {
+                  "style": {
+                    "position": "relative"
+                  },
+                  "event": {
+                    "click": {},
+                    "close": {}
+                  }
+                },
+                "x-designable-id": "1xyi4y2n3qu",
+                "x-index": 2,
+                "properties": {
+                  "l8izj4ecta6": {
+                    "type": "void",
+                    "title": "Button",
+                    "x-component": "Button",
+                    "x-component-props": {
+                      "style": {
+                        "width": "100%",
+                        "height": "",
+                        "position": "relative"
+                      },
+                      "data-designer-node-id": "l8izj4ecta6",
+                      "children": "按钮",
+                      "shape": "round",
+                      "type": "primary",
+                      "size": "large",
+                      "fill": "",
+                      "event": {
+                        "click": {
+                          "propsOperatorsArray": [
+                            "$form.submit()"
+                          ],
+                          "api": "runStatement"
+                        }
+                      }
+                    },
+                    "x-designable-id": "l8izj4ecta6",
+                    "x-index": 0
+                  }
+                }
+              }
+            }
           }
         }
       }
     },
-    "x-designable-id": "9g4ikf4qskr"
+    "x-designable-id": "3cboctnjdzu"
   }
 }

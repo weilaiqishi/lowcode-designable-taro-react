@@ -1,11 +1,14 @@
-import { observer, ReactFC } from '@formily/reactive-react'
-import { GlobalRegistry, TreeNode } from '@/designable/designable-core/src'
-import cls from 'classnames'
 import React, { Fragment, useEffect } from 'react'
+import { observer, ReactFC } from '@formily/reactive-react'
+import cls from 'classnames'
+
+import { GlobalRegistry, TreeNode } from '@/designable/designable-core/src'
+
+import './styles.less'
+
 import { DesignerComponentsContext, TreeNodeContext } from '../../context'
 import { useComponents, useDesigner, usePrefix, useTree } from '../../hooks'
 import { IDesignerComponents } from '../../types'
-import './styles.less'
 
 export interface IComponentTreeWidgetProps {
   style?: React.CSSProperties
@@ -35,6 +38,9 @@ export const TreeNodeWidget: ReactFC<ITreeNodeWidgetProps> = observer(
         ...extendsProps,
         ...node.props,
         ...node.designerProps?.getComponentProps?.(node),
+        onClick: () => {
+          console.log('theClick')
+        }
       }
       if (node.depth === 0) {
         delete props.style
