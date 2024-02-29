@@ -7,7 +7,7 @@ import { formilyStoreEvent, useScope } from '../utils'
 
 type typeProps = typePropsBase & VirtualListProps &
   Partial<{
-    event
+    eventsConfig
   }>
 
 // TODO

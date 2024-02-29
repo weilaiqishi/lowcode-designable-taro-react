@@ -7,9 +7,9 @@ import { typePropsBase } from '../type'
 type typeProps = typePropsBase &
   CellGroupProps &
   Partial<{
-    event
+    eventsConfig
   }>
 
-export const WidgetCellGroup = observer(({ children, ...props }: typeProps) => {
+export const WidgetCellGroup = observer(({ children, eventsConfig, ...props }: typeProps) => {
   return <CellGroup {...props}>{children}</CellGroup>
 })

@@ -23,8 +23,7 @@
             "margin": "0px 0px 20px 0px",
             "display": "inline-block"
           },
-          "staticValue": "基础用法",
-          "event": {}
+          "staticValue": "基础用法"
         },
         "x-designable-id": "nyz0bl8r3h3",
         "x-index": 0
@@ -49,10 +48,6 @@
                 "height": "750px",
                 "position": "relative"
               },
-              "event": {
-                "click": {},
-                "close": {}
-              },
               "divider": false
             },
             "x-designable-id": "c1on2stqlyb",
@@ -69,7 +64,6 @@
                     "position": "relative",
                     "display": "block"
                   },
-                  "event": {},
                   "placeholder": "请输入字段A"
                 },
                 "x-decorator-props": {
@@ -96,7 +90,6 @@
                   "style": {
                     "position": "relative"
                   },
-                  "event": {},
                   "placeholder": "请输入字段D"
                 },
                 "x-decorator-props": {
@@ -114,10 +107,6 @@
                 "x-component-props": {
                   "style": {
                     "position": "relative"
-                  },
-                  "event": {
-                    "click": {},
-                    "close": {}
                   }
                 },
                 "x-designable-id": "1xyi4y2n3qu",
@@ -139,8 +128,8 @@
                       "type": "primary",
                       "size": "large",
                       "fill": "",
-                      "event": {
-                        "click": {
+                      "eventsConfig": {
+                        "scriptClick": {
                           "propsOperatorsArray": [
                             "$form.submit()"
                           ],

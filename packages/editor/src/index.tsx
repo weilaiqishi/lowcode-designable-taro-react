@@ -40,7 +40,7 @@ import {
   SettingsForm,
 } from '@/designable/designable-react-settings-form/src'
 
-import testJson from '../../mobile/src/pages/index/event.json'
+import testJson from '../../mobile/src/pages/index/input.json'
 import todoList from '../../mobile/src/pages/index/todoList.json'
 import { formilyStoreRegister } from '../../ui/src'
 import {

@@ -14,7 +14,7 @@ import { initFormily } from '@/utils/formily'
 
 import './index.scss'
 
-import testJson from './test.json'
+import testJson from './input.json'
 
 initFormily()
 

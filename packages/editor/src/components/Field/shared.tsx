@@ -59,8 +59,9 @@ const eventProps = {
     },
   },
 }
-const xEventProperties = {
-  click: {
+
+export const eventsConfigProperties = {
+  scriptClick: {
     type: 'object',
     'x-component': 'DrawerSetter',
     'x-decorator': 'FormItem',
@@ -73,7 +74,7 @@ const xEventProperties = {
       ...eventProps,
     },
   },
-  close: {
+  scriptClose: {
     type: 'object',
     'x-component': 'DrawerSetter',
     'x-decorator': 'FormItem',
@@ -87,6 +88,7 @@ const xEventProperties = {
     },
   },
 }
+export const eventsConfigFaker = ['Click', 'Close']
 
 export const createComponentSchema = (
   component: ISchema,
@@ -133,11 +135,11 @@ export const createComponentSchema = (
       'x-component': 'CollapseItem',
       'x-component-props': { defaultExpand: false },
       properties: {
-        'x-component-props.event': {
+        'x-component-props.eventsConfig': {
           type: 'object',
           properties: props?.['component-events-group']
-            ? lodash.pick(xEventProperties, props['component-events-group'])
-            : xEventProperties,
+            ? lodash.pick(eventsConfigProperties, props['component-events-group'])
+            : eventsConfigProperties,
         },
       },
     },

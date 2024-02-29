@@ -42,7 +42,7 @@ const propsSchema = createVoidFieldSchema({
   },
   props: {
     'field-group': ['name', 'x-display', 'x-reactions'],
-    'component-events-group': ['click', 'close'],
+    'component-events-group': ['scriptClick', 'scriptClose'],
   },
 }) as any
 

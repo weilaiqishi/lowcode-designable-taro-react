@@ -59,9 +59,9 @@ export const Field = {
         bordered: '是否有边框',
         placeholder: '占位提示',
         style: CSSStyleLocales,
-        event: {
-          click: { title: '点击事件', ...eventProps },
-          close: { title: '关闭事件', ...eventProps },
+        eventsConfig: {
+          scriptClick: { title: '点击事件', ...eventProps },
+          scriptClose: { title: '关闭事件', ...eventProps },
         }
       },
       'x-decorator-props': {

@@ -14,11 +14,11 @@ type typeProps = typePropsBase &
   Partial<{
     leftIcon: typeIconImageProps
     rightIcon: typeIconImageProps
-    event
+    eventsConfig
   }>
 
 export const Button = connect(
-  ({ leftIcon, rightIcon, children, event, ...props }: typeProps) => {
+  ({ leftIcon, rightIcon, children, eventsConfig, ...props }: typeProps) => {
     const propNames = ['leftIcon', 'rightIcon']
     const IconImageConfig = getIconImageConfig(propNames, {
       leftIcon,
@@ -37,10 +37,12 @@ export const Button = connect(
         {...IconImageConfig}
         onClick={(e) => {
           e?.preventDefault()
-          console.log(event)
-          return
-          if (event?.click) {
-            formilyStoreEvent(scope, event.click)
+          if (eventsConfig?.Click) {
+            eventsConfig?.Click(e)
+            return
+          }
+          if (eventsConfig?.scriptClick) {
+            formilyStoreEvent(scope, eventsConfig.scriptClick)
           }
         }}
       >

@@ -1,7 +1,9 @@
 import React, { Fragment, useEffect } from 'react'
 import { observer, ReactFC } from '@formily/reactive-react'
 import cls from 'classnames'
+import * as lodash from 'lodash-es'
 
+import { eventsConfigFaker } from '@/components/Field/shared'
 import { GlobalRegistry, TreeNode } from '@/designable/designable-core/src'
 
 import './styles.less'
@@ -33,17 +35,27 @@ export const TreeNodeWidget: ReactFC<ITreeNodeWidgetProps> = observer(
       })
     }
     const renderProps = (extendsProps: any = {}) => {
-      const props = {
+      const props = lodash.cloneDeep({
         ...node.designerProps?.defaultProps,
         ...extendsProps,
         ...node.props,
         ...node.designerProps?.getComponentProps?.(node),
-        onClick: () => {
-          console.log('theClick')
-        }
-      }
+      })
       if (node.depth === 0) {
         delete props.style
+      }
+      if (props['x-component-props']) {
+        Object.assign(props['x-component-props'], {
+          eventsConfig: eventsConfigFaker.reduce(
+            (previousValue, currentValue) => {
+              previousValue[currentValue] = (e) => {
+                e?.preventDefault()
+              }
+              return previousValue
+            },
+            {}
+          ),
+        })
       }
       return props
     }

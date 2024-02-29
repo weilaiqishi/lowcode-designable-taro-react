@@ -8,23 +8,31 @@ import { formilyStoreEvent, useScope } from '../utils'
 type typeProps = typePropsBase &
   PopupProps &
   Partial<{
-    event
+    eventsConfig
   }>
 
 export const WidgetPopup = observer(
-  ({ children, event, ...props }: typeProps) => {
+  ({ children, eventsConfig, ...props }: typeProps) => {
     const scope = useScope()
     return (
       <Popup
         {...props}
-        onClick={() => {
-          if (event?.click) {
-            formilyStoreEvent(scope, event.click)
+        onClick={(e) => {
+          if (eventsConfig?.Click) {
+            eventsConfig.Click(e)
+            return
+          }
+          if (eventsConfig?.scriptClick) {
+            formilyStoreEvent(scope, eventsConfig.scriptClick)
           }
         }}
         onClose={() => {
-          if (event?.close) {
-            formilyStoreEvent(scope, event.close)
+          if (eventsConfig?.Close) {
+            eventsConfig.Close()
+            return
+          }
+          if (eventsConfig?.scriptClick) {
+            formilyStoreEvent(scope, eventsConfig.scriptClose)
           }
         }}
       >
