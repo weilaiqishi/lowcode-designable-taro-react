@@ -76,6 +76,9 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "scripts": {
+    "installCz": "npm install -g commitizen"
+  },
   "workspaces": {
     "packages": [
       "packages/*"
