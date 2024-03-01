@@ -22,8 +22,6 @@
     "@rspack/cli": "0.5.4",
     "@rspack/core": "0.5.4",
     "@swc/helpers": "^0.5.3",
-    "@taroify/core": "0.1.1-alpha.9",
-    "@taroify/icons": "0.1.1-alpha.9",
     "@tarojs/components": "3.6.20",
     "@tarojs/helper": "3.6.20",
     "@tarojs/plugin-framework-react": "3.6.20",

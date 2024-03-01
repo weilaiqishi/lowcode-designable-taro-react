@@ -50,12 +50,6 @@ importers:
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: ^0.5.11
         version: 0.5.11(react-refresh@0.11.0)(webpack@5.89.0)
-      '@taroify/core':
-        specifier: 0.1.1-alpha.9
-        version: 0.1.1-alpha.9(@tarojs/components@3.6.20)(@tarojs/taro@3.6.20)(react-dom@18.2.0)(react@18.2.0)
-      '@taroify/icons':
-        specifier: 0.1.1-alpha.9
-        version: 0.1.1-alpha.9(@tarojs/components@3.6.20)
       '@tarojs/components':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -167,12 +161,6 @@ importers:
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
-      mobx:
-        specifier: 4.8.0
-        version: 4.8.0
-      mobx-react:
-        specifier: 6.1.4
-        version: 6.1.4(mobx@4.8.0)(react@18.2.0)
       patch-package:
         specifier: ^6.4.7
         version: 6.5.1
@@ -242,12 +230,6 @@ importers:
       '@swc/helpers':
         specifier: ^0.5.3
         version: 0.5.3
-      '@taroify/core':
-        specifier: 0.1.1-alpha.9
-        version: 0.1.1-alpha.9(@tarojs/components@3.6.20)(@tarojs/taro@3.6.16)(react-dom@18.2.0)(react@18.2.0)
-      '@taroify/icons':
-        specifier: 0.1.1-alpha.9
-        version: 0.1.1-alpha.9(@tarojs/components@3.6.20)
       '@tarojs/components':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -474,12 +456,6 @@ importers:
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: ^0.5.11
         version: 0.5.11(react-refresh@0.11.0)(webpack@5.89.0)
-      '@taroify/core':
-        specifier: 0.1.1-alpha.9
-        version: 0.1.1-alpha.9(@tarojs/components@3.6.20)(@tarojs/taro@3.6.20)(react-dom@18.2.0)(react@18.2.0)
-      '@taroify/icons':
-        specifier: 0.1.1-alpha.9
-        version: 0.1.1-alpha.9(@tarojs/components@3.6.20)
       '@tarojs/components':
         specifier: 3.6.20
         version: 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
@@ -3431,93 +3407,6 @@ packages:
   /@swc/types@0.1.5:
     resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
 
-  /@taroify/core@0.1.1-alpha.9(@tarojs/components@3.6.20)(@tarojs/taro@3.6.16)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-QVP4ihOlVgUyfwLzJvMY9HXLmSb2tc+UILS4jE1VyIQKnxeosDWJ0O6B97U5dMZ3XkhqQoSB2GI+5s8NIGc7Hw==}
-    peerDependencies:
-      '@tarojs/components': 3.6.16
-      '@tarojs/taro': 3.6.16
-      react: ^18.2.0
-    dependencies:
-      '@taroify/hooks': 0.1.1-alpha.9(@tarojs/taro@3.6.16)(lodash@4.17.21)(react@18.2.0)
-      '@taroify/icons': 0.1.1-alpha.9(@tarojs/components@3.6.20)
-      '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/taro': 3.6.16(@types/react@18.2.45)(postcss@8.4.32)
-      classnames: 2.3.2
-      lodash: 4.17.21
-      promise: 8.3.0
-      raf: 3.4.1
-      react: 18.2.0
-      react-is: 18.2.0
-      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
-    transitivePeerDependencies:
-      - react-dom
-    dev: false
-
-  /@taroify/core@0.1.1-alpha.9(@tarojs/components@3.6.20)(@tarojs/taro@3.6.20)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-QVP4ihOlVgUyfwLzJvMY9HXLmSb2tc+UILS4jE1VyIQKnxeosDWJ0O6B97U5dMZ3XkhqQoSB2GI+5s8NIGc7Hw==}
-    peerDependencies:
-      '@tarojs/components': 3.6.16
-      '@tarojs/taro': 3.6.16
-      react: ^18.2.0
-    dependencies:
-      '@taroify/hooks': 0.1.1-alpha.9(@tarojs/taro@3.6.20)(lodash@4.17.21)(react@18.2.0)
-      '@taroify/icons': 0.1.1-alpha.9(@tarojs/components@3.6.20)
-      '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      '@tarojs/taro': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      classnames: 2.3.2
-      lodash: 4.17.21
-      promise: 8.3.0
-      raf: 3.4.1
-      react: 18.2.0
-      react-is: 18.2.0
-      react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
-    transitivePeerDependencies:
-      - react-dom
-    dev: false
-
-  /@taroify/hooks@0.1.1-alpha.9(@tarojs/taro@3.6.16)(lodash@4.17.21)(react@18.2.0):
-    resolution: {integrity: sha512-2ieIexy1CFibaNMiM7OuPQHitlR5KrHbuQGGIP+sFovhP9NO7gYScpbBmfyHwQGqdmTMu585SvqI7a0FacBZYQ==}
-    peerDependencies:
-      '@tarojs/taro': 3.6.16
-      lodash: ^4.17.21
-      react: ^18.2.0
-    dependencies:
-      '@tarojs/taro': 3.6.16(@types/react@18.2.45)(postcss@8.4.32)
-      '@vant/area-data': 1.5.1
-      lodash: 4.17.21
-      react: 18.2.0
-    dev: false
-
-  /@taroify/hooks@0.1.1-alpha.9(@tarojs/taro@3.6.20)(lodash@4.17.21)(react@18.2.0):
-    resolution: {integrity: sha512-2ieIexy1CFibaNMiM7OuPQHitlR5KrHbuQGGIP+sFovhP9NO7gYScpbBmfyHwQGqdmTMu585SvqI7a0FacBZYQ==}
-    peerDependencies:
-      '@tarojs/taro': 3.6.16
-      lodash: ^4.17.21
-      react: ^18.2.0
-    dependencies:
-      '@tarojs/taro': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)
-      '@vant/area-data': 1.5.1
-      lodash: 4.17.21
-      react: 18.2.0
-    dev: false
-
-  /@taroify/icons@0.1.1-alpha.9(@tarojs/components@3.6.20):
-    resolution: {integrity: sha512-uKkyCRsxb+wJsDWMvMKzS4djabOtZSypuFB5kctGv8spHBT/djaJXCIpEmCCbFahyFjVbaxLMrvKwwSr+zUtow==}
-    peerDependencies:
-      '@tarojs/components': 3.6.16
-    dependencies:
-      '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0)
-      classnames: 2.3.2
-    dev: false
-
-  /@tarojs/api@3.6.16:
-    resolution: {integrity: sha512-2vH0iQTnwGOb4UDGs2lKw6zbLXd4BmjvtjEuxLEsXBq/Bk/HY29zPuC0GcCgPPz1U15zoRA1F+mo2giCAr2dmg==}
-    dependencies:
-      '@babel/runtime': 7.23.6
-      '@tarojs/runtime': 3.6.16
-      '@tarojs/shared': 3.6.16
-    dev: false
-
   /@tarojs/api@3.6.20:
     resolution: {integrity: sha512-LJLYthePWUsq+Xy7IqUKv29BI1is1K861oagGVoQW6xYyLnvQx4zwU4FwlttvkA0iOtSGKf9q/KdTmheeeVrJQ==}
     dependencies:
@@ -3869,13 +3758,6 @@ packages:
       - supports-color
     dev: false
 
-  /@tarojs/runtime@3.6.16:
-    resolution: {integrity: sha512-iLH6LTDdf/sGrNf2JeOqJmGgvGCc16EzlTAPkk76MXIiQc+/dSrYtjNwO/6DXGbyUEH8vxz+Azh9IBS3pEvkWQ==}
-    dependencies:
-      '@tarojs/shared': 3.6.16
-      lodash-es: 4.17.21
-    dev: false
-
   /@tarojs/runtime@3.6.20:
     resolution: {integrity: sha512-9mcT8BZYrAhlouRKlMdicrAkgLNe4GvOTmReUAu24ZH/nV9GnwVt9SqSzz5vjZJGynjEcYLEROwCfyqKNKbDEA==}
     dependencies:
@@ -3903,10 +3785,6 @@ packages:
       - postcss
       - supports-color
       - vue
-    dev: false
-
-  /@tarojs/shared@3.6.16:
-    resolution: {integrity: sha512-Jlp8qIvbSxR/4CJ8UD0EyZp7eXvkwllOeHNuhkiZNs30mPLFhu77XNGIEkLemITYuRaNAVPFCw9h5rI9EUlYjQ==}
     dev: false
 
   /@tarojs/shared@3.6.20:
@@ -3952,32 +3830,6 @@ packages:
       - postcss
       - supports-color
       - vue
-    dev: false
-
-  /@tarojs/taro@3.6.16(@types/react@18.2.45)(postcss@8.4.32):
-    resolution: {integrity: sha512-tHRUgi19aPhN0STxTAHk8poEXg/2gvheMDvPnOHCHSAW6/30kp+ejDTIzT/RD+Rht3WfREMLEauavPx6Q42m8A==}
-    peerDependencies:
-      '@types/react': '*'
-      '@types/webpack': '*'
-      '@types/webpack-dev-server': '*'
-      postcss: '*'
-      vue: '*'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/webpack':
-        optional: true
-      '@types/webpack-dev-server':
-        optional: true
-      postcss:
-        optional: true
-      vue:
-        optional: true
-    dependencies:
-      '@tarojs/api': 3.6.16
-      '@tarojs/runtime': 3.6.16
-      '@types/react': 18.2.45
-      postcss: 8.4.32
     dev: false
 
   /@tarojs/taro@3.6.20(@types/react@18.2.45)(postcss@8.4.32):
@@ -4822,10 +4674,6 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@vant/area-data@1.5.1:
-    resolution: {integrity: sha512-gR5TPEzTbxN1cTK1aDhCoyikSCLX7DAacxyXoKyI4SAsYYTZrDl/nLgQFIm9vLsvWzlPIda8xV8/U3x7M9k6ww==}
-    dev: false
-
   /@vue/component-compiler-utils@3.3.0(lodash@4.17.21)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-97sfH2mYNU+2PzGrmK2haqffDpVASuib9/w2/noxiFi31Z54hW+q3izKQXXQZSNhtiUpAI36uSuYepeBe4wpHQ==}
     dependencies:
@@ -5370,10 +5218,6 @@ packages:
   /arrify@2.0.1:
     resolution: {integrity: sha512-3duEwti880xqi4eAMN8AyR4a0ByT90zoYdLlevfrvU43vb0YZwZVfxOgxWrLXXXpyugL0hNZc9G6BiB5B3nUug==}
     engines: {node: '>=8'}
-
-  /asap@2.0.6:
-    resolution: {integrity: sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==}
-    dev: false
 
   /astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
@@ -6953,6 +6797,7 @@ packages:
 
   /error-ex@1.3.2:
     resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
+    requiresBuild: true
     dependencies:
       is-arrayish: 0.2.1
 
@@ -9256,6 +9101,7 @@ packages:
 
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
+    requiresBuild: true
 
   /loader-runner@4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
@@ -9714,31 +9560,6 @@ packages:
 
   /mobile-detect@1.4.5:
     resolution: {integrity: sha512-yc0LhH6tItlvfLBugVUEtgawwFU2sIe+cSdmRJJCTMZ5GEJyLxNyC/NIOAOGk67Fa8GNpOttO3Xz/1bHpXFD/g==}
-    dev: false
-
-  /mobx-react-lite@1.5.2(mobx@4.8.0)(react@18.2.0):
-    resolution: {integrity: sha512-PyZmARqqWtpuQaAoHF5pKX7h6TKNLwq6vtovm4zZvG6sEbMRHHSqioGXSeQbpRmG8Kw8uln3q/W1yMO5IfL5Sg==}
-    peerDependencies:
-      mobx: ^4.0.0 || ^5.0.0
-      react: ^16.8.0
-    dependencies:
-      mobx: 4.8.0
-      react: 18.2.0
-    dev: false
-
-  /mobx-react@6.1.4(mobx@4.8.0)(react@18.2.0):
-    resolution: {integrity: sha512-wzrJF1RflhyLh8ne4FJfMbG8ZgRFmZ62b4nbyhJzwQpAmrkSnSsAWG9mIff4ffV/Q7OU+uOYf7rXvSmiuUe4cw==}
-    peerDependencies:
-      mobx: ^4.0.0 || ^5.0.0
-      react: ^16.8.0 || 16.9.0-alpha.0
-    dependencies:
-      mobx: 4.8.0
-      mobx-react-lite: 1.5.2(mobx@4.8.0)(react@18.2.0)
-      react: 18.2.0
-    dev: false
-
-  /mobx@4.8.0:
-    resolution: {integrity: sha512-uR6FnrK50UEbV+zTXkOI+R0pAMb7xA5mkAWnKTMBcN6hAh57qAa9r0XMvsiPgpb8dS3Kw1x0sNhrrUNUcM+Pug==}
     dev: false
 
   /monaco-editor@0.45.0:
@@ -10222,10 +10043,6 @@ packages:
 
   /pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
-
-  /performance-now@2.1.0:
-    resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
-    dev: false
 
   /picocolors@0.2.1:
     resolution: {integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==}
@@ -11168,12 +10985,6 @@ packages:
     resolution: {integrity: sha512-FuEc12/eKqqoRYIGBrUptCBRhobL19PS2U31vMNTfyck1FxPyMfgsXyW4Mav85y/ZN1hop3hOwRlUDok23oYfQ==}
     dev: false
 
-  /promise@8.3.0:
-    resolution: {integrity: sha512-rZPNPKTOYVNEEKFaq1HqTgOwZD+4/YHS5ukLzQCypkj+OkYx7iv0mA91lJlpPPZ8vMau3IIGj5Qlwrx+8iiSmg==}
-    dependencies:
-      asap: 2.0.6
-    dev: false
-
   /prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -11255,12 +11066,6 @@ packages:
   /quick-lru@4.0.1:
     resolution: {integrity: sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==}
     engines: {node: '>=8'}
-
-  /raf@3.4.1:
-    resolution: {integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==}
-    dependencies:
-      performance-now: 2.1.0
-    dev: false
 
   /randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}

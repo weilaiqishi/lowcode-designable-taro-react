@@ -42,8 +42,6 @@
     "@formily/shared": "2.3.1",
     "@kimeng/vm": "0.6.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
-    "@taroify/core": "0.1.1-alpha.9",
-    "@taroify/icons": "0.1.1-alpha.9",
     "@tarojs/components": "3.6.20",
     "@tarojs/helper": "3.6.20",
     "@tarojs/plugin-framework-react": "3.6.20",
