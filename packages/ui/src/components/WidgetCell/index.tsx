@@ -7,22 +7,26 @@ import { formilyStoreEvent, useScope } from '../utils'
 
 type typeProps = typePropsBase & CellProps &
   Partial<{
-    event
+    eventsConfig
   }>
 
 export const WidgetCell = observer(
   ({
     children,
-    event,
+    eventsConfig,
     ...props
   }: typeProps) => {
     const scope = useScope()
     return (
       <Cell
         {...props}
-        onClick={() => {
-          if (event?.click) {
-            formilyStoreEvent(scope, event.click)
+        onClick={(e) => {
+          if (eventsConfig?.Click) {
+            eventsConfig.Click(e)
+            return
+          }
+          if (eventsConfig?.scriptClick) {
+            formilyStoreEvent(scope, eventsConfig.scriptClick)
           }
         }}
       >

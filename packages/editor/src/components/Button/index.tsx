@@ -146,7 +146,7 @@ const propsSchema = createVoidFieldSchema({
     },
   },
   props: {
-    'component-events-group': ['click'],
+    'component-events-group': ['scriptClick'],
   },
 }) as any
 

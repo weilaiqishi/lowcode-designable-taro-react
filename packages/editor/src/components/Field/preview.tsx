@@ -11,16 +11,16 @@ import {
 } from '@formily/react'
 import { toJS } from '@formily/reactive'
 import { each, reduce } from '@formily/shared'
-import { createBehavior } from '@/designable/designable-core/src'
-import { isArr, isStr } from '@/designable/designable-shared/src'
 import { FormItem } from 'ui-nutui-react-taro'
 
+import { createBehavior } from '@/designable/designable-core/src'
 import {
   DnFC,
   useComponents,
   useDesigner,
   useTreeNode,
 } from '@/designable/designable-react/src'
+import { isArr, isStr } from '@/designable/designable-shared/src'
 
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'
@@ -163,7 +163,6 @@ export const Field: DnFC<ISchema> = observer((props) => {
       </VoidField>
     )
   }
-  console.log(fieldProps)
   return <InternalField {...fieldProps} name={node.id} />
 })
 
@@ -172,6 +171,6 @@ Field.Behavior = createBehavior({
   selector: 'Field',
   designerLocales: AllLocales.Field,
   designerProps: {
-    ...behaviorOfResizeAndtranslate
-  }
+    ...behaviorOfResizeAndtranslate,
+  },
 })

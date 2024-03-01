@@ -1,7 +1,10 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import { Text as Component } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
@@ -32,15 +35,6 @@ const propsSchema = createVoidFieldSchema({
     'component-events-group': [],
   },
 }) as any
-
-const customStyles = {}
-const styleSchema =
-  propsSchema.properties['component-style-group'].properties[
-    'x-component-props.style'
-  ].properties
-Object.entries(customStyles).forEach(
-  (values) => (styleSchema[`style.${values[0]}`] = values[1])
-)
 
 Text.Behavior = createBehavior({
   name: 'Text',

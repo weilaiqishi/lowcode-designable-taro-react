@@ -32,6 +32,7 @@
     "@tarojs/shared": "3.6.20",
     "@tarojs/taro": "3.6.20",
     "@tarojs/taro-h5": "3.6.20",
+    "@tarojs/taro-loader": "^3.6.23",
     "@tarojs/webpack5-runner": "3.6.20",
     "@types/react": "^18.2.0",
     "@types/webpack-env": "^1.13.6",
@@ -70,6 +71,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "scripts": {
+    "installCz": "npm install -g commitizen"
   },
   "workspaces": {
     "packages": [

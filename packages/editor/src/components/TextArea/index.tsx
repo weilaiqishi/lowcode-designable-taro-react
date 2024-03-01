@@ -1,5 +1,5 @@
 import React from 'react'
-import { Rate as component } from 'ui-nutui-react-taro'
+import { TextArea as component } from 'ui-nutui-react-taro'
 
 import {
   createBehavior,
@@ -12,47 +12,37 @@ import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
 import { iconimageDesignableConfig } from '../shared'
 
-export const Rate: DnFC<React.ComponentProps<typeof component>> = component
-
-const { imgsProperties, imgsLocales } = iconimageDesignableConfig([
-  {
-    name: 'uncheckedIcon',
-    locale: '选中前图标',
-  },
-  {
-    name: 'checkedIcon',
-    locale: '选中后图标',
-  },
-])
+export const TextArea: DnFC<React.ComponentProps<typeof component>> = component
 
 const propsSchema = createFieldSchema({
   component: {
     type: 'object',
     properties: {
-      count: {
-        type: 'number',
+      placeholder: {
+        type: 'string',
         'x-decorator': 'FormItem',
-        'x-component': 'NumberPicker',
-        'x-component-props': {
-          defaultValue: 5,
-        },
+        'x-component': 'Input',
       },
-      min: {
+      maxLength: {
         type: 'number',
         'x-decorator': 'FormItem',
         'x-component': 'NumberPicker',
       },
-      allowHalf: {
+      rows: {
+        type: 'number',
+        'x-decorator': 'FormItem',
+        'x-component': 'NumberPicker',
+      },
+      showCount: {
         type: 'boolean',
         'x-decorator': 'FormItem',
         'x-component': 'Switch',
       },
-      touchable: {
+      autoSize: {
         type: 'boolean',
         'x-decorator': 'FormItem',
         'x-component': 'Switch',
-      },
-      ...imgsProperties,
+      }
     },
   },
   props: {
@@ -60,40 +50,40 @@ const propsSchema = createFieldSchema({
   },
 }) as any
 
-Rate.Behavior = createBehavior({
-  name: 'Rate',
+TextArea.Behavior = createBehavior({
+  name: 'TextArea',
   extends: ['Field'],
-  selector: (node) => node.props['x-component'] === 'Rate',
+  selector: (node) => node.props['x-component'] === 'TextArea',
   designerProps: {
     propsSchema,
     defaultProps: {},
   },
   designerLocales: {
     'zh-CN': {
-      title: '评分',
+      title: '文本域',
       settings: {
         'x-component-props': {
-          count: 'star 总数',
-          min: '最少选中star数量',
-          allowHalf: '允许半选',
-          touchable: '允许滑动评分',
-          ...imgsLocales,
+          placeholder: 'placeholder',
+          maxLength: '限制最长输入字符，-1 表示无限制',
+          rows: '行数（仅支持H5）',
+          showCount: '是否展示输入字符。须配合maxLength使用',
+          autoSize: '高度是否可拉伸'
         },
       },
     },
   },
 })
 
-Rate.Resource = createResource({
-  icon: 'RateSource',
+TextArea.Resource = createResource({
+  icon: 'InputSource',
   elements: [
     {
       componentName: 'Field',
       props: {
-        type: 'number',
-        title: 'Rate',
+        type: 'string',
+        title: 'TextArea',
         'x-decorator': 'FormItem',
-        'x-component': 'Rate',
+        'x-component': 'TextArea',
       },
     },
   ],

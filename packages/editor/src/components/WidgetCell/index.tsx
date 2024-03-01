@@ -1,14 +1,29 @@
-import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
-import { WidgetCell as component } from 'ui-nutui-react-taro'
+import React, { useMemo } from 'react'
+import { createForm } from '@formily/core'
+import { observer } from '@formily/react'
+import * as lodash from 'lodash-es'
+import { WidgetCell as Component } from 'ui-nutui-react-taro'
 
-import { DnFC } from '@/designable/designable-react/src'
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
+import {
+  DnFC,
+  DroppableWidget,
+  useTreeNode,
+} from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
 import { createVoidFieldSchema } from '../Field'
 
-export const WidgetCell: DnFC<React.ComponentProps<typeof component>> =
-  component
+export const WidgetCell: DnFC<React.ComponentProps<typeof Component>> = (
+  props
+) => {
+  const node = useTreeNode()
+  if (node.children.length === 0) return <DroppableWidget />
+  return <Component {...props}></Component>
+}
 
 const props = {
   'field-group': ['name', 'x-display', 'x-reactions'],
@@ -23,39 +38,15 @@ const propsSchema = createVoidFieldSchema({
         'x-decorator': 'FormItem',
         'x-component': 'Input',
       },
-      size: {
+      description: {
         type: 'string',
         'x-decorator': 'FormItem',
-        'x-component': 'Select',
-        enum: [
-          {
-            label: 'medium',
-            value: 'medium',
-          },
-          {
-            label: 'large',
-            value: 'large',
-          },
-        ],
-        default: 'medium',
+        'x-component': 'Input.TextArea',
       },
-      bordered: {
-        type: 'boolean',
+      extra: {
+        type: 'string',
         'x-decorator': 'FormItem',
-        'x-component': 'Switch',
-        'x-component-props': {
-          defaultValue: true,
-          defaultChecked: true,
-        },
-      },
-      clickable: {
-        type: 'boolean',
-        'x-decorator': 'FormItem',
-        'x-component': 'Switch',
-        'x-component-props': {
-          defaultValue: false,
-          defaultChecked: false,
-        },
+        'x-component': 'Input',
       },
       align: {
         type: 'string',
@@ -63,16 +54,16 @@ const propsSchema = createVoidFieldSchema({
         'x-component': 'Select',
         enum: [
           {
-            label: 'start',
-            value: 'start',
+            label: 'flex-start',
+            value: 'flex-start',
           },
           {
             label: 'center',
             value: 'center',
           },
           {
-            label: 'end',
-            value: 'end',
+            label: 'flex-end',
+            value: 'flex-end',
           },
         ],
       },
@@ -94,11 +85,9 @@ WidgetCell.Behavior = createBehavior({
       title: '单元格',
       settings: {
         'x-component-props': {
-          style: {},
-          title: '分组标题',
-          size: '单元格大小',
-          bordered: '是否显示内边框',
-          clickable: '是否开启点击反馈',
+          title: '标题',
+          description: '描述',
+          extra: '右侧描述',
           align: '对齐方式',
         },
       },

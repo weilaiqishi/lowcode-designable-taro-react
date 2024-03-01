@@ -455,6 +455,9 @@ defineCustomElements(window)
 ```
 
 接着webpack配置还要处理两个地方
+参考 `plugin-framework-react` 这个taro包中的处理
+
+在 'node_modules/@tarojs/plugin-framework-react/dist/index.js' 文件中，有个 `modifyH5WebpackChain` 方法来处理编译到H5时的webpack配置
 
 ```ts
 export default {

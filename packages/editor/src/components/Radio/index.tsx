@@ -1,99 +1,112 @@
 import React from 'react'
-import { createBehavior, createResource } from '@/designable/designable-core/src'
 import { Radio as component } from 'ui-nutui-react-taro'
 
+import {
+  createBehavior,
+  createResource,
+} from '@/designable/designable-core/src'
 import { DnFC } from '@/designable/designable-react/src'
 
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
+import { iconimageDesignableConfig } from '../shared'
+
 
 export const Radio: DnFC<React.ComponentProps<typeof component>> = component
+
+const { imgsProperties, imgsLocales } = iconimageDesignableConfig([
+  {
+    name: 'noActiveIcon',
+    locale: '选中前图标',
+  },
+  {
+    name: 'activeIcon',
+    locale: '选中后图标',
+  }
+])
+
 const propsSchema = createFieldSchema({
-  component: AllSchemas.Radio,
+  component: {
+    type: 'object',
+    properties: {
+      'RadioGroupProps-group': {
+        type: 'void',
+        'x-component': 'DrawerSetter',
+        'x-decorator': 'FormItem',
+        'x-decorator-props': {
+          labelStyle: {
+            display: 'none',
+          },
+        },
+        properties: {
+          'RadioGroupProps': {
+            type: 'object',
+            'x-component': 'CollapseItem',
+            properties: {
+              labelPosition: {
+                type: 'string',
+                'x-decorator': 'FormItem',
+                'x-component': 'Select',
+                enum: [
+                  {
+                    label: 'left',
+                    value: 'left',
+                  },
+                  {
+                    label: 'right',
+                    value: 'right',
+                  },
+                ],
+                default: 'right',
+              },
+              direction: {
+                type: 'string',
+                'x-decorator': 'FormItem',
+                'x-component': 'Select',
+                enum: [
+                  {
+                    label: '垂直',
+                    value: 'vertical',
+                  },
+                  {
+                    label: '水平',
+                    value: 'horizontal',
+                  },
+                ],
+                default: 'vertical',
+              },
+            },
+            'x-component-props': {
+              title: 'Checkbox.Group属性',
+              defaultExpand: true,
+            },
+          },
+        },
+      },
+      shape: {
+        type: 'string',
+        'x-decorator': 'FormItem',
+        'x-component': 'Select',
+        enum: [
+          {
+            label: 'button',
+            value: 'button',
+          },
+          {
+            label: 'round',
+            value: 'round',
+          },
+        ],
+        default: 'round',
+      },
+      ...imgsProperties,
+    },
+  },
   props: {
     'component-events-group': [],
   },
 }) as any
-
-const customStyles = {
-  customStylesTitle: {
-    type: 'void',
-    'x-decorator': 'FormItem',
-  },
-  radioFontSize: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  radioBorderColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioGap: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  radioLabelMargin: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  radioLabelColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioLabelLineHeight: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  radioDisabledLabelColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioIconFontSize: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'SizeInput',
-  },
-  radioCheckedIconColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioCheckedIconBorderColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioCheckedIconBackgroundColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioDisabledIconColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-  radioDisabledIconBorderColor: {
-    type: 'string',
-    'x-decorator': 'FormItem',
-    'x-component': 'ColorInput',
-  },
-}
-const styleSchema =
-  propsSchema.properties['component-style-group'].properties[
-    'x-component-props.style'
-  ].properties
-Object.entries(customStyles).forEach(
-  (values) => (styleSchema[`style.${values[0]}`] = values[1])
-)
 
 Radio.Behavior = createBehavior({
   name: 'Radio',
@@ -106,15 +119,32 @@ Radio.Behavior = createBehavior({
         {
           label: '选项1',
           value: '1',
+          disabled: true,
         },
         {
           label: '选项2',
           value: '2',
+          disabled: false,
         },
       ],
     },
   },
-  designerLocales: AllLocales.RadioGroup,
+  designerLocales: {
+    'zh-CN': {
+      title: '单选框组',
+      settings: {
+        'x-component-props': {
+          'RadioGroupProps-group': 'Radio.Group属性',
+          'RadioGroupProps': {
+            labelPosition: '文本所在的位置',
+            direction: '排列方向',
+          },
+          shape: '形状',
+          ...imgsLocales,
+        },
+      },
+    },
+  },
 })
 
 Radio.Resource = createResource({

@@ -81,12 +81,11 @@ export const imageDesignableConfig = {
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
     },
-    radius: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'SizeInput',
-    },
-    style: lodash.cloneDeep(AllSchemas.CSSStyle),
+    // radius: {
+    //   type: 'string',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'SizeInput',
+    // },
   },
 }
 
@@ -128,7 +127,6 @@ export const iconFontDesignableConfig = {
     //   'x-decorator': 'FormItem',
     //   'x-component': 'Input',
     // },
-    style: lodash.cloneDeep(AllSchemas.CSSStyle),
   },
 }
 
@@ -156,7 +154,12 @@ export function iconimageDesignableConfig(
         [name + '.imageProps']: {
           type: 'object',
           'x-component': 'CollapseItem',
-          properties: lodash.cloneDeep(imageDesignableConfig.properties),
+          properties: Object.assign(
+            lodash.cloneDeep(imageDesignableConfig.properties),
+            {
+              style: lodash.cloneDeep(AllSchemas.CSSStyle),
+            }
+          ),
           'x-component-props': {
             title: '图片',
             defaultExpand: false,
@@ -165,7 +168,12 @@ export function iconimageDesignableConfig(
         [name + '.iconFontProps']: {
           type: 'object',
           'x-component': 'CollapseItem',
-          properties: lodash.cloneDeep(iconFontDesignableConfig.properties),
+          properties: Object.assign(
+            lodash.cloneDeep(iconFontDesignableConfig.properties),
+            {
+              style: lodash.cloneDeep(AllSchemas.CSSStyle),
+            }
+          ),
           'x-component-props': {
             title: '图标',
             defaultExpand: false,
@@ -188,7 +196,7 @@ export function iconimageDesignableConfig(
   return obj
 }
 
-const imageLocals = {
+export const imageLocals = {
   src: '图片资源地址',
   mode: '图片裁剪、缩放的模式',
   lazyLoad: '图片懒加载',

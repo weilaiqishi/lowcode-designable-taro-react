@@ -1,18 +1,20 @@
 //import { Sandbox } from '@/designable/designable-react/src-sandbox'
 import React, { Suspense, useEffect, useMemo, useRef } from 'react'
-import { createRoot } from 'react-dom/client'
+import { findDOMNode, render, unstable_batchedUpdates } from 'react-dom'
+import ReactDOM, { createRoot } from 'react-dom/client'
 import { GithubOutlined } from '@ant-design/icons'
 import { observer } from '@formily/react'
+import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
+import { createReactApp } from '@tarojs/plugin-framework-react/dist/runtime'
+import Taro from '@tarojs/taro'
+import { Button as AntdButton, message, Space } from 'antd'
+
 import {
   createBehavior,
   createDesigner,
   createResource,
   GlobalRegistry,
 } from '@/designable/designable-core/src'
-import { defineCustomElements } from '@tarojs/components/dist/esm/loader.js'
-import Taro from '@tarojs/taro'
-import { Button as AntdButton, message, Space } from 'antd'
-
 import {
   ComponentTreeWidget,
   CompositePanel,
@@ -38,7 +40,7 @@ import {
   SettingsForm,
 } from '@/designable/designable-react-settings-form/src'
 
-import testJson from '../../mobile/src/pages/index/event.json'
+import testJson from '../../mobile/src/pages/index/input.json'
 import todoList from '../../mobile/src/pages/index/todoList.json'
 import { formilyStoreRegister } from '../../ui/src'
 import {
@@ -54,6 +56,7 @@ import {
   Rate,
   Switch,
   Text,
+  TextArea,
   WidgetBase,
   WidgetCell,
   WidgetCellGroup,
@@ -69,7 +72,7 @@ import '@nutui/nutui-react-taro/dist/style.css'
 import '@nutui/icons-react-taro/dist/style_iconfont.css'
 import './fix.scss'
 
-defineCustomElements(window)
+// designable初始化配置
 setNpmCDNRegistry('//github.elemecdn.com')
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
@@ -172,7 +175,7 @@ const App = () => {
             <CompositePanel.Item title="panels.Component" icon="Component">
               <ResourceWidget
                 title="sources.Inputs"
-                sources={[Input, Checkbox, Radio, Rate, Switch]}
+                sources={[Input, TextArea, Checkbox, Radio, Rate, Switch]}
               />
               <ResourceWidget
                 title="sources.Displays"
@@ -207,7 +210,7 @@ const App = () => {
               style={{
                 width: '750px',
                 overflow: 'overlay',
-                overflowX: 'hidden'
+                overflowX: 'hidden',
               }}
             >
               <ViewPanel type="DESIGNABLE">
@@ -227,6 +230,7 @@ const App = () => {
                       Rate,
                       Switch,
                       Text,
+                      TextArea,
                       WidgetBase,
                       WidgetCell,
                       WidgetCellGroup,
@@ -255,10 +259,19 @@ const App = () => {
   )
 }
 
-const container = document.getElementById('root')
-if (container) {
-  const root = createRoot(container)
-  root.render(<App />)
-} else {
-  console.error('dom root is non-existent')
-}
+// Taro H5 初始化
+Object.assign(ReactDOM, { findDOMNode, render, unstable_batchedUpdates })
+defineCustomElements(window)
+const appObj = createReactApp(App, React, ReactDOM, {
+  appId: 'root'
+})
+appObj.onLaunch()
+
+// const container = document.getElementById('root')
+// if (container) {
+//   const root = createRoot(container)
+//   root.render(<App />)
+// } else {
+//   console.error('dom root is non-existent')
+// }
+

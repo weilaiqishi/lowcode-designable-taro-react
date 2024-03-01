@@ -7,17 +7,21 @@ import { formilyStoreEvent, useScope } from '../utils'
 
 type typeProps = typePropsBase &
   Partial<{
-    event
+    eventsConfig
   }>
 
-export const WidgetBase = observer(({ children, ...props }: typeProps) => {
+export const WidgetBase = observer(({ children, eventsConfig, ...props }: typeProps) => {
   const scope = useScope()
   return (
     <View
       {...props}
-      onClick={() => {
-        if (props?.event?.click) {
-          formilyStoreEvent(scope, props.event.click)
+      onClick={(e) => {
+        if (eventsConfig?.Click) {
+          eventsConfig.Click(e)
+          return
+        }
+        if (eventsConfig?.scriptClick) {
+          formilyStoreEvent(scope, eventsConfig.scriptClick)
         }
       }}
     >

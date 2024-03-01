@@ -36,10 +36,6 @@
             "display": "flex",
             "alignItems": "center",
             "justifyContent": "center"
-          },
-          "event": {
-            "click": {},
-            "close": {}
           }
         },
         "x-designable-id": "as8dgcohtb9",
@@ -56,8 +52,7 @@
                 "position": "relative",
                 "color": "rgba(184,63,69,1)"
               },
-              "staticValue": "todos",
-              "event": {}
+              "staticValue": "todos"
             },
             "x-designable-id": "2vkm3feq0hl",
             "x-index": 0
@@ -83,10 +78,6 @@
             "alignContent": "center",
             "justifyContent": "center",
             "alignItems": "center"
-          },
-          "event": {
-            "click": {},
-            "close": {}
           }
         },
         "x-designable-id": "atb7djrlxr0",
@@ -107,7 +98,6 @@
                 "lineHeight": "0px",
                 "textAlign": "center"
               },
-              "event": {},
               "placeholder": "What needs to be done?"
             },
             "x-designable-id": "g5bcvl1ii52",
@@ -143,8 +133,8 @@
                 "lineHeight": "0px",
                 "backgroundColor": "rgba(184,63,69,1)"
               },
-              "event": {
-                "click": {
+              "eventsConfig": {
+                "scriptClick": {
                   "propsOperatorsArray": [
                     "$form.fields.list.unshift({\nitemKey1:$form.values.inputValue\n})"
                   ],
@@ -163,8 +153,7 @@
         "x-component-props": {
           "style": {
             "position": "relative"
-          },
-          "event": {}
+          }
         },
         "x-validator": [],
         "name": "list",
@@ -192,10 +181,6 @@
                   "alignContent": "center",
                   "alignItems": "center",
                   "justifyContent": "center"
-                },
-                "event": {
-                  "click": {},
-                  "close": {}
                 }
               },
               "x-designable-id": "c9osxcqqez7",
@@ -214,7 +199,6 @@
                       "textAlign": "center"
                     },
                     "staticValue": "文本",
-                    "event": {},
                     "useValue": true
                   },
                   "x-designable-id": "c56fe8uyr9t",
@@ -250,8 +234,8 @@
                       "fontSize": "28px",
                       "color": "rgba(184,63,69,1)"
                     },
-                    "event": {
-                      "click": {
+                    "eventsConfig": {
+                      "scriptClick": {
                         "propsOperatorsArray": [
                           "console.log($index), $array.field.remove($index)"
                         ],
