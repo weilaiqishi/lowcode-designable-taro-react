@@ -114,7 +114,6 @@ module.exports = {
             transform: {
               react: {
                 runtime: 'automatic',
-                development: true,
               },
             },
           },
