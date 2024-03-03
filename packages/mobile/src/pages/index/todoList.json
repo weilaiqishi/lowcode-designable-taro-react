@@ -36,6 +36,10 @@
             "display": "flex",
             "alignItems": "center",
             "justifyContent": "center"
+          },
+          "eventsConfig": {
+            "scriptClick": {},
+            "scriptClose": {}
           }
         },
         "x-designable-id": "as8dgcohtb9",
@@ -52,7 +56,8 @@
                 "position": "relative",
                 "color": "rgba(184,63,69,1)"
               },
-              "staticValue": "todos"
+              "staticValue": "todos",
+              "eventsConfig": {}
             },
             "x-designable-id": "2vkm3feq0hl",
             "x-index": 0
@@ -78,6 +83,10 @@
             "alignContent": "center",
             "justifyContent": "center",
             "alignItems": "center"
+          },
+          "eventsConfig": {
+            "scriptClick": {},
+            "scriptClose": {}
           }
         },
         "x-designable-id": "atb7djrlxr0",
@@ -98,7 +107,8 @@
                 "lineHeight": "0px",
                 "textAlign": "center"
               },
-              "placeholder": "What needs to be done?"
+              "placeholder": "What needs to be done?",
+              "eventsConfig": {}
             },
             "x-designable-id": "g5bcvl1ii52",
             "x-index": 0,
@@ -140,7 +150,9 @@
                   ],
                   "api": "runStatement"
                 }
-              }
+              },
+              "type": "primary",
+              "fill": ""
             },
             "x-designable-id": "mh3c5p6p565",
             "x-index": 1
@@ -181,6 +193,10 @@
                   "alignContent": "center",
                   "alignItems": "center",
                   "justifyContent": "center"
+                },
+                "eventsConfig": {
+                  "scriptClick": {},
+                  "scriptClose": {}
                 }
               },
               "x-designable-id": "c9osxcqqez7",
@@ -199,7 +215,8 @@
                       "textAlign": "center"
                     },
                     "staticValue": "文本",
-                    "useValue": true
+                    "useValue": true,
+                    "eventsConfig": {}
                   },
                   "x-designable-id": "c56fe8uyr9t",
                   "x-index": 0,
@@ -212,8 +229,8 @@
                   "x-component-props": {
                     "children": "",
                     "variant": "text",
-                    "color": "primary",
-                    "size": "medium",
+                    "color": "rgba(255,255,255,1)",
+                    "size": "large",
                     "shape": "square",
                     "customIcon": {
                       "src": "",
@@ -232,7 +249,8 @@
                       "width": "28px",
                       "height": "28px",
                       "fontSize": "28px",
-                      "color": "rgba(184,63,69,1)"
+                      "color": "rgba(184,63,69,1)",
+                      "backgroundColor": ""
                     },
                     "eventsConfig": {
                       "scriptClick": {
@@ -240,6 +258,22 @@
                           "console.log($index), $array.field.remove($index)"
                         ],
                         "api": "runStatement"
+                      }
+                    },
+                    "type": "default",
+                    "fill": "none",
+                    "rightIcon": {
+                      "imageProps": {
+                        "mode": "aspectFit",
+                        "style": {
+                          "position": "relative"
+                        }
+                      },
+                      "iconFontProps": {
+                        "style": {
+                          "position": "relative"
+                        },
+                        "iconName": "check-disabled"
                       }
                     }
                   },
@@ -252,6 +286,6 @@
         }
       }
     },
-    "x-designable-id": "sn6iozmndvx"
+    "x-designable-id": "ufa33xpz4q8"
   }
 }
