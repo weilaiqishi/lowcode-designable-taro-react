@@ -3,7 +3,6 @@ import { observer, ReactFC } from '@formily/reactive-react'
 import cls from 'classnames'
 import * as lodash from 'lodash-es'
 
-import { eventsConfigFaker } from '@/components/Field/shared'
 import { GlobalRegistry, TreeNode } from '@/designable/designable-core/src'
 
 import './styles.less'
@@ -45,17 +44,7 @@ export const TreeNodeWidget: ReactFC<ITreeNodeWidgetProps> = observer(
         delete props.style
       }
       if (props['x-component-props']) {
-        Object.assign(props['x-component-props'], {
-          eventsConfig: eventsConfigFaker.reduce(
-            (previousValue, currentValue) => {
-              previousValue[currentValue] = (e) => {
-                e?.preventDefault()
-              }
-              return previousValue
-            },
-            {}
-          ),
-        })
+        props['x-component-props'].eventsConfig = {}
       }
       return props
     }

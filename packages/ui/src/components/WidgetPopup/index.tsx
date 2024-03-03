@@ -18,19 +18,11 @@ export const WidgetPopup = observer(
       <Popup
         {...props}
         onClick={(e) => {
-          if (eventsConfig?.Click) {
-            eventsConfig.Click(e)
-            return
-          }
           if (eventsConfig?.scriptClick) {
             formilyStoreEvent(scope, eventsConfig.scriptClick)
           }
         }}
         onClose={() => {
-          if (eventsConfig?.Close) {
-            eventsConfig.Close()
-            return
-          }
           if (eventsConfig?.scriptClick) {
             formilyStoreEvent(scope, eventsConfig.scriptClose)
           }

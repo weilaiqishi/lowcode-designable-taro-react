@@ -25,6 +25,12 @@ export const Input = connect(
       IconImageConfig.icon = IconImageConfig.noActiveIcon
       delete IconImageConfig.noActiveIcon
     }
+    if (props.type === 'number') {
+      const onChange = props.onChange
+      props.onChange = (val) => {
+        onChange(Number(val))
+      }
+    }
     return <Component {...props}></Component>
   },
   mapProps((props, field) => {

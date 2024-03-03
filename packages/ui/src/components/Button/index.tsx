@@ -37,10 +37,6 @@ export const Button = connect(
         {...IconImageConfig}
         onClick={(e) => {
           e?.preventDefault()
-          if (eventsConfig?.Click) {
-            eventsConfig?.Click(e)
-            return
-          }
           if (eventsConfig?.scriptClick) {
             formilyStoreEvent(scope, eventsConfig.scriptClick)
           }

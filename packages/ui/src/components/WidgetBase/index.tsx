@@ -16,10 +16,6 @@ export const WidgetBase = observer(({ children, eventsConfig, ...props }: typePr
     <View
       {...props}
       onClick={(e) => {
-        if (eventsConfig?.Click) {
-          eventsConfig.Click(e)
-          return
-        }
         if (eventsConfig?.scriptClick) {
           formilyStoreEvent(scope, eventsConfig.scriptClick)
         }

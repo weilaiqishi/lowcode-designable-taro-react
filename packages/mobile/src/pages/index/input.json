@@ -23,7 +23,8 @@
             "margin": "0px 0px 20px 0px",
             "display": "inline-block"
           },
-          "staticValue": "基础用法"
+          "staticValue": "基础用法",
+          "eventsConfig": {}
         },
         "x-designable-id": "nyz0bl8r3h3",
         "x-index": 0
@@ -64,7 +65,8 @@
                     "position": "relative",
                     "display": "block"
                   },
-                  "placeholder": "请输入字段A"
+                  "placeholder": "请输入字段A",
+                  "eventsConfig": {}
                 },
                 "x-decorator-props": {
                   "style": {
@@ -90,7 +92,8 @@
                   "style": {
                     "position": "relative"
                   },
-                  "placeholder": "请输入字段D"
+                  "placeholder": "请输入字段D",
+                  "eventsConfig": {}
                 },
                 "x-decorator-props": {
                   "style": {
@@ -107,6 +110,10 @@
                 "x-component-props": {
                   "style": {
                     "position": "relative"
+                  },
+                  "eventsConfig": {
+                    "scriptClick": {},
+                    "scriptClose": {}
                   }
                 },
                 "x-designable-id": "1xyi4y2n3qu",
@@ -145,8 +152,207 @@
             }
           }
         }
+      },
+      "fvpky1xaau0": {
+        "type": "string",
+        "title": "Text",
+        "x-component": "Text",
+        "x-component-props": {
+          "style": {
+            "fontSize": "28px",
+            "lineHeight": "28px",
+            "position": "relative",
+            "color": "#909ca4",
+            "padding": "0px 20px 0px 20px",
+            "margin": "20px 0px 20px 0px",
+            "display": "inline-block"
+          },
+          "staticValue": "表单校验",
+          "eventsConfig": {}
+        },
+        "x-designable-id": "fvpky1xaau0",
+        "x-index": 2
+      },
+      "ddnv0h1aepz": {
+        "type": "void",
+        "x-component": "Form",
+        "x-component-props": {
+          "style": {
+            "position": "relative"
+          }
+        },
+        "x-designable-id": "ddnv0h1aepz",
+        "x-index": 3,
+        "properties": {
+          "z5thf434w7o": {
+            "type": "void",
+            "x-component": "WidgetCellGroup",
+            "x-component-props": {
+              "style": {
+                "width": "750px",
+                "height": "750px",
+                "position": "relative"
+              },
+              "divider": false
+            },
+            "x-designable-id": "z5thf434w7o",
+            "x-index": 0,
+            "properties": {
+              "qlop2pxmaby": {
+                "type": "string",
+                "title": "字段A",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [],
+                "x-component-props": {
+                  "style": {
+                    "position": "relative",
+                    "display": "block"
+                  },
+                  "placeholder": "请输入字段A",
+                  "eventsConfig": {}
+                },
+                "x-decorator-props": {
+                  "style": {
+                    "position": "relative"
+                  }
+                },
+                "x-designable-id": "qlop2pxmaby",
+                "x-index": 0,
+                "description": "",
+                "required": true
+              },
+              "fg7ri5nzb90": {
+                "type": "number",
+                "title": "字段B",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [
+                  {
+                    "exclusiveMinimum": 0,
+                    "exclusiveMaximum": 20,
+                    "message": "数字要在0-20之间"
+                  }
+                ],
+                "x-component-props": {
+                  "style": {
+                    "position": "relative",
+                    "display": "block"
+                  },
+                  "placeholder": "请输入字段B，且数字要在0-20之间",
+                  "eventsConfig": {},
+                  "type": "number"
+                },
+                "x-decorator-props": {
+                  "style": {
+                    "position": "relative"
+                  }
+                },
+                "x-designable-id": "fg7ri5nzb90",
+                "x-index": 1,
+                "description": "",
+                "required": true
+              },
+              "y21uyj8n3wn": {
+                "type": "string",
+                "title": "字段C",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [
+                  {
+                    "exclusiveMaximum": 13
+                  }
+                ],
+                "x-component-props": {
+                  "style": {
+                    "position": "relative",
+                    "display": "block"
+                  },
+                  "placeholder": "请输入字段C",
+                  "eventsConfig": {}
+                },
+                "x-decorator-props": {
+                  "style": {
+                    "position": "relative"
+                  }
+                },
+                "x-designable-id": "y21uyj8n3wn",
+                "x-index": 2,
+                "description": "",
+                "required": false
+              },
+              "8yaj0uhwxkp": {
+                "type": "string",
+                "title": "字段D",
+                "x-decorator": "FormItem",
+                "x-component": "Input",
+                "x-validator": [
+                  {
+                    "required": false
+                  }
+                ],
+                "x-component-props": {
+                  "style": {
+                    "position": "relative"
+                  },
+                  "placeholder": "请输入字段D",
+                  "eventsConfig": {}
+                },
+                "x-decorator-props": {
+                  "style": {
+                    "position": "relative"
+                  }
+                },
+                "x-designable-id": "8yaj0uhwxkp",
+                "x-index": 3,
+                "required": true
+              },
+              "hfe9703l24d": {
+                "type": "void",
+                "x-component": "WidgetCell",
+                "x-component-props": {
+                  "style": {
+                    "position": "relative"
+                  }
+                },
+                "x-designable-id": "hfe9703l24d",
+                "x-index": 4,
+                "properties": {
+                  "kocpw514j6j": {
+                    "type": "void",
+                    "title": "Button",
+                    "x-component": "Button",
+                    "x-component-props": {
+                      "style": {
+                        "width": "100%",
+                        "height": "",
+                        "position": "relative"
+                      },
+                      "data-designer-node-id": "l8izj4ecta6",
+                      "children": "按钮",
+                      "shape": "round",
+                      "type": "primary",
+                      "size": "large",
+                      "fill": "",
+                      "eventsConfig": {
+                        "scriptClick": {
+                          "propsOperatorsArray": [
+                            "$form.submit()"
+                          ],
+                          "api": "runStatement"
+                        }
+                      }
+                    },
+                    "x-designable-id": "kocpw514j6j",
+                    "x-index": 0
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
-    "x-designable-id": "3cboctnjdzu"
+    "x-designable-id": "791138kk9ty"
   }
 }

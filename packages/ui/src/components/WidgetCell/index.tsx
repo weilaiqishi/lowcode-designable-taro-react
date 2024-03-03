@@ -21,10 +21,6 @@ export const WidgetCell = observer(
       <Cell
         {...props}
         onClick={(e) => {
-          if (eventsConfig?.Click) {
-            eventsConfig.Click(e)
-            return
-          }
           if (eventsConfig?.scriptClick) {
             formilyStoreEvent(scope, eventsConfig.scriptClick)
           }

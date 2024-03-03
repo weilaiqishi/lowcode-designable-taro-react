@@ -88,7 +88,6 @@ export const eventsConfigProperties = {
     },
   },
 }
-export const eventsConfigFaker = ['Click', 'Close']
 
 export const createComponentSchema = (
   component: ISchema,
