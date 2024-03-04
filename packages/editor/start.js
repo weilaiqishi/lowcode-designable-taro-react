@@ -24,7 +24,7 @@ async function run () {
           name: 'demoPath',
           message: '选择demo预览地址-Select demo preview path',
           default: 'http://localhost:10086',
-          choices: ['http://localhost:10086', 'https://miku01.cn/taroifyDemo/index.html']
+          choices: ['http://localhost:10086', 'https://lowcode-designable-taro-react-mobile.vercel.app']
         }
       ])
       .then(({ demoPath }) => {

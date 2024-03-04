@@ -8,6 +8,10 @@
   "scripts": {
     "serve": "rspack serve",
     "build": "rspack build",
+    "serve:test": "dotenv -e .env.test rspack serve",
+    "serve:prod": "dotenv -e .env.prod rspack serve",
+    "build:test": "dotenv -e .env.test rspack build",
+    "build:prod": "dotenv -e .env.prod rspack build",
     "start": "node start.js"
   },
   "private": true,
