@@ -75,9 +75,9 @@ const config = {
       })
     },
     commonChunks: ['runtime', 'vendors', 'taro', 'common', 'vm'],
-    // compile: {
-    //   include: ['node_modules']
-    // }
+    compile: {
+      include: ['ui-nutui-react-taro']
+    }
   },
   h5: {
     staticDirectory: 'static',
