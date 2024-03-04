@@ -1,68 +1,57 @@
 # 基于 Designable 开发 Taro小程序前端页面可视化搭建工具
 
+这个分支还没做好 可以先看旧版taro3.6分支
+
 ## 目录介绍
 
 ```
 ├─ packages
-  ├─ taroify-formily: 组件库
-  ├─ taroify-formily-demo: demo例子
-  ├─ taroify-formily-designable: 页面可视化搭建设计器
+  ├─ editor: 页面可视化搭建设计器，使用rspack构建并做了兼容Taro组件H5渲染处理
+  ├─ mobile: Taro项目demo例子
+  ├─ ui: 使用@nutui/nutui-react-taro组件库做的适配formily的组件
 ```
 
 ## 预览地址
 
-[Github](https://github.com/weilaiqishi/lowcode-designable-taro-react.git)
+可视化设计器（体积很大，注意流量，最好用PC打开） <https://lowcode-designable-taro-react.vercel.app>
+demo H5（按 F12 切换设备仿真） <https://lowcode-designable-taro-react-mobile.vercel.app>
 
-可视化设计器（体积很大，注意流量，最好用PC打开） <https://miku01.cn/taroifyDesignable/index.html>
-
-demo H5（按 F12 切换设备仿真） <https://miku01.cn/taroifyDemo/index.html#/pages/index/index>
-
-![taroify-formily-designable](./showImage/taroify-formily-designable.png)
-![taroify-formily-demo-weapp](./showImage/taroify-formily-demo-weapp.png)
+![editor](./showImage/editor.png)
+![mobile](./showImage/mobile.png)
 
 ## 项目启动
 
 **依赖安装**
-本项目用了lerna去做monorepo，注意lerna7版本有较大改动
+本项目用了pnpm去做monorepo
 根目录下
 
 ```bash
-npm i -g yarn lerna@7 ts-node @tarojs/cli@3.6.20
-yarn
-```
-
-**物料组件库打包**
-taroify-formily 目录下
-
-```bash
-yarn build
+npm i -g pnpm
+pnpm
 ```
 
 **Taro Demo运行**
-taroify-formily-demo 目录下
+packages/mobile 目录下
 编译微信小程序或淘宝(支付宝)小程序、h5
 
 ```bash
-yarn dev:weapp
+pnpm dev:weapp
 ```
 
 ```bash
-yarn dev:alipay
+pnpm dev:alipay
 ```
 
 ```bash
-yarn dev:h5
+pnpm dev:h5
 ```
-
-`taroify-formily-demo/src/pages/index/jsonSchema.json`
-可以替换 `PC端可视化设计器` 中编辑好的json
 
 **可视化设计器启动**
-taroify-formily-designable 目录下
-`taroify-formily-designable/start.js` 中可修改 `Taro Demo` 地址
+packages/editor 目录下
+`packages/editor/start.js` 中可修改 `Taro Demo` 地址
 
 ```bash
-yarn start
+npm start
 ```
 
 ## 介绍文章
@@ -74,7 +63,3 @@ yarn start
 [2Taro小程序H5渲染JSONSchema](./article/2Taro%E5%B0%8F%E7%A8%8B%E5%BA%8FH5%E6%B8%B2%E6%9F%93JSONSchema.md)
 3事件系统(开坑中)
 4数组组件(开坑中)
-
-## 待优化
-
-- [x] 输入框字体在H5中的大小
