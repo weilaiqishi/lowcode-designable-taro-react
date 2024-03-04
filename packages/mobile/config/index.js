@@ -74,10 +74,7 @@ const config = {
         },
       })
     },
-    commonChunks: ['runtime', 'vendors', 'taro', 'common', 'vm'],
-    compile: {
-      include: ['ui-nutui-react-taro']
-    }
+    commonChunks: ['runtime', 'vendors', 'taro', 'common', 'vm']
   },
   h5: {
     staticDirectory: 'static',
@@ -99,6 +96,9 @@ const config = {
         }
       }
     },
+    compile: {
+      include: [path.resolve(__dirname, '..', '..', 'ui')]
+    }
   },
   alias: {
     '@': path.resolve(__dirname, '..', 'src')
