@@ -97,7 +97,7 @@ const config = {
       }
     },
     compile: {
-      include: [path.resolve(__dirname, '..', '..', 'ui')]
+      include: [(modulePath) => modulePath.includes('@kimeng/vm')]
     }
   },
   alias: {
