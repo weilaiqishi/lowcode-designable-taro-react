@@ -13,6 +13,7 @@ const config = {
   },
   deviceRatio: {
     750: 1,
+    375: 2 / 1,
   },
   baseFontSize: 37.5,
   sourceRoot: 'src',
