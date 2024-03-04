@@ -52,6 +52,7 @@ import {
   FormPage,
   Image,
   Input,
+  InputNumber,
   Radio,
   Rate,
   Switch,
@@ -175,7 +176,7 @@ const App = () => {
             <CompositePanel.Item title="panels.Component" icon="Component">
               <ResourceWidget
                 title="sources.Inputs"
-                sources={[Input, TextArea, Checkbox, Radio, Rate, Switch]}
+                sources={[Input, InputNumber, TextArea, Checkbox, Radio, Rate, Switch]}
               />
               <ResourceWidget
                 title="sources.Displays"
@@ -226,6 +227,7 @@ const App = () => {
                       Field,
                       Image,
                       Input,
+                      InputNumber,
                       Radio,
                       Rate,
                       Switch,
