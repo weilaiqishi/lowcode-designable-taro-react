@@ -81,5 +81,26 @@
       "packages/*"
     ]
   },
-  "pnpm": {}
+  "pnpm": {},
+  "turbo": {
+    "npmClient": "pnpm",
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**"
+        ]
+      },
+      "deploy": {
+        "dependsOn": [
+          "build"
+        ]
+      },
+      "dev": {
+        "cache": false
+      }
+    }
+  }
 }
