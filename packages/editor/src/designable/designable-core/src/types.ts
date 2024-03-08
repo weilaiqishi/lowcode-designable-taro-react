@@ -56,16 +56,15 @@ export type IResizable = {
 }
 
 export type ITranslate = {
+  reset: (node: TreeNode) => void
   x?: (
     node: TreeNode,
-    element: HTMLElement,
     diffX: string | number
   ) => {
     translate: () => void
   }
   y?: (
     node: TreeNode,
-    element: HTMLElement,
     diffY: string | number
   ) => {
     translate: () => void

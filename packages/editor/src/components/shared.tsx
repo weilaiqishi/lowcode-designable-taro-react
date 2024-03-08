@@ -271,8 +271,22 @@ export const behaviorOfResizeAndtranslate = {
     },
   },
   translatable: {
-    x(node, element, diffX) {
-      const left = parseInt(node.props?.style?.left ?? element?.style.left) || 0
+    reset(node) {
+      node.props = node.props || {}
+      const styleKey = node.props['x-decorator']
+        ? 'x-decorator-props'
+        : 'x-component-props'
+      node.props[styleKey] = node.props[styleKey] || {}
+      node.props[styleKey].style = node.props[styleKey].style || {}
+      const nodeStyle = node.props[styleKey].style
+      if (!nodeStyle.left?.includes('px')) {
+        nodeStyle.left = '0px'
+      }
+      if (!nodeStyle.top?.includes('px')) {
+        nodeStyle.top = '0px'
+      }
+    },
+    x(node, diffX) {
       return {
         translate: () => {
           node.props = node.props || {}
@@ -281,13 +295,18 @@ export const behaviorOfResizeAndtranslate = {
             : 'x-component-props'
           node.props[styleKey] = node.props[styleKey] || {}
           node.props[styleKey].style = node.props[styleKey].style || {}
-          node.props[styleKey].style.left =
-            left + parseInt(String(diffX)) + 'px'
+          const nodeStyle = node.props[styleKey].style
+
+          let left = 0
+          const theString = nodeStyle.left || '0px'
+          if (theString?.includes('px')) {
+            left = Number(String(theString).slice(0, -2))
+          }
+          nodeStyle.left = left + parseInt(String(diffX)) + 'px'
         },
       }
     },
-    y(node, element, diffY) {
-      const top = parseInt(node.props?.style?.top ?? element?.style.top) || 0
+    y(node, diffY) {
       return {
         translate: () => {
           node.props = node.props || {}
@@ -296,7 +315,15 @@ export const behaviorOfResizeAndtranslate = {
             : 'x-component-props'
           node.props[styleKey] = node.props[styleKey] || {}
           node.props[styleKey].style = node.props[styleKey].style || {}
-          node.props[styleKey].style.top = top + parseInt(String(diffY)) + 'px'
+          const nodeStyle = node.props[styleKey].style
+
+          let top = 0
+          const theString = nodeStyle.top || '0px'
+          if (theString?.includes('px')) {
+            top = Number(String(theString).slice(0, -2))
+          }
+
+          nodeStyle.top = top + parseInt(String(diffY)) + 'px'
         },
       }
     },

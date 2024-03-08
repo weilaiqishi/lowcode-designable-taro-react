@@ -70,9 +70,9 @@ export const useResizeEffect = (engine: Engine) => {
       helper.resize(node, (rect) => {
         element.style.width = rect.width + 'px'
         element.style.height = rect.height + 'px'
-        element.style.position = 'absolute'
-        element.style.left = '0px'
-        element.style.top = '0px'
+        // element.style.position = 'absolute'
+        // element.style.left = '0px'
+        // element.style.top = '0px'
         element.style.transform = `translate3d(${rect.x}px,${rect.y}px,0)`
       })
     })

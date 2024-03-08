@@ -24,6 +24,7 @@ export const useTranslateEffect = (engine: Engine) => {
           if (nodeId) {
             const node = engine.findNodeById(nodeId)
             if (node) {
+              node.designerProps.translatable.reset(node)
               helper.dragStart({ dragNodes: [node], type: 'translate' })
             }
           }
@@ -44,9 +45,9 @@ export const useTranslateEffect = (engine: Engine) => {
       const element = node.getElement()
       if (!element) return
       helper.translate(node, (translate) => {
-        element.style.position = 'absolute'
-        element.style.left = '0px'
-        element.style.top = '0px'
+        // element.style.position = 'absolute'
+        // element.style.left = '0px'
+        // element.style.top = '0px'
         element.style.transform = `translate3d(${translate.x}px,${translate.y}px,0)`
       })
     })
@@ -57,7 +58,17 @@ export const useTranslateEffect = (engine: Engine) => {
       event.context?.workspace ?? engine.workbench.activeWorkspace
     const helper = currentWorkspace?.operation.transformHelper
     if (helper) {
+      const dragNodes = helper.dragNodes
+      const { dragStartNodesRect, dragNodesRect } = helper
       helper.dragEnd()
+      if (!dragNodes.length) return
+      dragNodes.forEach((node) => {
+        const element = node.getElement()
+        if (!element) return
+        element.style.transform = ''
+        node.designerProps.translatable?.x(node, dragNodesRect.x - dragStartNodesRect.x).translate()
+        node.designerProps.translatable?.y(node, dragNodesRect.y - dragStartNodesRect.y).translate()
+      })
     }
   })
 }

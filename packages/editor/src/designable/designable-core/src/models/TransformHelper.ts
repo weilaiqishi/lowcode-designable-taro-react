@@ -315,13 +315,13 @@ export class TransformHelper {
   }
 
   calcBaseTranslate(node: TreeNode) {
-    const dragStartTranslate = this.dragStartTranslateStore[node.id] ?? {
-      x: 0,
-      y: 0,
-    }
-    const x = dragStartTranslate.x + this.deltaX,
-      y = dragStartTranslate.y + this.deltaY
-    return { x, y }
+    // const dragStartTranslate = this.dragStartTranslateStore[node.id] ?? {
+    //   x: 0,
+    //   y: 0,
+    // }
+    // const x = dragStartTranslate.x + this.deltaX,
+    //   y = dragStartTranslate.y + this.deltaY
+    return { x: this.deltaX, y: this.deltaY }
   }
 
   calcBaseResize(node: TreeNode) {
@@ -498,11 +498,11 @@ export class TransformHelper {
     const translate = this.calcBaseTranslate(node)
     this.snapped = false
     this.snapping = false
-    for (let line of this.closestSnapLines) {
-      line.translate(node, translate)
-      this.snapping = true
-      this.snapped = true
-    }
+    // for (let line of this.closestSnapLines) {
+    //   line.translate(node, translate)
+    //   this.snapping = true
+    //   this.snapped = true
+    // }
     handler(translate)
     if (this.snapping) {
       this.dragMove()
